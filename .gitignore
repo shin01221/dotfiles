@@ -1,10 +1,10 @@
 .config/*
 .config/hyde/themes/
-.config/zsh/.zsh_history/
+.config/zsh/.zsh_history
 !.config/hyde/
 !.config/hyde/wallbash/
 !.config/hyde/config.toml
-!.config/zsh
+!.config/zsh/
 !.config/hypr
 !.config/mpd
 !.config/mpv
