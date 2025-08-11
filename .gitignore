@@ -1,5 +1,6 @@
 .config/*
 .config/hyde/themes/
+.config/zsh/.zsh_history
 !.config/hyde/
 !.config/hyde/wallbash/
 !.config/hyde/config.toml
