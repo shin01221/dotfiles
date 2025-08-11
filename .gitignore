@@ -2,6 +2,7 @@
 .config/hyde/themes/
 .config/zsh/.zsh_history
 .config/mpd/mpdstate
+.config/mpd/log
 !.config/hyde/
 !.config/hyde/wallbash/
 !.config/hyde/config.toml
