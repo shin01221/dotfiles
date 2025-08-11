@@ -1,0 +1,73 @@
+$HOME/.config/heroic/themes/wallbash.css|$HOME/.config/hyde/wallbash/scripts/heroic.sh
+body.wallbash {
+  --text-default: #<wallbash_txt1>;
+  --text-secondary: #<wallbash_txt2>;
+  --text-tertiary: #<wallbash_1xa1>;
+
+  --background: #<wallbash_pry1>;
+  --background-darker: #<wallbash_pry1>;
+  --background-lighter: #<wallbash_2xa1>;
+  --body-background: #<wallbash_pry1>;
+  --gradient-body-background: #<wallbash_pry1>;
+  --input-background: #<wallbash_2xa1>;
+  --controller-hints-background: transparent;
+  --current-background: #<wallbash_pry1>;
+  --modal-background: #<wallbash_1xa1>;
+  --modal-border: #<wallbash_2xa6>;
+  --osk-background: #<wallbash_pry1>;
+  --osk-button-background: #<wallbash_2xa1>;
+  --osk-button-border: #<wallbash_1xa1>;
+  --search-bar-background: #<wallbash_2xa1>;
+  --search-bar-border: #<wallbash_2xa1>;
+
+  --action-icon: #<wallbash_txt1>;
+  --action-icon-hover: #<wallbash_txt4>;
+  --action-icon-active: #<wallbash_2xa6>;
+  --icons-background: #<wallbash_pry1>;
+
+  --brand-primary: #<wallbash_2xa6>;
+  --brand-primary-hover: #<wallbash_txt4>;
+
+  --primary-button: #<wallbash_2xa6>;
+  --primary-button-overlay: #<wallbash_2xa6>;
+  --secondary-button: #<wallbash_2xa6>;
+  --secondary-button-overlay: #<wallbash_2xa6>;
+  --tertiary-button: #<wallbash_2xa6>;
+  --tertiary-button-overlay: #<wallbash_2xa6>;
+  --success-button: #<wallbash_3xa7>;
+  --disabled-button: #<wallbash_pry1>;
+  --disabled-button-overlay: #<wallbash_1xa1>;
+
+  --navbar-active: #<wallbash_2xa6>;
+  --navbar-inactive: #<wallbash_txt1>;
+  --navbar-active-background: #<wallbash_2xa1>;
+  --navbar-accent: #<wallbash_2xa6>;
+  --navbar-background: #<wallbash_pry1>;
+  --divider: #<wallbash_pry1>;
+
+  --success: #<wallbash_3xa7>;
+  --success-hover: #<wallbash_txt4>;
+  --danger: #<wallbash_4xa7>;
+  --danger-hover: #<wallbash_txt4>;
+
+  --primary: #<wallbash_2xa6>;
+  --secondary: #<wallbash_2xa6>;
+  --accent: #<wallbash_2xa6>;
+
+  --status-success: #<wallbash_3xa7>;
+  --status-warning: #<wallbash_4xa7>;
+  --status-danger: #<wallbash_4xa7>;
+  --status-info: #<wallbash_2xa6>;
+
+  --neutral-01: #<wallbash_1xa1>;
+  --neutral-02: #<wallbash_pry1>;
+  --neutral-03: #<wallbash_2xa1>;
+  --neutral-04: #<wallbash_txt4>;
+  --neutral-05: #<wallbash_4xa9>;
+  --neutral-06: #<wallbash_txt1>;
+}
+
+body.wallbash select,
+body.wallbash input {
+  box-shadow: none !important;
+}

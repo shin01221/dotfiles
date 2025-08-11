@@ -1,0 +1,16 @@
+/* DEPRECATED
+Instead of this file, please use 
+			custom-module.jsonc for 'custom/module' 
+			wlr-module.jsonc for 'wlr/module'
+			hyprland-module.jsonc for 'hyprland/module'
+
+? These files are deprecated and will be removed in a future release.
+
+* Please Manually REMOVE this module inside the "modules" folder, to avoid any clutter.
+
+TODO: Manual removal will be announced in the release notes after  the removal of this module upstream.
+
+
+{} // Empty Object to avoid syntax errors
+*/
+{}

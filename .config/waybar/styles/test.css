@@ -1,0 +1,320 @@
+@define-color accent #ede3bc;
+@define-color accent_hover #FBF1CA;
+@define-color black rgba(0, 0, 0, 0.7);
+@define-color background rgba(0, 0, 0, 0.0);
+@define-color critical #ffdad6;
+@define-color critical_text #93000a;
+@define-color text_color #f9f3e5;
+@define-color text_color_hover #eee8da;
+@define-color tertiary_hover #8DB49A;
+@define-color tertiary #D2FBDE;
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: proportional_font, monospace_alt_font;
+  font-size: 12px;
+  font-weight: bold;
+  transition: 0s;
+}
+
+window#waybar {
+  background: @background;
+}
+
+tooltip {
+  background: @black;
+  font-family: proportional_font;
+  border-radius: 10px;
+}
+
+tooltip label {
+  background: @black;
+  color: @text_color;
+  font-family: proportional_font;
+}
+
+#custom-updates,
+#custom-keyboard_lighting,
+#network,
+#bluetooth,
+#custom-gpu_usage,
+#disk,
+#memory {
+  color: @accent;
+  margin-right: 9px;
+  transition: 0.3s;
+  padding-top: 2px;
+}
+
+#bluetooth:hover,
+#custom-gpu_usage:hover,
+#custom-keyboard_lighting:hover,
+#memory:hover,
+#network:hover {
+  background: @background;
+  color: @accent;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-shadow: inset 0 0 0px 1px @accent_hover;
+}
+
+#bluetooth.disabled,
+#bluetooth.off,
+#network.disabled,
+#network.disconnected,
+#bluetooth.on {
+  color: gray;
+  margin-right: 9px;
+  transition: 0.3s;
+  padding-top: 2px;
+}
+
+#network.disabled:hover,
+#network.disconnected:hover,
+#bluetooth.disabled:hover,
+#bluetooth.off:hover,
+#bluetooth.on:hover {
+  color: @accent_hover;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-shadow: inset 0 0 0px 1px @accent_hover;
+}
+
+#pulseaudionslider {
+  background: transparent;
+  transition: 0.2s;
+  margin-left: 9px;
+}
+
+#pulseaudio {
+  color: @accent;
+  margin-top: 2px;
+}
+
+#pulseaudio-slider {
+  padding-top: 3px;
+  padding-bottom: 1px;
+}
+
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  background: transparent;
+}
+
+#pulseaudio-slider trough {
+  min-height: 10px;
+  min-width: 50px;
+  border-radius: 2px;
+  background: @background;
+}
+
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 2px;
+  background: @accent;
+}
+
+#backlight {
+  color: @accent;
+  margin-top: 2px;
+}
+
+#backlight-slider {
+  padding-top: 4px;
+  padding-bottom: 1px;
+}
+
+#backlight-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-image: none;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+#backlight-slider trough {
+  min-height: 10px;
+  min-width: 50px;
+  border-radius: 2px;
+  background: @background;
+}
+
+#backlight-slider highlight {
+  min-width: 10px;
+  border-radius: 2px;
+  background: @accent;
+}
+
+#custom-updates:hover {
+  color: @accent;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-shadow: inset 0 0 0px 1px @accent_hover;
+}
+
+#workspaces {
+  margin-right: 0px;
+}
+
+#custom-hiddenwindow {
+  background: transparent;
+  color: @tertiary;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+#custom-mic {
+  background: @accent;
+  color: black;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+#workspaces button {
+  background: transparent;
+  color: @text_color;
+  padding-left: 3px;
+  padding-right: 3px;
+  /* NOTE: 0px paddings are needed. module expands the bar if not set. */
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+#workspaces button:hover {
+  box-shadow: inset 0 0 0px 1px @accent_hover;
+  background: @background;
+  color: @accent;
+  margin-bottom: 0px;
+}
+
+#workspaces button.active {
+  background: @accent;
+  color: black;
+}
+
+#workspaces button.urgent {
+  background: @critical;
+  color: @critical_text;
+}
+
+#clock {
+  color: @accent;
+  transition: 0.2s;
+  padding-left: 8px;
+  padding-right: 7px;
+  padding-top: 3px;
+  font-weight: 800;
+  font-size: 1.05em;
+}
+
+#clock:hover {
+  box-shadow: inset 0 0 0px 1px @accent_hover;
+}
+
+#battery {
+  background: transparent;
+  color: @accent;
+  transition: 0.2s;
+  margin-right: 4px;
+  margin-left: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 1px;
+}
+
+#battery.charging {
+  background: transparent;
+  color: @accent;
+  transition: 0.2s;
+  font-weight: 900;
+}
+
+#cpuntemp {
+  color: @accent;
+  background: transparent;
+  margin-right: 9px;
+  transition: 0.3s;
+  border: 0px solid transparent;
+  padding-top: 2px;
+}
+
+#cpuntemp:hover {
+  background: @background;
+  color: @accent;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-shadow: inset 0 0 0px 1px @accent_hover;
+}
+
+#cpu {
+  color: @accent;
+  margin-right: 9px;
+}
+
+#temperature.cpu {
+  color: @accent;
+}
+
+#temperature.cpu.critical {
+  background: @critical;
+  color: @critical_text;
+  transition: 0.2s;
+}
+
+#custom-dnd {
+  background: transparent;
+  color: @tertiary;
+  margin-right: 0px;
+  padding-left: 7px;
+  padding-top: 2px;
+  padding-right: 7px;
+}
+
+#custom-dnd:hover {
+  color: @tertiary_hover;
+}
+
+#custom-sync,
+#tray {
+  background: transparent;
+  color: @accent;
+  transition: 0.2s;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+}
+
+#custom-sync:hover,
+#tray:hover {
+  background: @background;
+  box-shadow: inset 0 0 0 1px @accent;
+}
+
+#tray menu {
+  color: @accent;
+  background: @black;
+  transition: 0.2s;
+  border-radius: 10px;
+}
+
+#window {
+  background: transparent;
+  transition: 0.2s;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#privacy {
+  color: @critical;
+  margin-top: 3px;
+  margin-left: 1px;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+}
