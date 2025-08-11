@@ -1,9 +1,10 @@
 .config/*
+.config/hyde/themes/
 !.config/hyde/
+!.config/hyde/wallbash/
+!.config/hyde/config.toml
 !.config/zsh
 !.config/hypr
-!.config/hyde/wallbash
-!.config/hyde/config.toml
 !.config/mpd
 !.config/mpv
 !.config/sptlrx
