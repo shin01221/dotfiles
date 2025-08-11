@@ -1,12 +1,13 @@
 .config/*
 .config/hyde/themes/
 .config/zsh/.zsh_history
+.config/mpd/mpdstate
 !.config/hyde/
 !.config/hyde/wallbash/
 !.config/hyde/config.toml
 !.config/zsh/
 !.config/hypr
-!.config/mpd
+!.config/mpd/
 !.config/mpv
 !.config/sptlrx
 !.config/rmpc
