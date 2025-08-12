@@ -23,3 +23,4 @@
 !.config/wlogout
 !.config/systemd
 !.config/lsd
+!.config/kitty
