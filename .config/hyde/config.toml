@@ -1,3 +1,5 @@
+"$schema" = "https://raw.githubusercontent.com/HyDE-Project/HyDE/refs/heads/master/Configs/.local/share/hyde/schema/config.toml.json"
+
 [wallpaper]
 custom_paths = [
     "$HOME/Pictures/Wallpapers",
