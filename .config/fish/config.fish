@@ -6,6 +6,10 @@ function fish_prompt -d "Write out the prompt"
         (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
 end
 
+for f in ~/.config/fish/functions/user/*.fish
+    source $f
+end
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
     set fish_greeting
@@ -18,7 +22,6 @@ if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
 end
 
 alias pamcan pacman
-alias ls 'eza --icons'
 alias clear "printf '\033[2J\033[3J\033[1;1H'"
 alias q 'qs -c ii'
 
@@ -29,10 +32,10 @@ alias q 'qs -c ii'
 
 # aliases
 
-# alias down360='down 360'
-# alias down480='down 480'
-# alias down720='down 720'
-# alias down1080='down 1080'
+alias down360='down 360'
+alias down480='down 480'
+alias down720='down 720'
+alias down1080='down 1080'
 
 alias mirrors='sudo reflector --country Germany,France,Italy --latest 30 --sort age --protocol https --save /etc/pacman.d/mirrorlist'
 alias grep='grep --color=auto'
