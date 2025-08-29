@@ -8,6 +8,11 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.linebreak = false -- Prevents soft wrapping at word boundaries
   end,
 })
+
+-- vim.lsp.enable("qmlls")
+-- vim.lsp.config("qmlls", {
+--   cmd = { "qmlls6" },
+-- })
 -- vim.api.nvim_create_autocmd("BufWritePre", {
 --   pattern = "*.md",
 --   callback = function()

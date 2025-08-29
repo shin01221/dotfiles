@@ -3,6 +3,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        qmlls = {},
         pyright = {
           settings = {
             python = {
