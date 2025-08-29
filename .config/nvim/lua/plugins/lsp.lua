@@ -3,7 +3,13 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        qmlls = {},
+        qmlls = {
+          -- cmd = {
+          --   "qmlls",
+          --   "-I",
+          --   "/usr/lib/qt6/qml",
+          -- },
+        },
         pyright = {
           settings = {
             python = {
