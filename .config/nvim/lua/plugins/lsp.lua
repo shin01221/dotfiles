@@ -4,11 +4,11 @@ return {
     opts = {
       servers = {
         qmlls = {
-          -- cmd = {
-          --   "qmlls",
-          --   "-I",
-          --   "/usr/lib/qt6/qml",
-          -- },
+          cmd = {
+            "qmlls",
+            "-I",
+            "/usr/lib/qt6/qml",
+          },
         },
         pyright = {
           settings = {
