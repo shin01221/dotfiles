@@ -3,9 +3,10 @@
 .config/zsh/.zsh_history
 .config/mpd/mpdstate
 .config/mpd/log
-!.config/hyde/
-!.config/hyde/wallbash/
-!.config/hyde/config.toml
+# !.config/hyde/
+# !.config/hyde/wallbash/
+# !.config/hyde/config.toml
+# !.config/wlogout
 !.config/zsh/
 !.config/hypr
 !.config/mpd/
@@ -20,7 +21,7 @@
 !.config/waybar
 !.config/tmux
 !.config/fish
-!.config/wlogout
+!.config/matugen
 !.config/systemd
 !.config/lsd
 !.config/kitty
