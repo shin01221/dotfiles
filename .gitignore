@@ -3,6 +3,7 @@
 .config/zsh/.zsh_history
 .config/mpd/mpdstate
 .config/mpd/log
+.config/hypr/custom/scripts/mpvpaper_thumbnails
 # !.config/hyde/
 # !.config/hyde/wallbash/
 # !.config/hyde/config.toml
