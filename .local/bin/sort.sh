@@ -14,9 +14,9 @@ VERTICAL_GEN="$BASE_DIR_GENERAL/vertical"
 HORIZONTAL_GEN="$BASE_DIR_GENERAL/horizontal"
 
 # KEYWORDS="cum|pussy|penis|sex|fingering|masturbation|handjob|anal|anus|nipples|bottomless|uncensored|erect_nipples|pubic_hair|nude"
-KEYWORDS="cum|penis|sex|handjob|anal"
-KEYWORDS2="nipples|pussy|tribadism|masturbation|anus|topless|cunnilingus|naked|nude"
-KEYWORDS3="swisuit|thong|underboob|underwear|panties|bikini|breast_grab|bra|see_through"
+KEYWORDS="cum|penis|sex|handjob|anal|paizuri|fellatio"
+KEYWORDS2="nipples|pussy|tribadism|masturbation|anus|cunnilingus|naked|nude"
+KEYWORDS3="swisuit|thong|underboob|underwear|panties|breasts|bikini|breast_grab|bra|sling_bikini|undressing|maebari|"
 # Function: move image by dimensions
 move_by_dimensions() {
 	local img="$1"
