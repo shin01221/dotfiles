@@ -2,6 +2,15 @@
 
 # Vars
 path="$(jq -r '.background.wallpaperPath' ~/.config/illogical-impulse/config.json)"
+STATE_FILE="$HOME/.cache/current_wallpaper_path"
+if [[ ! -e "$path" ]]; then
+	if [[ -f "$STATE_FILE" ]]; then
+		path="$(<"$STATE_FILE")"
+	else
+		echo "Error: $path not found and no state file available" >&2
+		exit 1
+	fi
+fi
 
 #Functions
 move_by_dimensions() {
@@ -68,7 +77,14 @@ sort_images() {
 	done
 }
 
-fav_add() {
+fav_manage() {
+
+	local STATE_FILE="$HOME/.cache/current_wallpaper_path"
+	if [[ "$path" == *fav* ]]; then
+		sort_images
+		return
+	fi
+
 	local target_base=/Media/Pictures/fav
 	local KEYWORDS="cum|penis|sex|handjob|anal|nipples|pussy|tribadism|masturbation|anus|topless|cunnilingus|naked|nude|swimsuits|swimsuit|cameltoe|thong|sling_bikini|underboob|underwear|panties|bikini|breast_grab|bra|see_through|breasts"
 	filename=$(basename "$path")
@@ -77,11 +93,16 @@ fav_add() {
 	if [[ "$lowername" =~ $KEYWORDS ]]; then
 		# If filename has keyword → move inside homework
 		mv "$path" "$target_base/hot"
+		path="$target_base/hot/$filename"
 	else
 		# Otherwise → move inside general
 		mv "$path" "$target_base/goood"
+		path="$target_base/goood/$filename"
 	fi
+
+	echo "$path" >"$STATE_FILE"
 }
-wall_remove() {
+
+wall_delete() {
 	rm "$path"
 }

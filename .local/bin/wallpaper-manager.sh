@@ -4,14 +4,11 @@ source "$HOME/.local/bin/functions.sh"
 mode=$1
 
 case $mode in
---add-fav)
-	fav_add
+--fav-manage)
+	fav_manage
 	;;
---remove-fav)
-	sort_images "$path"
-	;;
---remove)
-	wall_remove
+--delete)
+	wall_delete
 	;;
 --sort)
 	sort_images "$2"
