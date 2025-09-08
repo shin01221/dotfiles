@@ -7,6 +7,9 @@ case $mode in
 --add-fav)
 	fav_add
 	;;
+--remove-fav)
+	sort_images "$path"
+	;;
 --remove)
 	wall_remove
 	;;

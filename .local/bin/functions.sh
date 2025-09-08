@@ -25,7 +25,7 @@ move_by_dimensions() {
 }
 
 sort_images() {
-	local SRC_DIR="$1"
+	local SRC="${1:-$path}"
 	local REGULLAR="/Media/Pictures/Wallpapers"
 	# Target directories
 	local BASE_DIR_HOMEWORK="/Media/Pictures/homework/🌶️"
@@ -39,28 +39,30 @@ sort_images() {
 
 	# KEYWORDS="cum|pussy|penis|sex|fingering|masturbation|handjob|anal|anus|nipples|bottomless|uncensored|erect_nipples|pubic_hair|nude"
 	local KEYWORDS="cum|penis|sex|handjob|anal|paizuri|fellatio"
-	local KEYWORDS2="nipples|pussy|tribadism|masturbation|anus|cunnilingus|naked|nude"
-	local KEYWORDS3="swisuit|thong|underboob|underwear|panties|breasts|bikini|breast_grab|bra|sling_bikini|undressing|maebari|"
+	local KEYWORDS2="nipples|nipple_slip|pussy|tribadism|masturbation|anus|cunnilingus|naked|nude"
+	local KEYWORDS3="swisuits|swimsuit|thong|underboob|underwear|panties|bikini|topless|bra|sling_bikini|pubic_hair|cameltoe|undressing|maebari"
 	# Function: move image by dimensions
 
+	if [ -d "$SRC" ]; then
+		files=("$SRC"/*.{jpg,jpeg,png,gif})
+	else
+		files=("$SRC")
+	fi
 	# Loop over images
-	for img in "$SRC_DIR"/*.{jpg,jpeg,png,gif}; do
+
+	for img in "${files[@]}"; do
 		[ -e "$img" ] || continue
 
 		filename=$(basename "$img")
 		lowername=$(echo "$filename" | tr '[:upper:]' '[:lower:]')
 
 		if [[ "$lowername" =~ $KEYWORDS ]]; then
-			# If filename has keyword → move inside homework
 			mv "$img" "$BASE_DIR_HOMEWORK/sex"
 		elif [[ "$lowername" =~ $KEYWORDS2 ]]; then
-			# If filename has keyword group 2 → move inside special
 			move_by_dimensions "$img" "$VERTICAL_HOME" "$HORIZONTAL_HOME"
 		elif [[ "$lowername" =~ $KEYWORDS3 ]]; then
-			# If filename has keyword group 2 → move inside special
 			move_by_dimensions "$img" "$VERTICAL_GEN" "$HORIZONTAL_GEN"
 		else
-			# Otherwise → move inside general
 			mv "$img" "$REGULLAR"
 		fi
 	done
@@ -68,7 +70,7 @@ sort_images() {
 
 fav_add() {
 	local target_base=/Media/Pictures/fav
-	local KEYWORDS="cum|penis|sex|handjob|anal|nipples|pussy|tribadism|masturbation|anus|topless|cunnilingus|naked|nude|swimsuits|cameltoe|thong|sling_bikini|underboob|underwear|panties|bikini|breast_grab|bra|see_through|breasts"
+	local KEYWORDS="cum|penis|sex|handjob|anal|nipples|pussy|tribadism|masturbation|anus|topless|cunnilingus|naked|nude|swimsuits|swimsuit|cameltoe|thong|sling_bikini|underboob|underwear|panties|bikini|breast_grab|bra|see_through|breasts"
 	filename=$(basename "$path")
 	lowername=$(echo "$filename" | tr '[:upper:]' '[:lower:]')
 
