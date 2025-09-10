@@ -29,7 +29,7 @@ move_by_dimensions() {
 	elif [ "$width" -gt "$height" ]; then
 		mv "$img" "$hdir/"
 	else
-		mv "$img" "$hdir/" # fallback: treat square as vertical
+		mv "$img" "$vdir/" # fallback: treat square as vertical
 	fi
 }
 
@@ -47,9 +47,9 @@ sort_images() {
 	local HORIZONTAL_GEN="$BASE_DIR_GENERAL/horizontal"
 
 	# KEYWORDS="cum|pussy|penis|sex|fingering|masturbation|handjob|anal|anus|nipples|bottomless|uncensored|erect_nipples|pubic_hair|nude"
-	local KEYWORDS="cum|penis|sex|handjob|anal|paizuri|fellatio"
+	local KEYWORDS="penis|sex|handjob|anal|paizuri|fellatio"
 	local KEYWORDS2="nipples|nipple_slip|pussy|tribadism|masturbation|anus|cunnilingus|naked|nude"
-	local KEYWORDS3="swisuits|swimsuit|thong|underboob|underwear|panties|bikini|topless|bra|sling_bikini|pubic_hair|cameltoe|undressing|maebari"
+	local KEYWORDS3="swisuits|swimsuit|thong|underboob|underwear|panties|bikini|topless|sling_bikini|pubic_hair|cameltoe|undressing|maebari"
 	# Function: move image by dimensions
 
 	if [ -d "$SRC" ]; then

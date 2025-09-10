@@ -44,6 +44,7 @@ alias down480='down 480'
 alias down720='down 720'
 alias down1080='down 1080'
 
+alias df="_df"
 alias mirrors='sudo reflector --country Germany,France,Italy --latest 30 --sort age --protocol https --save /etc/pacman.d/mirrorlist'
 alias grep='grep --color=auto'
 alias p='sudo pacman'
