@@ -1,10 +1,13 @@
 #!/bin/bash
 
-# Check if mpd is running
-if pgrep -x mpd >/dev/null; then
+if systemctl --user --quiet is-active mpd.service; then
+	# Stop both services
+	systemctl --user stop mpd-mpris.service
 	systemctl --user stop mpd.service
-	notify-send "mpd is stopped"
+	notify-send "MPD stopped (with MPRIS bridge)"
 else
+	# Start both services
 	systemctl --user start mpd.service
-	notify-send "mpd is running"
+	systemctl --user start mpd-mpris.service
+	notify-send "MPD started (with MPRIS bridge)"
 fi

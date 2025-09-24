@@ -25,6 +25,10 @@ output_path = '~/.config/gtk-3.0/gtk.css'
 input_path = '~/.config/matugen/templates/vesktop/midnight-discord.css'
 output_path = '~/.config/vesktop/themes/midnight-discord.css'
 
+[templates.heroic]
+input_path = '~/.config/matugen/templates/heroic/wallbash.css'
+output_path = '~/.config/heroic/themes/wallbash.css'
+
 # [templates.spotify]
 # input_path = '~/.config/matugen/templates/spotify/color.ini'
 # output_path = '~/.config/spicetify/Themes/spicewal/color.ini'
