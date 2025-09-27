@@ -9,6 +9,8 @@ return {
         ["html"] = { "prettier" },
         ["markdown.mdx"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
         ["markdown"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
+        ["json"] = { "prettier" },
+        ["jsonc"] = { "prettier" },
       },
       formatters = {
         ["markdown-toc"] = {

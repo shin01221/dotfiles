@@ -21,12 +21,12 @@ vim.api.nvim_create_autocmd("FileType", {
 -- })
 
 -- Disable autoformat only for JSON files
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "jsonc,json" },
-  callback = function()
-    vim.b.autoformat = false
-  end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = { "jsonc,json" },
+--   callback = function()
+--     vim.b.autoformat = false
+--   end,
+-- })
 -- -- to be deleted or optimized
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   pattern = "*.md",
