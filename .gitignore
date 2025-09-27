@@ -21,6 +21,7 @@
 !.config/MangoHud
 !.config/waybar
 !.config/tmux
+!.config/tmux/plugins
 !.config/fish
 !.config/matugen
 !.config/systemd
