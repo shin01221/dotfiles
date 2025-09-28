@@ -38,14 +38,20 @@ if status is-interactive # Commands to run in interactive sessions can go here
             case 1
                 tmux attach -t $sessions[1]
             case '*'
-                set chosen (printf "%s\n" $sessions | fzf --prompt="Attach tmux session > " --height=40%)
+                # If tmux supports popups (>= 3.2), use fzf-tmux popup
+                if type -q fzf-tmux
+                    set chosen (printf "%s\n" $sessions | fzf-tmux -p 60%,40% --prompt="Attach tmux session > ")
+                else
+                    # fallback to regular fzf
+                    set chosen (printf "%s\n" $sessions | fzf --height=40% --border --layout=reverse --prompt="Attach tmux session > ")
+                end
+
                 if test -n "$chosen"
-                    tmux attach -t $chosen
+                    tmux attach -t "$chosen"
                 else
                     tmux
                 end
         end
-
     end
     # Aliases
     alias pamcan pacman
