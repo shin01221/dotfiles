@@ -30,11 +30,22 @@ if status is-interactive # Commands to run in interactive sessions can go here
         if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
             cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
         end
-        if tmux has-session 2>/dev/null
-            tmux attach
-        else
-            tmux
+
+        set sessions (tmux list-sessions -F "#{session_name}" 2>/dev/null)
+        switch (count $sessions)
+            case 0
+                tmux
+            case 1
+                tmux attach -t $sessions[1]
+            case '*'
+                set chosen (printf "%s\n" $sessions | fzf --prompt="Attach tmux session > " --height=40%)
+                if test -n "$chosen"
+                    tmux attach -t $chosen
+                else
+                    tmux
+                end
         end
+
     end
     # Aliases
     alias pamcan pacman
