@@ -26,23 +26,36 @@ if status is-interactive # Commands to run in interactive sessions can go here
     # end
 
     starship init fish | source
+
     if not set -q TMUX
         if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
             cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
         end
 
-        set sessions (tmux list-sessions -F "#{session_name}" 2>/dev/null)
+        set sessions
+        for s in (tmux list-sessions -F "#{session_name}" 2>/dev/null)
+            # Skip sessions named scratch or rmpc
+            if test "$s" = scratch -o "$s" = rmpc
+                continue
+            end
+
+            # Skip sessions that have a window named rmpc
+            if tmux list-windows -t $s -F "#{window_name}" 2>/dev/null | grep -Fxq rmpc
+                continue
+            end
+
+            set sessions $sessions $s
+        end
+
         switch (count $sessions)
             case 0
                 tmux
             case 1
                 tmux attach -t $sessions[1]
             case '*'
-                # If tmux supports popups (>= 3.2), use fzf-tmux popup
                 if type -q fzf-tmux
                     set chosen (printf "%s\n" $sessions | fzf-tmux -p 60%,40% --prompt="Attach tmux session > ")
                 else
-                    # fallback to regular fzf
                     set chosen (printf "%s\n" $sessions | fzf --height=40% --border --layout=reverse --prompt="Attach tmux session > ")
                 end
 
@@ -53,6 +66,7 @@ if status is-interactive # Commands to run in interactive sessions can go here
                 end
         end
     end
+
     # Aliases
     alias pamcan pacman
     alias ls 'eza --icons'

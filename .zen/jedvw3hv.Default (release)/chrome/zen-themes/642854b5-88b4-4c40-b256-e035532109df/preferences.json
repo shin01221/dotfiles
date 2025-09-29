@@ -17,7 +17,7 @@
     },
     {
         "property": "zen.view.grey-out-inactive-windows",
-        "label": "\ud83d\udc40 Keep transparency when not in focus on linux",
+        "label": "\ud83d\udc40 Disable transparency when not in focus on linux",
         "type": "checkbox",
         "defaultValue": false,
         "disabledOn": [
@@ -28,6 +28,12 @@
     {
         "property": "mod.sameerasw.zen_transparent_sidebar_enabled",
         "label": "\ud83d\udc40 Transparent sidebar (bookmarks, history and sync)",
+        "type": "checkbox",
+        "defaultValue": true
+    },
+    {
+        "property": "mod.sameerasw.zen_transparent_glance_enabled",
+        "label": "\ud83d\udc40 Transparent glance",
         "type": "checkbox",
         "defaultValue": true
     },
