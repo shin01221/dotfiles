@@ -27,20 +27,29 @@ if status is-interactive # Commands to run in interactive sessions can go here
 
     starship init fish | source
 
+    # auto-attach logic (run only when not already in tmux)
     if not set -q TMUX
+        # optional: print sequences if present
         if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
             cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
         end
 
-        set sessions
+        # remember file
+        set -l last_choice_file ~/.local/state/tmux_last_session
+        set -l last_choice ""
+        if test -f $last_choice_file
+            set last_choice (cat $last_choice_file)
+        end
+
+        # gather sessions, skipping 'scratch' and any session that has a window named 'rmpc'
+        set -l sessions
         for s in (tmux list-sessions -F "#{session_name}" 2>/dev/null)
-            # Skip sessions named scratch or rmpc
             if test "$s" = scratch -o "$s" = rmpc
                 continue
             end
 
-            # Skip sessions that have a window named rmpc
-            if tmux list-windows -t $s -F "#{window_name}" 2>/dev/null | grep -Fxq rmpc
+            # skip session if any of its windows is exactly named "rmpc"
+            if tmux list-windows -t "$s" -F "#{window_name}" 2>/dev/null | grep -Fxq rmpc
                 continue
             end
 
@@ -53,15 +62,35 @@ if status is-interactive # Commands to run in interactive sessions can go here
             case 1
                 tmux attach -t $sessions[1]
             case '*'
-                if type -q fzf-tmux
-                    set chosen (printf "%s\n" $sessions | fzf-tmux -p 60%,40% --prompt="Attach tmux session > ")
+                # Build fzf input so last_choice appears first (and therefore is preselected)
+                set -l fzf_input
+                if test -n "$last_choice" && contains -- $last_choice $sessions
+                    set fzf_input $last_choice
+                    for s in $sessions
+                        if test "$s" != "$last_choice"
+                            set fzf_input $fzf_input $s
+                        end
+                    end
                 else
-                    set chosen (printf "%s\n" $sessions | fzf --height=40% --border --layout=reverse --prompt="Attach tmux session > ")
+                    set fzf_input $sessions
+                end
+
+                # show chooser (fzf-tmux if present, else fzf)
+                if type -q fzf-tmux
+                    set chosen (printf "%s\n" $fzf_input | fzf-tmux -p 60%,40% --prompt="Attach tmux session > ")
+                else if type -q fzf
+                    set chosen (printf "%s\n" $fzf_input | fzf --height=40% --border --layout=reverse --prompt="Attach tmux session > ")
+                else
+                    # no fzf available, attach to first
+                    tmux attach -t $sessions[1]
+                    return
                 end
 
                 if test -n "$chosen"
+                    printf "%s" "$chosen" >$last_choice_file
                     tmux attach -t "$chosen"
                 else
+                    # user cancelled fzf -> start fresh session
                     tmux
                 end
         end
@@ -104,12 +133,12 @@ alias ls='eza -1 --icons=auto' # short list
 alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
 alias ld='eza -lhD --icons=auto' # long list dirs
 alias lt='eza --icons=auto --tree' # list folder as tree
-alias un='$aurhelper -Rns' # uninstall package
-alias up='$aurhelper -Syu' # update system/package/aur
-alias pl='$aurhelper -Qs' # list installed package
-alias pa='$aurhelper -Ss' # list available package
-alias pc='$aurhelper -Sc' # remove unused cache
-alias po='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
+alias un='yay -Rns' # uninstall package
+alias up='yay -Syu' # update system/package/aur
+alias pl='yay -Qs' # list installed package
+alias pa='yay -Ss' # list available package
+alias pc='yay -Sc' # remove unused cache
+alias po='yay -Qtdq | yay -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
 alias vc='code' # gui code editor
 alias fastfetch='fastfetch --logo-type kitty'
 alias ..='cd ..'
