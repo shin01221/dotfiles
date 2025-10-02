@@ -1,5 +1,5 @@
 function tmux-set
-    if status is-interactive # Commands to run in interactive sessions can go here
+    if status is-interactive
         if not set -q TMUX
             # optional: print sequences if present
             if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
@@ -13,18 +13,15 @@ function tmux-set
                 set last_choice (cat $last_choice_file)
             end
 
-            # gather sessions, skipping 'scratch' and any session that has a window named 'rmpc'
+            # gather sessions, skipping 'scratch' and any session with window 'rmpc'
             set -l sessions
             for s in (tmux list-sessions -F "#{session_name}" 2>/dev/null)
                 if test "$s" = scratch -o "$s" = rmpc
                     continue
                 end
-
-                # skip session if any of its windows is exactly named "rmpc"
                 if tmux list-windows -t "$s" -F "#{window_name}" 2>/dev/null | grep -Fxq rmpc
                     continue
                 end
-
                 set sessions $sessions $s
             end
 
@@ -34,7 +31,7 @@ function tmux-set
                 case 1
                     tmux attach -t $sessions[1]
                 case '*'
-                    # Build fzf input so last_choice appears first (and therefore is preselected)
+                    # Build fzf input so last_choice appears first
                     set -l fzf_input
                     if test -n "$last_choice" && contains -- $last_choice $sessions
                         set fzf_input $last_choice
@@ -49,20 +46,22 @@ function tmux-set
 
                     # show chooser (fzf-tmux if present, else fzf)
                     if type -q fzf-tmux
-                        set chosen (printf "%s\n" $fzf_input | fzf-tmux -p 60%,40% --prompt="Attach tmux session > ")
+                        set chosen (printf "%s\n" $fzf_input | fzf-tmux -p 60%,40% --prompt="Attach or create tmux session > " --print-query | tail -n1)
                     else if type -q fzf
-                        set chosen (printf "%s\n" $fzf_input | fzf --height=40% --border --layout=reverse --prompt="Attach tmux session > ")
+                        set chosen (printf "%s\n" $fzf_input | fzf --height=40% --border --layout=reverse --prompt="Attach or create tmux session > " --print-query | tail -n1)
                     else
-                        # no fzf available, attach to first
                         tmux attach -t $sessions[1]
                         return
                     end
 
                     if test -n "$chosen"
                         printf "%s" "$chosen" >$last_choice_file
-                        tmux attach -t "$chosen"
+                        if contains -- $chosen $sessions
+                            tmux attach -t "$chosen"
+                        else
+                            tmux new -s "$chosen"
+                        end
                     else
-                        # user cancelled fzf -> start fresh session
                         tmux
                     end
             end
