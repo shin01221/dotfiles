@@ -1,4 +1,12 @@
 function tmux-set
+
+    # Skip tmux-set if NO_TMUX is set
+    if set -q NO_TMUX
+        if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
+            cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
+        end
+        return
+    end
     if status is-interactive
         if not set -q TMUX
             # optional: print sequences if present
