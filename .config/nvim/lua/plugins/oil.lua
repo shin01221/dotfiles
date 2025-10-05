@@ -1,7 +1,9 @@
 return {
-  {
     "stevearc/oil.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+     dependencies = { { "echasnovski/mini.icons", opts = {} } },
+  lazy = false,
+   ---@module 'oil'
+   ---@type oil.SetupOpts
     opts = {
       default_file_explorer = true,
       delete_to_trash = true,
@@ -24,11 +26,11 @@ return {
       },
       keymaps = {
         ["<C-c>"] = false,
-        ["q"] = "actions.close",
+        -- ["q"] = "actions.close",
       },
-      keys = {
-        { "-", "<cmd>Oil<cr>", desc = "Open parent directory" },
+          },
+keys = {
+        { "--", "<cmd>Oil<cr>", desc = "Open parent directory" },
       },
-    },
-  },
-}
+
+  }

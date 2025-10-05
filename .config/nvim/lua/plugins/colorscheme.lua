@@ -2,44 +2,44 @@ return {
   {
     lazy = true,
     "ellisonleao/gruvbox.nvim",
-    -- opts = {
-    --   transparent_mode = true,
-    -- },
+    opts = {
+      transparent_mode = true,
+    },
   },
   {
     lazy = true,
     "catppuccin/nvim",
-    -- opts = {
-    --   transparent_background = true,
-    -- },
+    opts = {
+      transparent_background = true,
+    },
   },
   {
     lazy = true,
     "rose-pine/neovim",
     name = "rose-pine",
-    -- opts = {
-    --   styles = { transparency = true },
-    -- },
+    opts = {
+      styles = { transparency = true },
+    },
   },
 
   {
     "folke/tokyonight.nvim",
     lazy = true,
     priority = 1000,
-    -- opts = {
-    --   transparent = true,
-    -- },
+    opts = {
+      transparent = true,
+    },
   },
   {
     "neanias/everforest-nvim",
     -- enabled = false,
     version = true,
     lazy = true,
-    -- config = function(_, opts)
-    --   require("everforest").setup({
-    --     transparent_background_level = 1,
-    --   })
-    -- end,
+    config = function(_, opts)
+      require("everforest").setup({
+        transparent_background_level = 1,
+      })
+    end,
   },
   {
     "olimorris/onedarkpro.nvim",
@@ -50,28 +50,28 @@ return {
     "AlexvZyl/nordic.nvim",
     lazy = true,
     priority = 1000,
-    -- opts = {
-    --   transparent = {
-    --     bg = true,
-    --     float = true,
-    --   },
-    -- },
+    opts = {
+      transparent = {
+        bg = true,
+        float = true,
+      },
+    },
   },
   {
     "craftzdog/solarized-osaka.nvim",
     lazy = true,
     priority = 1000,
-    -- opts = function()
-    --   return {
-    --     transparent = true,
-    --   }
-    -- end,
+    opts = function()
+      return {
+        transparent = true,
+      }
+    end,
   },
   {
     "binhtran432k/dracula.nvim",
     lazy = true,
     priority = 1000,
-    -- opts = { transparent = true },
+    opts = { transparent = true },
   },
   {
     "samharju/synthweave.nvim",

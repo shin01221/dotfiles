@@ -1,137 +1,123 @@
 return {
-  "saghen/blink.cmp",
-  dependencies = {
-    "moyiz/blink-emoji.nvim",
-    "Kaiser-Yang/blink-cmp-dictionary",
-  },
-  opts = {
-    -- cmdline = {
-    --   sources = function()
-    --     local type = vim.fn.getcmdtype()
-    --     if type == "/" or type == "?" then
-    --       return { "buffer" }
-    --     end
-    --     if type == ":" then
-    --       return { "cmdline" }
-    --     end
-    --     return {}
-    --   end,
-    -- },
-    -- completion = {
-    --   menu = {
-    --     border = "single",
-    --   },
-    --   documentation = {
-    --     auto_show = true,
-    --     window = {
-    --       border = "single",
-    --     },
-    -- },
-    -- Displays a preview of the selected item on the current line
-    -- ghost_text = {
-    -- enabled = true,
-    -- },
-    -- },
-    sources = {
-      default = { "lsp", "path", "snippets", "buffer", "emoji" },
-      providers = {
-        -- lsp = {
-        --   name = "lsp",
-        --   enabled = true,
-        --   module = "blink.cmp.sources.lsp",
-        --   kind = "LSP",
-        --   min_keyword_length = 2,
-        --   -- When linking markdown notes, I would get snippets and text in the
-        --   -- suggestions, I want those to show only if there are no LSP
-        --   -- suggestions
-        --   --
-        --   -- Enabled fallbacks as this seems to be working now
-        --   -- Disabling fallbacks as my snippets wouldn't show up when editing
-        --   -- lua files
-        --   -- fallbacks = { "snippets", "buffer" },
-        --   score_offset = 100, -- the higher the number, the higher the priority
-        -- },
-        path = {
-          name = "Path",
-          module = "blink.cmp.sources.path",
-          score_offset = 25,
-          -- When typing a path, I would get snippets and text in the
-          -- suggestions, I want those to show only if there are no path
-          -- suggestions
-          fallbacks = { "snippets", "buffer" },
-          min_keyword_length = 2,
-          opts = {
-            trailing_slash = false,
-            label_trailing_slash = true,
-            get_cwd = function(context)
-              return vim.fn.expand(("#%d:p:h"):format(context.bufnr))
-            end,
-            show_hidden_files_by_default = true,
-          },
-        },
-        buffer = {
-          name = "Buffer",
-          enabled = true,
-          max_items = 3,
-          module = "blink.cmp.sources.buffer",
-          -- min_keyword_length = 4,
-          score_offset = 15, -- the higher the number, the higher the priority
-        },
-        -- snippets = {
-        --   name = "snippets",
-        --   enabled = true,
-        --   max_items = 15,
-        --   min_keyword_length = 2,
-        --   module = "blink.cmp.sources.snippets",
-        --   score_offset = 85, -- the higher the number, the higher the priority
-        --   -- Only show snippets if I type the trigger_text characters, so
-        --   -- to expand the "bash" snippet, if the trigger_text is ";" I have to
-        -- },
-        -- Example on how to configure dadbod found in the main repo
-        -- https://github.com/kristijanhusak/vim-dadbod-completion
-        -- https://github.com/moyiz/blink-emoji.nvim
-        emoji = {
-          module = "blink-emoji",
-          name = "Emoji",
-          score_offset = 93, -- the higher the number, the higher the priority
-          min_keyword_length = 2,
-          opts = { insert = true }, -- Insert emoji (default) or complete its name
-        },
-      },
-    },
-    snippets = {
-      preset = "luasnip",
-      -- This comes from the luasnip extra, if you don't add it, won't be able to
-      -- jump forward or backward in luasnip snippets
-      -- https://www.lazyvim.org/extras/coding/luasnip#blinkcmp-optional
-      expand = function(snippet)
-        require("luasnip").lsp_expand(snippet)
-      end,
-      active = function(filter)
-        if filter and filter.direction then
-          return require("luasnip").jumpable(filter.direction)
-        end
-        return require("luasnip").in_snippet()
-      end,
-      jump = function(direction)
-        require("luasnip").jump(direction)
-      end,
-    },
-    keymap = {
-      preset = "default",
-      ["<Tab>"] = { "snippet_forward", "fallback" },
-      ["<S-Tab>"] = { "snippet_backward", "fallback" },
+	{
+		"saghen/blink.compat",
+		-- use the latest release, via version = '*', if you also use the latest release for blink.cmp
+		version = "*",
+		-- lazy.nvim will automatically load the plugin when it's required by blink.cmp
+		lazy = true,
+		-- make sure to set opts so that lazy.nvim calls blink.compat's setup
+		opts = {},
+	},
+	{
+		"saghen/blink.cmp",
+		-- optional: provides snippets for the snippet source
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+			"moyiz/blink-emoji.nvim",
+			"ray-x/cmp-sql",
+		},
 
-      ["<Up>"] = { "select_prev", "fallback" },
-      ["<Down>"] = { "select_next", "fallback" },
-      ["<C-p>"] = { "select_prev", "fallback" },
-      ["<C-n>"] = { "select_next", "fallback" },
+		-- use a release tag to download pre-built binaries
+		version = "1.*",
+		-- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
+		-- build = 'cargo build --release',
+		-- If you use nix, you can build from source using latest nightly rust with:
+		-- build = 'nix run .#build-plugin',
 
-      -- ["<S-k>"] = { "scroll_documentation_up", "fallback" },
-      -- ["<S-j>"] = { "scroll_documentation_down", "fallback" },
+		---@module 'blink.cmp'
+		---@type blink.cmp.Config
+		opts = {
+			-- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
+			-- 'super-tab' for mappings similar to vscode (tab to accept)
+			-- 'enter' for enter to accept
+			-- 'none' for no mappings
+			--
+			-- All presets have the following mappings:
+			-- C-space: Open menu or open docs if already open
+			-- C-n/C-p or Up/Down: Select next/previous item
+			-- C-e: Hide menu
+			-- C-k: Toggle signature help (if signature.enabled = true)
+			--
+			-- See :h blink-cmp-config-keymap for defining your own keymap
+			keymap = {
+				preset = "default",
+				["<C-Z>"] = { "accept", "fallback" },
+			},
 
-      ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-      ["<C-e>"] = { "hide", "fallback" },
-    },
-  },
+			appearance = {
+				-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+				-- Adjusts spacing to ensure icons are aligned
+				nerd_font_variant = "mono",
+			},
+			-- (Default) Only show the documentation popup when manually triggered
+			completion = {
+				menu = { border = "rounded" },
+				ghost_text = { enabled = false },
+				documentation = { auto_show = true },
+			},
+			signature = { enabled = true },
+
+			-- Default list of enabled providers defined so that you can extend it
+			-- elsewhere in your config, without redefining it, due to `opts_extend`
+			sources = {
+				default = { "lsp", "path", "snippets", "buffer", "emoji", "sql" },
+				providers = {
+					buffer = {
+						opts = {
+							-- filter to only "normal" buffers
+							get_bufnrs = function()
+								return vim.tbl_filter(function(bufnr)
+									return vim.bo[bufnr].buftype == ""
+								end, vim.api.nvim_list_bufs())
+							end,
+						},
+					},
+					emoji = {
+						module = "blink-emoji",
+						name = "Emoji",
+						score_offset = 15, -- Tune by preference
+						opts = { insert = true }, -- Insert emoji (default) or complete its name
+						should_show_items = function()
+							return vim.tbl_contains(
+								-- Enable emoji completion only for git commits and markdown.
+								-- By default, enabled for all file-types.
+								{ "gitcommit", "markdown" },
+								vim.o.filetype
+							)
+						end,
+					},
+					sql = {
+						-- IMPORTANT: use the same name as you would for nvim-cmp
+						name = "sql",
+						module = "blink.compat.source",
+
+						-- all blink.cmp source config options work as normal:
+						score_offset = -3,
+
+						-- this table is passed directly to the proxied completion source
+						-- as the `option` field in nvim-cmp's source config
+						--
+						-- this is NOT the same as the opts in a plugin's lazy.nvim spec
+						opts = {},
+						should_show_items = function()
+							return vim.tbl_contains(
+								-- Enable emoji completion only for git commits and markdown.
+								-- By default, enabled for all file-types.
+								{ "sql" },
+								vim.o.filetype
+							)
+						end,
+					},
+				},
+			},
+
+			-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
+			-- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,
+			-- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
+			--
+			-- See the fuzzy documentation for more information
+			fuzzy = { implementation = "prefer_rust_with_warning" },
+		},
+		opts_extend = { "sources.default" },
+	},
 }

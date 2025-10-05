@@ -19,12 +19,12 @@ if status is-interactive # Commands to run in interactive sessions can go here
     # No greeting
     set fish_greeting
 
+    starship init fish | source
     tmux-set
     # if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
     #     cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
     # end
 
-    starship init fish | source
     # Aliases
     alias pamcan pacman
     alias ls 'eza --icons'
