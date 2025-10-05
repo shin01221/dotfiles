@@ -26,35 +26,35 @@ vim.opt.mouse = "a"
 vim.opt.showmode = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 vim.o.splitright = true
 vim.o.splitbelow = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+-- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.o.scrolloff = 15
 vim.opt.cmdheight = 1
 vim.o.undofile = true
 vim.o.updatetime = 250
-vim.o.inccommand = 'split'
+vim.o.inccommand = "split"
 vim.o.list = true
 vim.o.confirm = true
-vim.api.nvim_create_autocmd("TextYankPost", { group = vim.api.nvim_create_augroup("YankHighlight",{clear = true }),pattern = "*",
-callback = function()
-    vim.highlight.on_yank()
-    end,
-    desc="Highlight yank",
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+	desc = "Highlight yank",
 })
 -- enable universal clipboard
 vim.schedule(function()
-  vim.o.clipboard = 'unnamedplus'
+	vim.o.clipboard = "unnamedplus"
 end)
 -- end basics
 
-
-
 -- neovide configs
 if vim.g.neovide then
-  vim.o.guifont = "Maple Mono:h10"
-  vim.g.neovide_padding_top = 30
-  vim.g.neovide_padding_right = 20
-  vim.g.neovide_padding_left = 20
+	vim.o.guifont = "Maple Mono:h10"
+	vim.g.neovide_padding_top = 30
+	vim.g.neovide_padding_right = 20
+	vim.g.neovide_padding_left = 20
 end
