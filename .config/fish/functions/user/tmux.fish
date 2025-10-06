@@ -5,6 +5,8 @@ function tmux-set
         if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
             cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
         end
+        # pyenv init - fish | source
+        # pyenv virtualenv-init - fish | source
         return
     end
     if not set -q TMUX

@@ -1,6 +1,7 @@
 return {
 	"akinsho/bufferline.nvim",
 	event = "VeryLazy",
+	-- enabled = false,
 	keys = {
 		{ "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle Pin" },
 		{ "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete Non-Pinned Buffers" },
@@ -15,6 +16,9 @@ return {
 	},
 	opts = {
 		options = {
+			mode = "buffers", -- still manages buffers
+			show_buffer_close_icons = false,
+			show_close_icon = false,
     -- stylua: ignore
     close_command = function(n) Snacks.bufdelete(n) end,
     -- stylua: ignore

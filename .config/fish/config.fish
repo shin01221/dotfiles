@@ -6,6 +6,40 @@ function fish_prompt -d "Write out the prompt"
         (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
 end
 
+# ~/.config/fish/functions/venv_activate.fish
+# function venv_activate
+#     set -l venv_path $argv[1]
+#     if test -d $venv_path
+#         source "$venv_path/bin/activate.fish"
+#         # store globally
+#         echo "$venv_path" >~/.local/venvs/.current
+#     else
+#         echo "Error: venv path $venv_path does not exist"
+#     end
+# end
+#
+# set venv_file ~/.local/venvs/.current
+# if test -f $venv_file
+#     set -l last_venv (string trim (cat $venv_file))
+#     if test -f "$last_venv/bin/activate.fish"
+#         source "$last_venv/bin/activate.fish"
+#     end
+# end
+#
+# # function lazy_activate_venv --on-event fish_prompt
+# #     set venv_file ~/.local/venvs/.current
+# #     if test -f $venv_file
+# #         set -l last_venv (string trim (cat $venv_file))
+# #         if not set -q VIRTUAL_ENV
+# #             source "$last_venv/bin/activate.fish"
+# #         end
+# #     end
+# # end
+#
+# function deactivate_global
+#     command deactivate && rm ~/.local/venvs/.current $argv
+# end
+
 set -g fish_key_bindings fish_vi_key_bindings
 bind -M insert jj 'set fish_bind_mode default; commandline -f repaint-mode'
 
@@ -20,6 +54,8 @@ if status is-interactive # Commands to run in interactive sessions can go here
     # No greeting
     set fish_greeting
 
+    # eval "$(pyenv init -)"
+    # eval "$(pyenv virtualenv-init -)"
     starship init fish | source
     atuin init fish --disable-up-arrow | source
     bind \cr _atuin_search
@@ -37,15 +73,13 @@ if status is-interactive # Commands to run in interactive sessions can go here
 
 end
 zoxide init fish | source
-
-# function fish_prompt
-#     set_color cyan
-#     echo (pwd)
-#     set_color green
-#     echo '> '
-# end
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+source ~/.config/fish/atuin.fish
 
 # aliases
+
+alias pn="source ~/.local/venvs/nudenet/bin/activate.fish"
 
 alias down360='down 360'
 alias down480='down 480'

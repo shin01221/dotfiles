@@ -4,13 +4,25 @@ local opts = { noremap = true, silent = true }
 -- keymap.set("n", "<S-l>", "<Cmd>BufferLineCycleNext<CR>", { desc = "NextBuffer" })
 -- keymap.set("n", "<S-h>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "PrevBuffer" })
 -- plugins
+
 -- keymap.set("n", "tt", vim.cmd.Themery)
 keymap.set("n", "tt", "<cmd>Themify<cr>")
+-- toggle markview
+keymap.set("n", "<leader>um", "<cmd>Markview Toggle<cr>", { desc = "Toggle markdwon" })
+--toggle top bar buffer on or off
+keymap.set("n", "<leader>bs", function()
+	if vim.o.showtabline == 0 then
+		vim.o.showtabline = 2
+	else
+		vim.o.showtabline = 0
+	end
+end, { desc = "Toggle bufferline visibility" })
 vim.keymap.set("n", "<leader>cf", function()
 	require("conform").format({
 		lsp_format = "fallback",
 	})
 end, { desc = "Format current file" })
+
 -- obsidian  keymaps
 keymap.set(
 	"n",

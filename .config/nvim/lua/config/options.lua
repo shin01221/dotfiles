@@ -5,8 +5,10 @@ vim.opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undo"
 
 -- basic
 
+vim.g.python3_host_prog = vim.fn.expand("~/.local/venvs/nvim/bin/python")
 vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
 vim.opt.wrap = false -- No Wrap lines
+vim.o.virtualedit = "block" -- make visual select go beyond the end of the line
 vim.opt.shell = "fish"
 vim.opt.smarttab = true
 vim.opt.smartindent = true
