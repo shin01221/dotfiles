@@ -4,7 +4,8 @@ local opts = { noremap = true, silent = true }
 -- keymap.set("n", "<S-l>", "<Cmd>BufferLineCycleNext<CR>", { desc = "NextBuffer" })
 -- keymap.set("n", "<S-h>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "PrevBuffer" })
 -- plugins
-keymap.set("n", "tt", vim.cmd.Themery)
+-- keymap.set("n", "tt", vim.cmd.Themery)
+keymap.set("n", "tt", "<cmd>Themify<cr>")
 vim.keymap.set("n", "<leader>cf", function()
 	require("conform").format({
 		lsp_format = "fallback",
@@ -17,18 +18,24 @@ keymap.set(
 	':Telescope live_grep search_dirs={"/Media/Docs/notes"}<cr>',
 	{ desc = "live grep in notes" }
 )
+keymap.set("n", "<leader>os", function()
+	Snacks.picker.files({
+		cwd = "/Media/Docs/notes/",
+	})
+end, { desc = "Notes search" })
 keymap.set("v", "<leader>oe", "<cmd>ObsidianExtractNote<cr>", { desc = "Note Extract" })
+keymap.set("v", "<leader>ox", ":ObsidianExtractNote", { desc = "Note Extract" })
+keymap.set("v", "<leader>oll", vim.cmd.ObsidianLinkNew, { desc = "New Link" })
+keymap.set("n", "<leader>ols", vim.cmd.ObsidianLinks, { desc = "Search Links" })
+keymap.set("n", "<leader>op", vim.cmd.ObsidianPasteImg, { desc = "Paste Image" })
 keymap.set("n", "<leader>o", "", { desc = "+obsidian" })
 keymap.set("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "New Note" })
 keymap.set("n", "<leader>ot", vim.cmd.ObsidianNewFromTemplate, { desc = "New Note with template" })
 keymap.set("n", "<leader>od", vim.cmd.ObsidianDailies, { desc = "New Daily Note" })
-keymap.set("n", "<leader>os", vim.cmd.ObsidianQuickSwitch, { desc = "Notes QuickSwitch" })
 keymap.set("n", "<leader>oh", vim.cmd.ObsidianTags, { desc = "Search Tags" })
 keymap.set("n", "<leader>oc", vim.cmd.ObsidianTOC, { desc = "Search TOC" })
 keymap.set("n", "<leader>ob", vim.cmd.ObsidianBacklinks, { desc = "Search backlinks" })
-keymap.set("n", "<leader>ols", vim.cmd.ObsidianLinks, { desc = "Search Links" })
-keymap.set("v", "<leader>ox", ":ObsidianExtractNote", { desc = "Note Extract" })
-keymap.set("v", "<leader>oll", vim.cmd.ObsidianLinkNew, { desc = "New Link" })
+
 keymap.set("n", "gf", function()
 	if require("obsidian").util.cursor_on_markdown_link() then
 		return "<cmd>ObsidianFollowLink<CR>"

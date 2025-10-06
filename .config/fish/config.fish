@@ -8,6 +8,7 @@ end
 
 set -g fish_key_bindings fish_vi_key_bindings
 bind -M insert jj 'set fish_bind_mode default; commandline -f repaint-mode'
+
 # sourcing my functions
 for f in ~/.config/fish/functions/user/*.fish
     source $f
@@ -20,10 +21,13 @@ if status is-interactive # Commands to run in interactive sessions can go here
     set fish_greeting
 
     starship init fish | source
+    atuin init fish --disable-up-arrow | source
+    bind \cr _atuin_search
+    bind k _atuin_search
+    bind -M insert \cr _atuin_search
     tmux-set
     # if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
     #     cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-    # end
 
     # Aliases
     alias pamcan pacman
@@ -32,6 +36,7 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias q 'qs -c ii'
 
 end
+zoxide init fish | source
 
 # function fish_prompt
 #     set_color cyan
@@ -48,7 +53,8 @@ alias down720='down 720'
 alias down1080='down 1080'
 
 alias df="_df"
-alias mirrors='sudo reflector --country Germany,France,Italy --latest 30 --sort age --protocol https --save /etc/pacman.d/mirrorlist'
+# alias mirrors='sudo reflector --country Germany,France,Italy --latest 30 --sort age --protocol https --save /etc/pacman.d/mirrorlist'
+alias mirrors='sudo reflector --verbose --country Germany,France,Italy --protocol https --sort rate --latest 20 --download-timeout 6 --save /etc/pacman.d/mirrorlist'
 alias grep='grep --color=auto'
 alias p='sudo pacman'
 alias rm='trash -d'
@@ -76,5 +82,3 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias mkdir='mkdir -p'
-
-zoxide init fish | source

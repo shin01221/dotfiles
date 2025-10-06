@@ -1,7 +1,8 @@
 return {
 	{
-		-- enabled = false,
+		enabled = false,
 		lazy = false,
+		event = "VeryLazy",
 		"zaldih/themery.nvim",
 		opts = {
 			themes = {
