@@ -42,6 +42,7 @@ end
 
 set -g fish_key_bindings fish_vi_key_bindings
 set -Ux fifc_editor nvim
+set -gx MANPAGER "nvim +Man!"
 bind -M insert jj 'set fish_bind_mode default; commandline -f repaint-mode'
 
 # sourcing my functions

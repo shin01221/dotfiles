@@ -2,12 +2,14 @@
 
 # Vars
 path="$(jq -r '.background.wallpaperPath' ~/.config/illogical-impulse/config.json)"
+base_homework="/Media/Pictures/homework"
+base_fav="/Media/Pictures/fav"
 STATE_FILE="$HOME/.cache/current_wallpaper_path"
 if [[ ! -e "$path" ]]; then
 	if [[ -f "$STATE_FILE" ]]; then
 		path="$(<"$STATE_FILE")"
 	else
-		echo "Error: $path not found and no state file available" >&2
+		notify-send "⚠️ Wallpaper Toggle" "Error: Wallpaper not found and no state file exists."
 		exit 1
 	fi
 fi
@@ -77,30 +79,26 @@ sort_images() {
 	done
 }
 
-fav_manage() {
-
-	local STATE_FILE="$HOME/.cache/current_wallpaper_path"
-	if [[ "$path" == *fav* ]]; then
-		sort_images
-		return
-	fi
-
-	local target_base=/Media/Pictures/fav
-	local KEYWORDS="cum|penis|sex|handjob|anal|nipples|pussy|tribadism|masturbation|anus|topless|cunnilingus|naked|nude|swimsuits|swimsuit|cameltoe|thong|sling_bikini|underboob|underwear|panties|bikini|breast_grab|bra|see_through|breasts"
-	filename=$(basename "$path")
-	lowername=$(echo "$filename" | tr '[:upper:]' '[:lower:]')
-
-	if [[ "$lowername" =~ $KEYWORDS ]]; then
-		# If filename has keyword → move inside homework
-		mv "$path" "$target_base/hot"
-		path="$target_base/hot/$filename"
-	else
-		# Otherwise → move inside general
-		mv "$path" "$target_base/goood"
-		path="$target_base/goood/$filename"
-	fi
+fav_toggle() {
 
 	echo "$path" >"$STATE_FILE"
+
+	# Determine target
+	if [[ "$path" == "$base_homework/"* ]]; then
+		rel="${path#"$base_homework"/}"
+		target="$base_fav/$rel"
+		mv -- "$path" "$target" && notify-send "Fav toggle" "Removed from fav 💢"
+	elif [[ "$path" == "$base_fav/"* ]]; then
+		rel="${path#"$base_fav"/}"
+		target="$base_homework/$rel"
+		mv -- "$path" "$target" && notify-send "Moved back to homework" "Added to fav 🥰"
+	else
+		notify-send "Wallpaper toggle" "File not inside homework or fav"
+		exit 1
+	fi
+
+	# Update state file after move
+	echo "$target" >"$STATE_FILE"
 }
 
 wall_delete() {

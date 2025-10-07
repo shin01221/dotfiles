@@ -5,7 +5,7 @@ mode=$1
 
 case $mode in
 --fav-manage)
-	fav_manage
+	fav_toggle
 	;;
 --delete)
 	wall_delete
