@@ -4,6 +4,7 @@
 path="$(jq -r '.background.wallpaperPath' ~/.config/illogical-impulse/config.json)"
 base_homework="/Media/Pictures/homework"
 base_fav="/Media/Pictures/fav"
+base_wallpapers="/Media/Pictures/Wallpapers"
 STATE_FILE="$HOME/.cache/current_wallpaper_path"
 if [[ ! -e "$path" ]]; then
 	if [[ -f "$STATE_FILE" ]]; then
@@ -13,6 +14,12 @@ if [[ ! -e "$path" ]]; then
 		exit 1
 	fi
 fi
+
+# Normalize with realpath
+# path="$(realpath -m "$path")"
+# base_homework="$(realpath -m "$base_homework")"
+# base_fav="$(realpath -m "$base_fav")"
+# base_wallpapers="$(realpath -m "$base_wallpapers")"
 
 #Functions
 move_by_dimensions() {
@@ -81,23 +88,33 @@ sort_images() {
 
 fav_toggle() {
 
-	echo "$path" >"$STATE_FILE"
-
-	# Determine target
 	if [[ "$path" == "$base_homework/"* ]]; then
 		rel="${path#"$base_homework"/}"
 		target="$base_fav/$rel"
-		mv -- "$path" "$target" && notify-send "Fav toggle" "Removed from fav 💢"
-	elif [[ "$path" == "$base_fav/"* ]]; then
+		mv -- "$path" "$target" && notify-send "Fav toggle" "Added to fav 🥰"
+
+	# --- CASE 2: inside fav → move back to homework
+	elif [[ "$path" == "$base_fav/"* && "$path" != "$base_fav/Wallpapers/"* ]]; then
 		rel="${path#"$base_fav"/}"
 		target="$base_homework/$rel"
-		mv -- "$path" "$target" && notify-send "Moved back to homework" "Added to fav 🥰"
+		mv -- "$path" "$target" && notify-send "Fav toggle" "Removed from fav 💢"
+
+	# --- CASE 3: Wallpapers ↔ fav/Wallpapers toggle
+	elif [[ "$path" == "$base_wallpapers/"* || "$path" == "$base_fav/Wallpapers/"* ]]; then
+		filename="$(basename -- "$path")"
+		if [[ "$path" == "$base_fav/Wallpapers/"* ]]; then
+			target="$base_wallpapers/$filename"
+			mv -- "$path" "$target" && notify-send "Fav toggle" "Removed from fav 💢"
+		else
+			target="$base_fav/Wallpapers/$filename"
+			mv -- "$path" "$target" && notify-send "Fav toggle" "Added to fav 🥰"
+		fi
+
 	else
-		notify-send "Wallpaper toggle" "File not inside homework or fav"
-		exit 1
+		notify-send "Fav toggle" "File not inside homework, fav, or Wallpapers"
+		return 1
 	fi
 
-	# Update state file after move
 	echo "$target" >"$STATE_FILE"
 }
 
