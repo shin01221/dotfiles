@@ -5,6 +5,7 @@ vim.opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undo"
 
 -- basic
 
+vim.opt.autoread = true
 vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
@@ -64,3 +65,6 @@ if vim.g.neovide then
 	vim.g.neovide_padding_right = 20
 	vim.g.neovide_padding_left = 20
 end
+
+-- lsps
+-- vim.lsp.enable("copilot")
