@@ -5,6 +5,8 @@ vim.opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undo"
 
 -- basic
 
+vim.opt.conceallevel = 2
+vim.opt.concealcursor = "c" -- show conceal only in normal and command mode
 vim.opt.autoread = true
 vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
