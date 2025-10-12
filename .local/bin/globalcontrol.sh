@@ -274,8 +274,8 @@ if [ -n "$HYPRLAND_INSTANCE_SIGNATURE" ]; then
     hypr_border="$(hyprctl -j getoption decoration:rounding | jq '.int')"
     hypr_width="$(hyprctl -j getoption general:border_size | jq '.int')"
 fi
-    export hypr_border=${hypr_border:-${HYDE_BORDER_RADIUS:-5}}
-    export hypr_width=${hypr_width:-${HYDE_BORDER_WIDTH:-5}}
+export hypr_border=${hypr_border:-${HYDE_BORDER_RADIUS:-5}}
+export hypr_width=${hypr_width:-${HYDE_BORDER_WIDTH:-5}}
 
 #// extra fns
 
@@ -522,7 +522,6 @@ accepted_mime_types() {
     done
 
 }
-
 
 export -f get_hyprConf get_rofi_pos \
     is_hovered toml_write \

@@ -34,10 +34,16 @@ return {
 				end,
 			},
 		},
-		format_on_save = {
-			-- These options will be passed to conform.format()
-			timeout_ms = 500,
-			lsp_format = "fallback",
-		},
+		format_on_save = function(bufnr)
+			-- Disable for certain filetypes
+			local disable_filetypes = { "json" }
+			if vim.tbl_contains(disable_filetypes, vim.bo[bufnr].filetype) then
+				return
+			end
+			return {
+				timeout_ms = 500,
+				lsp_format = "fallback", -- fallback to LSP if formatter not found
+			}
+		end,
 	},
 }
