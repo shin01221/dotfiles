@@ -1,3 +1,8 @@
+set -x ANTHROPIC_BASE_URL "https://agentrouter.org/"
+
+if test -f ~/.secrets.fish
+    source ~/.secrets.fish
+end
 function fish_prompt -d "Write out the prompt"
     # This shows up as USER@HOST /home/user/ >, with the directory colored
     # $USER and $hostname are set by fish, so you can just use them
@@ -5,40 +10,6 @@ function fish_prompt -d "Write out the prompt"
     printf '%s@%s %s%s%s > ' $USER $hostname \
         (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
 end
-
-# ~/.config/fish/functions/venv_activate.fish
-# function venv_activate
-#     set -l venv_path $argv[1]
-#     if test -d $venv_path
-#         source "$venv_path/bin/activate.fish"
-#         # store globally
-#         echo "$venv_path" >~/.local/venvs/.current
-#     else
-#         echo "Error: venv path $venv_path does not exist"
-#     end
-# end
-#
-# set venv_file ~/.local/venvs/.current
-# if test -f $venv_file
-#     set -l last_venv (string trim (cat $venv_file))
-#     if test -f "$last_venv/bin/activate.fish"
-#         source "$last_venv/bin/activate.fish"
-#     end
-# end
-#
-# # function lazy_activate_venv --on-event fish_prompt
-# #     set venv_file ~/.local/venvs/.current
-# #     if test -f $venv_file
-# #         set -l last_venv (string trim (cat $venv_file))
-# #         if not set -q VIRTUAL_ENV
-# #             source "$last_venv/bin/activate.fish"
-# #         end
-# #     end
-# # end
-#
-# function deactivate_global
-#     command deactivate && rm ~/.local/venvs/.current $argv
-# end
 
 set -g fish_key_bindings fish_vi_key_bindings
 set -Ux fifc_editor nvim

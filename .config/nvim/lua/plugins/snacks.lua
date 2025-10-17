@@ -8,6 +8,14 @@ return {
 		explorer = { enabled = true },
 		indent = { enabled = true },
 		input = { enabled = true },
+
+		image = {
+			enabled = true,
+			doc = {
+				inline = false,
+				float = true,
+			},
+		},
 		notifier = {
 			enabled = true,
 			timeout = 3000,
