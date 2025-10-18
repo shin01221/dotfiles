@@ -3,6 +3,7 @@ set -x ANTHROPIC_BASE_URL "https://agentrouter.org/"
 if test -f ~/.secrets.fish
     source ~/.secrets.fish
 end
+
 function fish_prompt -d "Write out the prompt"
     # This shows up as USER@HOST /home/user/ >, with the directory colored
     # $USER and $hostname are set by fish, so you can just use them

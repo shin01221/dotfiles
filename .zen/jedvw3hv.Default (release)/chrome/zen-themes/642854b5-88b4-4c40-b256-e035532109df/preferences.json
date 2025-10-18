@@ -9,7 +9,7 @@
         "property": "zen.widget.linux.transparency",
         "label": "\ud83d\udc40 Allow transparency on linux (TURN OFF BEFORE UNINSTALL)",
         "type": "checkbox",
-        "defaultValue": false,
+        "defaultValue": true,
         "disabledOn": [
             "windows",
             "macos"
