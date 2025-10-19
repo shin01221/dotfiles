@@ -30,6 +30,15 @@ input_path = "~/.config/matugen/templates/kitty/kitty-colors.conf"
 output_path = "~/.config/kitty/colors.conf"
 post_hook = "pkill -SIGUSR1 kitty"
 
+[templates.starship]
+input_path = "~/.config/matugen/templates/starship/starship-colors.toml"
+output_path = "~/.config/starship.toml"
+
+[templates.cava]
+input_path = "~/.config/matugen/templates/cava/cava-colors.ini"
+output_path = "~/.config/cava/themes/colors"
+post_hook = "pkill -USR1 cava"
+
 # [templates.heroic]
 # input_path = '~/.config/matugen/templates/heroic/wallbash.css'
 # output_path = '~/.config/heroic/themes/wallbash.css'
