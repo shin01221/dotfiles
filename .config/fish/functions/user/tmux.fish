@@ -2,18 +2,18 @@ function tmux-set
 
     # Skip tmux-set if NO_TMUX is set
     if set -q NO_TMUX
-        if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-            cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-        end
+        # if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
+        #     cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
+        # end
         # pyenv init - fish | source
         # pyenv virtualenv-init - fish | source
         return
     end
     if not set -q TMUX
         # optional: print sequences if present
-        if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-            cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-        end
+        # if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
+        #     cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
+        # end
 
         # remember file
         set -l last_choice_file ~/.local/state/tmux_last_session

@@ -22,16 +22,11 @@ fi
 # 🐱 Toggle Kitty transparency
 kitty_conf="$HOME/.config/kitty/kitty.conf"
 if grep -q '^[[:space:]]*#[[:space:]]*background_opacity' "$kitty_conf"; then
-    # It’s commented → uncomment it and set opacity to 0.90
     sed -i 's/^[[:space:]]*#[[:space:]]*\(background_opacity.*\)/\1/' "$kitty_conf"
-    # kitty @ set-background-opacity 0.90
-    echo "✨ Kitty transparency enabled"
+    kill -SIGUSR1 $(pgrep kitty)
 elif grep -q '^[[:space:]]*background_opacity' "$kitty_conf"; then
-    # It’s uncommented → comment it and set opacity to 1.0 (opaque)
     sed -i 's/^[[:space:]]*\(background_opacity.*\)/#\1/' "$kitty_conf"
-    # kitty @ set-background-opacity 1.0
-    echo "🔒 Kitty transparency disabled"
+    kill -SIGUSR1 $(pgrep kitty)
 else
     echo "⚠️ background_opacity line not found in $kitty_conf"
 fi
-# Apply the change live to all kitty windows (newer kitty)
