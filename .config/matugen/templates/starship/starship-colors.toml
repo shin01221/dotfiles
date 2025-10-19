@@ -1,5 +1,5 @@
 format = '''
-$directory$git_branch$rust$python
+$directory$git_branch$git_status$rust$python
 $character'''
 palette = "colors"
 
@@ -36,21 +36,17 @@ format = "[](fg:color1 bg:color4)[󰉋](bg:color1 fg:color2)[ ](fg:color1 
 [git_branch]
 format = "[](fg:color8 bg:color4)[ ](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5) $branch](fg:color3 bg:color4)[](fg:color4) "
 
+[git_commit]
+commit_hash_length = 4
+tag_symbol = " "
+
 [git_state]
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
 cherry_pick = "[🍒 PICKING](bold red)"
 
 [git_status]
-conflicted = " 🏳 "
-ahead = " 🏎💨 "
-behind = " 😰 "
-diverged = " 😵 "
-untracked = " 🤷 ‍"
-stashed = " 📦 "
-modified = " 📝 "
-staged = '[++\($count\)](green)'
-renamed = " ✍️ "
-deleted = " 🗑 "
+format = "[$all_status$ahead_behind ]($style)"
+style = "colors.on_primary.default.hex"
 
 [time]
 format = "[](fg:color8 bg:color4)[ ](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5) $time](fg:color3 bg:color4)[](fg:color4) "
