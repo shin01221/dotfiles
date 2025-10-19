@@ -1,6 +1,7 @@
 format = '''
-$directory$git_branch$rust$python
-$character'''
+$directory$git_branch$rust$python$c$lua$cpp$golang
+$character
+'''
 palette = "colors"
 
 [palettes.colors]
@@ -34,10 +35,7 @@ format = "[](fg:color1 bg:color4)[󰉋](bg:color1 fg:color2)[ ](fg:color1 
 "GitHub" = " 󰊤 "
 
 [git_branch]
-format = "[](fg:color8 bg:color4)[ $all_status$ahead_behind](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5) $branch](fg:color3 bg:color4)[](fg:color4) "
-
-# [git_status]
-# format = "[$all_status$ahead_behind](bg:color8 fg:color5)"
+format = "[](fg:color8 bg:color4)[ ](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5) $branch](fg:color3 bg:color4)[](fg:color4) "
 
 [time]
 format = "[](fg:color8 bg:color4)[ ](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5) $time](fg:color3 bg:color4)[](fg:color4) "
@@ -46,32 +44,16 @@ time_format = "%R"  # Hour:Minute Format
 
 [python]
 format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
-symbol = "[ ]"
+symbol = " "
 # pyenv_version_name = true
 pyenv_prefix = "venv"
 
 [docker_context]
-format = "[ $symbol $context ]($style)"
-style = "bg:#06969A"
+format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
 symbol = " "
-
-[elixir]
-format = "[ $symbol ]($style)"
-style = "bg:#86BBD8"
-symbol = " "
-
-[elm]
-format = "[ $symbol ]($style)"
-style = "bg:#86BBD8"
-symbol = " "
-
-[deno]
-format = " [deno](italic) [ ](green bold)"
-version_format = "${raw}"
 
 [lua]
-format = " [lua](italic) [${symbol}]($style)"
-style = "bold bright-yellow"
+format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
 symbol = "⨀ "
 version_format = "${raw}"
 
@@ -79,50 +61,43 @@ version_format = "${raw}"
 detect_extensions = []
 detect_files = ["package-lock.json", "yarn.lock"]
 detect_folders = ["node_modules"]
-format = "[ ](bold bright-green)"
+format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
+symbol = " "
 version_format = "${raw}"
 
 [ruby]
-format = " [rb](italic) [${symbol}]($style)"
-style = "bold red"
+format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
 symbol = " "
 version_format = "${raw}"
 
 [rust]
-style = "bold bright-red"
-format = " rs(italic) $symbol($style)"
+format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
 symbol = " "
 
 [swift]
-format = " [sw](italic) [${symbol}]($style)"
-style = "bold bright-red"
+format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
 symbol = " "
 version_format = "${raw}"
 
 [aws]
 disabled = true
-format = " [aws](italic) [$symbol $profile $region]($style)"
-style = "bold blue"
+format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
 symbol = " "
 
 [buf]
-style = "bold bright-red"
-format = " [buf](italic) [$symbol $buf_version]($style)"
+format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
 symbol = "■ "
 
 [c]
-style = "bold bright-cyan"
-format = " [$symbol(-$name)]($style)"
+format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
 symbol = "ℂ "
 
 [cpp]
-style = "bold bright-cyan"
-format = " [cpp](italic) [$symbol]($style)"
+format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
 symbol = " "
 
 [kotlin]
-format = " [kotlin](italic) [$symbol]($style)"
-style = "bold bright-red"
+format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
 symbol = " "
 
 [ocaml]
