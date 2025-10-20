@@ -12,6 +12,10 @@ function fish_prompt -d "Write out the prompt"
         (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
 end
 
+if test -f ~/.config/fish/colors.fish
+    source ~/.config/fish/colors.fish
+end
+
 set -g fish_key_bindings fish_vi_key_bindings
 set -Ux fifc_editor nvim
 set -gx MANPAGER "nvim +Man!"
@@ -27,7 +31,6 @@ set -gx PATH $HOME/.local/bin $PATH
 if status is-interactive # Commands to run in interactive sessions can go here
     # No greeting
     set fish_greeting
-
     # eval "$(pyenv init -)"
     # eval "$(pyenv virtualenv-init -)"
     starship init fish | source
@@ -47,8 +50,8 @@ if status is-interactive # Commands to run in interactive sessions can go here
 
 end
 zoxide init fish | source
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
 source ~/.config/fish/atuin.fish
 
 # aliases

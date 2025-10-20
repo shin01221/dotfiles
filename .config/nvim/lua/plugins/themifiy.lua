@@ -1,6 +1,6 @@
 return {
 	"lmantw/themify.nvim",
-
+	enabled = false,
 	lazy = false,
 	priority = 999,
 

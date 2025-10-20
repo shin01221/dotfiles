@@ -1,7 +1,6 @@
 format = '''
 $directory$git_branch$rust$python$c$lua$cpp$golang
-$character
-'''
+ $character'''
 palette = "colors"
 
 [palettes.colors]
