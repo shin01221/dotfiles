@@ -43,7 +43,7 @@ set fish_color_normal {{colors.on_surface.default.hex_stripped}}
 set fish_color_operator {{colors.secondary.default.hex_stripped}}
 
 # Options `--flag`
-set fish_color_option {{colors.primary_container.default.hex_stripped}}
+set fish_color_option {{colors.secondary.default.hex_stripped}}
 
 # Params/arguments
 set fish_color_param {{colors.tertiary.default.hex_stripped}}
