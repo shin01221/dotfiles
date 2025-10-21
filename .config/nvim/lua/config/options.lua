@@ -4,7 +4,7 @@ vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undo"
 
 -- basic
-
+vim.opt.termguicolors = true
 vim.opt.conceallevel = 2
 vim.opt.concealcursor = "c" -- show conceal only in normal and command mode
 vim.opt.autoread = true
