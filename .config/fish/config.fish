@@ -1,5 +1,4 @@
 set -x ANTHROPIC_BASE_URL "https://agentrouter.org/"
-
 if test -f ~/.secrets.fish
     source ~/.secrets.fish
 end

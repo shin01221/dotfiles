@@ -24,6 +24,10 @@ post_hook = "fish -c 'source ~/.config/fish/colors.fish'"
 input_path = "~/.config/matugen/templates/colors.json"
 output_path = "~/.local/state/quickshell/user/generated/colors.json"
 
+[templates.eza]
+input_path = "~/.config/matugen/templates/eza/eza-colors.yml"
+output_path = "~/.config/eza/theme.yml"
+
 [templates.hyprland]
 input_path = "~/.config/matugen/templates/hyprland/colors.conf"
 output_path = "~/.config/hypr/hyprland/colors.conf"
