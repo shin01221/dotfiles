@@ -1,82 +1,82 @@
 # Autosuggestions (grey-ish, subtle)
-set fish_color_autosuggestion 534340
+set fish_color_autosuggestion 46464f
 
 # Ctrl+C feedback
 set fish_color_cancel ffb4ab
 
 # Commands (main accent)
-set fish_color_command ffb4a6 --bold
+set fish_color_command bac3ff --bold
 
 # Comments
-set fish_color_comment a08c89
+set fish_color_comment 90909a
 
 # Current working directory
-set fish_color_cwd e7bdb5
+set fish_color_cwd c3c5dd
 set fish_color_cwd_root ffb4ab
 
 # Command separator like `;` or `&&`
-set fish_color_end ddc48c
+set fish_color_end e5bad7
 
 # Errors
 set fish_color_error ffb4ab
 
 # Special characters like escapes
-set fish_color_escape 5d3f3a
+set fish_color_escape 434659
 
 # Selected command entry in history search
 set fish_color_history_current --bold
 
 # Host appearance
-set fish_color_host d8c2be
+set fish_color_host c7c5d0
 set fish_color_host_remote ffb4ab
 
 # Keywords like `if`, `for`
-set fish_color_keyword ffb4a6
+set fish_color_keyword bac3ff
 
 # Highlight results
-set fish_color_match ddc48c
+set fish_color_match e5bad7
 
 # Default text
-set fish_color_normal f1dfdb
+set fish_color_normal e4e1e9
 
 # Operators like = + =>
-set fish_color_operator e7bdb5
+set fish_color_operator c3c5dd
 
 # Options `--flag`
-set fish_color_option e7bdb5
+set fish_color_option c3c5dd
 
 # Params/arguments
-set fish_color_param ddc48c
+set fish_color_param e5bad7
 
 # Strings
-set fish_color_quote 564519
+set fish_color_quote 5d3c55
 
 # Redirect symbols `>`, `<`, `|`
-set fish_color_redirection 733429
+set fish_color_redirection 394379
 
 # Search highlight colors
-set fish_color_search_match f1dfdb --background=322826
+set fish_color_search_match e4e1e9 --background=29292f
 
 # Selection in command line
-set fish_color_selection f1dfdb --background=322826
+set fish_color_selection e4e1e9 --background=29292f
 
 set fish_color_status ffb4ab
-set fish_color_user ffb4a6
-set fish_color_valid_path e7bdb5 --underline
+set fish_color_user bac3ff
+set fish_color_valid_path c3c5dd --underline
 
 #######################
 # Pager (tab completion menu)
 #######################
-set fish_pager_color_background 1a1110
-set fish_pager_color_completion d8c2be
-set fish_pager_color_description a08c89
-set fish_pager_color_prefix ffb4a6 --bold --underline
-set fish_pager_color_progress e7bdb5
-set fish_pager_color_secondary_background 231918
-set fish_pager_color_secondary_completion f1dfdb
-set fish_pager_color_secondary_description 534340
-set fish_pager_color_secondary_prefix e7bdb5
-set fish_pager_color_selected_background --background=322826
-set fish_pager_color_selected_completion ffb4a6
-set fish_pager_color_selected_description f1dfdb
-set fish_pager_color_selected_prefix ffb4a6
+set fish_pager_color_background 121318
+set fish_pager_color_completion c7c5d0
+set fish_pager_color_description 90909a
+set fish_pager_color_prefix bac3ff --bold --underline
+set fish_pager_color_progress c3c5dd
+set fish_pager_color_secondary_background 1b1b21
+set fish_pager_color_secondary_completion e4e1e9
+set fish_pager_color_secondary_description 46464f
+set fish_pager_color_secondary_prefix c3c5dd
+set fish_pager_color_selected_background --background=29292f
+set fish_pager_color_selected_completion bac3ff
+set fish_pager_color_selected_description e4e1e9
+set fish_pager_color_selected_prefix bac3ff
