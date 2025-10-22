@@ -5,14 +5,52 @@
 filekinds:
   normal:
     foreground: "{{colors.on_surface.default.hex}}"
+  special:
+    foreground: "{{colors.inverse_primary.default.hex}}"
+    is_bold: true
+  socket:
+    foreground: "{{colors.inverse_primary.default.hex}}"
+    is_bold: true
   directory:
     foreground: "{{colors.secondary.default.hex}}"
+    is_bold: true
+  block_device:
+    foreground: "{{colors.inverse_primary.default.hex}}"
+    is_bold: true
+  mount_point:
+    foreground: "{{colors.inverse_primary.default.hex}}"
+    is_bold: true
+  pipe:
+    foreground: "{{colors.inverse_primary.default.hex}}"
+    is_bold: true
+  char_device:
+    foreground: "{{colors.inverse_primary.default.hex}}"
     is_bold: true
   symlink:
     foreground: "{{colors.tertiary.default.hex}}"
   executable:
     foreground: "{{colors.primary.default.hex}}"
     is_bold: true
+
+file_type:
+  image:
+    foreground: "{{colors.secondary_fixed_dim.default.hex}}"
+  video:
+    foreground: "{{colors.secondary_fixed_dim.default.hex}}"
+  music:
+    foreground: "{{colors.secondary_fixed_dim.default.hex}}"
+  document:
+    foreground: "{{colors.secondary_fixed_dim.default.hex}}"
+  compiles:
+    foreground: "{{colors.secondary_fixed_dim.default.hex}}"
+  build:
+    foreground: "{{colors.secondary_fixed_dim.default.hex}}"
+  temp:
+    foreground: "{{colors.secondary_fixed_dim.default.hex}}"
+  source:
+    foreground: "{{colors.secondary_fixed_dim.default.hex}}"
+  compressed:
+    foreground: "{{colors.inverse_primary.default.hex}}"
 
 perms:
   user_read:
