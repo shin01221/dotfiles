@@ -185,7 +185,6 @@ return {
 			marksman = {},
 			pyright = {},
 			clangd = {},
-			copilot = {},
 			qmlls = {
 				cmd = {
 					"qmlls",

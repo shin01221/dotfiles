@@ -34,8 +34,8 @@ keymap.set("n", "<S-C-d>", function()
 	require("opencode").command("messages_half_page_down")
 end, { desc = "Messages half page down" })
 
-keymap.set("n", "tt", vim.cmd.Themery)
--- keymap.set("n", "tt", "<cmd>Themify<cr>")
+-- keymap.set("n", "tt", vim.cmd.Themery)
+keymap.set("n", "tt", "<cmd>Themify<cr>")
 -- toggle markview
 keymap.set("n", "<leader>um", "<cmd>Markview Toggle<cr>", { desc = "Toggle markdwon" })
 --toggle top bar buffer on or off

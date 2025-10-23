@@ -49,7 +49,7 @@ set fish_color_option {{colors.secondary.default.hex_stripped}}
 set fish_color_param {{colors.tertiary.default.hex_stripped}}
 
 # Strings
-set fish_color_quote {{colors.tertiary_container.default.hex_stripped}}
+set fish_color_quote {{colors.secondary.default.hex_stripped}}
 
 # Redirect symbols `>`, `<`, `|`
 set fish_color_redirection {{colors.primary_container.default.hex_stripped}}
