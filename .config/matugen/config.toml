@@ -9,6 +9,15 @@ post_hook = "pkill -SIGUSR1 kitty"
 [templates.starship]
 input_path = "~/.config/matugen/templates/starship/starship-colors.toml"
 output_path = "~/.config/starship.toml"
+post_hook = "starship init fish | source"
+
+[templates.heroic]
+input_path = "~/.config/matugen/templates/heroic/heroic-theme.css"
+output_path = "~/.config/heroic-colors.css"
+
+[templates.Telegram]
+input_path = "~/.config/matugen/templates/telegram/telegram-colors.tdesktop-theme"
+output_path = "~/.config/telegram-desktop/themes/material-you.tdesktop-theme"
 
 [templates.tmux]
 input_path = "~/.config/matugen/templates/tmux/tmux-colors.conf"

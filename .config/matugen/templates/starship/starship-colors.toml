@@ -1,307 +1,381 @@
-format = '''
-$directory$git_branch$rust$python$c$lua$cpp$golang
- $character'''
-palette = "colors"
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
 
-[palettes.colors]
-mustard = "{{colors.primary_fixed_dim.default.hex}}"  # example
-color1 = "{{colors.primary_fixed_dim.default.hex}}"
-color2 = "{{colors.on_primary.default.hex}}"
-color3 = "{{colors.on_surface_variant.default.hex}}"
-color4 = "{{colors.surface_container.default.hex}}"
-color5 = "{{colors.on_primary.default.hex}}"
-color6 = "{{colors.surface_dim.default.hex}}"
-color7 = "{{colors.surface.default.hex}}"
-color8 = "{{colors.primary.default.hex}}"
-color9 = "{{colors.tertiary.default.hex}}"
+#############
+#   Notes   #
+#############
 
-# Prompt symbols
-[character]
-success_symbol = "[🞈](color9 bold)"
-error_symbol = "[🞈](@{error})"
-vicmd_symbol = "[🞈](#f9e2af)"
+# This config assumes you have a Nerd Font installed and enabled in your terminal.
+# I use 'FiraCode Nerd Font Mono', but you should be able to use any Nerd Font you like.
 
-[directory]
-format = "[](fg:color1 bg:color4)[󰉋](bg:color1 fg:color2)[ ](fg:color1 bg:color4)[$path ](fg:color3 bg:color4)[ ](fg:color4)"
+################
+#   Settings   #
+################
 
-[directory.substitutions]
-"Downloads" = " "
-"Pictures" = " "
-"Desktop" = "  "
-"Documents" = "  "
-"Music" = " 󰎈 "
-"Videos" = "  "
-"GitHub" = " 󰊤 "
+# Inserts a blank line between shell prompts
+add_newline = true
 
-[git_branch]
-format = "[](fg:color8 bg:color4)[ ](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5) $branch](fg:color3 bg:color4)[](fg:color4) "
+# Maximum time it may take to produce the prompt
+command_timeout = 3000
 
-[time]
-format = "[](fg:color8 bg:color4)[ ](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5) $time](fg:color3 bg:color4)[](fg:color4) "
-disabled = false
-time_format = "%R"  # Hour:Minute Format
+########################
+#   Webber's colours   #
+########################
 
-[python]
-format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
-symbol = " "
-# pyenv_version_name = true
-pyenv_prefix = "venv"
+# Bright pink: (bg:{{colors.primary.default.hex}} fg:{{colors.on_primary.default.hex}})
+# Middle pink, bright text: (bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}})
+# Middle pink, faded text: (bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}})
+# Dark pink, regular text: (bg:{{colors.secondary_container.default.hex}} fg:{{colors.on_secondary_container.default.hex}})
+# Dark pink, highlighted: (bg:{{colors.secondary_container.default.hex}} fg:{{colors.primary.default.hex}})
 
-[docker_context]
-format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
-symbol = " "
+###############
+#   Prompts   #
+###############
 
-[lua]
-format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
-symbol = "⨀ "
-version_format = "${raw}"
+# Right prompt. This is displayed on the right side of the terminal.
+# Colours (i.e. bg and fg) are always listed from left to right.
+#
+# Note: Not supported in Powershell
+# @see: https://starship.rs/advanced-config/#enable-right-prompt
+right_format = """
+[](bg:transparent fg:{{colors.primary_container.default.hex}})\
+$time\
+$memory_usage\
+[](fg:{{colors.primary_container.default.hex}} bg:transparent)\
+\
+"""
 
-[nodejs]
-detect_extensions = []
-detect_files = ["package-lock.json", "yarn.lock"]
-detect_folders = ["node_modules"]
-format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
-symbol = " "
-version_format = "${raw}"
+# Left prompt. This is displayed on the left side of the terminal.
+# Colours (i.e. bg and fg) are always listed from left to right.
+format = """
+[](bg:#transparent fg:{{colors.primary.default.hex}})\
+$os\
+$username\
+[](fg:{{colors.primary.default.hex}} bg:{{colors.primary_container.default.hex}})\
+$directory\
+${custom.pregit}\
+$git_branch\
+$git_state\
+$git_metrics\
+$git_status\
+${custom.postgit}\
+${custom.nogit}\
+$package\
+$c\
+$elixir\
+$elm\
+$golang\
+$gradle\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$bun\
+$nim\
+$rust\
+$scala\
+$docker_context\
+$character\
+"""
 
-[ruby]
-format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
-symbol = " "
-version_format = "${raw}"
+########################
+#   Special sections   #
+########################
 
-[rust]
-format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
-symbol = " "
+# Exit code indicator
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[󱇫](bg:{{colors.primary.default.hex}} fg:{{colors.on_primary.default.hex}})[](fg:{{colors.primary.default.hex}} bg:transparent)'
+error_symbol = '[](bg:{{colors.primary_container.default.hex}} fg:{{colors.error.default.hex}})[󱇫](bg:{{colors.error.default.hex}} fg:{{colors.on_error.default.hex}})[](fg:{{colors.error.default.hex}} bg:transparent)'
+format = '$symbol '
 
-[swift]
-format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
-symbol = " "
-version_format = "${raw}"
-
-[aws]
+# cross-platform way to check if we are in a git repo, takes 200ms
+[custom.nogit]
+when = ''' git rev-parse --git-dir ; test $? = False '''
+format = '[ ](bg:{{colors.primary_container.default.hex}})'
 disabled = true
-format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
-symbol = " "
 
-[buf]
-format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
-symbol = "■ "
+# Either `Administrator`, `root` or the current user's username.
+[username]
+show_always = true
+style_user = "bg:{{colors.primary.default.hex}} fg:{{colors.on_primary.default.hex}}"
+style_root = "bg:{{colors.primary.default.hex}} fg:{{colors.on_primary.default.hex}}"
+format = '[ $user]($style)'
+disabled = false
 
-[c]
-format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
-symbol = "ℂ "
+# Displays a symbol that represents the current operating system
+[os]
+style = "bg:{{colors.primary.default.hex}} fg:{{colors.on_primary.default.hex}}"
+format = '[$symbol]($style)'
+disabled = false # This doesn't work in pwsh in Webstorm terminal.
 
-[cpp]
-format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
-symbol = " "
+# The current directory
+[directory]
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = "[ $path ]($style)"
+truncation_length = 1
+truncation_symbol = "…/"
 
-[kotlin]
-format = "[](fg:color8 bg:color4)[${symbol}${version}](bg:color8 fg:color5)[](fg:color8 bg:color4)[(bg:color8 fg:color5)( ${virtualenv})](fg:color3 bg:color4)[](fg:color4) "
-symbol = " "
-
-[ocaml]
-format = " [ocaml](italic) [$symbol]($style)"
-style = "bold bright-yellow"
-symbol = " "
-
-[perl]
-format = " [perl](italic) [$symbol]($style)"
-style = "bold bright-cyan"
-symbol = " "
-
-[php]
-format = " [php](italic) [$symbol]($style)"
-style = "bold bright-red"
-symbol = " "
-
-[pixi]
-format = " [pixi](italic) [$symbol]($style)"
-style = "bold bright-yellow"
-symbol = "pixi "
-
-[rlang]
-format = " [rlang](italic) [$symbol]($style)"
-style = "bold bright-cyan"
-symbol = " "
-
-[meson]
-format = " [meson](italic) [$symbol]($style)"
-style = "bold bright-red"
-symbol = "meson "
-
-[conda]
-style = "bold bright-red"
-format = " conda [$symbol$environment]($style)"
-symbol = "◯ "
-
-[dart]
-style = "bold bright-cyan"
-format = " dart [$symbol]($style)"
-symbol = " "
-
-[golang]
-style = "bold bright-blue"
-format = " go [$symbol]($style)"
-symbol = "∩ "
-
-[haskell]
-style = "bold bright-yellow"
-format = " hs [$symbol]($style)"
-symbol = "❯λ "
-
-[java]
-style = "bold bright-red"
-format = " java [${symbol}]($style)"
-symbol = " "
-
-[julia]
-style = "bold bright-cyan"
-format = " jl [$symbol]($style)"
-symbol = "◎ "
+[hostname]
+ssh_symbol = ""
 
 [memory_usage]
-style = "bold bright-cyan"
-format = " mem [${ram}( ${swap})]($style)"
-symbol = "▪▫▪ "
+symbol = "󰍛"
 
-[nim]
-style = "bold bright-yellow"
-format = " nim [$symbol]($style)"
-symbol = "▴▲▴ "
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:{{colors.primary_container.default.hex}}"
+format = '[$time]($style)'
 
-[nix_shell]
-format = "[$symbol nix⎪$state⎪]($style) [$name](italic dimmed white)"
-impure_msg = "[⌽](bold dimmed red)"
-pure_msg = "[⌾](bold dimmed green)"
-style = "bold italic dimmed blue"
-symbol = " "
-unknown_msg = "[◌](bold dimmed ellow)"
+#######################
+#   Version control   #
+#######################
 
-[spack]
-style = "bold bright-yellow"
-format = " spack [$symbol$environment]($style)"
-symbol = "◇ "
 
-[zig]
-style = "bold bright-yellow"
-format = " zig [$symbol]($style)"
-symbol = " "
+[git_branch]
+symbol = ""
+style = "bg:{{colors.secondary_container.default.hex}} fg:{{colors.on_secondary_container.default.hex}}"
+format = '[](fg:{{colors.primary_container.default.hex}} bg:{{colors.secondary_container.default.hex}})[ $symbol](bg:{{colors.secondary_container.default.hex}} fg:{{colors.primary.default.hex}})[ $branch ]($style)'
 
-[scala]
-format = " scala [$symbol]($style)"
-symbol = " "
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = '[🍒 PICKING](bg:{{colors.secondary_container.default.hex}} fg:bold red)'
+rebase = '[ REBASING](bg:{{colors.secondary_container.default.hex}} fg:bold green)'
+merge = '[ MERGING](bg:{{colors.secondary_container.default.hex}} fg:bold yellow)'
+bisect = '[🔍 BISECTING](bg:{{colors.secondary_container.default.hex}} fg:bold blue)'
+am = '[AM](bg:{{colors.secondary_container.default.hex}} fg:bold green)'
+am_or_rebase = '[AM/REBASE](bg:{{colors.secondary_container.default.hex}} fg:bold green)'
+revert = '[󰕍 REVERTING](bg:{{colors.secondary_container.default.hex}} fg:bold red)'
 
-[singularity]
-style = "bold bright-yellow"
-format = " [singularity](italic) [$symbol]($style)"
-symbol = "singularity "
+[git_metrics]
+added_style = "bg:{{colors.secondary_container.default.hex}} fg:{{colors.tertiary.default.hex}}"
+deleted_style = "bg:{{colors.secondary_container.default.hex}} fg:{{colors.error.default.hex}}"
+format = '([+$added ]($added_style))([-$deleted ]($deleted_style))'
+disabled = false
 
-[kubernetes]
-style = "bold bright-cyan"
-format = " [kubernetes](italic) [$symbol]($style)"
-symbol = " "
+[git_status]
+style = "bg:{{colors.secondary_container.default.hex}} fg:{{colors.primary.default.hex}}"
+conflicted = '=' # This branch has merge conflicts.
+ahead = ''
+behind = ''
+diverged = '󱡷'
+up_to_date = ''
+untracked = '?'
+stashed = ''
+modified = ''
+staged = ''
+renamed = '»'
+deleted = '✘'
+format = '([($all_status )($ahead_behind )]($style))[](bg:{{colors.secondary_container.default.hex}} fg:{{colors.primary_container.default.hex}})'
 
-[vcsh]
-style = "bold bright-red"
-format = " [vcsh](italic) [$symbol]($style)"
-symbol = "vcsh "
+[fossil_branch]
+symbol = ""
 
-[cobol]
-style = "bold bright-yellow"
-format = " [cobol](italic) [$symbol]($style)"
-symbol = "cobol "
+[hg_branch]
+symbol = ""
 
-[daml]
-style = "bold bright-cyan"
-format = " [daml](italic) [$symbol]($style)"
-symbol = "daml "
+[pijul_channel]
+symbol = ""
 
-[dotnet]
-style = "bold bright-red"
-format = " [dotnet](italic) [$symbol]($style)"
-symbol = ".NET "
+############################
+#   Contexts (canonical)   #
+############################
 
-[erlang]
-style = "bold bright-yellow"
-format = " [erlang](italic) [$symbol]($style)"
-symbol = " "
+[nodejs]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
 
-[fennel]
-style = "bold bright-cyan"
-format = " [fennel](italic) [$symbol]($style)"
-symbol = " "
+[bun]
+symbol = "󰅟"
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ (context) ]($style)'
+
+[package]
+format = '($style)[> $symbol$version ]($style)'
+symbol = '📦 '
+version_format = 'v${raw}'
+style = 'bold 208 bg:{{colors.primary_container.default.hex}}'
+display_private = false
+disabled = true
+################
+#   Contexts   #
+################
+
+[aws]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
+
+[c]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
+
+[conda]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
+
+[dart]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
+
+[elixir]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
+
+[elm]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
+
+[golang]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
+
+[gradle]
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
 
 [haxe]
-style = "bold bright-red"
-format = " [haxe](italic) [$symbol]($style)"
-symbol = " "
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
 
-[helm]
-style = "bold bright-yellow"
-format = " [helm](italic) [$symbol]($style)"
-symbol = "helm "
+[java]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
 
-[opa]
-style = "bold bright-cyan"
-format = " [opa](italic) [$symbol]($style)"
-symbol = "opa "
+[julia]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
 
-[pulumi]
-format = " [pulumi](italic) [$symbol]($style)"
-style = "bold bright-red"
-symbol = "pulumi "
+[kotlin]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
 
-[purescript]
-style = "bold bright-yellow"
-format = " [purescript](italic) [$symbol]($style)"
-symbol = " "
+[lua]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
 
-[raku]
-style = "bold bright-cyan"
-format = " [raku](italic) [$symbol]($style)"
-symbol = "raku "
+[ocaml]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
 
-[red]
-style = "bold bright-red"
-format = " [red](italic) [$symbol]($style)"
-symbol = "red "
+[perl]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
 
-[solidity]
-style = "bold bright-yellow"
-format = " [solidity](italic) [$symbol]($style)"
-symbol = " "
+[php]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
 
-[terraform]
-style = "bold bright-cyan"
-format = " [terraform](italic) [$symbol]($style)"
-symbol = "terraform "
+[python]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
 
-[vlang]
-format = " [vlang](italic) [$symbol]($style)"
-style = "bold bright-red"
-symbol = "vlang "
+[rlang]
+symbol = "󰟔"
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
 
-[vagrant]
-format = " [vagrant](italic) [$symbol]($style)"
-style = "bold bright-yellow"
-symbol = "vagrant "
+[ruby]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
 
-[gcloud]
-format = " [gcloud](italic) [$symbol]($style)"
-style = "bold bright-cyan"
-symbol = "gcloud "
+[rust]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
 
-[openstack]
-format = " [openstack](italic) [$symbol]($style)"
-style = "bold bright-red"
-symbol = "openstack "
+[scala]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
 
-[azure]
-format = " [azure](italic) [$symbol]($style)"
-style = "bold bright-yellow"
-symbol = " "
+[swift]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
 
-[crystal]
-format = " [crystal](italic) [$symbol]($style)"
-style = "bold bright-cyan"
-symbol = " "
+[zig]
+symbol = ""
+style = "bg:{{colors.primary_container.default.hex}} fg:{{colors.on_primary_container.default.hex}}"
+format = '[$symbol](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[ ($version) ]($style)'
+
+#############
+#   Other   #
+#############
+
+[nix_shell]
+symbol = ""
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
