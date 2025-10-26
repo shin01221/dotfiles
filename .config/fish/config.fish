@@ -27,12 +27,12 @@ end
 
 set -gx PATH $HOME/.local/bin $PATH
 
+starship init fish | source
 if status is-interactive # Commands to run in interactive sessions can go here
     # No greeting
     set fish_greeting
     # eval "$(pyenv init -)"
     # eval "$(pyenv virtualenv-init -)"
-    starship init fish | source
     atuin init fish --disable-up-arrow | source
     bind \cr _atuin_search
     bind k _atuin_search
