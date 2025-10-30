@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Smart directional focus for Hyprland
+dir="$1"
+
+# Get currently focused window address
+before=$(hyprctl activewindow -j | jq -r '.address')
+
+# Try movefocus in the given direction
+hyprctl dispatch movefocus "$dir" >/dev/null 2>&1
+
+# Get new focused window address
+after=$(hyprctl activewindow -j | jq -r '.address')
+
+# If focus didn't change, fallback to cycling
+if [[ "$before" == "$after" ]]; then
+    hyprctl dispatch cyclenext
+fi
