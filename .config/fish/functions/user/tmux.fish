@@ -1,20 +1,10 @@
 function tmux-set
-
     # Skip tmux-set if NO_TMUX is set
     if set -q NO_TMUX
-        # if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-        #     cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-        # end
-        # pyenv init - fish | source
-        # pyenv virtualenv-init - fish | source
         return
     end
-    if not set -q TMUX
-        # optional: print sequences if present
-        # if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-        #     cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-        # end
 
+    if not set -q TMUX
         # remember file
         set -l last_choice_file ~/.local/state/tmux_last_session
         set -l last_choice ""
@@ -22,16 +12,15 @@ function tmux-set
             set last_choice (cat $last_choice_file)
         end
 
-        # gather sessions, skipping 'scratch' and any session with window 'rmpc'
-        set -l sessions
-        for s in (tmux list-sessions -F "#{session_name}" 2>/dev/null)
-            if test "$s" = scratch -o "$s" = rmpc
-                continue
-            end
-            if tmux list-windows -t "$s" -F "#{window_name}" 2>/dev/null | grep -Fxq rmpc
-                continue
-            end
-            set sessions $sessions $s
+        # sessions to exclude from picker
+        set -l skip_sessions scratch-term rmpc test # <-- add names here
+
+        # gather sessions
+        set -l sessions (tmux list-sessions -F "#{session_name}" 2>/dev/null)
+
+        # filter out skipped sessions
+        for s in $skip_sessions
+            set sessions (string match -v -r "^$s\$" $sessions)
         end
 
         switch (count $sessions)
