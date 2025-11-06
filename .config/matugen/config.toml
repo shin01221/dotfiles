@@ -19,6 +19,11 @@ post_hook = "starship init fish | source"
 input_path = "~/.config/matugen/templates/telegram/telegram-colors.tdesktop-theme"
 output_path = "~/.config/telegram-desktop/themes/material-you.tdesktop-theme"
 
+[templates.spotify]
+input_path = "~/.config/matugen/templates/spicetify/spicetify.ini"
+output_path = "~/.config/spicetify/Themes/caelestia/color.ini"
+# post_hook = "~/.config/matugen/scripts/spiceitfy_theme_apply.sh"
+
 [templates.tmux]
 input_path = "~/.config/matugen/templates/tmux/tmux-colors.conf"
 output_path = "~/.config/tmux/colors.conf"
