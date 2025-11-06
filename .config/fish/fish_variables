@@ -9,41 +9,41 @@ SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR --export fifc_editor:nvim
 SETUVAR fifc_keybinding:\x09
 SETUVAR fifc_open_keybinding:ctrl\x2do
-SETUVAR --export fish_color_autosuggestion:534340
-SETUVAR --export fish_color_cancel:ffb4ab
-SETUVAR --export fish_color_command:ffb4a3\x1e\x2d\x2dbold
-SETUVAR --export fish_color_comment:a08c88
-SETUVAR --export fish_color_cwd:e7bdb4
-SETUVAR fish_color_cwd_root:ffb4ab
-SETUVAR --export fish_color_end:dbc58c
-SETUVAR --export fish_color_error:ffb4ab
-SETUVAR --export fish_color_escape:5d3f39
+SETUVAR --export fish_color_autosuggestion:d7c2b9
+SETUVAR --export fish_color_cancel:ba1a1a
+SETUVAR --export fish_color_command:8c4e29\x1e\x2d\x2dbold
+SETUVAR --export fish_color_comment:85746b
+SETUVAR --export fish_color_cwd:765848
+SETUVAR fish_color_cwd_root:ba1a1a
+SETUVAR --export fish_color_end:cec991
+SETUVAR --export fish_color_error:ba1a1a
+SETUVAR --export fish_color_escape:ffdbca
 SETUVAR fish_color_history_current:\x2d\x2dbold
-SETUVAR --export fish_color_host:d8c2bd
-SETUVAR --export fish_color_host_remote:ffb4ab
-SETUVAR --export fish_color_keyword:ffb4a3
-SETUVAR --export fish_color_normal:f1dfdb
-SETUVAR --export fish_color_operator:e7bdb4
-SETUVAR fish_color_option:e7bdb4
-SETUVAR --export fish_color_param:dbc58c
-SETUVAR --export fish_color_quote:e7bdb4
-SETUVAR --export fish_color_redirection:733426
-SETUVAR --export fish_color_search_match:f1dfdb\x1e\x2d\x2dbackground\x3d322825
-SETUVAR --export fish_color_selection:f1dfdb\x1e\x2d\x2dbackground\x3d322825
-SETUVAR fish_color_status:ffb4ab
-SETUVAR --export fish_color_user:ffb4a3
-SETUVAR --export fish_color_valid_path:e7bdb4\x1e\x2d\x2dunderline
+SETUVAR --export fish_color_host:52443c
+SETUVAR --export fish_color_host_remote:ba1a1a
+SETUVAR --export fish_color_keyword:8c4e29
+SETUVAR --export fish_color_normal:221a15
+SETUVAR --export fish_color_operator:765848
+SETUVAR fish_color_option:765848
+SETUVAR --export fish_color_param:636032
+SETUVAR --export fish_color_quote:765848
+SETUVAR --export fish_color_redirection:ffdbca
+SETUVAR --export fish_color_search_match:221a15\x1e\x2d\x2dbackground\x3df6e5dd
+SETUVAR --export fish_color_selection:221a15\x1e\x2d\x2dbackground\x3df6e5dd
+SETUVAR fish_color_status:ba1a1a
+SETUVAR --export fish_color_user:8c4e29
+SETUVAR --export fish_color_valid_path:765848\x1e\x2d\x2dunderline
 SETUVAR fish_key_bindings:fish_vi_key_bindings
-SETUVAR fish_pager_color_background:1a110f
-SETUVAR --export fish_pager_color_completion:d8c2bd
-SETUVAR --export fish_pager_color_description:a08c88
-SETUVAR --export fish_pager_color_prefix:ffb4a3\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
-SETUVAR --export fish_pager_color_progress:e7bdb4
-SETUVAR fish_pager_color_secondary_background:231917
-SETUVAR fish_pager_color_secondary_completion:f1dfdb
-SETUVAR fish_pager_color_secondary_description:534340
-SETUVAR fish_pager_color_secondary_prefix:e7bdb4
-SETUVAR --export fish_pager_color_selected_background:\x2d\x2dbackground\x3d322825
-SETUVAR fish_pager_color_selected_completion:ffb4a3
-SETUVAR fish_pager_color_selected_description:f1dfdb
-SETUVAR fish_pager_color_selected_prefix:ffb4a3
+SETUVAR fish_pager_color_background:fff8f6
+SETUVAR --export fish_pager_color_completion:52443c
+SETUVAR --export fish_pager_color_description:85746b
+SETUVAR --export fish_pager_color_prefix:8c4e29\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR --export fish_pager_color_progress:765848
+SETUVAR fish_pager_color_secondary_background:fff1eb
+SETUVAR fish_pager_color_secondary_completion:221a15
+SETUVAR fish_pager_color_secondary_description:d7c2b9
+SETUVAR fish_pager_color_secondary_prefix:765848
+SETUVAR --export fish_pager_color_selected_background:\x2d\x2dbackground\x3df6e5dd
+SETUVAR fish_pager_color_selected_completion:8c4e29
+SETUVAR fish_pager_color_selected_description:221a15
+SETUVAR fish_pager_color_selected_prefix:8c4e29
