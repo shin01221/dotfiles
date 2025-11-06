@@ -25,7 +25,7 @@ function tmux-set
 
         switch (count $sessions)
             case 0
-                tmux
+                tmux new -s main
             case 1
                 tmux attach -t $sessions[1]
             case '*'

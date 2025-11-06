@@ -87,37 +87,25 @@ sort_images() {
 }
 
 fav_toggle() {
+	dir="$(dirname -- "$path")"
+	filename="$(basename -- "$path")"
 
-	if [[ "$path" == "$base_homework/"* ]]; then
-		rel="${path#"$base_homework"/}"
-		target="$base_fav/$rel"
-		mv -- "$path" "$target" && notify-send "Fav toggle" "Added to fav 🥰"
-
-	# --- CASE 2: inside fav → move back to homework
-	elif [[ "$path" == "$base_fav/"* && "$path" != "$base_fav/Wallpapers/"* ]]; then
-		rel="${path#"$base_fav"/}"
-		target="$base_homework/$rel"
+	# If the file is already inside a 'fav' directory → move it one level up
+	if [[ "$dir" == */fav ]]; then
+		parent_dir="$(dirname -- "$dir")"
+		target="$parent_dir/$filename"
 		mv -- "$path" "$target" && notify-send "Fav toggle" "Removed from fav 💢"
 
-	# --- CASE 3: Wallpapers ↔ fav/Wallpapers toggle
-	elif [[ "$path" == "$base_wallpapers/"* || "$path" == "$base_fav/Wallpapers/"* ]]; then
-		filename="$(basename -- "$path")"
-		if [[ "$path" == "$base_fav/Wallpapers/"* ]]; then
-			target="$base_wallpapers/$filename"
-			mv -- "$path" "$target" && notify-send "Fav toggle" "Removed from fav 💢"
-		else
-			target="$base_fav/Wallpapers/$filename"
-			mv -- "$path" "$target" && notify-send "Fav toggle" "Added to fav 🥰"
-		fi
-
+	# Otherwise → move it into a 'fav' subdirectory in the same location
 	else
-		notify-send "Fav toggle" "File not inside homework, fav, or Wallpapers"
-		return 1
+		fav_dir="$dir/fav"
+		mkdir -p -- "$fav_dir"
+		target="$fav_dir/$filename"
+		mv -- "$path" "$target" && notify-send "Fav toggle" "Added to fav 🌡️"
 	fi
 
 	echo "$target" >"$STATE_FILE"
 }
-
 wall_delete() {
 	rm "$path"
 }

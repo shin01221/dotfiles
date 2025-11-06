@@ -11,9 +11,9 @@ input_path = "~/.config/matugen/templates/starship/starship-colors.toml"
 output_path = "~/.config/starship.toml"
 post_hook = "starship init fish | source"
 
-[templates.heroic]
-input_path = "~/.config/matugen/templates/heroic/heroic-theme.css"
-output_path = "~/.config/heroic/themes/heroic-colors.css"
+# [templates.heroic]
+# input_path = "~/.config/matugen/templates/heroic/heroic-theme.css"
+# output_path = "~/.config/heroic/themes/heroic-colors.css"
 
 [templates.Telegram]
 input_path = "~/.config/matugen/templates/telegram/telegram-colors.tdesktop-theme"
