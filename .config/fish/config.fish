@@ -37,9 +37,10 @@ if status is-interactive # Commands to run in interactive sessions can go here
     bind \cr _atuin_search
     bind k _atuin_search
     bind -M insert \cr _atuin_search
-    tmux-set
     # if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
     #     cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
+    # end
+    tmux-set
 
     # Aliases
     alias pamcan pacman
