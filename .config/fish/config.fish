@@ -25,7 +25,7 @@ for f in ~/.config/fish/functions/user/*.fish
     source $f
 end
 
-set -gx PATH $HOME/.local/bin $PATH
+set -gx PATH $HOME/.local/bin $HOME/go/bin $PATH
 
 starship init fish | source
 if status is-interactive # Commands to run in interactive sessions can go here

@@ -3,6 +3,7 @@
 # Get current wallpaper path from JSON
 config_file="$HOME/.config/illogical-impulse/config.json"
 wallpaper_path="$(jq -r '.background.wallpaperPath' "$config_file")"
+STATE_FILE="$HOME/.cache/current_wallpaper_path"
 
 # Get the directory containing the wallpapers
 wallpaper_dir="$(dirname "$wallpaper_path")"
@@ -27,3 +28,5 @@ random_image="$(printf "%s\n" "${images[@]}" | shuf -n 1)"
 
 # Run your wallpaper switch script with the random image
 bash "$HOME/.config/quickshell/ii/scripts/colors/switchwall.sh" "$random_image" 2>/dev/null
+
+echo "$random_image" >"$STATE_FILE"

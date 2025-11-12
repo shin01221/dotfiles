@@ -35,3 +35,4 @@ else
         hyprctl dispatch focuswindow address:"$ACTIVE_WINDOW"
     fi
 fi
+spicetify apply
