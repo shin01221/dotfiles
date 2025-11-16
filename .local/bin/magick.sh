@@ -9,13 +9,16 @@ source "$HOME/.local/bin/functions.sh"
 mode="$1"
 input="$2"
 output="$3"
-val="$4"
+height=$(identify -format "%h" "$input")
+width=$(identify -format "%w" "$input")
+new_height=$((height - $4))
+new_width=$((width - $4))
 position="$5"
 
 # Handle modes
 case "$mode" in
 --resize-height)
-	if [[ -z "$input" || -z "$output" || -z "$val" ]]; then
+	if [[ -z "$input" || -z "$output" || -z "$new_height" ]]; then
 		echo "Error: Missing arguments for --resize-height"
 		exit 1
 	fi
@@ -31,11 +34,11 @@ case "$mode" in
 	bottom | *) gravity="North" ;;
 	esac
 
-	magick "$input" -gravity "$gravity" -crop "x$val+0+0" +repage "$output"
+	magick "$input" -gravity "$gravity" -crop "x$new_height+0+0" +repage "$output"
 	;;
 
 --resize-width)
-	if [[ -z "$input" || -z "$output" || -z "$val" ]]; then
+	if [[ -z "$input" || -z "$output" || -z "$new_height" ]]; then
 		echo "Error: Missing arguments for --resize-width"
 		exit 1
 	fi
@@ -50,7 +53,7 @@ case "$mode" in
 	right) gravity="West" ;;
 	esac
 
-	magick "$input" -gravity "$gravity" -crop "$val"x+0+0 +repage "$output"
+	magick "$input" -gravity "$gravity" -crop "$new_width"x+0+0 +repage "$output"
 	;;
 
 --downscale)

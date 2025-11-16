@@ -1,4 +1,5 @@
 set -x ANTHROPIC_BASE_URL "https://agentrouter.org/"
+set EDITOR nvim
 if test -f ~/.secrets.fish
     source ~/.secrets.fish
 end
@@ -42,6 +43,7 @@ if status is-interactive # Commands to run in interactive sessions can go here
     # end
     tmux-set
 
+    set cur_wall (jq -r '.background.wallpaperPath' ~/.config/illogical-impulse/config.json)
     # Aliases
     alias pamcan pacman
     alias ls 'eza --icons'

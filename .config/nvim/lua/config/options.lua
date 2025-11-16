@@ -39,7 +39,7 @@ vim.opt.signcolumn = "yes"
 vim.o.splitright = true
 vim.o.splitbelow = true
 -- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-vim.o.scrolloff = 15
+vim.o.scrolloff = 20
 vim.opt.cmdheight = 1
 vim.o.undofile = true
 vim.o.updatetime = 250
