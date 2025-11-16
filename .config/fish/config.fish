@@ -26,11 +26,13 @@ for f in ~/.config/fish/functions/user/*.fish
     source $f
 end
 
-set -gx PATH $HOME/.local/bin $HOME/go/bin $PATH
+set -gx PATH $HOME/.local/bin $HOME/go/bin $HOME/.cargo/bin $PATH
 
 starship init fish | source
 if status is-interactive # Commands to run in interactive sessions can go here
     # No greeting
+    leadr --fish | source
+    bind \cg __leadr_invoke__
     set fish_greeting
     # eval "$(pyenv init -)"
     # eval "$(pyenv virtualenv-init -)"
@@ -44,6 +46,7 @@ if status is-interactive # Commands to run in interactive sessions can go here
     tmux-set
 
     set cur_wall (jq -r '.background.wallpaperPath' ~/.config/illogical-impulse/config.json)
+    set LEADR_CONFIG_DIR $HOME/.config/leadr/
     # Aliases
     alias pamcan pacman
     alias ls 'eza --icons'
