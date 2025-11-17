@@ -1,17 +1,9 @@
 set -x ANTHROPIC_BASE_URL "https://agentrouter.org/"
-set EDITOR nvim
 if test -f ~/.secrets.fish
     source ~/.secrets.fish
 end
 
-function fish_prompt -d "Write out the prompt"
-    # This shows up as USER@HOST /home/user/ >, with the directory colored
-    # $USER and $hostname are set by fish, so you can just use them
-    # instead of using `whoami` and `hostname`
-    printf '%s@%s %s%s%s > ' $USER $hostname \
-        (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
-end
-
+set EDITOR nvim
 if test -f ~/.config/fish/colors.fish
     source ~/.config/fish/colors.fish
 end
@@ -31,43 +23,33 @@ set -gx PATH $HOME/.local/bin $HOME/go/bin $HOME/.cargo/bin $PATH
 starship init fish | source
 if status is-interactive # Commands to run in interactive sessions can go here
     # No greeting
-    leadr --fish | source
-    bind \cg __leadr_invoke__
     set fish_greeting
-    # eval "$(pyenv init -)"
-    # eval "$(pyenv virtualenv-init -)"
-    atuin init fish --disable-up-arrow | source
-    bind \cr _atuin_search
-    bind k _atuin_search
-    bind -M insert \cr _atuin_search
     # if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
     #     cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
     # end
-    tmux-set
-
+    leadr --fish | source
     set cur_wall (jq -r '.background.wallpaperPath' ~/.config/illogical-impulse/config.json)
-    set LEADR_CONFIG_DIR $HOME/.config/leadr/
-    # Aliases
-    alias pamcan pacman
-    alias ls 'eza --icons'
-    alias clear "printf '\033[2J\033[3J\033[1;1H'"
-    alias q 'qs -c ii'
-
 end
+
 zoxide init fish | source
-# export PYENV_ROOT="$HOME/.pyenv"
-# export PATH="$PYENV_ROOT/bin:$PATH"
+atuin init fish --disable-up-arrow | source
+bind k _atuin_search
+bind \cr _atuin_search
+bind -M insert \cr _atuin_search
 source ~/.config/fish/atuin.fish
 
+tmux-set
+
 # aliases
-
+alias pamcan pacman
+alias ls 'eza --icons'
+alias clear "printf '\033[2J\033[3J\033[1;1H'"
+alias q 'qs -c ii'
 alias pn="source ~/.local/venvs/nudenet/bin/activate.fish"
-
 alias down360='down 360'
 alias down480='down 480'
 alias down720='down 720'
 alias down1080='down 1080'
-
 alias df="_df"
 # alias mirrors='sudo reflector --country Germany,France,Italy --latest 30 --sort age --protocol https --save /etc/pacman.d/mirrorlist'
 alias mirrors='sudo reflector --verbose --country Germany,France,Italy --protocol https --sort rate --latest 20 --download-timeout 6 --save /etc/pacman.d/mirrorlist'
