@@ -43,6 +43,7 @@ tmux-set
 # aliases
 alias pamcan pacman
 alias ls 'eza --icons'
+alias ip 'ip -c'
 alias clear "printf '\033[2J\033[3J\033[1;1H'"
 alias q 'qs -c ii'
 alias pn="source ~/.local/venvs/nudenet/bin/activate.fish"
