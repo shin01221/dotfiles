@@ -15,7 +15,7 @@ set fish_color_cwd e7bdb5
 set fish_color_cwd_root ffb4ab
 
 # Command separator like `;` or `&&`
-set fish_color_end dcc48c
+set fish_color_end ddc48c
 
 # Errors
 set fish_color_error ffb4ab
@@ -27,14 +27,14 @@ set fish_color_escape 5d3f3a
 set fish_color_history_current --bold
 
 # Host appearance
-set fish_color_host d8c2bd
+set fish_color_host d8c2be
 set fish_color_host_remote ffb4ab
 
 # Keywords like `if`, `for`
 set fish_color_keyword ffb4a6
 
 # Highlight results
-set fish_color_match dcc48c
+set fish_color_match ddc48c
 
 # Default text
 set fish_color_normal f1dfdb
@@ -46,13 +46,13 @@ set fish_color_operator e7bdb5
 set fish_color_option e7bdb5
 
 # Params/arguments
-set fish_color_param dcc48c
+set fish_color_param ddc48c
 
 # Strings
 set fish_color_quote e7bdb5
 
 # Redirect symbols `>`, `<`, `|`
-set fish_color_redirection 733428
+set fish_color_redirection 733429
 
 # Search highlight colors
 set fish_color_search_match f1dfdb --background=322826
@@ -68,7 +68,7 @@ set fish_color_valid_path e7bdb5 --underline
 # Pager (tab completion menu)
 #######################
 set fish_pager_color_background 1a1110
-set fish_pager_color_completion d8c2bd
+set fish_pager_color_completion d8c2be
 set fish_pager_color_description a08c89
 set fish_pager_color_prefix ffb4a6 --bold --underline
 set fish_pager_color_progress e7bdb5

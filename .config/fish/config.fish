@@ -437,7 +437,7 @@ function fish_greeting
 
     set random_index (shuf -i 1-13 -n 1)
 
-    set file_path ".cache/ascii-fish.temp"
+    set file_path "$HOME/.cache/ascii-fish.temp"
 
     # Check if the file exists
     if test -e $file_path
@@ -506,12 +506,18 @@ bind \cr _atuin_search
 bind -M insert \cr _atuin_search
 source ~/.config/fish/atuin.fish
 
+# Auto start Hyprland on tty1
+if test -z "$DISPLAY"; and test "$XDG_VTNR" -eq 1
+    mkdir -p ~/.cache
+    exec Hyprland >~/.cache/hyprland.log 2>&1
+end
+
 tmux-set
 
 # aliases
 alias pamcan pacman
 alias ls 'eza --icons'
-alias ip 'ip -c'
+# alias ip 'ip -c'
 alias clear "printf '\033[2J\033[3J\033[1;1H'"
 alias q 'qs -c ii'
 alias pn="source ~/.local/venvs/nudenet/bin/activate.fish"
