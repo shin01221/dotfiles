@@ -527,7 +527,7 @@ alias down720='down 720'
 alias down1080='down 1080'
 alias df="_df"
 # alias mirrors='sudo reflector --country Germany,France,Italy --latest 30 --sort age --protocol https --save /etc/pacman.d/mirrorlist'
-alias mirrors='sudo reflector --verbose --country Germany,France,Italy --protocol https --sort rate --latest 20 --download-timeout 6 --save /etc/pacman.d/mirrorlist'
+alias mirrors='sudo reflector --verbose --protocol https --sort rate --latest 70 --download-timeout 6 --save /etc/pacman.d/mirrorlist'
 alias grep='grep --color=auto'
 alias p='sudo pacman'
 alias rm='trash -d'
