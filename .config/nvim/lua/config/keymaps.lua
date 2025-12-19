@@ -78,6 +78,7 @@ keymap.set("n", "<leader>od", vim.cmd.ObsidianDailies, { desc = "New Daily Note"
 keymap.set("n", "<leader>oh", vim.cmd.ObsidianTags, { desc = "Search Tags" })
 keymap.set("n", "<leader>oc", vim.cmd.ObsidianTOC, { desc = "Search TOC" })
 keymap.set("n", "<leader>ob", vim.cmd.ObsidianBacklinks, { desc = "Search backlinks" })
+keymap.set("n", "<leader>oP", vim.cmd.MarkdownPreviewToggle, { desc = "Toggle markdown preview" })
 
 keymap.set("n", "gf", function()
 	if require("obsidian").util.cursor_on_markdown_link() then

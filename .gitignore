@@ -14,6 +14,8 @@
 !.config/mpv
 !.config/sptlrx
 !.config/rmpc
+!.config/qswitch
+!.config/dolphinrc
 !.config/starship
 !.config/nvim
 !.config/spicetify

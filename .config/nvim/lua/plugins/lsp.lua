@@ -177,7 +177,10 @@ return {
 		--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 		local servers = {
 			bashls = {},
+			docker_compose_language_service = {},
+			dockerls = {},
 			fish_lsp = {},
+			ansiblels = {},
 			jsonls = {},
 			tombi = {},
 			yamlls = {},
@@ -236,6 +239,8 @@ return {
 		vim.list_extend(ensure_installed, {
 			"stylua", -- Used to format Lua code
 			"prettier",
+			"ansible-lint",
+			"hadolint",
 			"prettierd",
 			"shfmt",
 			"isort",
