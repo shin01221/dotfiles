@@ -492,10 +492,9 @@ starship init fish | source
 if status is-interactive # Commands to run in interactive sessions can go here
     # No greeting
     set fish_greeting
-    if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-        cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-    end
-    leadr --fish | source
+    # if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
+    #     cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
+    # end
     set cur_wall (jq -r '.background.wallpaperPath' ~/.config/illogical-impulse/config.json)
 end
 

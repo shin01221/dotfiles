@@ -3,9 +3,12 @@ PreviewSize=32
 
 [General]
 GlobalViewProps=false
+RememberOpenedTabs=false
 ShowFullPath=true
-ShowStatusBar=FullWidth
 Version=202
+
+[IconsMode]
+IconSize=80
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false

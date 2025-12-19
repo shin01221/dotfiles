@@ -1,10 +1,10 @@
 [config]
 version_check = false
 
-# [templates.kitty]
-# input_path = "~/.config/matugen/templates/kitty/kitty-colors.conf"
-# output_path = "~/.config/kitty/colors.conf"
-# post_hook = "pkill -SIGUSR1 kitty"
+[templates.kitty]
+input_path = "~/.config/matugen/templates/kitty/kitty-colors.conf"
+output_path = "~/.config/kitty/current-theme.conf"
+post_hook = "pkill -SIGUSR1 kitty"
 
 [templates.starship]
 input_path = "~/.config/matugen/templates/starship/starship-colors.toml"
@@ -59,12 +59,12 @@ input_path = "~/.config/matugen/templates/gtk-3.0/gtk.css"
 output_path = "~/.config/gtk-3.0/gtk.css"
 
 [templates.vesktop]
-input_path = "~/.config/matugen/templates/vesktop/midnight-discord.css"
-output_path = "~/.config/vesktop/themes/midnight-discord.css"
+input_path = "/etc/xdg/quickshell/noctalia/Assets/MatugenTemplates/vesktop.css"
+output_path = "~/.config/vesktop/themes/noctalia.theme.css"
 
 [templates.cava]
-input_path = "~/.config/matugen/templates/cava/cava-colors.ini"
-output_path = "~/.config/cava/themes/colors"
+input_path = "/etc/xdg/quickshell/noctalia/Assets/MatugenTemplates/cava.ini"
+output_path = "~/.config/cava/themes/noctalia"
 post_hook = "pkill -USR1 cava"
 
 [templates.gtk4]
