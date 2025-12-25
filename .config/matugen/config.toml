@@ -6,10 +6,10 @@ input_path = "~/.config/matugen/templates/kitty/kitty-colors.conf"
 output_path = "~/.config/kitty/current-theme.conf"
 post_hook = "pkill -SIGUSR1 kitty"
 
-[templates.starship]
-input_path = "~/.config/matugen/templates/starship/starship-colors.toml"
-output_path = "~/.config/starship.toml"
-post_hook = "starship init fish | source"
+# [templates.starship]
+# input_path = "~/.config/matugen/templates/starship/starship-colors.toml"
+# output_path = "~/.config/starship.toml"
+# post_hook = "starship init fish | source"
 
 # [templates.heroic]
 # input_path = "~/.config/matugen/templates/heroic/heroic-theme.css"

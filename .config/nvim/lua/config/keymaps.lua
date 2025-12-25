@@ -61,6 +61,11 @@ end, { desc = "Format current file" })
 -- keymap.set("v", "<leader>ox", "<cmd>Obsidian extract_note", { desc = "Note Extract" })
 
 keymap.set("n", "<leader>o", "", { desc = "+obsidian" })
+keymap.set("n", "<leader>of", "", { desc = "+formating" })
+keymap.set("v", "<leader>ofb", ":lua require('markdowny').bold()<cr>", { desc = "bold" })
+keymap.set("v", "<leader>ofi", ":lua require('markdowny').italic()<cr>", { desc = "italic" })
+keymap.set("v", "<leader>ofl", ":lua require('markdowny').link()<cr>", { desc = "link" })
+keymap.set("v", "<leader>ofe", ":lua require('markdowny').code()<cr>", { desc = "code block" })
 keymap.set("v", "<leader>oll", "<cmd>Obsidian link_new<cr>", { desc = "New Link" })
 keymap.set("n", "<leader>ols", "<cmd>Obsidian links<cr>", { desc = "Search Links" })
 keymap.set("n", "<leader>op", "<cmd>Obsidian paste_img<cr>", { desc = "Paste Image" })
@@ -76,135 +81,10 @@ keymap.set("n", "<leader>oh", "<cmd>Obsidian tags<cr>", { desc = "Search Tags" }
 keymap.set("n", "<leader>oc", "<cmd>Obsidian toc<cr>", { desc = "TOC search" })
 keymap.set("n", "<leader>oP", vim.cmd.MarkdownPreviewToggle, { desc = "Toggle markdown preview" })
 
-keymap.set("n", "gf", function()
-	if require("obsidian").util.cursor_on_markdown_link() then
-		return "<cmd>ObsidianFollowLink<CR>"
-	else
-		return "gf"
-	end
-end, { noremap = false, expr = true })
-
--------------------------------------------------------------------------------
---                           Folding section
--------------------------------------------------------------------------------
-
--- Use <CR> to fold when in normal mode
--- To see help about folds use `:help fold`
-vim.keymap.set("n", "<CR>", function()
-	-- Get the current line number
-	local line = vim.fn.line(".")
-	-- Get the fold level of the current line
-	local foldlevel = vim.fn.foldlevel(line)
-	if foldlevel == 0 then
-		vim.notify("No fold found", vim.log.levels.INFO)
-	else
-		vim.cmd("normal! za")
-	end
-end, { desc = "[P]Toggle fold" })
-
-local function set_foldmethod_expr()
-	-- These are lazyvim.org defaults but setting them just in case a file
-	-- doesn't have them set
-	if vim.fn.has("nvim-0.10") == 1 then
-		vim.opt.foldmethod = "expr"
-		vim.opt.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
-		vim.opt.foldtext = ""
-	else
-		vim.opt.foldmethod = "indent"
-		vim.opt.foldtext = "v:lua.require'lazyvim.util'.ui.foldtext()"
-	end
-	vim.opt.foldlevel = 99
-end
-
--- Function to fold all headings of a specific level
-local function fold_headings_of_level(level)
-	-- Move to the top of the file
-	vim.cmd("normal! gg")
-	-- Get the total number of lines
-	local total_lines = vim.fn.line("$")
-	for line = 1, total_lines do
-		-- Get the content of the current line
-		local line_content = vim.fn.getline(line)
-		-- "^" -> Ensures the match is at the start of the line
-		-- string.rep("#", level) -> Creates a string with 'level' number of "#" characters
-		-- "%s" -> Matches any whitespace character after the "#" characters
-		-- So this will match `## `, `### `, `#### ` for example, which are markdown headings
-		if line_content:match("^" .. string.rep("#", level) .. "%s") then
-			-- Move the cursor to the current line
-			vim.fn.cursor(line, 1)
-			-- Fold the heading if it matches the level
-			if vim.fn.foldclosed(line) == -1 then
-				vim.cmd("normal! za")
-			end
-		end
-	end
-end
-
-local function fold_markdown_headings(levels)
-	set_foldmethod_expr()
-	-- I save the view to know where to jump back after folding
-	local saved_view = vim.fn.winsaveview()
-	for _, level in ipairs(levels) do
-		fold_headings_of_level(level)
-	end
-	vim.cmd("nohlsearch")
-	-- Restore the view to jump to where I was
-	vim.fn.winrestview(saved_view)
-end
-
--- Keymap for unfolding markdown headings of level 2 or above
-vim.keymap.set("n", "<leader>ofu", function()
-	-- Reloads the file to reflect the changes
-	vim.cmd("edit!")
-	vim.cmd("normal! zR") -- Unfold all headings
-end, { desc = "[P]Unfold all headings level 2 or above" })
-
--- Keymap for folding markdown headings of level 1 or above
-vim.keymap.set("n", "<leader>ofj", function()
-	-- Reloads the file to refresh folds, otherwise you have to re-open neovim
-	vim.cmd("edit!")
-	-- Unfold everything first or I had issues
-	vim.cmd("normal! zR")
-	fold_markdown_headings({ 6, 5, 4, 3, 2, 1 })
-end, { desc = "[P]Fold all headings level 1 or above" })
-
--- Keymap for folding markdown headings of level 2 or above
--- I know, it reads like "madafaka" but "k" for me means "2"
-vim.keymap.set("n", "<leader>ofk", function()
-	-- Reloads the file to refresh folds, otherwise you have to re-open neovim
-	vim.cmd("edit!")
-	-- Unfold everything first or I had issues
-	vim.cmd("normal! zR")
-	fold_markdown_headings({ 6, 5, 4, 3, 2 })
-end, { desc = "[P]Fold all headings level 2 or above" })
-
--- Keymap for folding markdown headings of level 3 or above
-vim.keymap.set("n", "<leader>ofl", function()
-	-- Reloads the file to refresh folds, otherwise you have to re-open neovim
-	vim.cmd("edit!")
-	-- Unfold everything first or I had issues
-	vim.cmd("normal! zR")
-	fold_markdown_headings({ 6, 5, 4, 3 })
-end, { desc = "[P]Fold all headings level 3 or above" })
-
--- Keymap for folding markdown headings of level 4 or above
-vim.keymap.set("n", "<leader>of;", function()
-	-- Reloads the file to refresh folds, otherwise you have to re-open neovim
-	vim.cmd("edit!")
-	-- Unfold everything first or I had issues
-	vim.cmd("normal! zR")
-	fold_markdown_headings({ 6, 5, 4 })
-end, { desc = "[P]Fold all headings level 4 or above" })
-
--------------------------------------------------------------------------------
---                         End Folding section
--------------------------------------------------------------------------------
-
 -- convienince
 
 -- keymap.set("n", "<S-l>", "<Cmd>BufferLineCycleNext<CR>", { desc = "NextBuffer" })
 -- keymap.set("n", "<S-h>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "PrevBuffer" })
-
 vim.keymap.set("n", "gl", function()
 	vim.diagnostic.open_float()
 end, { desc = "Open Diagnostics in Float" })
