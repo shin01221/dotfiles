@@ -53,31 +53,27 @@ vim.keymap.set("n", "<leader>cf", function()
 end, { desc = "Format current file" })
 
 -- obsidian  keymaps
-keymap.set(
-	"n",
-	"<leader>og",
-	':Telescope live_grep search_dirs={"/Media/Docs/notes"}<cr>',
-	{ desc = "live grep in notes" }
-)
 -- keymap.set("n", "<leader>os", function()
 -- 	Snacks.picker.files({
 -- 		cwd = "/Media/Docs/notes/",
 -- 	})
 -- end, { desc = "Notes search" })
-keymap.set("v", "<leader>oe", "<cmd>ObsidianExtractNote<cr>", { desc = "Note Extract" })
-keymap.set("v", "<leader>ox", ":ObsidianExtractNote", { desc = "Note Extract" })
-keymap.set("v", "<leader>oll", vim.cmd.ObsidianLinkNew, { desc = "New Link" })
-keymap.set("n", "<leader>l", "<cmd>ObsidianToggleCheckbox<cr>", { desc = "Checkbox Toggle" })
-keymap.set("n", "<leader>ols", vim.cmd.ObsidianLinks, { desc = "Search Links" })
-keymap.set("n", "<leader>op", vim.cmd.ObsidianPasteImg, { desc = "Paste Image" })
+-- keymap.set("v", "<leader>ox", "<cmd>Obsidian extract_note", { desc = "Note Extract" })
+
 keymap.set("n", "<leader>o", "", { desc = "+obsidian" })
-keymap.set("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "New Note" })
-keymap.set("n", "<leader>os", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Search notes" })
-keymap.set("n", "<leader>ot", vim.cmd.ObsidianNewFromTemplate, { desc = "New Note with template" })
-keymap.set("n", "<leader>od", vim.cmd.ObsidianDailies, { desc = "New Daily Note" })
-keymap.set("n", "<leader>oh", vim.cmd.ObsidianTags, { desc = "Search Tags" })
-keymap.set("n", "<leader>oc", vim.cmd.ObsidianTOC, { desc = "Search TOC" })
-keymap.set("n", "<leader>ob", vim.cmd.ObsidianBacklinks, { desc = "Search backlinks" })
+keymap.set("v", "<leader>oll", "<cmd>Obsidian link_new<cr>", { desc = "New Link" })
+keymap.set("n", "<leader>ols", "<cmd>Obsidian links<cr>", { desc = "Search Links" })
+keymap.set("n", "<leader>op", "<cmd>Obsidian paste_img<cr>", { desc = "Paste Image" })
+keymap.set("n", "<leader>or", "<cmd>Obsidian rename<cr>", { desc = "rename note" })
+keymap.set("n", "<leader>l", "<cmd>Obsidian toggle_checkbox<cr>", { desc = "toggle checkbox" })
+keymap.set("n", "<leader>on", "<cmd>Obsidian new<cr>", { desc = "New Note" })
+keymap.set("n", "<leader>og", "<cmd>Obsidian search<cr>", { desc = "Search notes" })
+keymap.set("n", "<leader>os", "<cmd>Obsidian quick_switch<cr>", { desc = "Search notes" })
+keymap.set("n", "<leader>ob", "<cmd>Obsidian backlinks<cr>", { desc = "Search backlinks" })
+keymap.set("n", "<leader>ot", "<cmd>Obsidian new_from_template<cr>", { desc = "New Note with template" })
+keymap.set("n", "<leader>od", "<cmd>Obsidian dailies<cr>", { desc = "New Daily Note" })
+keymap.set("n", "<leader>oh", "<cmd>Obsidian tags<cr>", { desc = "Search Tags" })
+keymap.set("n", "<leader>oc", "<cmd>Obsidian toc<cr>", { desc = "TOC search" })
 keymap.set("n", "<leader>oP", vim.cmd.MarkdownPreviewToggle, { desc = "Toggle markdown preview" })
 
 keymap.set("n", "gf", function()

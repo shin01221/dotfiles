@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 check=$(ps -aux | rg 'noctalia' | wc -l)
-if [[ check -gt 2 ]]; then
+if [[ check -gt 1 ]]; then
     exit
 else
     # Get current wallpaper path from JSON
