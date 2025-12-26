@@ -13,7 +13,7 @@ function tmux-set
         end
 
         # sessions to exclude from picker
-        set -l skip_sessions scratch-term rmpc test # <-- add names here
+        set -l skip_sessions scratch-term rmpc # <-- add names here
 
         # gather sessions
         set -l sessions (tmux list-sessions -F "#{session_name}" 2>/dev/null)
