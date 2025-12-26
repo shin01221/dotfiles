@@ -1,0 +1,37 @@
+[config]
+
+[templates]
+# User-defined templates
+# Add your custom templates below
+# Example:
+# [templates.myapp]
+# input_path = "~/.config/noctalia/templates/myapp.css"
+# output_path = "~/.config/myapp/theme.css"
+# post_hook = "myapp --reload-theme"
+
+# Remove this section and add your own templates
+# [templates.placeholder]
+# input_path = "/home/shin/.config/quickshell/noctalia-shell/Assets/MatugenTemplates/noctalia.json"
+# output_path = "/home/shin/.cache/noctalia/placeholder.json"
+
+[templates.starship]
+input_path = "/home/shin/.config/noctalia/templates/starship-colors.toml"
+output_path = "/home/shin/.config/starship.toml"
+
+[templates.tmux]
+input_path = "/home/shin/.config/noctalia/templates/tmux-colors.conf"
+output_path = "/home/shin/.config/tmux/colors.conf"
+post_hook = "tmux source-file ~/.config/tmux/colors.conf >/dev/null 2>&1 || true"
+
+[templates.fish]
+input_path = "/home/shin/.config/noctalia/templates/fish-colors.fish"
+output_path = "/home/shin/.config/fish/colors.fish"
+
+[templates.eza]
+input_path = "/home/shin/.config/noctalia/templates/eza-colors.yml"
+output_path = "/home/shin/.config/eza/theme.yml"
+
+[templates.kde_colors]
+input_path = "~/.config/matugen/templates/kde/color.txt"
+output_path = "~/.local/state/quickshell/user/generated/color.txt"
+post_hook = "~/.config/matugen/templates/kde/kde-material-you-colors-wrapper.sh"

@@ -12,6 +12,7 @@
 !.config/hypr
 !.config/mpd/
 !.config/mpv
+!.config/noctalia
 !.config/sptlrx
 !.config/rmpc
 !.config/qswitch
