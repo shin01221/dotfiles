@@ -39,7 +39,7 @@ keymap.set("n", "tt", "<cmd>Themify<cr>")
 -- toggle markview
 keymap.set("n", "<leader>um", "<cmd>Markview Toggle<cr>", { desc = "Toggle markdwon" })
 --toggle top bar buffer on or off
-keymap.set("n", "<leader>bs", function()
+keymap.set("n", "<leader>us", function()
 	if vim.o.showtabline == 0 then
 		vim.o.showtabline = 2
 	else

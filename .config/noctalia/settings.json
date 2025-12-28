@@ -87,6 +87,7 @@
                     "formatHorizontal": "hh:mm AP ddd, MMM dd",
                     "formatVertical": "ddd MMM d",
                     "id": "Clock",
+                    "tooltipFormat": "HH:mm ddd, MMM dd",
                     "useCustomFont": false,
                     "usePrimaryColor": false
                 },
@@ -95,19 +96,22 @@
                     "formatHorizontal": "dd MM h:mm ap",
                     "formatVertical": "h mm ap",
                     "id": "Clock",
+                    "tooltipFormat": "HH:mm ddd, MMM dd",
                     "useCustomFont": false,
                     "usePrimaryColor": false
                 },
                 {
+                    "compactMode": true,
                     "diskPath": "/",
                     "id": "SystemMonitor",
-                    "showCpuTemp": false,
+                    "showCpuTemp": true,
                     "showCpuUsage": true,
                     "showDiskUsage": false,
                     "showGpuTemp": false,
-                    "showMemoryAsPercent": true,
+                    "showMemoryAsPercent": false,
                     "showMemoryUsage": true,
                     "showNetworkStats": false,
+                    "useMonospaceFont": true,
                     "usePrimaryColor": false
                 },
                 {
@@ -207,7 +211,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "matugenSchemeType": "scheme-tonal-spot",
-        "predefinedScheme": "Everforest",
+        "predefinedScheme": "Gruvbox",
         "schedulingMode": "off",
         "useWallpaperColors": true
     },
@@ -280,12 +284,15 @@
                     {
                         "hideMode": "visible",
                         "id": "MediaPlayer",
+                        "roundedCorners": true,
                         "scale": 1.0091543605945683,
+                        "showAlbumArt": true,
                         "showBackground": true,
-                        "showButtons": false,
+                        "showButtons": true,
+                        "showVisualizer": true,
                         "visualizerType": "wave",
                         "visualizerVisibility": "always",
-                        "x": 1600,
+                        "x": 1500,
                         "y": 960
                     }
                 ]
@@ -410,6 +417,7 @@
         "audioCodec": "opus",
         "audioSource": "default_output",
         "colorRange": "limited",
+        "copyToClipboard": false,
         "directory": "/Media/Records/screencast",
         "frameRate": 60,
         "quality": "ultra",
@@ -460,15 +468,17 @@
                 "enabled": true
             }
         ],
-        "showHeader": false
+        "showHeader": false,
+        "showNumberLabels": true
     },
-    "settingsVersion": 32,
+    "settingsVersion": 33,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,
         "cpuWarningThreshold": 80,
         "criticalColor": "#fd4663",
         "diskCriticalThreshold": 90,
+        "diskPath": "/",
         "diskPollingInterval": 3000,
         "diskWarningThreshold": 80,
         "enableDgpuMonitoring": false,
@@ -544,6 +554,7 @@
         "transitionEdgeSmoothness": 0.05,
         "transitionType": "fade",
         "useWallhaven": false,
+        "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
@@ -552,6 +563,7 @@
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",
         "wallhavenResolutionWidth": "",
-        "wallhavenSorting": "relevance"
+        "wallhavenSorting": "relevance",
+        "wallpaperChangeMode": "random"
     }
 }
