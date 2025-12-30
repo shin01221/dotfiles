@@ -26,6 +26,7 @@
         "volumeStep": 5
     },
     "bar": {
+        "backgroundOpacity": 0.93,
         "capsuleOpacity": 1,
         "density": "default",
         "exclusive": true,
@@ -38,19 +39,21 @@
         "position": "left",
         "showCapsule": true,
         "showOutline": false,
-        "transparent": false,
+        "useSeparateOpacity": false,
         "widgets": {
             "center": [
                 {
                     "characterCount": 2,
                     "colorizeIcons": true,
                     "enableScrollWheel": true,
-                    "followFocusedScreen": false,
+                    "followFocusedScreen": true,
+                    "groupedBorderOpacity": 1,
                     "hideUnoccupied": true,
                     "id": "Workspace",
                     "labelMode": "index",
                     "showApplications": true,
-                    "showLabelsOnlyWhenOccupied": true
+                    "showLabelsOnlyWhenOccupied": true,
+                    "unfocusedIconsOpacity": 1
                 }
             ],
             "left": [
@@ -161,11 +164,14 @@
                     "displayMode": "onhover",
                     "hideIfNotDetected": true,
                     "id": "Battery",
-                    "showNoctaliaPerformance": false,
+                    "showNoctaliaPerformance": true,
                     "showPowerProfiles": false,
                     "warningThreshold": 30
                 },
                 {
+                    "defaultSettings": {
+                        "refreshInterval": 5000
+                    },
                     "id": "plugin:mini-docker"
                 },
                 {
@@ -211,9 +217,9 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "matugenSchemeType": "scheme-tonal-spot",
-        "predefinedScheme": "Gruvbox",
+        "predefinedScheme": "Catppuccin",
         "schedulingMode": "off",
-        "useWallpaperColors": true
+        "useWallpaperColors": false
     },
     "controlCenter": {
         "cards": [
@@ -471,7 +477,7 @@
         "showHeader": false,
         "showNumberLabels": true
     },
-    "settingsVersion": 33,
+    "settingsVersion": 35,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,
@@ -546,7 +552,7 @@
         ],
         "overviewEnabled": false,
         "panelPosition": "follow_bar",
-        "randomEnabled": true,
+        "randomEnabled": false,
         "randomIntervalSec": 1800,
         "recursiveSearch": true,
         "setWallpaperOnAllMonitors": true,
