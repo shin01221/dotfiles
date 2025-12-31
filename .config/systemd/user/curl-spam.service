@@ -1,0 +1,19 @@
+[Unit]
+Description=culr spam
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/curl-test.sh 
+
+# restart if curl fails
+Restart=on-failure
+RestartSec=15
+StartLimitIntervalSec=0
+
+# sandboxing (safe for user services)
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=full
+ProtectHome=read-only

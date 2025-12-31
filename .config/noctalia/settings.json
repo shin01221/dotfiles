@@ -5,6 +5,7 @@
         "enableClipPreview": true,
         "enableClipboardHistory": true,
         "iconMode": "tabler",
+        "ignoreMouseInput": false,
         "pinnedExecs": [
         ],
         "position": "follow_bar",
@@ -49,6 +50,7 @@
                     "followFocusedScreen": true,
                     "groupedBorderOpacity": 1,
                     "hideUnoccupied": true,
+                    "iconScale": 0.8,
                     "id": "Workspace",
                     "labelMode": "index",
                     "showApplications": true,
@@ -219,7 +221,7 @@
         "matugenSchemeType": "scheme-tonal-spot",
         "predefinedScheme": "Catppuccin",
         "schedulingMode": "off",
-        "useWallpaperColors": false
+        "useWallpaperColors": true
     },
     "controlCenter": {
         "cards": [
@@ -488,6 +490,7 @@
         "diskPollingInterval": 3000,
         "diskWarningThreshold": 80,
         "enableDgpuMonitoring": false,
+        "externalMonitor": "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor",
         "gpuCriticalThreshold": 90,
         "gpuPollingInterval": 3000,
         "gpuWarningThreshold": 80,

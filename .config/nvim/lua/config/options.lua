@@ -64,7 +64,7 @@ end)
 
 -- neovide configs
 if vim.g.neovide then
-	vim.o.guifont = "Maple Mono:h10"
+	-- vim.o.guifont = "Maple Mono:h10"
 	vim.g.neovide_padding_top = 30
 	vim.g.neovide_padding_right = 20
 	vim.g.neovide_padding_left = 20
