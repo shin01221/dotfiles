@@ -452,7 +452,7 @@
             },
             {
                 "action": "suspend",
-                "command": "systemctl suspend",
+                "command": "",
                 "countdownEnabled": true,
                 "enabled": true
             },
