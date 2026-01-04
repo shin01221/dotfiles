@@ -1,7 +1,5 @@
 set EDITOR nvim
-# if test -f ~/.config/fish/colors.fish
-#     source ~/.config/fish/colors.fish
-# end
+
 set -g fish_key_bindings fish_vi_key_bindings
 set -Ux fifc_editor nvim
 set -gx MANPAGER "nvim +Man!"
