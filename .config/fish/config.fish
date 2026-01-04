@@ -1,8 +1,7 @@
 set EDITOR nvim
-if test -f ~/.config/fish/colors.fish
-    source ~/.config/fish/colors.fish
-end
-set -g fish_term24bit 1
+# if test -f ~/.config/fish/colors.fish
+#     source ~/.config/fish/colors.fish
+# end
 set -g fish_key_bindings fish_vi_key_bindings
 set -Ux fifc_editor nvim
 set -gx MANPAGER "nvim +Man!"
@@ -12,7 +11,6 @@ bind -M insert jj 'set fish_bind_mode default; commandline -f repaint-mode'
 for f in ~/.config/fish/functions/user/*.fish
     source $f
 end
-
 set -gx PATH $HOME/.local/bin $HOME/go/bin $HOME/.cargo/bin $PATH
 
 starship init fish | source
@@ -38,6 +36,13 @@ if test -z "$DISPLAY"; and test "$XDG_VTNR" -eq 1
     exec Hyprland >~/.cache/hyprland.log 2>&1
 end
 
+# colors
+set fish_color_command blue --bold
+set fish_color_quote magenta
+set fish_color_redirection magenta
+set fish_color_error green
+set fish_color_valid_path yellow --bold
+
 tmux-set
 
 # aliases
@@ -46,7 +51,6 @@ alias ls 'eza --icons'
 # alias ip 'ip -c'
 alias clear "printf '\033[2J\033[3J\033[1;1H'"
 alias q 'qs -c ii'
-alias pn="source ~/.local/venvs/nudenet/bin/activate.fish"
 alias down360='down 360'
 alias down480='down 480'
 alias down720='down 720'

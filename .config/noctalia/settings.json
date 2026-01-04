@@ -9,6 +9,7 @@
         "pinnedExecs": [
         ],
         "position": "follow_bar",
+        "screenshotAnnotationTool": "",
         "showCategories": true,
         "sortByMostUsed": true,
         "terminalCommand": "kitty -e",
@@ -60,6 +61,8 @@
             ],
             "left": [
                 {
+                    "colorizeSystemIcon": "none",
+                    "enableColorization": false,
                     "hideMode": "alwaysExpanded",
                     "icon": "rocket",
                     "id": "CustomButton",
@@ -220,9 +223,9 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "matugenSchemeType": "scheme-tonal-spot",
-        "predefinedScheme": "Tokyo Night Moon",
+        "predefinedScheme": "Solarized",
         "schedulingMode": "off",
-        "useWallpaperColors": true
+        "useWallpaperColors": false
     },
     "controlCenter": {
         "cards": [
@@ -371,8 +374,11 @@
         "weatherShowEffects": true
     },
     "network": {
+        "bluetoothDetailsViewMode": "grid",
+        "bluetoothHideUnnamedDevices": false,
         "bluetoothRssiPollIntervalMs": 10000,
         "bluetoothRssiPollingEnabled": false,
+        "wifiDetailsViewMode": "grid",
         "wifiEnabled": true
     },
     "nightLight": {
@@ -484,7 +490,7 @@
         "showHeader": false,
         "showNumberLabels": true
     },
-    "settingsVersion": 36,
+    "settingsVersion": 37,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,
@@ -537,8 +543,7 @@
         "zed": false
     },
     "ui": {
-        "bluetoothDetailsViewMode": "grid",
-        "bluetoothHideUnnamedDevices": false,
+        "boxBorderEnabled": false,
         "fontDefault": "Nimbus Sans",
         "fontDefaultScale": 1,
         "fontFixed": "JetBrainsMono Nerd Font",
@@ -546,8 +551,7 @@
         "panelBackgroundOpacity": 0.9700000000000001,
         "panelsAttachedToBar": true,
         "settingsPanelMode": "attached",
-        "tooltipsEnabled": false,
-        "wifiDetailsViewMode": "grid"
+        "tooltipsEnabled": false
     },
     "wallpaper": {
         "directory": "/home/shin/Pictures/homework/norm",

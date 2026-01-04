@@ -18,18 +18,10 @@
 input_path = "/home/shin/.config/noctalia/templates/starship-colors.toml"
 output_path = "/home/shin/.config/starship.toml"
 
-[templates.tmux]
-input_path = "/home/shin/.config/noctalia/templates/tmux-colors.conf"
-output_path = "/home/shin/.config/tmux/colors.conf"
-post_hook = "tmux source-file ~/.config/tmux/colors.conf >/dev/null 2>&1 || true"
-
-[templates.fish]
-input_path = "/home/shin/.config/noctalia/templates/fish-colors.fish"
-output_path = "/home/shin/.config/fish/colors.fish"
-
-[templates.eza]
-input_path = "/home/shin/.config/noctalia/templates/eza-colors.yml"
-output_path = "/home/shin/.config/eza/theme.yml"
+# [templates.tmux]
+# input_path = "/home/shin/.config/noctalia/templates/tmux-colors.conf"
+# output_path = "/home/shin/.config/tmux/colors.conf"
+# post_hook = "tmux source-file ~/.config/tmux/colors.conf >/dev/null 2>&1 || true"
 
 [templates.kde_colors]
 input_path = "~/.config/matugen/templates/kde/color.txt"
