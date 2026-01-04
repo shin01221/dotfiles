@@ -67,9 +67,9 @@ $character\
 
 # Exit code indicator
 [character]  # The name of the module we are configuring is 'character'
-success_symbol = "[](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[󱇫](bg:{{colors.primary.default.hex}} fg:{{colors.on_primary.default.hex}})[](fg:{{colors.primary.default.hex}} bg:transparent)"
-error_symbol = "[](bg:{{colors.primary_container.default.hex}} fg:{{colors.error.default.hex}})[󱇫](bg:{{colors.error.default.hex}} fg:{{colors.on_error.default.hex}})[](fg:{{colors.error.default.hex}} bg:transparent)"
-vimcmd_symbol = "[](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[󱇫](bg:{{colors.primary.default.hex}} fg:{{colors.on_primary.default.hex}})[](fg:{{colors.primary.default.hex}} bg:transparent)"
+success_symbol = "[](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[](bg:{{colors.primary.default.hex}} fg:{{colors.on_primary.default.hex}})[](fg:{{colors.primary.default.hex}} bg:transparent)"
+error_symbol = "[](bg:{{colors.primary_container.default.hex}} fg:{{colors.error.default.hex}})[](bg:{{colors.error.default.hex}} fg:{{colors.on_error.default.hex}})[](fg:{{colors.error.default.hex}} bg:transparent)"
+vimcmd_symbol = "[](bg:{{colors.primary_container.default.hex}} fg:{{colors.primary.default.hex}})[](bg:{{colors.primary.default.hex}} fg:{{colors.on_primary.default.hex}})[](fg:{{colors.primary.default.hex}} bg:transparent)"
 format = "$symbol "
 
 # cross-platform way to check if we are in a git repo, takes 200ms
