@@ -3,6 +3,10 @@ function tmux-set
     if set -q NO_TMUX
         return
     end
+    # Skip if already inside tmux
+    if set -q TMUX
+        return
+    end
     if not set -q TMUX
         # remember file
         set -l last_choice_file ~/.local/state/tmux_last_session

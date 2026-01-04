@@ -5,34 +5,19 @@ local opts = { noremap = true, silent = true }
 -- keymap.set("n", "<S-h>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "PrevBuffer" })
 -- plugins
 
--- opencode
-keymap.set({ "n", "x" }, "<leader>aa", function()
-	require("opencode").ask("@this: ", { submit = true })
-end, { desc = "Ask about this" })
-keymap.set({ "n", "x" }, "<leader>a+", function()
-	require("opencode").prompt("@this")
-end, { desc = "Add this" })
-keymap.set({ "n", "x" }, "<leader>as", function()
-	require("opencode").select()
-end, { desc = "Select prompt" })
-keymap.set("n", "<leader>at", function()
-	require("opencode").toggle()
-end, { desc = "Toggle embedded" })
-vim.keymap.set("n", "<leader>an", function()
-	require("opencode").command("session_new")
-end, { desc = "New session" })
-keymap.set("n", "<leader>ai", function()
-	require("opencode").command("session_interrupt")
-end, { desc = "Interrupt session" })
-keymap.set("n", "<leader>aA", function()
-	require("opencode").command("agent_cycle")
-end, { desc = "Cycle selected agent" })
-keymap.set("n", "<S-C-u>", function()
-	require("opencode").command("messages_half_page_up")
-end, { desc = "Messages half page up" })
-keymap.set("n", "<S-C-d>", function()
-	require("opencode").command("messages_half_page_down")
-end, { desc = "Messages half page down" })
+-- tree walker
+
+-- movement
+vim.keymap.set({ "n", "v" }, "<leader>k", "<cmd>Treewalker Up<cr>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>j", "<cmd>Treewalker Down<cr>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>h", "<cmd>Treewalker Left<cr>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>l", "<cmd>Treewalker Right<cr>", { silent = true })
+
+-- swapping
+vim.keymap.set("n", "<A-k>", "<cmd>Treewalker SwapUp<cr>", { silent = true })
+vim.keymap.set("n", "<A-j>", "<cmd>Treewalker SwapDown<cr>", { silent = true })
+vim.keymap.set("n", "<A-h>", "<cmd>Treewalker SwapLeft<cr>", { silent = true })
+vim.keymap.set("n", "<A-l>", "<cmd>Treewalker SwapRight<cr>", { silent = true })
 
 -- keymap.set("n", "tt", vim.cmd.Themery)
 keymap.set("n", "tt", "<cmd>Themify<cr>")
