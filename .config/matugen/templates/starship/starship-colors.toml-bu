@@ -163,19 +163,19 @@ format = "[$time]($style)"
 # ######################
 
 [git_branch]
-symbol = "[](bg:{{colors.inverse_primary.default.hex}})"
-style = "bg:{{colors.inverse_primary.default.hex}} fg:{{colors.on_secondary_container.default.hex}}"
-format = "[](fg:{{colors.primary_container.default.hex}} bg:{{colors.inverse_primary.default.hex}})[ $symbol](bg:{{colors.inverse_primary.default.hex}} fg:{{colors.primary.default.hex}})[ $branch ]($style)"
+symbol = ""
+style = "bg:{{colors.secondary_container.default.hex}} fg:{{colors.on_secondary_container.default.hex}}"
+format = "[](fg:{{colors.primary_container.default.hex}} bg:{{colors.secondary_container.default.hex}})[ $symbol](bg:{{colors.secondary_container.default.hex}} fg:{{colors.primary.default.hex}})[ $branch ]($style)"
 
 [git_state]
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
-cherry_pick = "[🍒 PICKING](bg:{{colors.inverse_primary.default.hex}} fg:bold red)"
-rebase = "[ REBASING](bg:{{colors.inverse_primary.default.hex}} fg:bold green)"
-merge = "[ MERGING](bg:{{colors.inverse_primary.default.hex}} fg:bold yellow)"
-bisect = "[🔍 BISECTING](bg:{{colors.inverse_primary.default.hex}} fg:bold blue)"
-am = "[AM](bg:{{colors.inverse_primary.default.hex}} fg:bold green)"
-am_or_rebase = "[AM/REBASE](bg:{{colors.inverse_primary.default.hex}} fg:bold green)"
-revert = "[󰕍 REVERTING](bg:{{colors.inverse_primary.default.hex}} fg:bold red)"
+cherry_pick = "[🍒 PICKING](bg:{{colors.secondary_container.default.hex}} fg:bold red)"
+rebase = "[ REBASING](bg:{{colors.secondary_container.default.hex}} fg:bold green)"
+merge = "[ MERGING](bg:{{colors.secondary_container.default.hex}} fg:bold yellow)"
+bisect = "[🔍 BISECTING](bg:{{colors.secondary_container.default.hex}} fg:bold blue)"
+am = "[AM](bg:{{colors.secondary_container.default.hex}} fg:bold green)"
+am_or_rebase = "[AM/REBASE](bg:{{colors.secondary_container.default.hex}} fg:bold green)"
+revert = "[󰕍 REVERTING](bg:{{colors.secondary_container.default.hex}} fg:bold red)"
 
 [git_metrics]
 added_style = "bg:{{colors.secondary_container.default.hex}} fg:{{colors.tertiary.default.hex}}"
@@ -184,7 +184,7 @@ format = "([+$added ]($added_style))([-$deleted ]($deleted_style))"
 disabled = false
 
 [git_status]
-style = "bg:{{colors.inverse_primary.default.hex}} fg:{{colors.primary.default.hex}}"
+style = "bg:{{colors.secondary_container.default.hex}} fg:{{colors.primary.default.hex}}"
 conflicted = "="  # This branch has merge conflicts.
 ahead = ""
 behind = ""
@@ -196,7 +196,7 @@ modified = ""
 staged = ""
 renamed = "»"
 deleted = "✘"
-format = "([($all_status )($ahead_behind )]($style))[](bg:{{colors.inverse_primary.default.hex}} fg:{{colors.primary_container.default.hex}})"
+format = "([($all_status )($ahead_behind )]($style))[](bg:{{colors.secondary_container.default.hex}} fg:{{colors.primary_container.default.hex}})"
 
 [fossil_branch]
 symbol = ""
