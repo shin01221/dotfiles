@@ -2,8 +2,8 @@
 
 # Directories
 SRC_DIR="$1"
-VERTICAL_DIR="/Media/Pictures/homework/🌶️/vertical"
-HORIZONTAL_DIR="/Media/Pictures/homework/🌶️/horizontal"
+VERTICAL_DIR="/Media/Pictures/homework/ecchi/nobreast/vertical"
+HORIZONTAL_DIR="/Media/Pictures/homework/ecchi/nobreast/horizontal"
 
 # Loop over images
 for img in "$SRC_DIR"/*.{jpg,jpeg,png,gif}; do
