@@ -36,10 +36,10 @@ end
 
 # colors
 set fish_color_command blue --bold
-set fish_color_quote magenta
-set fish_color_redirection magenta
-set fish_color_error green
-set fish_color_valid_path yellow --bold
+set fish_color_quote yellow
+set fish_color_redirection yellow
+set fish_color_error red
+set fish_color_valid_path white --bold
 
 tmux-set
 
