@@ -1,5 +1,4 @@
 .config/*
-.config/hyde/themes/
 .config/zsh/.zsh_history
 .config/mpd/mpdstate
 .config/mpd/log
@@ -24,6 +23,7 @@
 !.config/MangoHud
 !.config/waybar
 !.config/tmux
+!.config/eilmeldung
 !.config/tmux/plugins
 !.config/fish
 !.config/matugen

@@ -39,11 +39,12 @@ set fish_color_command blue --bold
 set fish_color_quote yellow
 set fish_color_redirection yellow
 set fish_color_error red
-set fish_color_valid_path white --bold
+set fish_color_valid_path magenta --bold
 
 tmux-set
 
 # aliases
+alias rss eilmeldung
 alias pamcan pacman
 alias ls 'eza --icons'
 # alias ip 'ip -c'
