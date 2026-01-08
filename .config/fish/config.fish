@@ -44,6 +44,7 @@ set fish_color_valid_path magenta --bold
 tmux-set
 
 # aliases
+alias type 'type -a'
 alias rss eilmeldung
 alias pamcan pacman
 alias ls 'eza --icons'

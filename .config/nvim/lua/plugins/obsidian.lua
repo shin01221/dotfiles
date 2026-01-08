@@ -51,7 +51,7 @@ return {
 			template = nil,
 		},
 		attachments = {
-			img_folder = "assets/imgs",
+			folder = "assets/imgs",
 		},
 		-- mappings = {
 		-- 	["gf"] = {

@@ -22,7 +22,6 @@ return {
 		},
 		picker = {
 			enabled = true,
-			layout = "ivy",
 		},
 		zen = {
 			enabled = true,
