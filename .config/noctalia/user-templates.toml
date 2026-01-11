@@ -15,8 +15,9 @@
 # output_path = "/home/shin/.cache/noctalia/placeholder.json"
 
 [templates.starship]
-input_path = "/home/shin/.config/noctalia/templates/starship-colors.toml"
-output_path = "/home/shin/.config/starship.toml"
+input_path = "~/.config/matugen/templates/starship/starship-colors.toml"
+output_path = "~/.config/starship.toml"
+post_hook = "starship init fish | source"
 
 [templates.kitty]
 input_path = "~/.config/matugen/templates/kitty/kitty-colors.conf"
@@ -27,3 +28,7 @@ post_hook = "pkill -SIGUSR1 kitty"
 input_path = "~/.config/matugen/templates/kde/color.txt"
 output_path = "~/.local/state/quickshell/user/generated/color.txt"
 post_hook = "~/.config/matugen/templates/kde/kde-material-you-colors-wrapper.sh"
+
+[templates.hyprland]
+input_path = "~/.config/matugen/templates/hyprland/colors.conf"
+output_path = "~/.config/hypr/hyprland/colors.conf"
