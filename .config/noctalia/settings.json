@@ -1,16 +1,19 @@
 {
     "appLauncher": {
+        "autoPasteClipboard": false,
+        "clipboardWrapText": true,
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
         "enableClipPreview": true,
         "enableClipboardHistory": true,
         "iconMode": "tabler",
         "ignoreMouseInput": false,
-        "pinnedExecs": [
+        "pinnedApps": [
         ],
         "position": "follow_bar",
         "screenshotAnnotationTool": "",
         "showCategories": true,
+        "showIconBackground": false,
         "sortByMostUsed": true,
         "terminalCommand": "kitty -e",
         "useApp2Unit": false,
@@ -18,7 +21,6 @@
     },
     "audio": {
         "cavaFrameRate": 60,
-        "externalMixer": "pwvucontrol || pavucontrol",
         "mprisBlacklist": [
             "firefox.*"
         ],
@@ -33,8 +35,9 @@
         "density": "default",
         "exclusive": true,
         "floating": true,
-        "marginHorizontal": 0.18,
-        "marginVertical": 0.5,
+        "hideOnOverview": false,
+        "marginHorizontal": 3,
+        "marginVertical": 9,
         "monitors": [
         ],
         "outerCorners": true,
@@ -66,6 +69,7 @@
                     "hideMode": "alwaysExpanded",
                     "icon": "rocket",
                     "id": "CustomButton",
+                    "ipcIdentifier": "",
                     "leftClickExec": "qs -c noctalia ipc call launcher toggle",
                     "leftClickUpdateText": true,
                     "maxTextLength": {
@@ -133,10 +137,15 @@
                     "useFixedWidth": false
                 },
                 {
+                    "compactMode": false,
+                    "compactShowAlbumArt": true,
+                    "compactShowVisualizer": false,
                     "hideMode": "hidden",
                     "hideWhenIdle": false,
                     "id": "MediaMini",
                     "maxWidth": 145,
+                    "panelShowAlbumArt": true,
+                    "panelShowVisualizer": true,
                     "scrollingMode": "hover",
                     "showAlbumArt": true,
                     "showArtistFirst": true,
@@ -156,9 +165,6 @@
                     "id": "Tray",
                     "pinned": [
                     ]
-                },
-                {
-                    "id": "ScreenRecorder"
                 },
                 {
                     "hideWhenZero": true,
@@ -219,13 +225,12 @@
     },
     "colorSchemes": {
         "darkMode": true,
-        "generateTemplatesForPredefined": true,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "matugenSchemeType": "scheme-tonal-spot",
-        "predefinedScheme": "Everforest",
+        "predefinedScheme": "Miasma",
         "schedulingMode": "off",
-        "useWallpaperColors": false
+        "useWallpaperColors": true
     },
     "controlCenter": {
         "cards": [
@@ -263,9 +268,6 @@
                 },
                 {
                     "id": "Bluetooth"
-                },
-                {
-                    "id": "ScreenRecorder"
                 },
                 {
                     "id": "WallpaperSelector"
@@ -327,6 +329,7 @@
         "pinnedApps": [
         ],
         "pinnedStatic": false,
+        "position": "bottom",
         "size": 1
     },
     "general": {
@@ -348,9 +351,11 @@
         "shadowDirection": "bottom_right",
         "shadowOffsetX": 2,
         "shadowOffsetY": 3,
+        "showChangelogOnStartup": true,
         "showHibernateOnLockScreen": false,
         "showScreenCorners": true,
-        "showSessionButtonsOnLockScreen": true
+        "showSessionButtonsOnLockScreen": true,
+        "telemetryEnabled": false
     },
     "hooks": {
         "darkModeChange": "",
@@ -359,11 +364,14 @@
         "performanceModeEnabled": "",
         "screenLock": "",
         "screenUnlock": "",
+        "session": "",
         "wallpaperChange": ""
     },
     "location": {
         "analogClockInCalendar": false,
         "firstDayOfWeek": -1,
+        "hideWeatherCityName": false,
+        "hideWeatherTimezone": false,
         "name": "Cairo",
         "showCalendarEvents": true,
         "showCalendarWeather": true,
@@ -431,18 +439,6 @@
         ],
         "overlayLayer": true
     },
-    "screenRecorder": {
-        "audioCodec": "opus",
-        "audioSource": "default_output",
-        "colorRange": "limited",
-        "copyToClipboard": false,
-        "directory": "/Media/Records/screencast",
-        "frameRate": 60,
-        "quality": "ultra",
-        "showCursor": true,
-        "videoCodec": "h264",
-        "videoSource": "portal"
-    },
     "sessionMenu": {
         "countdownDuration": 5000,
         "enableCountdown": false,
@@ -490,7 +486,7 @@
         "showHeader": false,
         "showNumberLabels": true
     },
-    "settingsVersion": 37,
+    "settingsVersion": 40,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,
@@ -516,42 +512,48 @@
         "warningColor": "#9bfece"
     },
     "templates": {
-        "alacritty": false,
-        "cava": true,
-        "code": false,
-        "discord": true,
-        "emacs": false,
-        "enableUserTemplates": true,
-        "foot": false,
-        "fuzzel": true,
-        "ghostty": false,
-        "gtk": true,
-        "helix": false,
-        "hyprland": false,
-        "kcolorscheme": false,
-        "kitty": true,
-        "mango": false,
-        "niri": false,
-        "pywalfox": false,
-        "qt": false,
-        "spicetify": false,
-        "telegram": true,
-        "vicinae": false,
-        "walker": false,
-        "wezterm": false,
-        "yazi": true,
-        "zed": false
+        "activeTemplates": [
+            {
+                "enabled": true,
+                "id": "gtk"
+            },
+            {
+                "enabled": true,
+                "id": "kitty"
+            },
+            {
+                "enabled": true,
+                "id": "fuzzel"
+            },
+            {
+                "enabled": true,
+                "id": "discord"
+            },
+            {
+                "enabled": true,
+                "id": "telegram"
+            },
+            {
+                "enabled": true,
+                "id": "cava"
+            }
+        ],
+        "enableUserTemplates": true
     },
     "ui": {
+        "bluetoothDetailsViewMode": "grid",
+        "bluetoothHideUnnamedDevices": false,
         "boxBorderEnabled": false,
-        "fontDefault": "Nimbus Sans",
-        "fontDefaultScale": 1,
+        "fontDefault": "Hack",
+        "fontDefaultScale": 0.99,
         "fontFixed": "JetBrainsMono Nerd Font",
         "fontFixedScale": 1,
+        "networkPanelView": "wifi",
         "panelBackgroundOpacity": 0.9700000000000001,
         "panelsAttachedToBar": true,
         "settingsPanelMode": "attached",
-        "tooltipsEnabled": false
+        "tooltipsEnabled": false,
+        "wifiDetailsViewMode": "grid"
     },
     "wallpaper": {
         "directory": "/home/shin/Pictures/homework/norm",
