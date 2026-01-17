@@ -21,10 +21,10 @@ fi
 
 # Toggle Kitty transparency
 foot_conf="$HOME/.config/foot/transparency.conf"
-if rg -q '^alpha.*' "$foot_conf"; then
-    sed -i 's/^alpha.*/#alpha=.93/' "$foot_conf"
+if rg -q '^alpha=1' "$foot_conf"; then
+    sed -i 's/^alpha.*/alpha=.93/' "$foot_conf"
     foot --reload
-else
-    sed -i 's/^#alpha.*/alpha=.93/' "$foot_conf"
+elif rg -q '^alpha=\.\d+' "$foot_conf"; then
+    sed -i 's/^alpha.*/alpha=1/' "$foot_conf"
     foot --reload
 fi

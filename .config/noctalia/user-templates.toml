@@ -23,11 +23,10 @@ post_hook = "starship init fish | source"
 # input_path = "~/.config/matugen/templates/kitty/kitty-colors.conf"
 # output_path = "~/.config/kitty/current-theme.conf"
 # post_hook = "pkill -SIGUSR1 kitty"
-
-[templates.foot]
-input_path = "~/.config/matugen/templates/foot/foot"
-output_path = "~/.config/foot/themes/noctalia"
-post_hook = "foot --reload-on-change"
+#
+# [templates.foot]
+# input_path = "~/.config/matugen/templates/foot/foot"
+# output_path = "~/.config/foot/themes/noctalia"
 
 [templates.kde_colors]
 input_path = "~/.config/matugen/templates/kde/color.txt"
