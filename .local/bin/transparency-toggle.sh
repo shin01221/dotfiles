@@ -20,11 +20,11 @@ else
 fi
 
 # Toggle Kitty transparency
-kitty_conf="$HOME/.config/kitty/kitty.conf"
-if grep -q '^[[:space:]]*#[[:space:]]*background_opacity' "$kitty_conf"; then
-    sed -i 's/^[[:space:]]*#[[:space:]]*\(background_opacity.*\)/\1/' "$kitty_conf"
-    kill -SIGUSR1 $(pgrep kitty)
-elif grep -q '^[[:space:]]*background_opacity' "$kitty_conf"; then
-    sed -i 's/^[[:space:]]*\(background_opacity.*\)/#\1/' "$kitty_conf"
-    kill -SIGUSR1 $(pgrep kitty)
+foot_conf="$HOME/.config/foot/transparency.conf"
+if rg -q '^alpha.*' "$foot_conf"; then
+    sed -i 's/^alpha.*/#alpha=.93/' "$foot_conf"
+    foot --reload
+else
+    sed -i 's/^#alpha.*/alpha=.93/' "$foot_conf"
+    foot --reload
 fi

@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-CLASS="$1"
+APP_ID="$1"
 
-if [ -z "$1" ]; then
-    echo "Error: No class name provided."
+if [ -z "$APP_ID" ]; then
+    echo "Error: No app-id provided."
     exit 1
 fi
 
-if pgrep -f "kitty.*--class $CLASS" >/dev/null; then
-    pkill -f "kitty.*--class $CLASS"
+if pgrep -f "foot.*--app-id=$APP_ID" >/dev/null; then
+    pkill -f "foot.*--app-id=$APP_ID"
 else
-    kitty --class $CLASS env NO_TMUX=1 fish -c \
+    foot --app-id="$APP_ID" env NO_TMUX=1 fish -c \
         'tmux attach -t scratch-term 2>/dev/null || tmux new -s scratch-term'
 fi
