@@ -519,10 +519,6 @@
             },
             {
                 "enabled": true,
-                "id": "kitty"
-            },
-            {
-                "enabled": true,
                 "id": "fuzzel"
             },
             {
@@ -540,10 +536,6 @@
             {
                 "enabled": true,
                 "id": "foot"
-            },
-            {
-                "enabled": true,
-                "id": "ghostty"
             }
         ],
         "enableUserTemplates": true
