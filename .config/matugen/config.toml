@@ -36,11 +36,11 @@ input_path = "~/.config/matugen/templates/gtk-3.0/gtk.css"
 output_path = "~/.config/gtk-3.0/gtk.css"
 
 [templates.vesktop]
-input_path = "/etc/xdg/quickshell/noctalia/Assets/MatugenTemplates/vesktop.css"
+input_path = "/etc/xdg/quickshell/noctalia/Assets/Templates/vesktop.css"
 output_path = "~/.config/vesktop/themes/noctalia.theme.css"
 
 [templates.cava]
-input_path = "/etc/xdg/quickshell/noctalia/Assets/MatugenTemplates/cava.ini"
+input_path = "/etc/xdg/quickshell/noctalia/Assets/Templates/cava.ini"
 output_path = "~/.config/cava/themes/noctalia"
 post_hook = "pkill -USR1 cava"
 

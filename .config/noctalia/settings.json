@@ -236,7 +236,7 @@
         "manualSunset": "18:30",
         "predefinedScheme": "Gruvbox",
         "schedulingMode": "off",
-        "useWallpaperColors": true
+        "useWallpaperColors": false
     },
     "controlCenter": {
         "cards": [
@@ -567,7 +567,7 @@
         "wifiDetailsViewMode": "grid"
     },
     "wallpaper": {
-        "directory": "/home/shin/Pictures/homework/norm",
+        "directory": "/home/shin/Pictures/homework/ecchi/breast",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#004880",

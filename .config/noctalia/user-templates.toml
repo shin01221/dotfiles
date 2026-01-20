@@ -19,10 +19,6 @@ input_path = "~/.config/matugen/templates/starship/starship-colors.toml"
 output_path = "~/.config/starship.toml"
 post_hook = "starship init fish | source"
 
-# [templates.foot]
-# input_path = "~/.config/matugen/templates/foot/foot"
-# output_path = "~/.config/foot/themes/noctalia"
-
 [templates.kde_colors]
 input_path = "~/.config/matugen/templates/kde/color.txt"
 output_path = "~/.local/state/quickshell/user/generated/color.txt"
