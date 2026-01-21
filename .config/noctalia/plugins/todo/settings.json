@@ -1,0 +1,21 @@
+{
+  "pages": [
+    {
+      "id": 0,
+      "name": "General"
+    }
+  ],
+  "current_page_id": 0,
+  "todos": [
+    {
+      "id": 1768947168634,
+      "text": "theme switch script",
+      "completed": false,
+      "createdAt": "2026-01-20T22:12:48.634Z",
+      "pageId": 0
+    }
+  ],
+  "count": 1,
+  "completedCount": 0,
+  "isExpanded": false
+}

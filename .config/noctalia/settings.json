@@ -132,15 +132,6 @@
                     "usePrimaryColor": false
                 },
                 {
-                    "colorizeIcons": true,
-                    "hideMode": "hidden",
-                    "id": "ActiveWindow",
-                    "maxWidth": 145,
-                    "scrollingMode": "hover",
-                    "showIcon": true,
-                    "useFixedWidth": false
-                },
-                {
                     "compactMode": false,
                     "compactShowAlbumArt": true,
                     "compactShowVisualizer": false,
@@ -163,7 +154,7 @@
                 {
                     "blacklist": [
                     ],
-                    "colorizeIcons": false,
+                    "colorizeIcons": true,
                     "drawerEnabled": true,
                     "hidePassive": false,
                     "id": "Tray",
@@ -171,20 +162,35 @@
                     ]
                 },
                 {
-                    "hideWhenZero": true,
-                    "hideWhenZeroUnread": false,
-                    "id": "NotificationHistory",
-                    "showUnreadBadge": true
+                    "defaultSettings": {
+                        "completedCount": 0,
+                        "count": 0,
+                        "current_page_id": 0,
+                        "isExpanded": false,
+                        "pages": [
+                            {
+                                "id": 0,
+                                "name": "General"
+                            }
+                        ],
+                        "showBackground": true,
+                        "showCompleted": true,
+                        "todos": [
+                        ]
+                    },
+                    "id": "plugin:todo"
                 },
                 {
-                    "deviceNativePath": "",
-                    "displayMode": "onhover",
-                    "hideIfIdle": false,
-                    "hideIfNotDetected": true,
-                    "id": "Battery",
-                    "showNoctaliaPerformance": true,
-                    "showPowerProfiles": false,
-                    "warningThreshold": 30
+                    "defaultSettings": {
+                        "autoStartBreaks": false,
+                        "autoStartWork": false,
+                        "compactMode": false,
+                        "longBreakDuration": 15,
+                        "sessionsBeforeLongBreak": 4,
+                        "shortBreakDuration": 5,
+                        "workDuration": 25
+                    },
+                    "id": "plugin:pomodoro"
                 },
                 {
                     "defaultSettings": {
@@ -193,13 +199,29 @@
                     "id": "plugin:mini-docker"
                 },
                 {
+                    "deviceNativePath": "",
+                    "displayMode": "onhover",
+                    "hideIfIdle": true,
+                    "hideIfNotDetected": true,
+                    "id": "Battery",
+                    "showNoctaliaPerformance": true,
+                    "showPowerProfiles": true,
+                    "warningThreshold": 30
+                },
+                {
                     "colorizeDistroLogo": false,
-                    "colorizeSystemIcon": "none",
+                    "colorizeSystemIcon": "primary",
                     "customIconPath": "",
                     "enableColorization": false,
                     "icon": "noctalia",
                     "id": "ControlCenter",
                     "useDistroLogo": false
+                },
+                {
+                    "defaultSettings": {
+                        "mode": "region"
+                    },
+                    "id": "plugin:screenshot"
                 }
             ]
         }
@@ -231,10 +253,10 @@
     },
     "colorSchemes": {
         "darkMode": true,
-        "extractionMethod": "material",
+        "generationMethod": "tonal-spot",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
-        "predefinedScheme": "Gruvbox",
+        "predefinedScheme": "Miasma",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -495,7 +517,7 @@
         "showHeader": false,
         "showNumberLabels": true
     },
-    "settingsVersion": 41,
+    "settingsVersion": 42,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,
@@ -547,6 +569,18 @@
             {
                 "enabled": true,
                 "id": "foot"
+            },
+            {
+                "enabled": true,
+                "id": "btop"
+            },
+            {
+                "enabled": true,
+                "id": "kitty"
+            },
+            {
+                "enabled": true,
+                "id": "spicetify"
             }
         ],
         "enableUserTheming": true
@@ -567,7 +601,8 @@
         "wifiDetailsViewMode": "grid"
     },
     "wallpaper": {
-        "directory": "/home/shin/Pictures/homework/ecchi/breast",
+        "automationEnabled": false,
+        "directory": "/home/shin/Pictures/homework/ecchi/nobreast/ass",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#004880",
@@ -577,11 +612,10 @@
         ],
         "overviewEnabled": false,
         "panelPosition": "follow_bar",
-        "randomEnabled": false,
         "randomIntervalSec": 1800,
         "recursiveSearch": true,
         "setWallpaperOnAllMonitors": true,
-        "solidColor": "#1a1a2e",
+        "solidColor": "#180905",
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": "fade",
