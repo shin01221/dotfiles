@@ -36,7 +36,7 @@ post_hook = "bash ~/.local/bin/theme-switch-hook.bash"
 [templates.kde_colors]
 input_path = "~/.config/matugen/templates/kde/color.txt"
 output_path = "~/.local/state/quickshell/user/generated/color.txt"
-post_hook = "~/.config/matugen/templates/kde/kde-material-you-colors-wrapper.sh"
+post_hook = "~/.config/matugen/templates/kde/kde-material-you-colors-wrapper.sh && plasma-apply-colorscheme noctalia"
 
 [templates.hyprland]
 input_path = "~/.config/matugen/templates/hyprland/colors.conf"

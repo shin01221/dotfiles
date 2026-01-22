@@ -42,7 +42,7 @@
         "monitors": [
         ],
         "outerCorners": true,
-        "position": "left",
+        "position": "top",
         "screenOverrides": [
         ],
         "showCapsule": true,
@@ -51,16 +51,34 @@
         "widgets": {
             "center": [
                 {
+                    "compactMode": true,
+                    "compactShowAlbumArt": true,
+                    "compactShowVisualizer": false,
+                    "hideMode": "hidden",
+                    "hideWhenIdle": false,
+                    "id": "MediaMini",
+                    "maxWidth": 145,
+                    "panelShowAlbumArt": true,
+                    "panelShowVisualizer": true,
+                    "scrollingMode": "hover",
+                    "showAlbumArt": true,
+                    "showArtistFirst": true,
+                    "showProgressRing": true,
+                    "showVisualizer": true,
+                    "useFixedWidth": false,
+                    "visualizerType": "mirrored"
+                },
+                {
                     "characterCount": 2,
-                    "colorizeIcons": true,
+                    "colorizeIcons": false,
                     "enableScrollWheel": true,
                     "followFocusedScreen": true,
                     "groupedBorderOpacity": 1,
                     "hideUnoccupied": true,
                     "iconScale": 0.8,
                     "id": "Workspace",
-                    "labelMode": "index",
-                    "showApplications": true,
+                    "labelMode": "none",
+                    "showApplications": false,
                     "showLabelsOnlyWhenOccupied": true,
                     "unfocusedIconsOpacity": 1
                 }
@@ -99,17 +117,8 @@
                 },
                 {
                     "customFont": "",
-                    "formatHorizontal": "hh:mm AP ddd, MMM dd",
+                    "formatHorizontal": "ddd, MMM hh:mm AP",
                     "formatVertical": "ddd MMM d",
-                    "id": "Clock",
-                    "tooltipFormat": "HH:mm ddd, MMM dd",
-                    "useCustomFont": false,
-                    "usePrimaryColor": false
-                },
-                {
-                    "customFont": "",
-                    "formatHorizontal": "dd MM h:mm ap",
-                    "formatVertical": "h mm ap",
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
                     "useCustomFont": false,
@@ -130,24 +139,6 @@
                     "showSwapUsage": false,
                     "useMonospaceFont": true,
                     "usePrimaryColor": false
-                },
-                {
-                    "compactMode": false,
-                    "compactShowAlbumArt": true,
-                    "compactShowVisualizer": false,
-                    "hideMode": "hidden",
-                    "hideWhenIdle": false,
-                    "id": "MediaMini",
-                    "maxWidth": 145,
-                    "panelShowAlbumArt": true,
-                    "panelShowVisualizer": true,
-                    "scrollingMode": "hover",
-                    "showAlbumArt": true,
-                    "showArtistFirst": true,
-                    "showProgressRing": true,
-                    "showVisualizer": false,
-                    "useFixedWidth": false,
-                    "visualizerType": "linear"
                 }
             ],
             "right": [
@@ -181,6 +172,39 @@
                     "id": "plugin:todo"
                 },
                 {
+                    "deviceNativePath": "",
+                    "displayMode": "onhover",
+                    "hideIfIdle": true,
+                    "hideIfNotDetected": true,
+                    "id": "Battery",
+                    "showNoctaliaPerformance": true,
+                    "showPowerProfiles": true,
+                    "warningThreshold": 30
+                },
+                {
+                    "defaultSettings": {
+                        "mode": "region"
+                    },
+                    "id": "plugin:screenshot"
+                },
+                {
+                    "defaultSettings": {
+                        "audioCodec": "opus",
+                        "audioSource": "default_output",
+                        "colorRange": "limited",
+                        "copyToClipboard": false,
+                        "directory": "",
+                        "filenamePattern": "recording_yyyyMMdd_HHmmss",
+                        "frameRate": "60",
+                        "quality": "very_high",
+                        "resolution": "original",
+                        "showCursor": true,
+                        "videoCodec": "h264",
+                        "videoSource": "portal"
+                    },
+                    "id": "plugin:screen-recorder"
+                },
+                {
                     "defaultSettings": {
                         "autoStartBreaks": false,
                         "autoStartWork": false,
@@ -197,31 +221,6 @@
                         "refreshInterval": 5000
                     },
                     "id": "plugin:mini-docker"
-                },
-                {
-                    "deviceNativePath": "",
-                    "displayMode": "onhover",
-                    "hideIfIdle": true,
-                    "hideIfNotDetected": true,
-                    "id": "Battery",
-                    "showNoctaliaPerformance": true,
-                    "showPowerProfiles": true,
-                    "warningThreshold": 30
-                },
-                {
-                    "colorizeDistroLogo": false,
-                    "colorizeSystemIcon": "primary",
-                    "customIconPath": "",
-                    "enableColorization": false,
-                    "icon": "noctalia",
-                    "id": "ControlCenter",
-                    "useDistroLogo": false
-                },
-                {
-                    "defaultSettings": {
-                        "mode": "region"
-                    },
-                    "id": "plugin:screenshot"
                 }
             ]
         }
@@ -253,7 +252,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Tokyo Night Moon",
+        "predefinedScheme": "Lilac AMOLED",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -418,13 +417,13 @@
         "wifiEnabled": true
     },
     "nightLight": {
-        "autoSchedule": false,
+        "autoSchedule": true,
         "dayTemp": "6500",
-        "enabled": false,
+        "enabled": true,
         "forced": false,
         "manualSunrise": "08:00",
         "manualSunset": "20:00",
-        "nightTemp": "6000"
+        "nightTemp": "3554"
     },
     "notifications": {
         "backgroundOpacity": 1,
@@ -602,7 +601,7 @@
         "networkPanelView": "wifi",
         "panelBackgroundOpacity": 0.9700000000000001,
         "panelsAttachedToBar": true,
-        "settingsPanelMode": "attached",
+        "settingsPanelMode": "centered",
         "tooltipsEnabled": false,
         "wifiDetailsViewMode": "grid"
     },
