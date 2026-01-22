@@ -53,5 +53,6 @@ input_path = "~/.config/matugen/templates/kde/color.txt"
 output_path = "~/.local/state/quickshell/user/generated/color.txt"
 
 [templates.wallpaper]
+post_hook = "bash ~/.local/bin/fix-illogical-tmux.bash"
 input_path = "~/.config/matugen/templates/wallpaper.txt"
 output_path = "~/.local/state/quickshell/user/generated/wallpaper/path.txt"

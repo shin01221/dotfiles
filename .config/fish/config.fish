@@ -35,11 +35,11 @@ if test -z "$DISPLAY"; and test "$XDG_VTNR" -eq 1
 end
 
 # colors
-set fish_color_command magenta --bold
-set fish_color_quote yellow
+set fish_color_command yellow --bold
+set fish_color_quote magenta
 set fish_color_redirection yellow
 set fish_color_error blue
-set fish_color_valid_path magenta --bold
+set fish_color_valid_path white --bold
 
 tmux-set
 

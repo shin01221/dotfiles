@@ -42,6 +42,6 @@ post_hook = "~/.config/matugen/templates/kde/kde-material-you-colors-wrapper.sh"
 input_path = "~/.config/matugen/templates/hyprland/colors.conf"
 output_path = "~/.config/hypr/hyprland/colors.conf"
 
-[templates.wallpaper]
-input_path = "~/.config/matugen/templates/wallpaper.txt"
-output_path = "~/.local/state/quickshell/user/generated/wallpaper/path.txt"
+# [templates.wallpaper]
+# input_path = "~/.config/matugen/templates/wallpaper.txt"
+# output_path = "~/.local/state/quickshell/user/generated/wallpaper/path.txt"

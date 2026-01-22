@@ -135,7 +135,7 @@ else
             fi
         else
             cp "$starship_configs/starship.toml-nord-light" "$HOME/.config/starship.toml"
-            cp "$tmux_themes/nord-light" "$HOME/.config/tmux/theme.conf"
+            cp "$tmux_themes/nord-light.conf" "$HOME/.config/tmux/theme.conf"
         fi
     }
     rosepine() {

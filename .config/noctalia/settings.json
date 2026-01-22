@@ -13,9 +13,9 @@
         "position": "follow_bar",
         "screenshotAnnotationTool": "",
         "showCategories": true,
-        "showIconBackground": false,
+        "showIconBackground": true,
         "sortByMostUsed": true,
-        "terminalCommand": "kitty -e",
+        "terminalCommand": "NO_TMUX foot -e",
         "useApp2Unit": false,
         "viewMode": "list"
     },
@@ -31,11 +31,11 @@
         "volumeStep": 5
     },
     "bar": {
-        "backgroundOpacity": 0.93,
-        "capsuleOpacity": 1,
+        "backgroundOpacity": 1,
+        "capsuleOpacity": 0.66,
         "density": "default",
         "exclusive": true,
-        "floating": true,
+        "floating": false,
         "hideOnOverview": false,
         "marginHorizontal": 3,
         "marginVertical": 9,
@@ -243,10 +243,6 @@
             },
             {
                 "enabled": true,
-                "id": "timer-card"
-            },
-            {
-                "enabled": true,
                 "id": "weather-card"
             }
         ]
@@ -256,7 +252,8 @@
         "generationMethod": "tonal-spot",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
-        "predefinedScheme": "Miasma",
+        "monitorForColors": "",
+        "predefinedScheme": "Tokyo Night Moon",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -395,6 +392,7 @@
         "screenLock": "",
         "screenUnlock": "",
         "session": "",
+        "startup": "",
         "wallpaperChange": ""
     },
     "location": {
@@ -517,7 +515,7 @@
         "showHeader": false,
         "showNumberLabels": true
     },
-    "settingsVersion": 42,
+    "settingsVersion": 43,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,
@@ -581,6 +579,14 @@
             {
                 "enabled": true,
                 "id": "spicetify"
+            },
+            {
+                "enabled": true,
+                "id": "kcolorscheme"
+            },
+            {
+                "enabled": true,
+                "id": "qt"
             }
         ],
         "enableUserTheming": true
@@ -602,7 +608,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/shin/Pictures/homework/ecchi/nobreast/ass",
+        "directory": "/home/shin/Pictures/homework/norm",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#004880",
@@ -611,16 +617,17 @@
         "monitorDirectories": [
         ],
         "overviewEnabled": false,
-        "panelPosition": "follow_bar",
+        "panelPosition": "center",
         "randomIntervalSec": 1800,
-        "recursiveSearch": true,
         "setWallpaperOnAllMonitors": true,
+        "showHiddenFiles": false,
         "solidColor": "#180905",
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": "fade",
         "useSolidColor": false,
         "useWallhaven": false,
+        "viewMode": "recursive",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
