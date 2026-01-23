@@ -1,7 +1,11 @@
 #!/bin/bash
 
 # Vars
-path="$(jq -r '.background.wallpaperPath' ~/.config/illogical-impulse/config.json)"
+if pgrep -f 'qs -c noctalia' >/dev/null; then
+	path=$(jq -r '.wallpapers["eDP-2"]' ~/.cache/noctalia/wallpapers.json)
+else
+	path=$(jq -r '.background.wallpaperPath' ~/.config/illogical-impulse/config.json)
+fi
 base_homework="/Media/Pictures/homework"
 base_fav="/Media/Pictures/fav"
 base_wallpapers="/Media/Pictures/Wallpapers"

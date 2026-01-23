@@ -117,7 +117,7 @@
                 },
                 {
                     "customFont": "",
-                    "formatHorizontal": "ddd, MMM hh:mm AP",
+                    "formatHorizontal": "ddd MMM d",
                     "formatVertical": "ddd MMM d",
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
@@ -145,7 +145,7 @@
                 {
                     "blacklist": [
                     ],
-                    "colorizeIcons": true,
+                    "colorizeIcons": false,
                     "drawerEnabled": true,
                     "hidePassive": false,
                     "id": "Tray",
@@ -252,7 +252,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Lilac AMOLED",
+        "predefinedScheme": "GruvboxAlt",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -333,6 +333,18 @@
                         "visualizerVisibility": "always",
                         "x": 1500,
                         "y": 960
+                    },
+                    {
+                        "clockStyle": "digital",
+                        "customFont": "",
+                        "format": "HH:mm\\nd MMMM yyyy",
+                        "id": "Clock",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "useCustomFont": false,
+                        "usePrimaryColor": true,
+                        "x": 80,
+                        "y": 900
                     }
                 ]
             }
@@ -364,7 +376,7 @@
         "boxRadiusRatio": 1,
         "compactLockScreen": true,
         "dimmerOpacity": 0.4,
-        "enableLockScreenCountdown": true,
+        "enableLockScreenCountdown": false,
         "enableShadows": true,
         "forceBlackScreenCorners": true,
         "iRadiusRatio": 1.04,
@@ -419,7 +431,7 @@
     "nightLight": {
         "autoSchedule": true,
         "dayTemp": "6500",
-        "enabled": true,
+        "enabled": false,
         "forced": false,
         "manualSunrise": "08:00",
         "manualSunset": "20:00",
@@ -594,7 +606,7 @@
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
         "boxBorderEnabled": false,
-        "fontDefault": "DejaVu Sans Mono",
+        "fontDefault": "Bitstream Vera Sans Mono",
         "fontDefaultScale": 0.99,
         "fontFixed": "JetBrainsMono Nerd Font",
         "fontFixedScale": 1,
@@ -607,12 +619,12 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/shin/Pictures/homework/norm",
+        "directory": "/home/shin/Pictures/homework/",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#004880",
         "fillMode": "crop",
-        "hideWallpaperFilenames": true,
+        "hideWallpaperFilenames": false,
         "monitorDirectories": [
         ],
         "overviewEnabled": false,
@@ -621,12 +633,12 @@
         "setWallpaperOnAllMonitors": true,
         "showHiddenFiles": false,
         "solidColor": "#180905",
-        "transitionDuration": 1500,
+        "transitionDuration": 1000,
         "transitionEdgeSmoothness": 0.05,
-        "transitionType": "fade",
+        "transitionType": "random",
         "useSolidColor": false,
         "useWallhaven": false,
-        "viewMode": "recursive",
+        "viewMode": "browse",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
