@@ -17,12 +17,12 @@
     {
       "id": 1769161398052,
       "text": "test debian vm in eve",
-      "completed": false,
+      "completed": true,
       "createdAt": "2026-01-23T09:43:18.052Z",
       "pageId": 0
     }
   ],
   "count": 2,
-  "completedCount": 0,
+  "completedCount": 1,
   "isExpanded": false
 }
