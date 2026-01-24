@@ -6,6 +6,7 @@
         "customLaunchPrefixEnabled": false,
         "enableClipPreview": true,
         "enableClipboardHistory": true,
+        "enableSettingsSearch": true,
         "iconMode": "tabler",
         "ignoreMouseInput": false,
         "pinnedApps": [
@@ -183,29 +184,6 @@
                 },
                 {
                     "defaultSettings": {
-                        "mode": "region"
-                    },
-                    "id": "plugin:screenshot"
-                },
-                {
-                    "defaultSettings": {
-                        "audioCodec": "opus",
-                        "audioSource": "default_output",
-                        "colorRange": "limited",
-                        "copyToClipboard": false,
-                        "directory": "",
-                        "filenamePattern": "recording_yyyyMMdd_HHmmss",
-                        "frameRate": "60",
-                        "quality": "very_high",
-                        "resolution": "original",
-                        "showCursor": true,
-                        "videoCodec": "h264",
-                        "videoSource": "portal"
-                    },
-                    "id": "plugin:screen-recorder"
-                },
-                {
-                    "defaultSettings": {
                         "autoStartBreaks": false,
                         "autoStartWork": false,
                         "compactMode": false,
@@ -252,7 +230,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "GruvboxAlt",
+        "predefinedScheme": "Miasma",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -335,16 +313,17 @@
                         "y": 960
                     },
                     {
-                        "clockStyle": "digital",
+                        "clockStyle": "minimal",
                         "customFont": "",
-                        "format": "HH:mm\\nd MMMM yyyy",
+                        "format": "h:mm AP \\nMMMM yyyy",
                         "id": "Clock",
                         "roundedCorners": true,
+                        "scale": 1.3150676308880684,
                         "showBackground": true,
                         "useCustomFont": false,
-                        "usePrimaryColor": true,
-                        "x": 80,
-                        "y": 900
+                        "usePrimaryColor": false,
+                        "x": 120,
+                        "y": 960
                     }
                 ]
             }
@@ -526,7 +505,7 @@
         "showHeader": false,
         "showNumberLabels": true
     },
-    "settingsVersion": 43,
+    "settingsVersion": 44,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,
@@ -598,6 +577,10 @@
             {
                 "enabled": true,
                 "id": "qt"
+            },
+            {
+                "enabled": true,
+                "id": "yazi"
             }
         ],
         "enableUserTheming": true
