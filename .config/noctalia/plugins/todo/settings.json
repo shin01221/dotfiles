@@ -17,5 +17,7 @@
   ],
   "count": 1,
   "completedCount": 0,
-  "isExpanded": false
+  "isExpanded": false,
+  "showCompleted": true,
+  "showBackground": true
 }

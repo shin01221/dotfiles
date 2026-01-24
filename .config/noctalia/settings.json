@@ -16,7 +16,7 @@
         "showCategories": true,
         "showIconBackground": true,
         "sortByMostUsed": true,
-        "terminalCommand": "NO_TMUX foot -e",
+        "terminalCommand": "NO_TMUX=1 foot -e",
         "useApp2Unit": false,
         "viewMode": "list"
     },
@@ -118,8 +118,8 @@
                 },
                 {
                     "customFont": "",
-                    "formatHorizontal": "ddd MMM d",
-                    "formatVertical": "ddd MMM d",
+                    "formatHorizontal": "ddd MMM d h:mm AP",
+                    "formatVertical": "ddd MMM d h:mm AP",
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
                     "useCustomFont": false,
@@ -173,14 +173,7 @@
                     "id": "plugin:todo"
                 },
                 {
-                    "deviceNativePath": "",
-                    "displayMode": "onhover",
-                    "hideIfIdle": true,
-                    "hideIfNotDetected": true,
-                    "id": "Battery",
-                    "showNoctaliaPerformance": true,
-                    "showPowerProfiles": true,
-                    "warningThreshold": 30
+                    "id": "plugin:dns-switcher"
                 },
                 {
                     "defaultSettings": {
@@ -199,6 +192,16 @@
                         "refreshInterval": 5000
                     },
                     "id": "plugin:mini-docker"
+                },
+                {
+                    "deviceNativePath": "",
+                    "displayMode": "onhover",
+                    "hideIfIdle": true,
+                    "hideIfNotDetected": true,
+                    "id": "Battery",
+                    "showNoctaliaPerformance": true,
+                    "showPowerProfiles": true,
+                    "warningThreshold": 30
                 }
             ]
         }
@@ -310,19 +313,6 @@
                         "visualizerType": "wave",
                         "visualizerVisibility": "always",
                         "x": 1500,
-                        "y": 960
-                    },
-                    {
-                        "clockStyle": "minimal",
-                        "customFont": "",
-                        "format": "h:mm AP \\nMMMM yyyy",
-                        "id": "Clock",
-                        "roundedCorners": true,
-                        "scale": 1.3150676308880684,
-                        "showBackground": true,
-                        "useCustomFont": false,
-                        "usePrimaryColor": false,
-                        "x": 120,
                         "y": 960
                     }
                 ]
