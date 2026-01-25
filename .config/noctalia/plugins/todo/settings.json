@@ -8,10 +8,10 @@
   "current_page_id": 0,
   "todos": [
     {
-      "id": 1769296167018,
-      "text": "make new ubuntu server vm",
+      "id": 1769344752968,
+      "text": "learn more about ubuntu server",
       "completed": false,
-      "createdAt": "2026-01-24T23:09:27.018Z",
+      "createdAt": "2026-01-25T12:39:12.968Z",
       "pageId": 0
     },
     {
@@ -20,10 +20,17 @@
       "completed": false,
       "createdAt": "2026-01-23T09:44:21.556Z",
       "pageId": 0
+    },
+    {
+      "id": 1769296167018,
+      "text": "make new ubuntu server vm",
+      "completed": true,
+      "createdAt": "2026-01-24T23:09:27.018Z",
+      "pageId": 0
     }
   ],
-  "count": 2,
-  "completedCount": 0,
+  "count": 3,
+  "completedCount": 1,
   "isExpanded": false,
   "showCompleted": true,
   "showBackground": true

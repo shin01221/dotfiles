@@ -258,7 +258,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Kanagawa",
+        "predefinedScheme": "GruvboxAlt",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -638,7 +638,7 @@
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#004880",
-        "fillMode": "crop",
+        "fillMode": "stretch",
         "hideWallpaperFilenames": false,
         "monitorDirectories": [
         ],
