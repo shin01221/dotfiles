@@ -67,7 +67,7 @@
                     "showProgressRing": true,
                     "showVisualizer": true,
                     "useFixedWidth": false,
-                    "visualizerType": "mirrored"
+                    "visualizerType": "wave"
                 },
                 {
                     "characterCount": 2,
@@ -103,9 +103,9 @@
                     "parseJson": false,
                     "rightClickExec": "",
                     "rightClickUpdateText": false,
-                    "showIcon": true,
+                    "showIcon": false,
                     "textCollapse": "",
-                    "textCommand": "",
+                    "textCommand": "echo \"死Shin\"",
                     "textIntervalMs": 3000,
                     "textStream": false,
                     "wheelDownExec": "",
@@ -140,6 +140,13 @@
                     "showSwapUsage": false,
                     "useMonospaceFont": true,
                     "usePrimaryColor": false
+                },
+                {
+                    "defaultSettings": {
+                        "hideBackground": false,
+                        "minimumThreshold": 10
+                    },
+                    "id": "plugin:catwalk"
                 }
             ],
             "right": [
@@ -189,6 +196,24 @@
                 },
                 {
                     "defaultSettings": {
+                        "audioCodec": "opus",
+                        "audioSource": "default_output",
+                        "colorRange": "limited",
+                        "copyToClipboard": false,
+                        "directory": "",
+                        "filenamePattern": "recording_yyyyMMdd_HHmmss",
+                        "frameRate": "60",
+                        "hideInactive": false,
+                        "quality": "very_high",
+                        "resolution": "original",
+                        "showCursor": true,
+                        "videoCodec": "h264",
+                        "videoSource": "portal"
+                    },
+                    "id": "plugin:screen-recorder"
+                },
+                {
+                    "defaultSettings": {
                         "refreshInterval": 5000
                     },
                     "id": "plugin:mini-docker"
@@ -233,7 +258,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Miasma",
+        "predefinedScheme": "Kanagawa",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -309,11 +334,32 @@
                         "showAlbumArt": true,
                         "showBackground": true,
                         "showButtons": true,
-                        "showVisualizer": true,
+                        "showVisualizer": false,
                         "visualizerType": "wave",
                         "visualizerVisibility": "always",
                         "x": 1500,
                         "y": 960
+                    },
+                    {
+                        "defaultSettings": {
+                            "barWidth": 0.6,
+                            "bloomIntensity": 0.5,
+                            "customPrimaryColor": "#6750A4",
+                            "customSecondaryColor": "#625B71",
+                            "fadeWhenIdle": false,
+                            "innerDiameter": 0.7,
+                            "ringOpacity": 0.8,
+                            "rotationSpeed": 0.5,
+                            "sensitivity": 1.5,
+                            "useCustomColors": false,
+                            "visualizationMode": 3,
+                            "waveThickness": 1
+                        },
+                        "id": "plugin:fancy-audiovisualizer",
+                        "scale": 1.387619732916063,
+                        "showBackground": true,
+                        "x": 40,
+                        "y": 420
                     }
                 ]
             }
@@ -551,10 +597,6 @@
             {
                 "enabled": true,
                 "id": "btop"
-            },
-            {
-                "enabled": true,
-                "id": "kitty"
             },
             {
                 "enabled": true,
