@@ -33,13 +33,16 @@
     },
     "bar": {
         "backgroundOpacity": 1,
+        "barType": "floating",
         "capsuleOpacity": 0.66,
         "density": "default",
         "exclusive": true,
-        "floating": false,
+        "floating": true,
+        "frameRadius": 12,
+        "frameThickness": 8,
         "hideOnOverview": false,
-        "marginHorizontal": 3,
-        "marginVertical": 9,
+        "marginHorizontal": 18,
+        "marginVertical": 5,
         "monitors": [
         ],
         "outerCorners": true,
@@ -48,7 +51,7 @@
         ],
         "showCapsule": true,
         "showOutline": false,
-        "useSeparateOpacity": false,
+        "useSeparateOpacity": true,
         "widgets": {
             "center": [
                 {
@@ -72,14 +75,18 @@
                 {
                     "characterCount": 2,
                     "colorizeIcons": false,
+                    "emptyColor": "secondary",
                     "enableScrollWheel": true,
+                    "focusedColor": "primary",
                     "followFocusedScreen": true,
                     "groupedBorderOpacity": 1,
                     "hideUnoccupied": true,
                     "iconScale": 0.8,
                     "id": "Workspace",
                     "labelMode": "none",
+                    "occupiedColor": "secondary",
                     "showApplications": false,
+                    "showBadge": true,
                     "showLabelsOnlyWhenOccupied": true,
                     "unfocusedIconsOpacity": 1
                 }
@@ -140,13 +147,6 @@
                     "showSwapUsage": false,
                     "useMonospaceFont": true,
                     "usePrimaryColor": false
-                },
-                {
-                    "defaultSettings": {
-                        "hideBackground": false,
-                        "minimumThreshold": 10
-                    },
-                    "id": "plugin:catwalk"
                 }
             ],
             "right": [
@@ -213,12 +213,6 @@
                     "id": "plugin:screen-recorder"
                 },
                 {
-                    "defaultSettings": {
-                        "refreshInterval": 5000
-                    },
-                    "id": "plugin:mini-docker"
-                },
-                {
                     "deviceNativePath": "",
                     "displayMode": "onhover",
                     "hideIfIdle": true,
@@ -258,7 +252,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "GruvboxAlt",
+        "predefinedScheme": "Noctalia (default)",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -359,7 +353,7 @@
                         "scale": 1.387619732916063,
                         "showBackground": true,
                         "x": 40,
-                        "y": 420
+                        "y": 220
                     }
                 ]
             }
@@ -385,8 +379,10 @@
     },
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
+        "allowPasswordWithFprintd": false,
         "animationDisabled": false,
         "animationSpeed": 1,
+        "autoStartAuth": false,
         "avatarImage": "/home/shin/Downloads/550413787_122171110412380833_4447995126445341480_n.jpg",
         "boxRadiusRatio": 1,
         "compactLockScreen": true,
@@ -541,7 +537,7 @@
         "showHeader": false,
         "showNumberLabels": true
     },
-    "settingsVersion": 44,
+    "settingsVersion": 46,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,

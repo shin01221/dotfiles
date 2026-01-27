@@ -15,22 +15,29 @@
       "pageId": 0
     },
     {
-      "id": 1769161461556,
-      "text": "set dns,syslog,domain and samba server",
-      "completed": false,
-      "createdAt": "2026-01-23T09:44:21.556Z",
-      "pageId": 0
-    },
-    {
       "id": 1769296167018,
       "text": "make new ubuntu server vm",
       "completed": true,
       "createdAt": "2026-01-24T23:09:27.018Z",
       "pageId": 0
+    },
+    {
+      "id": 1769161461556,
+      "text": "set dns,syslog,domain and samba server",
+      "completed": true,
+      "createdAt": "2026-01-23T09:44:21.556Z",
+      "pageId": 0
+    },
+    {
+      "id": 1769438249899,
+      "text": "add shared folder in AD",
+      "completed": true,
+      "createdAt": "2026-01-26T14:37:29.899Z",
+      "pageId": 0
     }
   ],
-  "count": 3,
-  "completedCount": 1,
+  "count": 4,
+  "completedCount": 3,
   "isExpanded": false,
   "showCompleted": true,
   "showBackground": true
