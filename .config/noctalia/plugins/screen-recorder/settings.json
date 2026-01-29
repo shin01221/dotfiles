@@ -2,13 +2,14 @@
   "directory": "/Media/Records/screencast",
   "filenamePattern": "recording_yyyyMMdd_HHmmss",
   "frameRate": "120",
-  "audioCodec": "opus",
+  "audioCodec": "aac",
   "videoCodec": "h264",
-  "quality": "very_high",
-  "colorRange": "limited",
+  "quality": "high",
+  "colorRange": "full",
   "showCursor": true,
   "copyToClipboard": false,
   "audioSource": "default_output",
-  "videoSource": "portal",
-  "resolution": "original"
+  "videoSource": "screen",
+  "resolution": "1920x1080",
+  "hideInactive": true
 }
