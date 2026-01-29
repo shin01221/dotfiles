@@ -7,7 +7,7 @@
   "visualizationMode": 3,
   "waveThickness": 1,
   "innerDiameter": 0.7,
-  "fadeWhenIdle": true,
+  "fadeWhenIdle": false,
   "useCustomColors": false,
   "customPrimaryColor": "#6750a4",
   "customSecondaryColor": "#625b71"
