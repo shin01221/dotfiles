@@ -9,7 +9,7 @@ post_hook = "pkill -SIGUSR1 foot"
 [templates.starship]
 input_path = "~/.config/matugen/templates/starship/starship-colors.toml"
 output_path = "~/.config/starship.toml"
-post_hook = "./~/.local/bin/fix-illogical-tmux.bash"
+post_hook = "~/.local/bin/fix-illogical-tmux.bash"
 
 [templates.Telegram]
 input_path = "~/.config/matugen/templates/telegram/telegram-colors.tdesktop-theme"
