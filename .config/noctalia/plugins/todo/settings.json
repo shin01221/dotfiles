@@ -8,6 +8,27 @@
   "current_page_id": 0,
   "todos": [
     {
+      "id": 1769850633081,
+      "text": "mail server",
+      "completed": false,
+      "createdAt": "2026-01-31T09:10:33.081Z",
+      "pageId": 0
+    },
+    {
+      "id": 1769850561649,
+      "text": "syslog server",
+      "completed": false,
+      "createdAt": "2026-01-31T09:09:21.649Z",
+      "pageId": 0
+    },
+    {
+      "id": 1769850553024,
+      "text": "make small debian client and add it to eve for testing",
+      "completed": false,
+      "createdAt": "2026-01-31T09:09:13.024Z",
+      "pageId": 0
+    },
+    {
       "id": 1769344752968,
       "text": "learn more about ubuntu server",
       "completed": false,
@@ -15,7 +36,7 @@
       "pageId": 0
     }
   ],
-  "count": 1,
+  "count": 4,
   "completedCount": 0,
   "isExpanded": false,
   "showCompleted": true,
