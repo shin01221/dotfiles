@@ -1,6 +1,5 @@
 acpilight
 amd-ucode
-android-tools
 anki
 ansible
 ansible-navigator

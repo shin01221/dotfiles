@@ -20,7 +20,7 @@ if grep -q '^#\s*source = transparency\.conf' "$hypr_conf"; then
     jq -r '.ui.panelBackgroundOpacity = 1.00' "$noctalia_conf" >"$noctalia_conf.tmp" && mv "$noctalia_conf.tmp" "$noctalia_conf"
 else
     sed -i 's/^source = transparency\.conf/#source = transparency.conf/' "$hypr_conf"
-    jq -r '.ui.panelBackgroundOpacity = 0.90' "$noctalia_conf" >"$noctalia_conf.tmp" && mv "$noctalia_conf.tmp" "$noctalia_conf"
+    jq -r '.ui.panelBackgroundOpacity = 0.95' "$noctalia_conf" >"$noctalia_conf.tmp" && mv "$noctalia_conf.tmp" "$noctalia_conf"
 fi
 
 # Toggle foot transparency
