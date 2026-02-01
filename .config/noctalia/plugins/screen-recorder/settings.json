@@ -8,8 +8,8 @@
   "colorRange": "full",
   "showCursor": true,
   "copyToClipboard": false,
-  "audioSource": "default_output",
-  "videoSource": "screen",
+  "audioSource": "both",
+  "videoSource": "portal",
   "resolution": "1920x1080",
   "hideInactive": true
 }

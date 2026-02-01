@@ -42,7 +42,6 @@
         "capsuleOpacity": 0.53,
         "density": "default",
         "displayMode": "always_visible",
-        "exclusive": true,
         "floating": true,
         "frameRadius": 12,
         "frameThickness": 8,
@@ -267,7 +266,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Miasma",
+        "predefinedScheme": "Gruvbox",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -624,6 +623,10 @@
             {
                 "enabled": true,
                 "id": "yazi"
+            },
+            {
+                "enabled": true,
+                "id": "kitty"
             }
         ],
         "enableUserTheming": true
@@ -632,7 +635,7 @@
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
         "boxBorderEnabled": false,
-        "fontDefault": "Bitstream Vera Sans Mono",
+        "fontDefault": "Fira Code",
         "fontDefaultScale": 0.99,
         "fontFixed": "JetBrainsMono Nerd Font",
         "fontFixedScale": 1,
@@ -645,7 +648,7 @@
     },
     "wallpaper": {
         "automationEnabled": true,
-        "directory": "/home/shin/Pictures/homework/",
+        "directory": "/home/shin/Pictures/homework",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#004880",

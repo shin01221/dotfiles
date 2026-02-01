@@ -7,6 +7,10 @@ function tmux-set
     if set -q TMUX
         return
     end
+    if test -f ~/.local/state/tmux_last_session
+        set last_choice (string collect < ~/.local/state/tmux_last_session)
+    end
+    set sessions (tmux ls -F '#S' 2>/dev/null)
     if not set -q TMUX
         # remember file
         switch (count $sessions)
