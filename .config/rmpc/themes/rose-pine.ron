@@ -19,9 +19,9 @@
         inactive_style: (),
     ),
     highlighted_item_style: (fg: "blue", modifiers: "Bold"),
-    current_item_style: (fg: "black", bg: "green", modifiers: "Bold"),
-    borders_style: (fg: "green"),
-    highlight_border_style: (fg: "green"),
+    current_item_style: (fg: "black", bg: "red", modifiers: "Bold"),
+    borders_style: (fg: "red"),
+    highlight_border_style: (fg: "red"),
 
     cava: (
         bar_symbols: ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█'],
@@ -46,7 +46,7 @@
         info: (fg: "blue", bg: "black"),
         warn: (fg: "yellow", bg: "black"),
         error: (fg: "red", bg: "black"),
-        debug: (fg: "light_green", bg: "black"),
+        debug: (fg: "light_red", bg: "black"),
         trace: (fg: "magenta", bg: "black"),
     ),
     progress_bar: (
