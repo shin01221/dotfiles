@@ -47,6 +47,6 @@ input_path = "~/.config/nvim/lua/config/matugen-template.lua"
 output_path = "~/.config/nvim/colors/matugen.lua"
 post_hook = 'pkill -SIGUSR1 nvim'
 
-# [templates.wallpaper]
-# input_path = "~/.config/matugen/templates/wallpaper.txt"
-# output_path = "~/.local/state/quickshell/user/generated/wallpaper/path.txt"
+[templates.rmpc]
+input_path = "~/.config/matugen/templates/rmpc/colors.ron"
+output_path = "~/.config/rmpc/themes/colors.ron"

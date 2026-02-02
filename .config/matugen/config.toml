@@ -6,6 +6,10 @@ input_path = "~/.config/matugen/templates/foot/foot"
 output_path = "~/.config/foot/themes/noctalia"
 post_hook = "pkill -SIGUSR1 foot"
 
+[templates.rmpc]
+input_path = "~/.config/matugen/templates/rmpc/colors.ron"
+output_path = "~/.config/rmpc/themes/colors.ron"
+
 [templates.starship]
 input_path = "~/.config/matugen/templates/starship/starship-colors.toml"
 output_path = "~/.config/starship.toml"

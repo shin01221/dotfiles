@@ -15,13 +15,13 @@
     preview_label_style: (fg: "yellow"),
     preview_metadata_group_style: (fg: "blue", modifiers: "Bold"),
     tab_bar: (
-        active_style: (fg: "black", bg: "cyan", modifiers: "Bold"),
+        active_style: (fg: "black", bg: "yellow", modifiers: "Bold"),
         inactive_style: (),
     ),
     highlighted_item_style: (fg: "blue", modifiers: "Bold"),
-    current_item_style: (fg: "black", bg: "red", modifiers: "Bold"),
-    borders_style: (fg: "red"),
-    highlight_border_style: (fg: "red"),
+    current_item_style: (fg: "black", bg: "green", modifiers: "Bold"),
+    borders_style: (fg: "yellow"),
+    highlight_border_style: (fg: "yellow"),
 
     cava: (
         bar_symbols: ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█'],
@@ -45,22 +45,22 @@
     level_styles: (
         info: (fg: "blue", bg: "black"),
         warn: (fg: "yellow", bg: "black"),
-        error: (fg: "red", bg: "black"),
-        debug: (fg: "light_red", bg: "black"),
+        error: (fg: "yellow", bg: "black"),
+        debug: (fg: "light_yellow", bg: "black"),
         trace: (fg: "magenta", bg: "black"),
     ),
     progress_bar: (
         symbols: ["[", "━", "━", " ", "]"],
-        track_style: (fg: "cyan"),
-        elapsed_style: (fg: "cyan"),
-        thumb_style: (fg: "cyan", bg: "black"),
+        track_style: (fg: "yellow"),
+        elapsed_style: (fg: "yellow"),
+        thumb_style: (fg: "yellow", bg: "black"),
         use_track_when_empty: false,
     ),
     scrollbar: (
         symbols: ["│", "█", "", ""],
         track_style: (),
         ends_style: (),
-        thumb_style: (fg: "cyan"),
+        thumb_style: (fg: "yellow"),
     ),
     song_table_format: [
         (
@@ -117,8 +117,8 @@
             ),
             (
                 left: [
-                    (kind: Property(Song(Artist)), style: (fg: "cyan", modifiers: "Bold"),
-                        default: (kind: Text("Unknown"), style: (fg: "cyan", modifiers: "Bold"))
+                    (kind: Property(Song(Artist)), style: (fg: "yellow", modifiers: "Bold"),
+                        default: (kind: Text("Unknown"), style: (fg: "yellow", modifiers: "Bold"))
                     ),
                 ],
                 center: [],
@@ -135,9 +135,9 @@
             ),
             (
                 left: [
-                    (kind: Text("["), style: (fg: "cyan", modifiers: "Bold")),
-                    (kind: Property(Status(StateV2(playing_label: "Playing", paused_label: "Paused", stopped_label: "Stopped"))), style: (fg: "cyan", modifiers: "Bold")),
-                    (kind: Text("]"), style: (fg: "cyan", modifiers: "Bold"))
+                    (kind: Text("["), style: (fg: "yellow", modifiers: "Bold")),
+                    (kind: Property(Status(StateV2(playing_label: "Playing", paused_label: "Paused", stopped_label: "Stopped"))), style: (fg: "yellow", modifiers: "Bold")),
+                    (kind: Text("]"), style: (fg: "yellow", modifiers: "Bold"))
                 ],
                 center: [],
                 right: [],
