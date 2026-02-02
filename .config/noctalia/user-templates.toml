@@ -42,6 +42,11 @@ post_hook = "~/.config/matugen/templates/kde/kde-material-you-colors-wrapper.sh 
 input_path = "~/.config/matugen/templates/hyprland/colors.conf"
 output_path = "~/.config/hypr/hyprland/colors.conf"
 
+[templates.nvim-base16]
+input_path = "~/.config/nvim/lua/config/matugen-template.lua"
+output_path = "~/.config/nvim/colors/matugen.lua"
+post_hook = 'pkill -SIGUSR1 nvim'
+
 # [templates.wallpaper]
 # input_path = "~/.config/matugen/templates/wallpaper.txt"
 # output_path = "~/.local/state/quickshell/user/generated/wallpaper/path.txt"
