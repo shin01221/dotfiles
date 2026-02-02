@@ -632,9 +632,9 @@
     "fontFixed": "JetBrainsMono Nerd Font",
     "fontFixedScale": 1,
     "networkPanelView": "wifi",
-    "panelBackgroundOpacity": 1.00,
+    "panelBackgroundOpacity": 0.90,
     "panelsAttachedToBar": true,
-    "settingsPanelMode": "centered",
+    "settingsPanelMode": "attached",
     "tooltipsEnabled": false,
     "wifiDetailsViewMode": "grid"
   },
