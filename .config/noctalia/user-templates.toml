@@ -46,7 +46,3 @@ output_path = "~/.config/hypr/hyprland/colors.conf"
 input_path = "~/.config/nvim/lua/config/matugen-template.lua"
 output_path = "~/.config/nvim/colors/matugen.lua"
 post_hook = 'pkill -SIGUSR1 nvim'
-
-[templates.rmpc]
-input_path = "~/.config/matugen/templates/rmpc/colors.ron"
-output_path = "~/.config/rmpc/themes/colors.ron"

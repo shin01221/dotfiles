@@ -53,6 +53,10 @@
         "outerCorners": true,
         "position": "top",
         "screenOverrides": [
+            {
+                "enabled": false,
+                "name": "eDP-2"
+            }
         ],
         "showCapsule": true,
         "showOutline": false,
@@ -90,6 +94,7 @@
                     "id": "Workspace",
                     "labelMode": "none",
                     "occupiedColor": "secondary",
+                    "pillSize": 0.6,
                     "reverseScroll": false,
                     "showApplications": false,
                     "showBadge": true,
@@ -145,8 +150,9 @@
                     "showCpuFreq": false,
                     "showCpuTemp": false,
                     "showCpuUsage": true,
-                    "showDiskAsFree": false,
+                    "showDiskAvailable": false,
                     "showDiskUsage": false,
+                    "showDiskUsageAsPercent": false,
                     "showGpuTemp": false,
                     "showLoadAverage": false,
                     "showMemoryAsPercent": false,
@@ -222,13 +228,11 @@
                 },
                 {
                     "deviceNativePath": "",
-                    "displayMode": "onhover",
                     "hideIfIdle": true,
                     "hideIfNotDetected": true,
                     "id": "Battery",
                     "showNoctaliaPerformance": true,
-                    "showPowerProfiles": true,
-                    "warningThreshold": 30
+                    "showPowerProfiles": true
                 },
                 {
                     "defaultSettings": {
@@ -269,11 +273,11 @@
     },
     "colorSchemes": {
         "darkMode": true,
-        "generationMethod": "tonal-spot",
+        "generationMethod": "content",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Noctalia (default)",
+        "predefinedScheme": "Gruvbox",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -407,7 +411,7 @@
         "avatarImage": "/home/shin/Downloads/550413787_122171110412380833_4447995126445341480_n.jpg",
         "boxRadiusRatio": 1,
         "compactLockScreen": true,
-        "dimmerOpacity": 0.4,
+        "dimmerOpacity": 0.25,
         "enableLockScreenCountdown": false,
         "enableShadows": true,
         "forceBlackScreenCorners": true,
@@ -417,10 +421,10 @@
         "lockScreenCountdownDuration": 10000,
         "radiusRatio": 1,
         "scaleRatio": 0.9500000000000001,
-        "screenRadiusRatio": 1.1400000000000001,
-        "shadowDirection": "bottom_right",
-        "shadowOffsetX": 2,
-        "shadowOffsetY": 3,
+        "screenRadiusRatio": 0.64,
+        "shadowDirection": "center",
+        "shadowOffsetX": 0,
+        "shadowOffsetY": 0,
         "showChangelogOnStartup": true,
         "showHibernateOnLockScreen": false,
         "showScreenCorners": true,
@@ -467,10 +471,12 @@
         "forced": false,
         "manualSunrise": "08:00",
         "manualSunset": "20:00",
-        "nightTemp": "3552"
+        "nightTemp": "3505"
     },
     "notifications": {
         "backgroundOpacity": 1,
+        "batteryCriticalThreshold": 5,
+        "batteryWarningThreshold": 20,
         "criticalUrgencyDuration": 15,
         "enableKeyboardLayoutToast": true,
         "enableMediaToast": false,
@@ -564,6 +570,8 @@
         "cpuPollingInterval": 1000,
         "cpuWarningThreshold": 80,
         "criticalColor": "#fd4663",
+        "diskAvailCriticalThreshold": 10,
+        "diskAvailWarningThreshold": 20,
         "diskCriticalThreshold": 90,
         "diskPollingInterval": 3000,
         "diskWarningThreshold": 80,
@@ -641,12 +649,12 @@
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
         "boxBorderEnabled": false,
-        "fontDefault": "Fira Code",
-        "fontDefaultScale": 0.99,
+        "fontDefault": "Noto Sans Cherokee",
+        "fontDefaultScale": 1,
         "fontFixed": "JetBrainsMono Nerd Font",
         "fontFixedScale": 1,
         "networkPanelView": "wifi",
-        "panelBackgroundOpacity": 0.95,
+        "panelBackgroundOpacity": 0.9,
         "panelsAttachedToBar": true,
         "settingsPanelMode": "attached",
         "tooltipsEnabled": false,
@@ -663,7 +671,7 @@
         "monitorDirectories": [
         ],
         "overviewEnabled": false,
-        "panelPosition": "center",
+        "panelPosition": "top_center",
         "randomIntervalSec": 1800,
         "setWallpaperOnAllMonitors": true,
         "showHiddenFiles": false,

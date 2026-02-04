@@ -12,33 +12,83 @@
       "text": "mail server",
       "completed": false,
       "createdAt": "2026-01-31T09:10:33.081Z",
-      "pageId": 0
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
     },
     {
       "id": 1769850561649,
       "text": "syslog server",
       "completed": false,
       "createdAt": "2026-01-31T09:09:21.649Z",
-      "pageId": 0
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
     },
     {
       "id": 1769850553024,
       "text": "make small debian client and add it to eve for testing",
       "completed": false,
       "createdAt": "2026-01-31T09:09:13.024Z",
-      "pageId": 0
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
     },
     {
       "id": 1769344752968,
       "text": "learn more about ubuntu server",
       "completed": false,
       "createdAt": "2026-01-25T12:39:12.968Z",
-      "pageId": 0
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
     }
   ],
   "count": 4,
   "completedCount": 0,
   "isExpanded": false,
   "showCompleted": true,
-  "showBackground": true
+  "showBackground": true,
+  "useCustomColors": false,
+  "priorityColors": {
+    "high": {
+      "r": 0.9843137264251709,
+      "g": 0.2862745225429535,
+      "b": 0.20392157137393951,
+      "a": 1,
+      "hsvHue": 0.01758333295583725,
+      "hsvSaturation": 0.7928282618522644,
+      "hsvValue": 0.9843137264251709,
+      "hslHue": 0.01758333295583725,
+      "hslSaturation": 0.9613488912582397,
+      "hslLightness": 0.5941252708435059,
+      "valid": true
+    },
+    "medium": {
+      "r": 0.7215686440467834,
+      "g": 0.7333333492279053,
+      "b": 0.14901961386203766,
+      "a": 1,
+      "hsvHue": 0.17002777755260468,
+      "hsvSaturation": 0.7967956066131592,
+      "hsvValue": 0.7333333492279053,
+      "hslHue": 0.17002777755260468,
+      "hslSaturation": 0.6622263193130493,
+      "hslLightness": 0.4411841034889221,
+      "valid": true
+    },
+    "low": {
+      "r": 0.9215686321258545,
+      "g": 0.8588235378265381,
+      "b": 0.6980392336845398,
+      "a": 1,
+      "hsvHue": 0.11988888680934906,
+      "hsvSaturation": 0.24255740642547607,
+      "hsvValue": 0.9215686321258545,
+      "hslHue": 0.11988888680934906,
+      "hslSaturation": 0.5876249074935913,
+      "hslLightness": 0.809811532497406,
+      "valid": true
+    }
+  }
 }

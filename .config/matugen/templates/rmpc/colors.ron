@@ -1,7 +1,0 @@
-primary : "{{colors.primary.default.hex}}"
-pri_dim : "{{colors.primary_fixed_dim.default.hex}}"
-secondary : "{{colors.secondary.default.hex}}"
-sec_dim : "{{colors.secondary_fixed_dim.default.hex}}"
-bg : "{{colors.tertiary.default.hex}}"
-fg : "{{colors.on_tertiary.default.hex}}"
-on_surface : "{{colors.on_surface.default.hex}}"
