@@ -39,12 +39,13 @@
         "autoShowDelay": 150,
         "backgroundOpacity": 1,
         "barType": "framed",
+        "capsuleColorKey": "none",
         "capsuleOpacity": 0.5,
         "density": "default",
         "displayMode": "always_visible",
         "floating": false,
         "frameRadius": 24,
-        "frameThickness": 6,
+        "frameThickness": 8,
         "hideOnOverview": false,
         "marginHorizontal": 12,
         "marginVertical": 3,
@@ -75,9 +76,10 @@
                     "panelShowVisualizer": true,
                     "scrollingMode": "hover",
                     "showAlbumArt": true,
-                    "showArtistFirst": false,
+                    "showArtistFirst": true,
                     "showProgressRing": true,
                     "showVisualizer": true,
+                    "textColor": "none",
                     "useFixedWidth": false,
                     "visualizerType": "mirrored"
                 },
@@ -114,7 +116,7 @@
                     "leftClickUpdateText": true,
                     "maxTextLength": {
                         "horizontal": 10,
-                        "vertical": 10
+                        "vertical": 0
                     },
                     "middleClickExec": "",
                     "middleClickUpdateText": false,
@@ -124,28 +126,29 @@
                     "showIcon": false,
                     "textCollapse": "",
                     "textCommand": "echo \"死Shin\"",
-                    "textIntervalMs": 3000,
+                    "textIntervalMs": 100000,
                     "textStream": false,
-                    "wheelDownExec": "",
-                    "wheelDownUpdateText": false,
+                    "wheelDownExec": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-",
+                    "wheelDownUpdateText": true,
                     "wheelExec": "",
-                    "wheelMode": "unified",
-                    "wheelUpExec": "",
-                    "wheelUpUpdateText": false,
+                    "wheelMode": "separate",
+                    "wheelUpExec": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ -l 1.5",
+                    "wheelUpUpdateText": true,
                     "wheelUpdateText": false
                 },
                 {
+                    "clockColor": "none",
                     "customFont": "",
                     "formatHorizontal": "ddd MMM d h:mm AP",
                     "formatVertical": "ddd MMM d h:mm AP",
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
-                    "useCustomFont": false,
-                    "usePrimaryColor": false
+                    "useCustomFont": false
                 },
                 {
                     "compactMode": false,
                     "diskPath": "/",
+                    "iconColor": "none",
                     "id": "SystemMonitor",
                     "showCpuFreq": false,
                     "showCpuTemp": false,
@@ -159,16 +162,17 @@
                     "showMemoryUsage": true,
                     "showNetworkStats": false,
                     "showSwapUsage": false,
-                    "useMonospaceFont": true,
-                    "usePrimaryColor": false
+                    "textColor": "none",
+                    "useMonospaceFont": true
                 }
             ],
             "right": [
                 {
                     "blacklist": [
                     ],
+                    "chevronColor": "none",
                     "colorizeIcons": false,
-                    "drawerEnabled": true,
+                    "drawerEnabled": false,
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
@@ -209,6 +213,21 @@
                     "id": "plugin:pomodoro"
                 },
                 {
+                    "deviceNativePath": "",
+                    "displayMode": "graphic",
+                    "hideIfIdle": true,
+                    "hideIfNotDetected": true,
+                    "id": "Battery",
+                    "showNoctaliaPerformance": true,
+                    "showPowerProfiles": true
+                },
+                {
+                    "defaultSettings": {
+                        "refreshInterval": 5000
+                    },
+                    "id": "plugin:mini-docker"
+                },
+                {
                     "defaultSettings": {
                         "audioCodec": "opus",
                         "audioSource": "default_output",
@@ -225,20 +244,6 @@
                         "videoSource": "portal"
                     },
                     "id": "plugin:screen-recorder"
-                },
-                {
-                    "deviceNativePath": "",
-                    "hideIfIdle": true,
-                    "hideIfNotDetected": true,
-                    "id": "Battery",
-                    "showNoctaliaPerformance": true,
-                    "showPowerProfiles": true
-                },
-                {
-                    "defaultSettings": {
-                        "refreshInterval": 5000
-                    },
-                    "id": "plugin:mini-docker"
                 },
                 {
                     "defaultSettings": {
@@ -410,6 +415,8 @@
         "autoStartAuth": false,
         "avatarImage": "/home/shin/Downloads/550413787_122171110412380833_4447995126445341480_n.jpg",
         "boxRadiusRatio": 1,
+        "clockFormat": "hh\\nmm",
+        "clockStyle": "custom",
         "compactLockScreen": true,
         "dimmerOpacity": 0.25,
         "enableLockScreenCountdown": false,
@@ -475,9 +482,8 @@
     },
     "notifications": {
         "backgroundOpacity": 1,
-        "batteryCriticalThreshold": 5,
-        "batteryWarningThreshold": 20,
         "criticalUrgencyDuration": 15,
+        "enableBatteryToast": true,
         "enableKeyboardLayoutToast": true,
         "enableMediaToast": false,
         "enabled": true,
@@ -564,8 +570,10 @@
         "showHeader": false,
         "showNumberLabels": true
     },
-    "settingsVersion": 47,
+    "settingsVersion": 48,
     "systemMonitor": {
+        "batteryCriticalThreshold": 5,
+        "batteryWarningThreshold": 20,
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 1000,
         "cpuWarningThreshold": 80,
@@ -654,7 +662,7 @@
         "fontFixed": "JetBrainsMono Nerd Font",
         "fontFixedScale": 1,
         "networkPanelView": "wifi",
-        "panelBackgroundOpacity": 0.9,
+        "panelBackgroundOpacity": 0.95,
         "panelsAttachedToBar": true,
         "settingsPanelMode": "attached",
         "tooltipsEnabled": false,
@@ -663,7 +671,7 @@
     "wallpaper": {
         "automationEnabled": false,
         "directory": "/home/shin/Pictures/homework",
-        "enableMultiMonitorDirectories": false,
+        "enableMultiMonitorDirectories": true,
         "enabled": true,
         "fillColor": "#004880",
         "fillMode": "stretch",
