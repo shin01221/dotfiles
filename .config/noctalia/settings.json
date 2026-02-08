@@ -12,6 +12,7 @@
         "enableWindowsSearch": true,
         "iconMode": "tabler",
         "ignoreMouseInput": false,
+        "overviewLayer": false,
         "pinnedApps": [
         ],
         "position": "follow_bar",
@@ -40,7 +41,7 @@
         "backgroundOpacity": 1,
         "barType": "framed",
         "capsuleColorKey": "none",
-        "capsuleOpacity": 0.5,
+        "capsuleOpacity": 0.68,
         "density": "default",
         "displayMode": "always_visible",
         "floating": false,
@@ -84,21 +85,21 @@
                     "visualizerType": "mirrored"
                 },
                 {
-                    "characterCount": 2,
+                    "characterCount": 3,
                     "colorizeIcons": false,
                     "emptyColor": "secondary",
                     "enableScrollWheel": true,
                     "focusedColor": "primary",
                     "followFocusedScreen": true,
-                    "groupedBorderOpacity": 0.33,
+                    "groupedBorderOpacity": 0.43,
                     "hideUnoccupied": false,
-                    "iconScale": 0.7,
+                    "iconScale": 0.6799999999999999,
                     "id": "Workspace",
                     "labelMode": "none",
                     "occupiedColor": "secondary",
-                    "pillSize": 0.6,
+                    "pillSize": 0.55,
                     "reverseScroll": false,
-                    "showApplications": false,
+                    "showApplications": true,
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": false,
                     "unfocusedIconsOpacity": 0.75
@@ -106,13 +107,13 @@
             ],
             "left": [
                 {
-                    "colorizeSystemIcon": "none",
+                    "colorizeSystemIcon": "primary",
                     "enableColorization": false,
                     "hideMode": "alwaysExpanded",
-                    "icon": "rocket",
+                    "icon": "calendar",
                     "id": "CustomButton",
                     "ipcIdentifier": "",
-                    "leftClickExec": "qs -c noctalia ipc call controlCenter toggle",
+                    "leftClickExec": "qs -c noctalia ipc call calendar toggle",
                     "leftClickUpdateText": true,
                     "maxTextLength": {
                         "horizontal": 10,
@@ -126,7 +127,7 @@
                     "showIcon": false,
                     "textCollapse": "",
                     "textCommand": "echo \"死Shin\"",
-                    "textIntervalMs": 100000,
+                    "textIntervalMs": 1000000,
                     "textStream": false,
                     "wheelDownExec": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-",
                     "wheelDownUpdateText": true,
@@ -135,15 +136,6 @@
                     "wheelUpExec": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ -l 1.5",
                     "wheelUpUpdateText": true,
                     "wheelUpdateText": false
-                },
-                {
-                    "clockColor": "none",
-                    "customFont": "",
-                    "formatHorizontal": "ddd MMM d h:mm AP",
-                    "formatVertical": "ddd MMM d h:mm AP",
-                    "id": "Clock",
-                    "tooltipFormat": "HH:mm ddd, MMM dd",
-                    "useCustomFont": false
                 },
                 {
                     "compactMode": false,
@@ -164,6 +156,37 @@
                     "showSwapUsage": false,
                     "textColor": "none",
                     "useMonospaceFont": true
+                },
+                {
+                    "colorizeSystemIcon": "none",
+                    "enableColorization": false,
+                    "hideMode": "maxTransparent",
+                    "icon": "calendar",
+                    "id": "CustomButton",
+                    "ipcIdentifier": "",
+                    "leftClickExec": "",
+                    "leftClickUpdateText": false,
+                    "maxTextLength": {
+                        "horizontal": 50,
+                        "vertical": 10
+                    },
+                    "middleClickExec": "",
+                    "middleClickUpdateText": false,
+                    "parseJson": false,
+                    "rightClickExec": "",
+                    "rightClickUpdateText": false,
+                    "showIcon": false,
+                    "textCollapse": "",
+                    "textCommand": "lrc_tty --raw",
+                    "textIntervalMs": 1000,
+                    "textStream": true,
+                    "wheelDownExec": "",
+                    "wheelDownUpdateText": false,
+                    "wheelExec": "",
+                    "wheelMode": "unified",
+                    "wheelUpExec": "",
+                    "wheelUpUpdateText": false,
+                    "wheelUpdateText": false
                 }
             ],
             "right": [
@@ -172,7 +195,7 @@
                     ],
                     "chevronColor": "none",
                     "colorizeIcons": false,
-                    "drawerEnabled": false,
+                    "drawerEnabled": true,
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
@@ -213,21 +236,6 @@
                     "id": "plugin:pomodoro"
                 },
                 {
-                    "deviceNativePath": "",
-                    "displayMode": "graphic",
-                    "hideIfIdle": true,
-                    "hideIfNotDetected": true,
-                    "id": "Battery",
-                    "showNoctaliaPerformance": true,
-                    "showPowerProfiles": true
-                },
-                {
-                    "defaultSettings": {
-                        "refreshInterval": 5000
-                    },
-                    "id": "plugin:mini-docker"
-                },
-                {
                     "defaultSettings": {
                         "audioCodec": "opus",
                         "audioSource": "default_output",
@@ -251,6 +259,15 @@
                         "removeMargins": false
                     },
                     "id": "plugin:privacy-indicator"
+                },
+                {
+                    "deviceNativePath": "",
+                    "displayMode": "graphic",
+                    "hideIfIdle": true,
+                    "hideIfNotDetected": true,
+                    "id": "Battery",
+                    "showNoctaliaPerformance": true,
+                    "showPowerProfiles": true
                 }
             ]
         }
@@ -282,7 +299,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Gruvbox",
+        "predefinedScheme": "Noctalia (default)",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -384,6 +401,12 @@
                         "showBackground": true,
                         "x": 40,
                         "y": 120
+                    },
+                    {
+                        "id": "Weather",
+                        "showBackground": true,
+                        "x": 20,
+                        "y": 980
                     }
                 ]
             }
@@ -425,6 +448,7 @@
         "iRadiusRatio": 1.04,
         "language": "",
         "lockOnSuspend": true,
+        "lockScreenAnimations": true,
         "lockScreenCountdownDuration": 10000,
         "radiusRatio": 1,
         "scaleRatio": 0.9500000000000001,
@@ -523,6 +547,9 @@
         ],
         "overlayLayer": true
     },
+    "plugins": {
+        "autoUpdate": true
+    },
     "sessionMenu": {
         "countdownDuration": 5000,
         "enableCountdown": false,
@@ -570,7 +597,7 @@
         "showHeader": false,
         "showNumberLabels": true
     },
-    "settingsVersion": 48,
+    "settingsVersion": 49,
     "systemMonitor": {
         "batteryCriticalThreshold": 5,
         "batteryWarningThreshold": 20,
@@ -662,10 +689,10 @@
         "fontFixed": "JetBrainsMono Nerd Font",
         "fontFixedScale": 1,
         "networkPanelView": "wifi",
-        "panelBackgroundOpacity": 0.95,
+        "panelBackgroundOpacity": 1,
         "panelsAttachedToBar": true,
         "settingsPanelMode": "attached",
-        "tooltipsEnabled": false,
+        "tooltipsEnabled": true,
         "wifiDetailsViewMode": "grid"
     },
     "wallpaper": {
@@ -674,7 +701,7 @@
         "enableMultiMonitorDirectories": true,
         "enabled": true,
         "fillColor": "#004880",
-        "fillMode": "stretch",
+        "fillMode": "center",
         "hideWallpaperFilenames": false,
         "monitorDirectories": [
         ],
