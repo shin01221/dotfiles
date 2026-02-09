@@ -41,12 +41,12 @@
         "backgroundOpacity": 1,
         "barType": "framed",
         "capsuleColorKey": "none",
-        "capsuleOpacity": 0.68,
+        "capsuleOpacity": 0.4,
         "density": "default",
         "displayMode": "always_visible",
         "floating": false,
-        "frameRadius": 24,
-        "frameThickness": 8,
+        "frameRadius": 10,
+        "frameThickness": 6,
         "hideOnOverview": false,
         "marginHorizontal": 12,
         "marginVertical": 3,
@@ -66,25 +66,6 @@
         "widgets": {
             "center": [
                 {
-                    "compactMode": false,
-                    "compactShowAlbumArt": true,
-                    "compactShowVisualizer": false,
-                    "hideMode": "idle",
-                    "hideWhenIdle": false,
-                    "id": "MediaMini",
-                    "maxWidth": 200,
-                    "panelShowAlbumArt": true,
-                    "panelShowVisualizer": true,
-                    "scrollingMode": "hover",
-                    "showAlbumArt": true,
-                    "showArtistFirst": true,
-                    "showProgressRing": true,
-                    "showVisualizer": true,
-                    "textColor": "none",
-                    "useFixedWidth": false,
-                    "visualizerType": "mirrored"
-                },
-                {
                     "characterCount": 3,
                     "colorizeIcons": false,
                     "emptyColor": "secondary",
@@ -97,12 +78,31 @@
                     "id": "Workspace",
                     "labelMode": "none",
                     "occupiedColor": "secondary",
-                    "pillSize": 0.55,
+                    "pillSize": 0.5700000000000001,
                     "reverseScroll": false,
-                    "showApplications": true,
+                    "showApplications": false,
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": false,
                     "unfocusedIconsOpacity": 0.75
+                },
+                {
+                    "compactMode": false,
+                    "compactShowAlbumArt": true,
+                    "compactShowVisualizer": false,
+                    "hideMode": "hidden",
+                    "hideWhenIdle": false,
+                    "id": "MediaMini",
+                    "maxWidth": 200,
+                    "panelShowAlbumArt": true,
+                    "panelShowVisualizer": true,
+                    "scrollingMode": "hover",
+                    "showAlbumArt": true,
+                    "showArtistFirst": true,
+                    "showProgressRing": false,
+                    "showVisualizer": true,
+                    "textColor": "none",
+                    "useFixedWidth": false,
+                    "visualizerType": "mirrored"
                 }
             ],
             "left": [
@@ -138,7 +138,7 @@
                     "wheelUpdateText": false
                 },
                 {
-                    "compactMode": false,
+                    "compactMode": true,
                     "diskPath": "/",
                     "iconColor": "none",
                     "id": "SystemMonitor",
@@ -164,8 +164,8 @@
                     "icon": "calendar",
                     "id": "CustomButton",
                     "ipcIdentifier": "",
-                    "leftClickExec": "",
-                    "leftClickUpdateText": false,
+                    "leftClickExec": "playerctl --ignore-player=firefox --player=tauon,spotify,mpd toggle",
+                    "leftClickUpdateText": true,
                     "maxTextLength": {
                         "horizontal": 50,
                         "vertical": 10
@@ -176,10 +176,10 @@
                     "rightClickExec": "",
                     "rightClickUpdateText": false,
                     "showIcon": false,
-                    "textCollapse": "",
+                    "textCollapse": "(no lyrics)",
                     "textCommand": "lrc_tty --raw",
                     "textIntervalMs": 1000,
-                    "textStream": true,
+                    "textStream": false,
                     "wheelDownExec": "",
                     "wheelDownUpdateText": false,
                     "wheelExec": "",
@@ -299,7 +299,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Noctalia (default)",
+        "predefinedScheme": "Gruvbox",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -397,16 +397,23 @@
                             "waveThickness": 1
                         },
                         "id": "plugin:fancy-audiovisualizer",
-                        "scale": 0.9261957297136543,
+                        "scale": 0.7778690338163199,
                         "showBackground": true,
-                        "x": 40,
+                        "x": 20,
                         "y": 120
                     },
                     {
-                        "id": "Weather",
+                        "clockColor": "none",
+                        "clockStyle": "digital",
+                        "customFont": "",
+                        "format": "hh:mm\\nd MMMM yyyy",
+                        "id": "Clock",
+                        "roundedCorners": true,
+                        "scale": 1.1151626512901216,
                         "showBackground": true,
+                        "useCustomFont": false,
                         "x": 20,
-                        "y": 980
+                        "y": 900
                     }
                 ]
             }
@@ -434,7 +441,7 @@
         "allowPanelsOnScreenWithoutBar": true,
         "allowPasswordWithFprintd": false,
         "animationDisabled": false,
-        "animationSpeed": 1,
+        "animationSpeed": 1.3,
         "autoStartAuth": false,
         "avatarImage": "/home/shin/Downloads/550413787_122171110412380833_4447995126445341480_n.jpg",
         "boxRadiusRatio": 1,
@@ -445,11 +452,21 @@
         "enableLockScreenCountdown": false,
         "enableShadows": true,
         "forceBlackScreenCorners": true,
-        "iRadiusRatio": 1.04,
+        "iRadiusRatio": 1,
+        "keybinds": {
+            "keyDown": "Down",
+            "keyEnter": "Return",
+            "keyEscape": "Esc",
+            "keyLeft": "Left",
+            "keyRight": "Right",
+            "keyUp": "Up"
+        },
         "language": "",
         "lockOnSuspend": true,
         "lockScreenAnimations": true,
         "lockScreenCountdownDuration": 10000,
+        "lockScreenMonitors": [
+        ],
         "radiusRatio": 1,
         "scaleRatio": 0.9500000000000001,
         "screenRadiusRatio": 0.64,
@@ -512,10 +529,10 @@
         "enableMediaToast": false,
         "enabled": true,
         "location": "top_right",
-        "lowUrgencyDuration": 1,
+        "lowUrgencyDuration": 2,
         "monitors": [
         ],
-        "normalUrgencyDuration": 2,
+        "normalUrgencyDuration": 3,
         "overlayLayer": true,
         "respectExpireTimeout": true,
         "saveToHistory": {
@@ -689,10 +706,10 @@
         "fontFixed": "JetBrainsMono Nerd Font",
         "fontFixedScale": 1,
         "networkPanelView": "wifi",
-        "panelBackgroundOpacity": 1,
+        "panelBackgroundOpacity": 0.85,
         "panelsAttachedToBar": true,
         "settingsPanelMode": "attached",
-        "tooltipsEnabled": true,
+        "tooltipsEnabled": false,
         "wifiDetailsViewMode": "grid"
     },
     "wallpaper": {
