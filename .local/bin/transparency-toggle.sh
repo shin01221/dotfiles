@@ -25,7 +25,7 @@ fi
 
 # Toggle foot transparency
 if rg -q '^alpha=1' "$foot_conf"; then
-    sed -i 's/^alpha.*/alpha=.85/' "$foot_conf"
+    sed -i 's/^alpha.*/alpha=.90/' "$foot_conf"
     foot --reload
 elif rg -q '^alpha=\.\d+' "$foot_conf"; then
     sed -i 's/^alpha.*/alpha=1/' "$foot_conf"

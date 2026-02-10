@@ -8,7 +8,7 @@ mode=$(jq -r '.colorSchemes.darkMode' "$settings")
 starship_configs=$HOME/.config/starship
 tmux_themes=$HOME/.config/tmux/themes
 tmux_config=$HOME/.config/tmux/tmux.conf
-themes_arr=("Ayu" "Gruvbox" "Eldritch" "Everforest" "GruvboxAlt" "Kanagawa" "Miasma" "Monochrome" "Noctalia (default)" "Nord" "Rose Pine" "Tokyo Night Moon" "Lilac AMOLED")
+themes_arr=("Ayu" "Gruvbox" "Eldritch" "Everforest" "GruvboxAlt" "Kanagawa" "Miasma" "Monochrome" "Noctalia (default)" "Nord" "Rose Pine" "Tokyo Night Moon" "Lilac AMOLED" "Occult Umbral" "One" "Oxide" "Vesper")
 variant=$([[ "$mode" == "true" ]] && echo "dark" || echo "light") # should be used to refactor this script.
 
 if [[ $auto_colors = true ]]; then
@@ -72,6 +72,18 @@ else
         ;;
     "${themes_arr[12]}")
         apply_theme lilac
+        ;;
+    "${themes_arr[13]}")
+        apply_theme occult
+        ;;
+    "${themes_arr[14]}")
+        apply_theme one
+        ;;
+    "${themes_arr[15]}")
+        apply_theme oxide
+        ;;
+    "${themes_arr[16]}")
+        apply_theme vesper
         ;;
     esac
     tmux source-file ~/.config/tmux/theme.conf >/dev/null 2>&1 || true
