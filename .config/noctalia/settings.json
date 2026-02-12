@@ -9,6 +9,7 @@
         "density": "default",
         "enableClipPreview": true,
         "enableClipboardHistory": true,
+        "enableSessionSearch": true,
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
         "iconMode": "tabler",
@@ -42,7 +43,7 @@
         "backgroundOpacity": 1,
         "barType": "framed",
         "capsuleColorKey": "none",
-        "capsuleOpacity": 1,
+        "capsuleOpacity": 0.65,
         "density": "default",
         "displayMode": "always_visible",
         "floating": false,
@@ -227,6 +228,15 @@
                     "id": "plugin:privacy-indicator"
                 },
                 {
+                    "clockColor": "none",
+                    "customFont": "JetBrainsMono NF",
+                    "formatHorizontal": "hh:mm AP",
+                    "formatVertical": "HH mm - dd MM",
+                    "id": "Clock",
+                    "tooltipFormat": "HH:mm ddd, MMM dd",
+                    "useCustomFont": true
+                },
+                {
                     "compactMode": true,
                     "diskPath": "/",
                     "iconColor": "none",
@@ -247,13 +257,13 @@
                     "useMonospaceFont": true
                 },
                 {
-                    "clockColor": "none",
-                    "customFont": "JetBrainsMono NF",
-                    "formatHorizontal": "hh:mm AP",
-                    "formatVertical": "HH mm - dd MM",
-                    "id": "Clock",
-                    "tooltipFormat": "HH:mm ddd, MMM dd",
-                    "useCustomFont": true
+                    "colorizeDistroLogo": false,
+                    "colorizeSystemIcon": "none",
+                    "customIconPath": "",
+                    "enableColorization": true,
+                    "icon": "noctalia",
+                    "id": "ControlCenter",
+                    "useDistroLogo": true
                 },
                 {
                     "deviceNativePath": "",
@@ -294,7 +304,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Vesper",
+        "predefinedScheme": "Gruvbox",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -417,7 +427,7 @@
     "dock": {
         "animationSpeed": 1,
         "backgroundOpacity": 1,
-        "colorizeIcons": false,
+        "colorizeIcons": true,
         "deadOpacity": 0.6,
         "displayMode": "auto_hide",
         "enabled": false,
@@ -428,7 +438,7 @@
         "onlySameOutput": true,
         "pinnedApps": [
         ],
-        "pinnedStatic": false,
+        "pinnedStatic": true,
         "position": "bottom",
         "size": 1
     },
@@ -450,10 +460,12 @@
         "iRadiusRatio": 1,
         "keybinds": {
             "keyDown": [
-                "Down"
+                "Down",
+                "Ctrl+N"
             ],
             "keyEnter": [
-                "Return"
+                "Return",
+                "Ctrl+Y"
             ],
             "keyEscape": [
                 "Esc"
@@ -465,7 +477,8 @@
                 "Right"
             ],
             "keyUp": [
-                "Up"
+                "Up",
+                "Ctrl+P"
             ]
         },
         "language": "",
@@ -533,6 +546,7 @@
     "notifications": {
         "backgroundOpacity": 1,
         "criticalUrgencyDuration": 15,
+        "density": "default",
         "enableBatteryToast": true,
         "enableKeyboardLayoutToast": true,
         "enableMediaToast": false,
@@ -588,48 +602,47 @@
                 "command": "",
                 "countdownEnabled": true,
                 "enabled": true,
-                "keybind": ""
+                "keybind": "1"
             },
             {
                 "action": "suspend",
                 "command": "",
                 "countdownEnabled": true,
                 "enabled": true,
-                "keybind": ""
+                "keybind": "2"
             },
             {
                 "action": "hibernate",
                 "command": "",
                 "countdownEnabled": true,
                 "enabled": false,
-                "keybind": ""
+                "keybind": "3"
             },
             {
                 "action": "reboot",
                 "command": "",
                 "countdownEnabled": true,
                 "enabled": true,
-                "keybind": ""
+                "keybind": "4"
             },
             {
                 "action": "logout",
                 "command": "",
                 "countdownEnabled": true,
                 "enabled": true,
-                "keybind": ""
+                "keybind": "5"
             },
             {
                 "action": "shutdown",
                 "command": "",
                 "countdownEnabled": true,
                 "enabled": true,
-                "keybind": ""
+                "keybind": "6"
             }
         ],
-        "showHeader": false,
-        "showNumberLabels": true
+        "showHeader": false
     },
-    "settingsVersion": 51,
+    "settingsVersion": 53,
     "systemMonitor": {
         "batteryCriticalThreshold": 5,
         "batteryWarningThreshold": 20,
@@ -732,8 +745,23 @@
         "directory": "/home/shin/Pictures/homework",
         "enableMultiMonitorDirectories": true,
         "enabled": true,
+        "favorites": [
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/norm/136126644_p7.png",
+                "useWallpaperColors": false
+            }
+        ],
         "fillColor": "#004880",
-        "fillMode": "center",
+        "fillMode": "stretch",
         "hideWallpaperFilenames": false,
         "monitorDirectories": [
         ],
@@ -742,8 +770,9 @@
         "overviewTint": 0.6,
         "panelPosition": "top_center",
         "randomIntervalSec": 1800,
-        "setWallpaperOnAllMonitors": true,
+        "setWallpaperOnAllMonitors": false,
         "showHiddenFiles": false,
+        "skipStartupTransition": false,
         "solidColor": "#180905",
         "sortOrder": "date_desc",
         "transitionDuration": 1000,

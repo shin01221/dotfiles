@@ -12,79 +12,72 @@ themes_arr=("Ayu" "Gruvbox" "Eldritch" "Everforest" "GruvboxAlt" "Kanagawa" "Mia
 variant=$([[ "$mode" == "true" ]] && echo "dark" || echo "light") # should be used to refactor this script.
 
 if [[ $auto_colors = true ]]; then
-    if rg -q '^#\s*source-file .*colors.conf' "$tmux_config" && rg -q '^\s*source-file .*theme.conf' "$tmux_config"; then
-        sed -i 's|^#\s*source-file\s.*colors.conf|source-file ~/.config/tmux/colors.conf|' "$tmux_config"
-        sed -i 's|^\s*source-file\s.*theme.conf|#source-file ~/.config/tmux/theme.conf|' "$tmux_config"
-    else
-        sed -i 's|^#\s*source-file\s.*colors.conf|source-file ~/.config/tmux/colors.conf|' "$tmux_config"
-    fi
-    tmux source-file ~/.config/tmux/colors.conf >/dev/null 2>&1 || true
     exit
-else
-
-    if rg -q '^\s*source-file .*colors.conf' "$tmux_config" && rg -q '^#\s*source-file .*theme.conf' "$tmux_config"; then
-        sed -i 's|^\s*source-file\s.*colors.conf|#source-file ~/.config/tmux/colors.conf|' "$tmux_config"
-        sed -i 's|^#\s*source-file\s.*theme.conf|source-file ~/.config/tmux/theme.conf|' "$tmux_config"
-    else
-        sed -i 's|^#\s*source-file\s.*theme.conf|source-file ~/.config/tmux/theme.conf|' "$tmux_config"
-    fi
-    apply_theme() {
-        local theme_name=$1
-        cp "$starship_configs/starship.toml-$theme_name-$variant" "$HOME/.config/starship.toml"
-        cp "$tmux_themes/$theme_name-$variant.conf" "$HOME/.config/tmux/theme.conf"
-    }
-    case "$theme" in
-    "${themes_arr[0]}")
-        apply_theme ayu
-        ;;
-    "${themes_arr[1]}")
-        apply_theme gruvbox
-        ;;
-    "${themes_arr[2]}")
-        apply_theme elderich
-        ;;
-    "${themes_arr[3]}")
-        apply_theme everforest
-        ;;
-    "${themes_arr[4]}")
-        apply_theme gruvboxalto
-        ;;
-    "${themes_arr[5]}")
-        apply_theme kanagwa
-        ;;
-    "${themes_arr[6]}")
-        apply_theme miasma
-        ;;
-    "${themes_arr[7]}")
-        apply_theme monochrome
-        ;;
-    "${themes_arr[8]}")
-        apply_theme noctalia
-        ;;
-    "${themes_arr[9]}")
-        apply_theme nord
-        ;;
-    "${themes_arr[10]}")
-        apply_theme rosepine
-        ;;
-    "${themes_arr[11]}")
-        apply_theme tokyounightmoon
-        ;;
-    "${themes_arr[12]}")
-        apply_theme lilac
-        ;;
-    "${themes_arr[13]}")
-        apply_theme occult
-        ;;
-    "${themes_arr[14]}")
-        apply_theme one
-        ;;
-    "${themes_arr[15]}")
-        apply_theme oxide
-        ;;
-    "${themes_arr[16]}")
-        apply_theme vesper
-        ;;
-    esac
-    tmux source-file ~/.config/tmux/theme.conf >/dev/null 2>&1 || true
 fi
+
+if rg -q '^\s*source-file .*colors.conf' "$tmux_config" && rg -q '^#\s*source-file .*theme.conf' "$tmux_config"; then
+    sed -i 's|^\s*source-file\s.*colors.conf|#source-file ~/.config/tmux/colors.conf|' "$tmux_config"
+    sed -i 's|^#\s*source-file\s.*theme.conf|source-file ~/.config/tmux/theme.conf|' "$tmux_config"
+else
+    sed -i 's|^#\s*source-file\s.*theme.conf|source-file ~/.config/tmux/theme.conf|' "$tmux_config"
+fi
+apply_theme() {
+    local theme_name=$1
+    cp "$starship_configs/starship.toml-$theme_name-$variant" "$HOME/.config/starship.toml"
+    cp "$tmux_themes/$theme_name-$variant.conf" "$HOME/.config/tmux/theme.conf"
+}
+case "$theme" in
+"${themes_arr[0]}")
+    apply_theme ayu
+    ;;
+"${themes_arr[1]}")
+    apply_theme gruvbox
+    ;;
+"${themes_arr[2]}")
+    apply_theme elderich
+    ;;
+"${themes_arr[3]}")
+    apply_theme everforest
+    ;;
+"${themes_arr[4]}")
+    apply_theme gruvboxalto
+    ;;
+"${themes_arr[5]}")
+    apply_theme kanagwa
+    ;;
+"${themes_arr[6]}")
+    apply_theme miasma
+    ;;
+"${themes_arr[7]}")
+    apply_theme monochrome
+    ;;
+"${themes_arr[8]}")
+    apply_theme noctalia
+    ;;
+"${themes_arr[9]}")
+    apply_theme nord
+    ;;
+"${themes_arr[10]}")
+    apply_theme rosepine
+    ;;
+"${themes_arr[11]}")
+    apply_theme tokyounightmoon
+    ;;
+"${themes_arr[12]}")
+    apply_theme lilac
+    ;;
+"${themes_arr[13]}")
+    apply_theme occult
+    ;;
+"${themes_arr[14]}")
+    apply_theme one
+    ;;
+"${themes_arr[15]}")
+    apply_theme oxide
+    ;;
+"${themes_arr[16]}")
+    apply_theme vesper
+    ;;
+esac
+
+tmux source-file ~/.config/tmux/theme.conf >/dev/null 2>&1 || true
