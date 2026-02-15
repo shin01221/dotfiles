@@ -11,5 +11,6 @@
   "audioSource": "both",
   "videoSource": "portal",
   "resolution": "1920x1080",
-  "hideInactive": true
+  "hideInactive": true,
+  "iconColor": "primary"
 }

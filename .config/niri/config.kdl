@@ -1,0 +1,100 @@
+prefer-no-csd
+
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
+}
+cursor {
+    xcursor-theme "breeze_cursors"
+    xcursor-size 24
+    hide-when-typing
+    hide-after-inactive-ms 1000
+}
+
+xwayland-satellite {
+    path "xwayland-satellite"
+}
+
+environment {
+    QT_QPA_PLATFORM "wayland"
+    DISPLAY null
+}
+
+input {
+    keyboard {
+        repeat-rate 50
+        repeat-delay 300
+        xkb {
+            layout "us,ara"
+            options "caps:super"
+        }
+    }
+    touchpad {
+        tap
+        accel-speed 0.3
+        disabled-on-external-mouse
+    }
+    mouse {
+    }
+    focus-follows-mouse max-scroll-amount="30%"
+    workspace-auto-back-and-forth
+}
+
+output "eDP-1" {
+    variable-refresh-rate on-demand=true
+    // mode "1920x1080@120.030"
+    // scale 2
+    // transform "normal"
+    // position x=1280 y=0
+}
+
+layout {
+    gaps 5
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+    default-column-width { proportion 1.00; }
+    focus-ring {
+        on
+        width 2
+    }
+    shadow {
+        on
+        softness 30
+        spread 5
+        draw-behind-window true
+        offset x=0 y=5
+    }
+    tab-indicator {
+        on
+        hide-when-single-tab
+        place-within-column
+        gap 5
+        width 2
+        length total-proportion=1.0
+        position "right"
+        gaps-between-tabs 2
+        corner-radius 8
+    }
+    insert-hint {
+        on
+    }
+}
+hotkey-overlay {
+    skip-at-startup
+}
+animations {
+    // Uncomment to turn off all animations.
+    // off
+
+    // Slow down all animations by this factor. Values below 1 speed them up instead.
+    // slowdown 3.0
+}
+
+include "execs.kdl"
+include "keybinds.kdl"
+include "windowrules.kdl"
+include "./noctalia.kdl"

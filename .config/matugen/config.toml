@@ -56,6 +56,10 @@ output_path = "~/.config/gtk-4.0/gtk.css"
 input_path = "~/.config/matugen/templates/kde/color.txt"
 output_path = "~/.local/state/quickshell/user/generated/color.txt"
 
+[templates.which-key]
+input_path = "~/.config/matugen/templates/which-key/colors.json"
+output_path = "~/.config/wlr-which-key/colors.json"
+
 [templates.wallpaper]
 input_path = "~/.config/matugen/templates/wallpaper.txt"
 output_path = "~/.local/state/quickshell/user/generated/wallpaper/path.txt"

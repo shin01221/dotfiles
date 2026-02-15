@@ -19,22 +19,22 @@ vim.keymap.set("n", "<A-j>", "<cmd>Treewalker SwapDown<cr>", { silent = true })
 vim.keymap.set("n", "<A-h>", "<cmd>Treewalker SwapLeft<cr>", { silent = true })
 vim.keymap.set("n", "<A-l>", "<cmd>Treewalker SwapRight<cr>", { silent = true })
 
--- keymap.set("n", "tt", vim.cmd.Themery)
-keymap.set("n", "tt", "<cmd>Themify<cr>")
+keymap.set("n", "tt", vim.cmd.Themery)
+-- keymap.set("n", "tt", "<cmd>Themify<cr>")
 -- toggle markview
 keymap.set("n", "<leader>um", "<cmd>Markview Toggle<cr>", { desc = "Toggle markdwon" })
 --toggle top bar buffer on or off
 keymap.set("n", "<leader>us", function()
-	if vim.o.showtabline == 0 then
-		vim.o.showtabline = 2
-	else
-		vim.o.showtabline = 0
-	end
+  if vim.o.showtabline == 0 then
+    vim.o.showtabline = 2
+  else
+    vim.o.showtabline = 0
+  end
 end, { desc = "Toggle bufferline visibility" })
 vim.keymap.set("n", "<leader>cf", function()
-	require("conform").format({
-		lsp_format = "fallback",
-	})
+  require("conform").format({
+    lsp_format = "fallback",
+  })
 end, { desc = "Format current file" })
 
 -- obsidian  keymaps
@@ -71,7 +71,7 @@ keymap.set("n", "<leader>oP", vim.cmd.MarkdownPreviewToggle, { desc = "Toggle ma
 -- keymap.set("n", "<S-l>", "<Cmd>BufferLineCycleNext<CR>", { desc = "NextBuffer" })
 -- keymap.set("n", "<S-h>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "PrevBuffer" })
 vim.keymap.set("n", "gl", function()
-	vim.diagnostic.open_float()
+  vim.diagnostic.open_float()
 end, { desc = "Open Diagnostics in Float" })
 
 -- Clear highlights on search when pressing <Esc> in normal mode

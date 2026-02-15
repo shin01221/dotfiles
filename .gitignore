@@ -18,6 +18,7 @@
 !.config/dolphinrc
 !.config/starship
 !.config/nvim
+!.config/niri
 !.config/spicetify
 !.config/lrcsnc
 !.config/MangoHud

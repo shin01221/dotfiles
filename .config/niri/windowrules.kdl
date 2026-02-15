@@ -1,0 +1,75 @@
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+}
+
+// window-rule {
+//      open-fullscreen true
+// }
+
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    block-out-from "screen-capture"
+}
+
+window-rule {
+    match app-id="^mpv$"
+    variable-refresh-rate true
+}
+
+window-rule {
+    draw-border-with-background false
+}
+
+window-rule {
+    match app-id="^foot-dropterm$"
+    open-floating true
+    default-floating-position x=0 y=15 relative-to="bottom"
+    default-window-height { proportion 0.5; }
+    default-column-width { proportion 0.6; }
+}
+ // Fix OBS with server-side decorations missing a minimum width.
+window-rule {
+    match app-id=r#"^com\.obsproject\.Studio$"#
+    min-width 876
+}
+
+window-rule {
+    match app-id=r#"^org\.kde\.ark$|hyprland-share-picker"#
+    open-floating true
+    default-column-width { fixed 780; }
+    default-window-height { fixed 500; }
+}
+
+window-rule {
+    match app-id=r#"^(mpv)$|^(snappergui)$|^(imv)$|^(org.gnome.Shotwell)$|^(org.kde.kdeconnect.handler)$|^org\.kde\.kdeconnect\.app$|^(kvantummanager)$|^(qt6ct)$|^(qt5ct)$|^(org.gnome.ark)$|^(pavucontrol)$|^(pavucontrol-qt)$|^(org.gnome.FileRoller)$|^(com.gabm.satty)$"#
+    open-floating true
+    default-column-width { fixed 1200; }
+    default-window-height { fixed 800; }
+}
+
+layer-rule {
+  match namespace="^noctalia-wallpaper*"
+  place-within-backdrop true
+}
+
+layout {
+  background-color "transparent"
+}
+
+overview {
+  workspace-shadow {
+    off
+  }
+}
