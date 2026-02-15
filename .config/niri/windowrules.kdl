@@ -1,11 +1,29 @@
+// workspaces
+
+workspace "Music"
+workspace "Comm"
+workspace "Net"
+
+window-rule {
+    match app-id=r#"zen"#
+    open-on-workspace "Net"
+}
+
+window-rule {
+    match app-id=r#"vesktop|org\.telegram\.desktop"#
+    open-on-workspace "Comm"
+}
+
+window-rule {
+    match app-id=r#"rmpc|lrc|spotify"#
+    open-on-workspace "Music"
+    open-focused false
+}
+
 window-rule {
     geometry-corner-radius 8
     clip-to-geometry true
 }
-
-// window-rule {
-//      open-fullscreen true
-// }
 
 window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
@@ -39,7 +57,7 @@ window-rule {
     default-window-height { proportion 0.5; }
     default-column-width { proportion 0.6; }
 }
- // Fix OBS with server-side decorations missing a minimum width.
+
 window-rule {
     match app-id=r#"^com\.obsproject\.Studio$"#
     min-width 876

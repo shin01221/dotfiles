@@ -1,4 +1,5 @@
 spawn-sh-at-startup "qs -c noctalia"
 spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-sh-at-startup "gnome-keyring-daemon --start --components=secrets"
-spawn-sh-at-startup "exec-once = easyeffects --hide-window --service-mode"
+spawn-sh-at-startup "easyeffects --hide-window --service-mode"
+spawn-sh-at-startup "~/.local/bin/music.sh rmpc"

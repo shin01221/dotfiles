@@ -4,6 +4,8 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: launcher" { spawn-sh "qs -c noctalia ipc call launcher toggle"; }
     Mod+Print { spawn "~/.local/bin/hyprshot.sh"; }
     Mod+F1 { spawn "wayscriber" "--active"; }
+    Mod+Equal{ spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ -l 1.5"; }
+    Mod+Minus{ spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"; }
     Mod+U { switch-layout "next"; }
     Mod+Alt+Return { spawn-sh "~/.local/bin/scratchpad.sh foot-dropterm"; }
 
@@ -106,11 +108,11 @@ binds {
     Mod+F { fullscreen-window; }
     Mod+Ctrl+F { expand-column-to-available-width; }
 
-    Mod+C { center-column; }
+    // Mod+C { center-column; }
     Mod+Ctrl+C { center-visible-columns; }
 
-    Mod+Minus { set-column-width "-10%"; }
-    Mod+Equal { set-column-width "+10%"; }
+    Mod+Alt+Minus { set-column-width "-10%"; }
+    Mod+Alt+Equal { set-column-width "+10%"; }
 
     Mod+Shift+Minus { set-window-height "-10%"; }
     Mod+Shift+Equal { set-window-height "+10%"; }
@@ -132,4 +134,5 @@ binds {
     Mod+m { spawn-sh "wlr-which-key -k m niri"; }
     Mod+n { spawn-sh "wlr-which-key -k n niri"; }
     Mod+a { spawn-sh "wlr-which-key -k a niri"; }
+    Mod+C { spawn-sh "wlr-which-key -k c niri"; }
 }

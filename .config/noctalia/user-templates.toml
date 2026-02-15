@@ -50,3 +50,4 @@ post_hook = 'pkill -SIGUSR1 nvim'
 [templates.which-key]
 input_path = "~/.config/matugen/templates/which-key/colors.json"
 output_path = "~/.config/wlr-which-key/colors.json"
+post_hook = "~/.local/bin/which-key.sh"
