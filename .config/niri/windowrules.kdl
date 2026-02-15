@@ -7,27 +7,25 @@ workspace "Net"
 window-rule {
     match app-id=r#"zen"#
     open-on-workspace "Net"
+    default-column-width { proportion 1.00; }
 }
 
 window-rule {
     match app-id=r#"vesktop|org\.telegram\.desktop"#
     open-on-workspace "Comm"
+    default-column-width { proportion 1.00; }
 }
 
 window-rule {
     match app-id=r#"rmpc|lrc|spotify"#
     open-on-workspace "Music"
     open-focused false
+    default-column-width { proportion 1.00; }
 }
 
 window-rule {
     geometry-corner-radius 8
     clip-to-geometry true
-}
-
-window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
 }
 
 window-rule {
@@ -44,6 +42,7 @@ window-rule {
 window-rule {
     match app-id="^mpv$"
     variable-refresh-rate true
+    // block-out-from "screencast"
 }
 
 window-rule {
@@ -71,7 +70,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"^(mpv)$|^(snappergui)$|^(imv)$|^(org.gnome.Shotwell)$|^(org.kde.kdeconnect.handler)$|^org\.kde\.kdeconnect\.app$|^(kvantummanager)$|^(qt6ct)$|^(qt5ct)$|^(org.gnome.ark)$|^(pavucontrol)$|^(pavucontrol-qt)$|^(org.gnome.FileRoller)$|^(com.gabm.satty)$"#
+    match app-id=r#"^(mpv)$|^(snappergui)$|^(imv)$|^(org.gnome.Shotwell)$|org\.kde\.kdeconnect\.handler|org\.kde\.kdeconnect\.app|^(kvantummanager)$|^(qt6ct)$|^(qt5ct)$|^(org.gnome.ark)$|^(pavucontrol)$|^(pavucontrol-qt)$|^(org.gnome.FileRoller)$|^(com.gabm.satty)$"#
     open-floating true
     default-column-width { fixed 1200; }
     default-window-height { fixed 800; }

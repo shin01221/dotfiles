@@ -1,8 +1,8 @@
 # Theming
 font: JetBrainsMono Nerd Font 12
-background: "#232a2ed0"
-color: "#859289"
-border: "#d3c6aa"
+background: "#070722d0"
+color: "#f3edf7"
+border: "#fff59b"
 separator: " ➜ "
 border_width: 1
 corner_r: 10
@@ -151,8 +151,8 @@ menu:
         desc: MonoChrome
         cmd: qs -c noctalia ipc call colorScheme set "Monochrome"
       - key: "t"
-        desc: Nocatalia
-        cmd: qs -c noctalia ipc call colorScheme set "Nocatalia (default)"
+        desc: Noctalia
+        cmd: qs -c noctalia ipc call colorScheme set "Noctalia (default)"
       - key: "n"
         desc: Nord
         cmd: qs -c noctalia ipc call colorScheme set "Nord"

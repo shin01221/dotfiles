@@ -1,7 +1,7 @@
 binds {
-    Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
-    Mod+Shift+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "env" "NO_TMUX=1" "foot"; }
-    Mod+D hotkey-overlay-title="Run an Application: launcher" { spawn-sh "qs -c noctalia ipc call launcher toggle"; }
+    Mod+Return { spawn "foot"; }
+    Mod+Shift+Return { spawn "env" "NO_TMUX=1" "foot"; }
+    Mod+D { spawn-sh "qs -c noctalia ipc call launcher toggle"; }
     Mod+Print { spawn "~/.local/bin/hyprshot.sh"; }
     Mod+F1 { spawn "wayscriber" "--active"; }
     Mod+Equal{ spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ -l 1.5"; }
@@ -104,9 +104,9 @@ binds {
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
-    Mod+Shift+F { maximize-column; }
+    Mod+Alt+F { maximize-column; }
     Mod+F { fullscreen-window; }
-    Mod+Ctrl+F { expand-column-to-available-width; }
+    Mod+Shift+F { expand-column-to-available-width; }
 
     // Mod+C { center-column; }
     Mod+Ctrl+C { center-visible-columns; }
@@ -118,12 +118,8 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     Mod+space       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+Alt+space { switch-focus-between-floating-and-tiling; }
     Mod+G { toggle-column-tabbed-display; }
-
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Ctrl+Alt+Delete { quit; }

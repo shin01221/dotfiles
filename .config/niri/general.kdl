@@ -1,5 +1,4 @@
 prefer-no-csd
-
 debug {
   // Allows notification actions and window activation from Noctalia.
   honor-xdg-activation-with-invalid-serial
@@ -40,14 +39,15 @@ output "eDP-1" {
 }
 
 layout {
-    gaps 5
+    gaps 4
     center-focused-column "never"
     preset-column-widths {
         proportion 0.33333
         proportion 0.5
         proportion 0.66667
+        proportion 1.00
     }
-    default-column-width { proportion 1.00; }
+    default-column-width { proportion 0.50; }
     focus-ring {
         on
         width 2
@@ -63,7 +63,7 @@ layout {
         on
         hide-when-single-tab
         place-within-column
-        gap 5
+        gap 4
         width 2
         length total-proportion=1.0
         position "right"
