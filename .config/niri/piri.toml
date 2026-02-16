@@ -1,24 +1,20 @@
 [niri]
 
 [piri.plugins]
-scratchpads = false
 empty = true
 window_order = true
 workspace_rule = true
-window_rule = true
+scratchpads = false
+window_rule = false
 autofill = false
 singleton = false
 swallow = false
 
 [piri.workspace_rule]
-auto_width = ["100%", ["45%", "55%"], ["50%", "50%"], "50%", "50%"]
+auto_width = ["100%", "70%", ["50%", "50%"], "50%", "50%"]
 auto_tile = false
 auto_fill = false
 auto_maximize = false
-
-# [workspace_rule.browser]
-# # 1 window: 100%, 2 windows: 45% and 55%, 3 windows: 33.33% each
-# auto_width = ["100%", ["45%", "55%"], "33.33%"]
 
 [piri.window_order]
 enable_event_listener = true # Enable event listening for automatic reordering
@@ -29,6 +25,7 @@ zen-browser = 100
 Vmware = 99
 virt-manager = 98
 dolphin = 80
+rmpc = 79
 foot = 75
 
 [empty.Net]

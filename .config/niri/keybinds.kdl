@@ -126,10 +126,11 @@ binds {
     Ctrl+Alt+Delete { quit; }
     Mod+Shift+P { power-off-monitors; }
     Mod+backspace { spawn-sh "qs -c noctalia ipc call sessionMenu toggle"; }
-
+    Mod+T { spawn-sh "~/.local/bin/niri-sidebar toggle-window"; }
     // wlr_which_key
     Mod+m { spawn-sh "wlr-which-key -k m niri"; }
     Mod+n { spawn-sh "wlr-which-key -k n niri"; }
     Mod+a { spawn-sh "wlr-which-key -k a niri"; }
     Mod+C { spawn-sh "wlr-which-key -k c niri"; }
+    Mod+s { spawn-sh "wlr-which-key -k s niri"; }
 }

@@ -4,6 +4,7 @@ workspace "Music"
 workspace "Comm"
 workspace "Net"
 
+
 window-rule {
     match app-id=r#"zen"#
     open-on-workspace "Net"
@@ -18,7 +19,7 @@ window-rule {
 
 window-rule {
     match app-id=r#"rmpc|lrc|spotify"#
-    match title=r#"rmpc|lrc|spotify"#
+    // match title=r#"rmpc|lrc|spotify"#
     open-on-workspace "Music"
     open-focused false
     default-column-width { proportion 1.00; }
@@ -44,6 +45,12 @@ window-rule {
     match app-id="^mpv$"
     variable-refresh-rate true
     // block-out-from "screencast"
+}
+
+window-rule {
+    match is-floating=true
+    min-width 100
+    min-height 100
 }
 
 window-rule {
@@ -78,6 +85,11 @@ window-rule {
     default-window-height { fixed 500; }
 }
 
+window-rule {
+    match app-id=r#"^org\.kde\.dolphin"#
+    default-column-width { proportion 1.00; }
+    default-window-height { proportion 1.00; }
+}
 
 window-rule {
     match app-id=r#"^(mpv)$|^(snappergui)$|^(imv)$|^(org.gnome.Shotwell)$|org\.kde\.kdeconnect\.handler|org\.kde\.kdeconnect\.app|^(kvantummanager)$|^(qt6ct)$|^(qt5ct)$|^(org.gnome.ark)$|^(pavucontrol)$|^(pavucontrol-qt)$|^(org.gnome.FileRoller)$|^(com.gabm.satty)$"#

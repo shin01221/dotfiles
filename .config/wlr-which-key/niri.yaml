@@ -95,7 +95,18 @@ menu:
       - key: "l"
         desc: "Toggle dark/light"
         cmd: qs -c noctalia ipc call darkMode toggle
-
+  - key: "s"
+    desc: NirirSidebar
+    submenu:
+      - key: "v"
+        desc: ToggleVisibility
+        cmd: ~/.local/bin/niri-sidebar toggle-visibility
+      - key: "f"
+        desc: Flip
+        cmd: ~/.local/bin/niri-sidebar flip
+      - key: "r"
+        desc: Flip
+        cmd: ~/.local/bin/niri-sidebar reorder
   - key: "a"
     desc: Applaications
     submenu:
