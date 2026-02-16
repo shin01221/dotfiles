@@ -40,6 +40,7 @@ output "eDP-1" {
 
 layout {
     gaps 4
+    // default-column-width { proportion 0.50; }
     center-focused-column "never"
     preset-column-widths {
         proportion 0.33333
@@ -47,24 +48,27 @@ layout {
         proportion 0.66667
         proportion 1.00
     }
-    default-column-width { proportion 0.50; }
     focus-ring {
+        off
+        width 2
+    }
+    border {
         on
         width 2
     }
     shadow {
         on
-        softness 30
-        spread 5
+        softness 20
+        spread 3
         draw-behind-window true
-        offset x=0 y=5
+        offset x=2 y=7
     }
     tab-indicator {
         on
-        hide-when-single-tab
+        // hide-when-single-tab
         place-within-column
         gap 4
-        width 2
+        width 1
         length total-proportion=1.0
         position "right"
         gaps-between-tabs 2

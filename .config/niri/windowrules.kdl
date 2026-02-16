@@ -18,6 +18,7 @@ window-rule {
 
 window-rule {
     match app-id=r#"rmpc|lrc|spotify"#
+    match title=r#"rmpc|lrc|spotify"#
     open-on-workspace "Music"
     open-focused false
     default-column-width { proportion 1.00; }
@@ -50,7 +51,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^foot-dropterm$"
+    match app-id="^foot-dropterm$|^kitty-dropterm$"
     open-floating true
     default-floating-position x=0 y=15 relative-to="bottom"
     default-window-height { proportion 0.5; }
@@ -68,6 +69,15 @@ window-rule {
     default-column-width { fixed 780; }
     default-window-height { fixed 500; }
 }
+
+window-rule {
+    // match app-id=r#"^org\.kde\.dolphin$"#
+    match title=r#"^Compressing a file\s*—\s*Dolphin$"#
+    open-floating true
+    default-column-width { fixed 780; }
+    default-window-height { fixed 500; }
+}
+
 
 window-rule {
     match app-id=r#"^(mpv)$|^(snappergui)$|^(imv)$|^(org.gnome.Shotwell)$|org\.kde\.kdeconnect\.handler|org\.kde\.kdeconnect\.app|^(kvantummanager)$|^(qt6ct)$|^(qt5ct)$|^(org.gnome.ark)$|^(pavucontrol)$|^(pavucontrol-qt)$|^(org.gnome.FileRoller)$|^(com.gabm.satty)$"#

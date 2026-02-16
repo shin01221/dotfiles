@@ -1,8 +1,8 @@
 # Theming
 font: JetBrainsMono Nerd Font 12
-background: "#070722d0"
-color: "#f3edf7"
-border: "#fff59b"
+background: "#222222d0"
+color: "#c2c2b0"
+border: "#c9a554"
 separator: " ➜ "
 border_width: 1
 corner_r: 10
@@ -80,9 +80,6 @@ menu:
       - key: "w"
         desc: Wallpapers
         cmd: qs -c noctalia ipc call wallpaper toggle
-      - key: "i"
-        desc: SessionMenu
-        cmd: qs -c noctalia ipc call sessionMenu toggle
       - key: "r"
         desc: Record
         cmd: qs -c noctalia ipc call plugin:screen-recorder toggle
