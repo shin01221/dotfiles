@@ -178,7 +178,7 @@
                     "id": "Workspace",
                     "labelMode": "name",
                     "occupiedColor": "primary",
-                    "pillSize": 0.6000000000000001,
+                    "pillSize": 0.65,
                     "showApplications": false,
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": true,
@@ -325,9 +325,9 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Monochrome",
+        "predefinedScheme": "Gruvbox",
         "schedulingMode": "off",
-        "useWallpaperColors": true
+        "useWallpaperColors": false
     },
     "controlCenter": {
         "cards": [
@@ -565,7 +565,7 @@
         "autoSchedule": false,
         "dayTemp": "6500",
         "enabled": true,
-        "forced": false,
+        "forced": true,
         "manualSunrise": "08:00",
         "manualSunset": "20:00",
         "nightTemp": "3505"

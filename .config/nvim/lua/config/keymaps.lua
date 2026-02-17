@@ -58,7 +58,17 @@ keymap.set("n", "<leader>or", "<cmd>Obsidian rename<cr>", { desc = "rename note"
 keymap.set("n", "<leader>l", "<cmd>Obsidian toggle_checkbox<cr>", { desc = "toggle checkbox" })
 keymap.set("n", "<leader>on", "<cmd>Obsidian new<cr>", { desc = "New Note" })
 keymap.set("n", "<leader>og", "<cmd>Obsidian search<cr>", { desc = "Search notes" })
-keymap.set("n", "<leader>os", "<cmd>Obsidian quick_switch<cr>", { desc = "Search notes" })
+
+vim.keymap.set("n", "<leader>os", function()
+  if vim.fn.exists(":Obsidian quick_switch") == 2 then
+    vim.cmd("Obsidian quick_switch")
+  else
+    Snacks.picker.files({
+      cwd = vim.fn.expand("/Media/Docs/notes/"),
+    })
+  end
+end)
+
 keymap.set("n", "<leader>ob", "<cmd>Obsidian backlinks<cr>", { desc = "Search backlinks" })
 keymap.set("n", "<leader>ot", "<cmd>Obsidian new_from_template<cr>", { desc = "New Note with template" })
 keymap.set("n", "<leader>od", "<cmd>Obsidian dailies<cr>", { desc = "New Daily Note" })

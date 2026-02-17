@@ -5,6 +5,14 @@ workspace "Files"
 workspace "Comm"
 workspace "Net"
 
+// keep this one on top since it need to be overrided later
+window-rule {
+    match is-floating=true
+    default-column-width { fixed 800; }
+    default-window-height { fixed 800; }
+}
+// ..
+
 window-rule {
     match app-id=r#"zen"#
     open-on-workspace "Net"
@@ -41,8 +49,6 @@ window-rule {
     block-out-from "screen-capture"
 }
 
-
-
 window-rule {
     match is-floating=true
     min-width 100
@@ -72,8 +78,6 @@ window-rule {
     default-column-width { fixed 780; }
     default-window-height { fixed 500; }
 }
-
-
 
 window-rule {
     match app-id=r#"^org\.kde\.dolphin|mpv"#
