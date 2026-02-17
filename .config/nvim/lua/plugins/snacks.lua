@@ -22,11 +22,9 @@ return {
     {
       "<leader>fC",
       function()
-        require("snacks").picker.files({
-          cwd = vim.fn.expand("~/.config"),
-        })
+        Snacks.picker.files({ cwd = vim.fn.expand("~/.config") })
       end,
-      desc = "Find files in ~/.config",
+      desc = "Find ~/.config Files",
     },
   },
 }

@@ -4,7 +4,6 @@ workspace "Music"
 workspace "Comm"
 workspace "Net"
 
-
 window-rule {
     match app-id=r#"zen"#
     open-on-workspace "Net"

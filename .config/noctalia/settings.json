@@ -104,7 +104,9 @@
                     "parseJson": false,
                     "rightClickExec": "",
                     "rightClickUpdateText": false,
+                    "showExecTooltip": true,
                     "showIcon": true,
+                    "showTextTooltip": true,
                     "textCollapse": "(no lyrics)",
                     "textCommand": "lrc_tty --raw",
                     "textIntervalMs": 500,
@@ -146,7 +148,9 @@
                     "parseJson": false,
                     "rightClickExec": "qs -c noctalia ipc call launcher toggle",
                     "rightClickUpdateText": false,
+                    "showExecTooltip": true,
                     "showIcon": false,
+                    "showTextTooltip": true,
                     "textCollapse": "",
                     "textCommand": "echo \"死Shin\"",
                     "textIntervalMs": 1000000,
@@ -264,7 +268,9 @@
                     "parseJson": false,
                     "rightClickExec": "",
                     "rightClickUpdateText": false,
+                    "showExecTooltip": true,
                     "showIcon": true,
+                    "showTextTooltip": true,
                     "textCollapse": "",
                     "textCommand": "",
                     "textIntervalMs": 3000,
@@ -312,11 +318,11 @@
     },
     "colorSchemes": {
         "darkMode": true,
-        "generationMethod": "fruit-salad",
+        "generationMethod": "content",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Miasma",
+        "predefinedScheme": "Gruvbox",
         "schedulingMode": "off",
         "useWallpaperColors": false
     },
@@ -418,6 +424,16 @@
                         "showBackground": true,
                         "x": 20,
                         "y": 120
+                    },
+                    {
+                        "defaultSettings": {
+                            "hideBackground": false,
+                            "minimumThreshold": 10
+                        },
+                        "id": "plugin:catwalk",
+                        "showBackground": true,
+                        "x": 20,
+                        "y": 980
                     }
                 ]
             }
@@ -429,6 +445,7 @@
         "colorizeIcons": true,
         "deadOpacity": 0.6,
         "displayMode": "auto_hide",
+        "dockType": "floating",
         "enabled": false,
         "floatingRatio": 1,
         "inactiveIndicators": false,
@@ -439,6 +456,8 @@
         ],
         "pinnedStatic": true,
         "position": "bottom",
+        "showFrameIndicator": true,
+        "sitOnFrame": false,
         "size": 1
     },
     "general": {
@@ -543,13 +562,14 @@
         "autoSchedule": false,
         "dayTemp": "6500",
         "enabled": true,
-        "forced": true,
+        "forced": false,
         "manualSunrise": "08:00",
         "manualSunset": "20:00",
         "nightTemp": "3505"
     },
     "notifications": {
         "backgroundOpacity": 1,
+        "clearDismissed": true,
         "criticalUrgencyDuration": 15,
         "density": "default",
         "enableBatteryToast": true,
@@ -883,7 +903,7 @@
             }
         ],
         "fillColor": "#004880",
-        "fillMode": "stretch",
+        "fillMode": "center",
         "hideWallpaperFilenames": false,
         "monitorDirectories": [
         ],

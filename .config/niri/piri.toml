@@ -11,7 +11,22 @@ singleton = false
 swallow = false
 
 [piri.workspace_rule]
-auto_width = ["100%", "70%", ["50%", "50%"], "50%", "50%"]
+auto_width = [
+    "100%",
+    "100%",
+    [
+        "70%",
+        "50%",
+        "50%",
+    ],
+    [
+        "70%",
+        "50%",
+        "50%",
+        "50%",
+    ],
+    "70%",
+]
 auto_tile = false
 auto_fill = false
 auto_maximize = false
