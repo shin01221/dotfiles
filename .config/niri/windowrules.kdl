@@ -41,11 +41,7 @@ window-rule {
     block-out-from "screen-capture"
 }
 
-// window-rule {
-//     match app-id="^mpv$"
-//     // variable-refresh-rate true
-//     // block-out-from "screencast"
-// }
+
 
 window-rule {
     match is-floating=true
@@ -77,19 +73,14 @@ window-rule {
     default-window-height { fixed 500; }
 }
 
-window-rule {
-    match title=r#"^Compressing a file\s*—\s*Dolphin$"#
-    open-floating true
-    default-column-width { fixed 780; }
-    default-window-height { fixed 500; }
-}
+
 
 window-rule {
     match app-id=r#"^org\.kde\.dolphin|mpv"#
     open-on-workspace "Files"
     open-focused true
-    default-column-width { proportion 1.00; }
-    default-window-height { proportion 1.00; }
+    // default-column-width { proportion 1.00; }
+    // default-window-height { proportion 1.00; }
 }
 
 window-rule {
@@ -97,6 +88,28 @@ window-rule {
     open-floating true
     default-column-width { fixed 1200; }
     default-window-height { fixed 800; }
+}
+
+// block-out
+window-rule {
+    match app-id=r#"(zen|^org\.kde\.dolphin|^mpv$)"# title=r#"(.*[wW]hats[aA]pp.*|.*[iI]nstagram.*|.*[Rr]eddit.*|.*[zZ]en\s*[bB]rowser\s*[pP]rivate\s*[Bb]rowsing.*|.*priv.*|.*\.p.*)"#
+    block-out-from "screencast"
+}
+
+// keep all dolphin window titles rules at the end to overide the main dolphin window rule behaviour on top
+window-rule {
+    match app-id=r#"^org\.kde\.dolphin"# title=r#"^Properties.*"#
+    open-floating true
+    default-column-width { fixed 780; }
+    default-window-height { fixed 500; }
+}
+
+window-rule {
+    match title=r#"^Compressing a file\s*—\s*Dolphin$"#
+    open-floating true
+    default-column-width { proportion 0.30; }
+    default-window-height { proportion 0.20; }
+    // default-floating-position x=0 y=30 relative-to="top"
 }
 
 layer-rule {

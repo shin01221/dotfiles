@@ -1,24 +1,24 @@
 vim.cmd("hi clear")
 require("base16-colorscheme").setup({
   -- Background tones
-  base00 = "#282828", -- Default Background
-  base01 = "#3c3836", -- Lighter Background (status bars)
-  base02 = "#474240", -- Selection Background
-  base03 = "#786f6b", -- Comments, Invisibles
+  base00 = "#141311", -- Default Background
+  base01 = "#211f1d", -- Lighter Background (status bars)
+  base02 = "#2b2a28", -- Selection Background
+  base03 = "#959085", -- Comments, Invisibles
   -- Foreground tones
-  base04 = "#ebdbb2", -- Dark Foreground (status bars)
-  base05 = "#fbf1c7", -- Default Foreground
-  base06 = "#fbf1c7", -- Light Foreground
-  base07 = "#fbf1c7", -- Lightest Foreground
+  base04 = "#ccc6ba", -- Dark Foreground (status bars)
+  base05 = "#e6e2de", -- Default Foreground
+  base06 = "#e6e2de", -- Light Foreground
+  base07 = "#e6e2de", -- Lightest Foreground
   -- Accent colors
-  base08 = "#fb4934", -- Variables, XML Tags, Errors
-  base09 = "#83a598", -- Integers, Constants
-  base0A = "#fabd2f", -- Classes, Search Background
-  base0B = "#b8bb26", -- Strings, Diff Inserted
-  base0C = "#96e9c9", -- Regex, Escape Chars
-  base0D = "#e8e995", -- Functions, Methods
-  base0E = "#fcd782", -- Keywords, Storage
-  --base0F = '#7d0d00', -- Deprecated, Embedded Tags
+  base08 = "#ffb4ab", -- Variables, XML Tags, Errors
+  base09 = "#c0cab6", -- Integers, Constants
+  base0A = "#ccc6b9", -- Classes, Search Background
+  base0B = "#cfc6ac", -- Strings, Diff Inserted
+  base0C = "#c0cab6", -- Regex, Escape Chars
+  base0D = "#cfc6ac", -- Functions, Methods
+  base0E = "#ccc6b9", -- Keywords, Storage
+  --base0F = '#93000a', -- Deprecated, Embedded Tags
 })
 
 local signal = vim.uv.new_signal()
