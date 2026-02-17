@@ -24,22 +24,18 @@ binds {
 // window management
     Mod+O repeat=false { toggle-overview; }
     Mod+Q repeat=false { close-window; }
-    Mod+Left  { focus-column-left; }
+    Mod+Left  { spawn-sh "~/.local/bin/float-tile-niri-navigation.sh left"; }
     Mod+Down  { focus-window-down; }
     Mod+Up    { focus-window-up; }
-    Mod+Right { focus-column-right; }
-    Mod+H     { focus-column-left; }
-    // Mod+J     { focus-window-down; }
-    // Mod+K     { focus-window-up; }
-    Mod+L     { focus-column-right; }
+    Mod+Right { spawn-sh "~/.local/bin/float-tile-niri-navigation.sh right"; }
+    Mod+H     { spawn-sh "~/.local/bin/float-tile-niri-navigation.sh left"; }
+    Mod+L     { spawn-sh "~/.local/bin/float-tile-niri-navigation.sh right"; }
 
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Down  { move-window-down; }
     Mod+Ctrl+Up    { move-window-up; }
     Mod+Ctrl+Right { move-column-right; }
     Mod+Ctrl+H     { move-column-left; }
-    // Mod+Ctrl+J     { move-window-down; }
-    // Mod+Ctrl+K     { move-window-up; }
     Mod+Ctrl+L     { move-column-right; }
 
     Mod+J     { focus-window-or-workspace-down; }
@@ -119,7 +115,7 @@ binds {
     Mod+Alt+J { set-window-height "+6%"; }
 
     Mod+space       { toggle-window-floating; }
-    Mod+Alt+space { switch-focus-between-floating-and-tiling; }
+    Mod+Shift+H { switch-focus-between-floating-and-tiling; }
     Mod+G { toggle-column-tabbed-display; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
