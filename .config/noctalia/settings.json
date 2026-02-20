@@ -325,9 +325,9 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Gruvbox",
+        "predefinedScheme": "Monochrome",
         "schedulingMode": "off",
-        "useWallpaperColors": false
+        "useWallpaperColors": true
     },
     "controlCenter": {
         "cards": [
@@ -409,27 +409,6 @@
                     },
                     {
                         "defaultSettings": {
-                            "barWidth": 0.6,
-                            "bloomIntensity": 0.5,
-                            "customPrimaryColor": "#6750A4",
-                            "customSecondaryColor": "#625B71",
-                            "fadeWhenIdle": false,
-                            "innerDiameter": 0.7,
-                            "ringOpacity": 0.8,
-                            "rotationSpeed": 0.5,
-                            "sensitivity": 1.5,
-                            "useCustomColors": false,
-                            "visualizationMode": 3,
-                            "waveThickness": 1
-                        },
-                        "id": "plugin:fancy-audiovisualizer",
-                        "scale": 0.8475116860675574,
-                        "showBackground": true,
-                        "x": 20,
-                        "y": 120
-                    },
-                    {
-                        "defaultSettings": {
                             "hideBackground": false,
                             "minimumThreshold": 10
                         },
@@ -452,6 +431,7 @@
         "enabled": false,
         "floatingRatio": 1,
         "inactiveIndicators": false,
+        "launcherPosition": "end",
         "monitors": [
         ],
         "onlySameOutput": true,
@@ -460,6 +440,7 @@
         "pinnedStatic": true,
         "position": "bottom",
         "showFrameIndicator": true,
+        "showLauncherIcon": false,
         "sitOnFrame": false,
         "size": 1
     },
@@ -513,6 +494,7 @@
         "lockScreenMonitors": [
         ],
         "lockScreenTint": 0,
+        "passwordChars": true,
         "radiusRatio": 1,
         "reverseScroll": false,
         "scaleRatio": 0.9500000000000001,
@@ -565,7 +547,7 @@
         "autoSchedule": false,
         "dayTemp": "6500",
         "enabled": true,
-        "forced": true,
+        "forced": false,
         "manualSunrise": "08:00",
         "manualSunset": "20:00",
         "nightTemp": "3505"
@@ -902,6 +884,32 @@
                     "#ffb4ab"
                 ],
                 "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/140789652_p5.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": false,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#645e48",
+                    "#625e54",
+                    "#586151",
+                    "#ba1a1a"
+                ],
+                "path": "/home/shin/Pictures/Wallpapers/wallhaven-8gkolk.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "muted",
+                "paletteColors": [
+                    "#a6a6a6",
+                    "#999999",
+                    "#999999",
+                    "#fd4663"
+                ],
+                "path": "/home/shin/Pictures/Wallpapers/wallhaven-m3x62m.jpg",
                 "useWallpaperColors": true
             }
         ],

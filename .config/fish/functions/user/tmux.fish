@@ -17,7 +17,7 @@ function tmux-set
             case 0
                 tmux new -As main
             case '*'
-                tmux attach -t "$last_choice"
+                tmux attach -t "$last_choice"; or tmux new -s "$last_choice"
         end
     end
 end

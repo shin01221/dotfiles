@@ -26,15 +26,6 @@
       "details": ""
     },
     {
-      "id": 1769850553024,
-      "text": "make small debian client and add it to eve for testing",
-      "completed": false,
-      "createdAt": "2026-01-31T09:09:13.024Z",
-      "pageId": 0,
-      "priority": "medium",
-      "details": ""
-    },
-    {
       "id": 1769344752968,
       "text": "learn more about ubuntu server",
       "completed": false,
@@ -44,7 +35,7 @@
       "details": ""
     }
   ],
-  "count": 4,
+  "count": 3,
   "completedCount": 0,
   "isExpanded": false,
   "showCompleted": true,

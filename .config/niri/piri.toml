@@ -33,16 +33,18 @@ auto_maximize = false
 
 [piri.window_order]
 enable_event_listener = true # Enable event listening for automatic reordering
-default_weight = 0           # Default weight for unconfigured windows
+default_weight = 50          # Default weight for unconfigured windows
 
 [window_order]
 zen-browser = 100
 Vmware = 99
 virt-manager = 98
-dolphin = 80
-rmpc = 79
-foot = 75
-kitty = 74
+dolphin = 97
+rmpc = 96
+mpv = 95
+vlc = 94
+foot = 49
+kitty = 48
 
 [empty.Net]
 command = "zen-browser"

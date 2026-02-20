@@ -2,10 +2,16 @@
 
 workspace "Music"
 workspace "Files"
+workspace "Read"
 workspace "Comm"
 workspace "Net"
 
 // keep this one on top since it need to be overrided later
+
+// window-rule {
+//     opacity 0.90
+// }
+
 window-rule {
     match is-floating=true
     default-column-width { fixed 800; }
@@ -13,10 +19,22 @@ window-rule {
 }
 // ..
 
+// opacity overrides
+window-rule {
+    match app-id=r#"rmpc|.*zen.*|.*org\.kde\.okular.*|.*mpv.*|.*vlc.*|.*foot.*"#
+    opacity 1.00
+}
+// ..
+
 window-rule {
     match app-id=r#"zen"#
     open-on-workspace "Net"
     default-column-width { proportion 1.00; }
+}
+
+window-rule {
+    match app-id=r#".*org\.kde\.okular.*|.*calibre.*"#
+    open-on-workspace "Read"
 }
 
 window-rule {
@@ -80,7 +98,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"^org\.kde\.dolphin|mpv"#
+    match app-id=r#"^org\.kde\.dolphin|.*mpv.*|.*vlc.*|.*thunar.*"#
     open-on-workspace "Files"
     open-focused true
     // default-column-width { proportion 1.00; }
