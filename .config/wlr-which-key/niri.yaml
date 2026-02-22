@@ -1,8 +1,8 @@
 # Theming
 font: JetBrainsMono Nerd Font 12
-background: "#141312"
-color: "#e6e2df"
-border: "#cbc7b3"
+background: "#141311"
+color: "#e6e2de"
+border: "#cfc6ac"
 separator: " ➜ "
 border_width: 1
 corner_r: 10
@@ -52,7 +52,7 @@ menu:
         cmd: wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
       - key: "m"
         desc: Mute
-        cmd: wpctl set-mute @DEFAULT_SINK@ toggle
+        cmd: qs -c noctalia ipc call volume muteOutput
       - key: "r"
         desc: RMPC
         cmd: ~/.local/bin/music.sh rmpc

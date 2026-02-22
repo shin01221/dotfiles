@@ -34,6 +34,7 @@ auto_maximize = false
 [piri.window_order]
 enable_event_listener = true # Enable event listening for automatic reordering
 default_weight = 50          # Default weight for unconfigured windows
+# workspaces = ["1", "2", "dev"]  # Optional: only apply to specific workspaces (empty = all)
 
 [window_order]
 zen-browser = 100

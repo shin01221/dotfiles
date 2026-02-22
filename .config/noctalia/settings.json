@@ -35,7 +35,7 @@
         "visualizerType": "linear",
         "volumeFeedback": false,
         "volumeOverdrive": true,
-        "volumeStep": 5
+        "volumeStep": 2
     },
     "bar": {
         "autoHideDelay": 500,
@@ -47,9 +47,10 @@
         "density": "default",
         "displayMode": "always_visible",
         "floating": false,
+        "fontScale": 1,
         "frameRadius": 10,
         "frameThickness": 6,
-        "hideOnOverview": false,
+        "hideOnOverview": true,
         "marginHorizontal": 12,
         "marginVertical": 3,
         "monitors": [
@@ -63,8 +64,10 @@
             }
         ],
         "showCapsule": true,
+        "showOnWorkspaceSwitch": true,
         "showOutline": false,
         "useSeparateOpacity": false,
+        "widgetSpacing": 6,
         "widgets": {
             "center": [
                 {
@@ -157,11 +160,11 @@
                     "textCommand": "echo \"死Shin\"",
                     "textIntervalMs": 1000000,
                     "textStream": false,
-                    "wheelDownExec": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-",
+                    "wheelDownExec": "qs -c noctalia ipc call volume decrease",
                     "wheelDownUpdateText": true,
                     "wheelExec": "",
                     "wheelMode": "separate",
-                    "wheelUpExec": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ -l 1.5",
+                    "wheelUpExec": "qs -c noctalia ipc call volume increase",
                     "wheelUpUpdateText": true,
                     "wheelUpdateText": false
                 },
@@ -325,7 +328,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Monochrome",
+        "predefinedScheme": "Kanagawa",
         "schedulingMode": "off",
         "useWallpaperColors": true
     },
@@ -409,17 +412,28 @@
                     },
                     {
                         "defaultSettings": {
-                            "hideBackground": false,
-                            "minimumThreshold": 10
+                            "barWidth": 0.6,
+                            "bloomIntensity": 0.5,
+                            "customPrimaryColor": "#6750A4",
+                            "customSecondaryColor": "#625B71",
+                            "fadeWhenIdle": false,
+                            "innerDiameter": 0.7,
+                            "ringOpacity": 0.8,
+                            "rotationSpeed": 0.5,
+                            "sensitivity": 1.5,
+                            "useCustomColors": false,
+                            "visualizationMode": 3,
+                            "waveThickness": 1
                         },
-                        "id": "plugin:catwalk",
+                        "id": "plugin:fancy-audiovisualizer",
                         "showBackground": true,
-                        "x": 20,
-                        "y": 980
+                        "x": 0,
+                        "y": 100
                     }
                 ]
             }
-        ]
+        ],
+        "overviewEnabled": true
     },
     "dock": {
         "animationSpeed": 1,
@@ -427,10 +441,15 @@
         "colorizeIcons": true,
         "deadOpacity": 0.6,
         "displayMode": "auto_hide",
-        "dockType": "floating",
-        "enabled": false,
+        "dockType": "static",
+        "enabled": true,
         "floatingRatio": 1,
+        "groupApps": true,
+        "groupClickAction": "cycle",
+        "groupContextMenuMode": "extended",
+        "groupIndicatorStyle": "dots",
         "inactiveIndicators": false,
+        "launcherIconColor": "none",
         "launcherPosition": "end",
         "monitors": [
         ],
@@ -438,9 +457,9 @@
         "pinnedApps": [
         ],
         "pinnedStatic": true,
-        "position": "bottom",
-        "showFrameIndicator": true,
-        "showLauncherIcon": false,
+        "position": "right",
+        "showFrameIndicator": false,
+        "showLauncherIcon": true,
         "sitOnFrame": false,
         "size": 1
     },
@@ -498,7 +517,7 @@
         "radiusRatio": 1,
         "reverseScroll": false,
         "scaleRatio": 0.9500000000000001,
-        "screenRadiusRatio": 0.64,
+        "screenRadiusRatio": 0.6,
         "shadowDirection": "center",
         "shadowOffsetX": 0,
         "shadowOffsetY": 0,
@@ -511,7 +530,7 @@
     "hooks": {
         "darkModeChange": "",
         "enabled": true,
-        "performanceModeDisabled": "workflows.bash default",
+        "performanceModeDisabled": "",
         "performanceModeEnabled": "workflows.bash powersaver",
         "screenLock": "",
         "screenUnlock": "",
@@ -556,7 +575,7 @@
         "backgroundOpacity": 1,
         "clearDismissed": true,
         "criticalUrgencyDuration": 15,
-        "density": "default",
+        "density": "compact",
         "enableBatteryToast": true,
         "enableKeyboardLayoutToast": true,
         "enableMarkdown": false,
@@ -649,6 +668,13 @@
                 "countdownEnabled": true,
                 "enabled": true,
                 "keybind": "6"
+            },
+            {
+                "action": "rebootToUefi",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": true,
+                "keybind": ""
             }
         ],
         "showHeader": false,
@@ -887,14 +913,14 @@
                 "useWallpaperColors": true
             },
             {
-                "colorScheme": "Gruvbox",
-                "darkMode": false,
+                "colorScheme": "Kanagawa",
+                "darkMode": true,
                 "generationMethod": "content",
                 "paletteColors": [
-                    "#645e48",
-                    "#625e54",
-                    "#586151",
-                    "#ba1a1a"
+                    "#cfc6ac",
+                    "#ccc6b9",
+                    "#c0cab6",
+                    "#ffb4ab"
                 ],
                 "path": "/home/shin/Pictures/Wallpapers/wallhaven-8gkolk.png",
                 "useWallpaperColors": true
@@ -918,14 +944,14 @@
         "hideWallpaperFilenames": false,
         "monitorDirectories": [
         ],
-        "overviewBlur": 0.4,
+        "overviewBlur": 0.6,
         "overviewEnabled": false,
         "overviewTint": 0.6,
         "panelPosition": "top_center",
         "randomIntervalSec": 1800,
         "setWallpaperOnAllMonitors": true,
         "showHiddenFiles": false,
-        "skipStartupTransition": false,
+        "skipStartupTransition": true,
         "solidColor": "#180905",
         "sortOrder": "date_desc",
         "transitionDuration": 1000,

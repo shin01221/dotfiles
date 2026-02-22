@@ -17,6 +17,8 @@ window-rule {
     default-column-width { fixed 800; }
     default-window-height { fixed 800; }
 }
+
+
 // ..
 
 // opacity overrides
@@ -148,3 +150,4 @@ overview {
     off
   }
 }
+
