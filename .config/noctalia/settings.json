@@ -302,6 +302,8 @@
         }
     },
     "brightness": {
+        "backlightDeviceMappings": [
+        ],
         "brightnessStep": 5,
         "enableDdcSupport": false,
         "enforceMinimum": true
@@ -328,7 +330,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Kanagawa",
+        "predefinedScheme": "Monochrome",
         "schedulingMode": "off",
         "useWallpaperColors": true
     },
@@ -878,10 +880,10 @@
                 "darkMode": true,
                 "generationMethod": "content",
                 "paletteColors": [
-                    "#cbc7b3",
-                    "#cac6bc",
-                    "#c1c9bc",
-                    "#ffb4ab"
+                    "#aaaaaa",
+                    "#a7a7a7",
+                    "#cccccc",
+                    "#dddddd"
                 ],
                 "path": "/home/shin/Pictures/Wallpapers/wallhaven-rqyd8j.png",
                 "useWallpaperColors": true
