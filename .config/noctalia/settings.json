@@ -47,7 +47,6 @@
         "density": "default",
         "displayMode": "always_visible",
         "floating": false,
-        "fontScale": 1,
         "frameRadius": 10,
         "frameThickness": 6,
         "hideOnOverview": true,
@@ -64,10 +63,8 @@
             }
         ],
         "showCapsule": true,
-        "showOnWorkspaceSwitch": true,
         "showOutline": false,
         "useSeparateOpacity": false,
-        "widgetSpacing": 6,
         "widgets": {
             "center": [
                 {
@@ -173,14 +170,14 @@
                     "colorizeIcons": false,
                     "emptyColor": "none",
                     "enableScrollWheel": true,
-                    "focusedColor": "secondary",
+                    "focusedColor": "primary",
                     "followFocusedScreen": true,
                     "groupedBorderOpacity": 0.43,
                     "hideUnoccupied": true,
                     "iconScale": 0.6799999999999999,
                     "id": "Workspace",
                     "labelMode": "name",
-                    "occupiedColor": "primary",
+                    "occupiedColor": "secondary",
                     "pillSize": 0.65,
                     "showApplications": false,
                     "showBadge": true,
@@ -302,8 +299,6 @@
         }
     },
     "brightness": {
-        "backlightDeviceMappings": [
-        ],
         "brightnessStep": 5,
         "enableDdcSupport": false,
         "enforceMinimum": true
@@ -330,7 +325,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Monochrome",
+        "predefinedScheme": "Gruvbox",
         "schedulingMode": "off",
         "useWallpaperColors": true
     },
@@ -434,8 +429,7 @@
                     }
                 ]
             }
-        ],
-        "overviewEnabled": true
+        ]
     },
     "dock": {
         "animationSpeed": 1,
@@ -446,13 +440,7 @@
         "dockType": "static",
         "enabled": true,
         "floatingRatio": 1,
-        "groupApps": true,
-        "groupClickAction": "cycle",
-        "groupContextMenuMode": "extended",
-        "groupIndicatorStyle": "dots",
-        "inactiveIndicators": false,
-        "launcherIconColor": "none",
-        "launcherPosition": "end",
+        "inactiveIndicators": true,
         "monitors": [
         ],
         "onlySameOutput": true,
@@ -461,7 +449,6 @@
         "pinnedStatic": true,
         "position": "right",
         "showFrameIndicator": false,
-        "showLauncherIcon": true,
         "sitOnFrame": false,
         "size": 1
     },
@@ -515,7 +502,6 @@
         "lockScreenMonitors": [
         ],
         "lockScreenTint": 0,
-        "passwordChars": true,
         "radiusRatio": 1,
         "reverseScroll": false,
         "scaleRatio": 0.9500000000000001,
@@ -772,7 +758,7 @@
         "fontFixed": "JetBrainsMono Nerd Font",
         "fontFixedScale": 1,
         "networkPanelView": "wifi",
-        "panelBackgroundOpacity": 1,
+        "panelBackgroundOpacity": 0.9,
         "panelsAttachedToBar": true,
         "settingsPanelMode": "attached",
         "tooltipsEnabled": false,
@@ -880,10 +866,10 @@
                 "darkMode": true,
                 "generationMethod": "content",
                 "paletteColors": [
-                    "#aaaaaa",
-                    "#a7a7a7",
-                    "#cccccc",
-                    "#dddddd"
+                    "#cbc7b3",
+                    "#cac6bc",
+                    "#c1c9bc",
+                    "#ffb4ab"
                 ],
                 "path": "/home/shin/Pictures/Wallpapers/wallhaven-rqyd8j.png",
                 "useWallpaperColors": true
@@ -915,7 +901,7 @@
                 "useWallpaperColors": true
             },
             {
-                "colorScheme": "Kanagawa",
+                "colorScheme": "Gruvbox",
                 "darkMode": true,
                 "generationMethod": "content",
                 "paletteColors": [

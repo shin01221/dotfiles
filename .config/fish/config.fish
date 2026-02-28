@@ -9,7 +9,9 @@ bind -M insert jj 'set fish_bind_mode default; commandline -f repaint-mode'
 for f in ~/.config/fish/functions/user/*.fish
     source $f
 end
+
 set -gx PATH $HOME/.local/bin $HOME/go/bin $HOME/.cargo/bin $PATH
+set -Ux JAVA_HOME /usr/lib/jvm/java-21-openjdk
 
 starship init fish | source
 if status is-interactive # Commands to run in interactive sessions can go here
@@ -85,3 +87,12 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias mkdir='mkdir -p'
+function fish_command_not_found
+    # Play sound in background
+    paplay /home/shin/.local/share/fahhh/fahhh.mp3 >/dev/null 2>&1 &
+
+    # Print error message
+    echo "fish: command not found: [1]" >&2
+
+    return 127
+end

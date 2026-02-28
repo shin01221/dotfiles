@@ -49,26 +49,28 @@ vim.o.inccommand = "split"
 vim.o.list = true
 vim.o.confirm = true
 vim.api.nvim_create_autocmd("TextYankPost", {
-	group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
-	pattern = "*",
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-	desc = "Highlight yank",
+  group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
+  pattern = "*",
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  desc = "Highlight yank",
 })
 -- enable universal clipboard
 vim.schedule(function()
-	vim.o.clipboard = "unnamedplus"
+  vim.o.clipboard = "unnamedplus"
 end)
 -- end basics
 
 -- neovide configs
 if vim.g.neovide then
-	-- vim.o.guifont = "Maple Mono:h10"
-	vim.g.neovide_padding_top = 30
-	vim.g.neovide_padding_right = 20
-	vim.g.neovide_padding_left = 20
+  -- vim.o.guifont = "Maple Mono:h10"
+  vim.g.neovide_padding_top = 30
+  vim.g.neovide_padding_right = 20
+  vim.g.neovide_padding_left = 20
 end
 
 -- lsps
 -- vim.lsp.enable("copilot")
+vim.env.JAVA_HOME = "/usr/lib/jvm/java-17-openjdk"
+vim.env.PATH = vim.env.JAVA_HOME .. "/bin:" .. vim.env.PATH

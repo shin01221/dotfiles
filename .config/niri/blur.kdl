@@ -1,0 +1,56 @@
+// keep this on top since it need to be overrided later
+window-rule {
+    opacity 0.90
+}
+
+blur {
+   passes 4        // more passes = stronger blur (default: 3)
+   offset 3.0      // sample distance per pass (default: 3.0)
+   noise 0.02      // grain overlay (default: 0.02)
+   saturation 1.5  // color saturation boost (default: 1.5)
+}
+
+/* Blur everywhere */
+window-rule {
+  background-effect {
+    blur true
+    xray false
+  }
+}
+
+/* Floating noctalia settings */
+window-rule {
+  match app-id="dev.noctalia.noctalia-qs"
+  open-floating true
+}
+
+/* No xray on noctalia layer-shell bg  */
+layer-rule {
+  match namespace="^noctalia-background-.*$"
+  background-effect {
+    xray false
+  }
+}
+layer-rule {
+  match namespace="^noctalia-background-.*$|^noctalia-desktop.*"
+  background-effect {
+    xray false
+  }
+}
+// ..
+
+// opacity and blur overrides
+window-rule {
+    match app-id=r#"\.*org\.kde\.okular.*|.*mpv.*|.*vlc.*|.*org\.kde\.gwenview.*|^com\.obsproject\.Studio$"#
+    match app-id=r#".*zen.*"# title=r#".*YouTube.*"#
+    // match app-id=r#".*zen.*"# title=r#".*[Rr]eddit.*"#
+    opacity 1.00
+    background-effect {
+        blur false
+    }
+}
+// ..
+
+
+
+

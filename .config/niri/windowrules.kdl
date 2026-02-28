@@ -1,32 +1,25 @@
 // workspaces
 
 workspace "Music"
-workspace "Files"
 workspace "Read"
 workspace "Comm"
 workspace "Net"
 
-// keep this one on top since it need to be overrided later
+window-rule {
+    match app-id=r#".*org\.kde\.okular.*"#
+    default-column-width { proportion 1.00; }
+}
 
-// window-rule {
-//     opacity 0.90
-// }
+window-rule {
+    match app-id=r#".*calibre-ebook-viewer.*"# title=r#".*E-book viewer.*"#
+    default-column-width { proportion 1.00; }
+}
 
 window-rule {
     match is-floating=true
     default-column-width { fixed 800; }
     default-window-height { fixed 800; }
 }
-
-
-// ..
-
-// opacity overrides
-window-rule {
-    match app-id=r#"rmpc|.*zen.*|.*org\.kde\.okular.*|.*mpv.*|.*vlc.*|.*foot.*"#
-    opacity 1.00
-}
-// ..
 
 window-rule {
     match app-id=r#"zen"#
@@ -35,7 +28,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#".*org\.kde\.okular.*|.*calibre.*"#
+    match app-id=r#".*org\.kde\.okular.*"#
     open-on-workspace "Read"
 }
 
@@ -47,14 +40,13 @@ window-rule {
 
 window-rule {
     match app-id=r#"rmpc|lrc|spotify"#
-    // match title=r#"rmpc|lrc|spotify"#
     open-on-workspace "Music"
     open-focused false
     default-column-width { proportion 1.00; }
 }
 
 window-rule {
-    geometry-corner-radius 8
+    geometry-corner-radius 10
     clip-to-geometry true
 }
 
@@ -80,6 +72,13 @@ window-rule {
 }
 
 window-rule {
+    match title=r#"calibre\s+-\s+Preferences"#
+    open-floating true
+    default-column-width { fixed 1100; }
+    default-window-height { fixed 800; }
+}
+
+window-rule {
     match app-id="^foot-dropterm$|^kitty-dropterm$"
     open-floating true
     default-floating-position x=0 y=15 relative-to="bottom"
@@ -100,15 +99,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"^org\.kde\.dolphin|.*mpv.*|.*vlc.*|.*thunar.*"#
-    open-on-workspace "Files"
-    open-focused true
-    // default-column-width { proportion 1.00; }
-    // default-window-height { proportion 1.00; }
-}
-
-window-rule {
-    match app-id=r#"^(mpv)$|^(snappergui)$|^(imv)$|^(org.gnome.Shotwell)$|org\.kde\.kdeconnect\.handler|org\.kde\.kdeconnect\.app|^(kvantummanager)$|^(qt6ct)$|^(qt5ct)$|^(org.gnome.ark)$|^(pavucontrol)$|^(pavucontrol-qt)$|^(org.gnome.FileRoller)$|^(com.gabm.satty)$"#
+    match app-id=r#"^(mpv)$|^(snappergui)$|^(imv)$|^(org\.kde\.gwenview)$|^(org.gnome.Shotwell)$|org\.kde\.kdeconnect\.handler|org\.kde\.kdeconnect\.app|^(kvantummanager)$|^(qt6ct)$|^(qt5ct)$|^(org.gnome.ark)$|^(pavucontrol)$|^(pavucontrol-qt)$|^(org.gnome.FileRoller)$|^(com.gabm.satty)$|^(org\.kde\.partitionmanager)$|^(org\.qbittorrent\.qBittorrent)$"#
     open-floating true
     default-column-width { fixed 1200; }
     default-window-height { fixed 800; }
@@ -129,11 +120,15 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#"^org\.kde\.dolphin"#
+    default-column-width { proportion 1.00; }
+}
+
+window-rule {
     match title=r#"^Compressing a file\s*—\s*Dolphin$"#
     open-floating true
     default-column-width { proportion 0.30; }
     default-window-height { proportion 0.20; }
-    // default-floating-position x=0 y=30 relative-to="top"
 }
 
 layer-rule {

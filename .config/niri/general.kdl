@@ -34,13 +34,20 @@ input {
     workspace-auto-back-and-forth
 }
 
+gestures {
+    hot-corners {
+        off
+    }
+}
+
 output "eDP-1" {
     variable-refresh-rate on-demand=true
 }
 
+
+
 layout {
     gaps 4
-    // default-column-width { proportion 0.80; }
     center-focused-column "never"
     preset-column-widths {
         proportion 0.33333

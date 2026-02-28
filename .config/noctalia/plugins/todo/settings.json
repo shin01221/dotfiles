@@ -8,6 +8,15 @@
   "current_page_id": 0,
   "todos": [
     {
+      "id": 1772105558811,
+      "text": "finish git part one in boot.dev",
+      "completed": false,
+      "createdAt": "2026-02-26T11:32:38.811Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    },
+    {
       "id": 1769850633081,
       "text": "mail server",
       "completed": false,
@@ -35,7 +44,7 @@
       "details": ""
     }
   ],
-  "count": 3,
+  "count": 4,
   "completedCount": 0,
   "isExpanded": false,
   "showCompleted": true,
