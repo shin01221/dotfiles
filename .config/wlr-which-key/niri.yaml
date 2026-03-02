@@ -1,8 +1,8 @@
 # Theming
 font: JetBrainsMono Nerd Font 12
-background: "#181211"
-color: "#ede0dd"
-border: "#ffb4a7"
+background: "#17120f"
+color: "#ece0da"
+border: "#ffb77a"
 separator: " ➜ "
 border_width: 1
 corner_r: 10
@@ -96,7 +96,7 @@ menu:
         desc: "Toggle dark/light"
         cmd: qs -c noctalia ipc call darkMode toggle
   - key: "s"
-    desc: NirirSidebar
+    desc: Scripts
     submenu:
       - key: "v"
         desc: ToggleVisibility
@@ -107,6 +107,9 @@ menu:
       - key: "r"
         desc: Flip
         cmd: ~/.local/bin/niri-sidebar reorder
+      - key: "t"
+        desc: ToggleTransparency
+        cmd: ~/.local/bin/niri-transparency-toggle.sh
   - key: "a"
     desc: Applaications
     submenu:
@@ -141,8 +144,8 @@ menu:
         desc: Everforest
         cmd: qs -c noctalia ipc call colorScheme set "Everforest"
       - key: "d"
-        desc: GruvboxDarker
-        cmd: qs -c noctalia ipc call colorScheme set "Gruvbox Darker"
+        desc: GruberDarker
+        cmd: qs -c noctalia ipc call colorScheme set "Gruber Darker"
       - key: "o"
         desc: GruvboxAlt
         cmd: qs -c noctalia ipc call colorScheme set "GruvboxAlt"
