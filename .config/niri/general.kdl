@@ -88,7 +88,6 @@ hotkey-overlay {
     skip-at-startup
 }
 animations {
-    // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     slowdown 1.5
@@ -139,4 +138,6 @@ animations {
     recent-windows-close {
         spring damping-ratio=1.0 stiffness=800 epsilon=0.001
     }
+
+    // off
 }

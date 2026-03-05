@@ -1,8 +1,8 @@
 # Theming
 font: JetBrainsMono Nerd Font 12
-background: "#17120f"
-color: "#ece0da"
-border: "#ffb77a"
+background: "#181212"
+color: "#ece0df"
+border: "#ffb3b2"
 separator: " ➜ "
 border_width: 1
 corner_r: 10
@@ -98,6 +98,12 @@ menu:
   - key: "s"
     desc: Scripts
     submenu:
+      - key: "w"
+        desc: RandomWallpaper
+        cmd: ~/.local/bin/random_wall.sh
+      - key: "d"
+        desc: DeleteCurrentWallpaper
+        cmd: ~/.local/bin/wallpaper-manager.sh --delete
       - key: "v"
         desc: ToggleVisibility
         cmd: ~/.local/bin/niri-sidebar toggle-visibility

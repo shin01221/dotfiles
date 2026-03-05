@@ -1,6 +1,5 @@
 // workspaces
 
-workspace "Music"
 workspace "Read"
 workspace "Comm"
 workspace "Net"
@@ -127,6 +126,8 @@ window-rule {
 window-rule {
     // match app-id=r#"^org\.kde\.dolphin"# title=r#"(^Compressing a file\s*—\s*Dolphin$)|(.*[pP]rogress\s+[dD]ialog)|(.*[fF]ile\s+[aA]lready\s+[eE]xists.*)"#
     match app-id=r#"^org\.kde\.dolphin"# is-floating=true
+    match title=r#"Deleting.*"#
+    open-floating true
     default-column-width { proportion 0.30; }
     default-window-height { proportion 0.20; }
 }

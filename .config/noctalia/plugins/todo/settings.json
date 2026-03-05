@@ -54,5 +54,8 @@
     "high": "#e67e80",
     "medium": "#d3c6aa",
     "low": "#d3c6aa"
-  }
+  },
+  "exportPath": "~/Documents",
+  "exportFormat": "markdown",
+  "exportEmptySections": false
 }
