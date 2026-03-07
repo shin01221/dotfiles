@@ -27,11 +27,11 @@
         "viewMode": "list"
     },
     "audio": {
-        "cavaFrameRate": 120,
         "mprisBlacklist": [
             "firefox.*"
         ],
         "preferredPlayer": "mpd",
+        "spectrumFrameRate": 120,
         "visualizerType": "linear",
         "volumeFeedback": false,
         "volumeFeedbackSoundFile": "",
@@ -183,6 +183,7 @@
                     "enableScrollWheel": true,
                     "focusedColor": "secondary",
                     "followFocusedScreen": true,
+                    "fontWeight": "bold",
                     "groupedBorderOpacity": 0.43,
                     "hideUnoccupied": true,
                     "iconScale": 0.6799999999999999,
@@ -339,7 +340,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Monochrome",
+        "predefinedScheme": "GruvboxAlt",
         "schedulingMode": "off",
         "useWallpaperColors": true
     },
@@ -438,8 +439,8 @@
                         },
                         "id": "plugin:fancy-audiovisualizer",
                         "showBackground": true,
-                        "x": 0,
-                        "y": 100
+                        "x": 100,
+                        "y": 160
                     }
                 ]
             }
@@ -489,6 +490,7 @@
         "clockStyle": "custom",
         "compactLockScreen": false,
         "dimmerOpacity": 0.25,
+        "enableBlurBehind": true,
         "enableLockScreenCountdown": false,
         "enableLockScreenMediaControls": false,
         "enableShadows": true,
@@ -603,6 +605,10 @@
         "manualSunset": "20:00",
         "nightTemp": "3505"
     },
+    "noctaliaPerformance": {
+        "disableDesktopWidgets": true,
+        "disableWallpaper": true
+    },
     "notifications": {
         "backgroundOpacity": 0.9,
         "clearDismissed": true,
@@ -712,7 +718,7 @@
         "showHeader": false,
         "showKeybinds": true
     },
-    "settingsVersion": 56,
+    "settingsVersion": 57,
     "systemMonitor": {
         "batteryCriticalThreshold": 5,
         "batteryWarningThreshold": 20,
@@ -785,6 +791,10 @@
             {
                 "enabled": true,
                 "id": "niri"
+            },
+            {
+                "enabled": true,
+                "id": "foot"
             }
         ],
         "enableUserTheming": true

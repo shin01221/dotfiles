@@ -23,6 +23,12 @@ if status is-interactive # Commands to run in interactive sessions can go here
     set cur_wall (jq -r '.background.wallpaperPath' ~/.config/illogical-impulse/config.json)
 end
 
+if set -q VENV_PATH
+    if test -f "$VENV_PATH/bin/activate.fish"
+        source "$VENV_PATH/bin/activate.fish"
+    end
+end
+
 zoxide init fish | source
 atuin init fish --disable-up-arrow | source
 bind k _atuin_search
