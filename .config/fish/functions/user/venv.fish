@@ -1,8 +1,3 @@
-# function venv
-#     set -U VENV_PATH (realpath $argv[1])
-#     source $VENV_PATH/bin/activate.fish
-# end
-
 function venv
     if test -z "$argv[1]"
         echo "Usage: venv /path/to/venv"
@@ -14,6 +9,10 @@ function venv
     if not test -f "$venv_path/bin/activate.fish"
         echo "Invalid venv: $venv_path"
         return 1
+    end
+
+    if functions -q deactivate
+        deactivate
     end
 
     source "$venv_path/bin/activate.fish"

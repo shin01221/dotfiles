@@ -438,9 +438,10 @@
                             "waveThickness": 1
                         },
                         "id": "plugin:fancy-audiovisualizer",
+                        "scale": 1.026037734078067,
                         "showBackground": true,
-                        "x": 100,
-                        "y": 160
+                        "x": 20,
+                        "y": 120
                     }
                 ]
             }
