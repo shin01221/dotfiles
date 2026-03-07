@@ -1,4 +1,11 @@
+# function venvoff
+#     set -eU VENV_PATH
+#     deactivate
+# end
 function venvoff
-    set -eU VENV_PATH
-    deactivate
+    if functions -q deactivate
+        deactivate
+    end
+
+    rm -f ~/.config/fish/venv_state
 end

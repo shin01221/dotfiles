@@ -23,9 +23,20 @@ if status is-interactive # Commands to run in interactive sessions can go here
     set cur_wall (jq -r '.background.wallpaperPath' ~/.config/illogical-impulse/config.json)
 end
 
-if set -q VENV_PATH
-    if test -f "$VENV_PATH/bin/activate.fish"
-        source "$VENV_PATH/bin/activate.fish"
+# if set -q VENV_PATH
+#     if test -f "$VENV_PATH/bin/activate.fish"
+#         source "$VENV_PATH/bin/activate.fish"
+#     end
+# end
+
+set VENV_STATE_FILE ~/.config/fish/venv_state
+if test -f $VENV_STATE_FILE
+    set venv_path (cat $VENV_STATE_FILE)
+
+    if test -f "$venv_path/bin/activate.fish"
+        source "$venv_path/bin/activate.fish"
+    else
+        rm $VENV_STATE_FILE
     end
 end
 

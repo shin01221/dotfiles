@@ -1,4 +1,22 @@
+# function venv
+#     set -U VENV_PATH (realpath $argv[1])
+#     source $VENV_PATH/bin/activate.fish
+# end
+
 function venv
-    set -U VENV_PATH (realpath $argv[1])
-    source $VENV_PATH/bin/activate.fish
+    if test -z "$argv[1]"
+        echo "Usage: venv /path/to/venv"
+        return 1
+    end
+
+    set venv_path (realpath $argv[1])
+
+    if not test -f "$venv_path/bin/activate.fish"
+        echo "Invalid venv: $venv_path"
+        return 1
+    end
+
+    source "$venv_path/bin/activate.fish"
+
+    echo $venv_path >~/.config/fish/venv_state
 end
