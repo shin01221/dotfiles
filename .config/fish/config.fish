@@ -15,12 +15,8 @@ set -Ux JAVA_HOME /usr/lib/jvm/java-21-openjdk
 
 starship init fish | source
 if status is-interactive # Commands to run in interactive sessions can go here
-    # No greeting
     set fish_greeting
-    # if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-    #     cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-    # end
-    set cur_wall (jq -r '.background.wallpaperPath' ~/.config/illogical-impulse/config.json)
+    set cur_wall (jq -r '.wallpapers["eDP-2"]' ~/.cache/noctalia/wallpapers.json)
 end
 
 direnv hook fish | source

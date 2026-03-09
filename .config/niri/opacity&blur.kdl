@@ -1,7 +1,13 @@
 // keep this on top since it need to be overrided later
 window-rule {
-    opacity 0.90
+    opacity 0.80
 }
+
+// window-rule {
+//     background-effect {
+//         xray true
+//     }
+// }
 
 blur {
    passes 4        // more passes = stronger blur (default: 3)
@@ -16,6 +22,14 @@ window-rule {
     blur true
     xray false
   }
+}
+
+layer-rule {
+    match namespace="^wlr_which_key$"
+    background-effect {
+        blur true
+        xray false
+    }
 }
 
 /* Floating noctalia settings */
@@ -36,7 +50,7 @@ layer-rule {
 // opacity and blur overrides
 window-rule {
     match app-id=r#"\.*org\.kde\.okular.*|.*mpv.*|.*vlc.*|.*org\.kde\.gwenview.*|^com\.obsproject\.Studio$"#
-    match app-id=r#".*zen.*"# title=r#".*YouTube.*"#
+    match app-id=r#".*zen.*"# title=r#"^\([0-9]*\)\s*YouTube.*"#
     // match app-id=r#".*zen.*"# title=r#".*[Rr]eddit.*"#
     opacity 1.00
     background-effect {

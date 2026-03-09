@@ -8,6 +8,10 @@ BG=$(jq -r '.background' "$GENERATED_JSON")
 FG=$(jq -r '.color' "$GENERATED_JSON")
 BORDER=$(jq -r '.border' "$GENERATED_JSON")
 
-sed -i "s/^\(background: \).*/\1\"${BG}\"/" "$CONFIG_FILE"
-sed -i "s/^\(color: \).*/\1\"${FG}\"/" "$CONFIG_FILE"
-sed -i "s/^\(border: \).*/\1\"${BORDER}\"/" "$CONFIG_FILE"
+# sed -i "s/^\(color: \).*/\1\"${FG}\"/" "$CONFIG_FILE"
+# sed -i "s/^\(border: \).*/\1\"${BORDER}\"/" "$CONFIG_FILE"
+# sed -i "s/^\(background: \).*/\1\"${BG}\"/" "$CONFIG_FILE"
+
+sd '^(color: ).*' "\$1\"${FG}\"" "$CONFIG_FILE"
+sd '^(border: ).*' "\$1\"${BORDER}\"" "$CONFIG_FILE"
+sd '^(background: ).*' "\$1\"${BG}\"" "$CONFIG_FILE"

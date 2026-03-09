@@ -9,6 +9,6 @@
   "innerDiameter": 0.6000000000000001,
   "fadeWhenIdle": true,
   "useCustomColors": false,
-  "customPrimaryColor": "#6750a4",
-  "customSecondaryColor": "#625b71"
+  "customPrimaryColor": "#645e48",
+  "customSecondaryColor": "#ccc6ba"
 }
