@@ -50,7 +50,7 @@ layer-rule {
 // opacity and blur overrides
 window-rule {
     match app-id=r#"\.*org\.kde\.okular.*|.*mpv.*|.*vlc.*|.*org\.kde\.gwenview.*|^com\.obsproject\.Studio$"#
-    match app-id=r#".*zen.*"# title=r#"^\([0-9]*\)\s*YouTube.*"#
+    match app-id=r#".*zen.*"# title=r#"^(\([0-9]\))*.*YouTube.*"#
     // match app-id=r#".*zen.*"# title=r#".*[Rr]eddit.*"#
     opacity 1.00
     background-effect {
