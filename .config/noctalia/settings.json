@@ -812,7 +812,8 @@
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",
         "settingsPanelSideBarCardStyle": false,
-        "tooltipsEnabled": false
+        "tooltipsEnabled": false,
+        "translucentWidgets": true
     },
     "wallpaper": {
         "automationEnabled": false,

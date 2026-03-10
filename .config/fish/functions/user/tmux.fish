@@ -3,10 +3,17 @@ function tmux-set
     if set -q NO_TMUX
         return
     end
+
     # Skip if already inside tmux
     if set -q TMUX
         return
     end
+
+    # Skip if inside TTY
+    if test "$XDG_SESSION_TYPE" = tty
+        return
+    end
+
     if test -f ~/.local/state/tmux_last_session
         set last_choice (string collect < ~/.local/state/tmux_last_session)
     end
