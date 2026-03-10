@@ -3,12 +3,6 @@ window-rule {
     opacity 0.85
 }
 
-// window-rule {
-//     background-effect {
-//         xray true
-//     }
-// }
-
 blur {
    passes 5        // more passes = stronger blur (default: 3)
    offset 3.0      // sample distance per pass (default: 3.0)
@@ -20,16 +14,18 @@ blur {
 window-rule {
   background-effect {
     blur true
-    xray false
+    xray true
   }
 }
 
 layer-rule {
     match namespace="^wlr_which_key$"
+    opacity 0.85
     background-effect {
         blur true
         xray true
     }
+    geometry-corner-radius 9
 }
 
 /* Floating noctalia settings */
@@ -45,6 +41,12 @@ layer-rule {
     xray false
   }
 }
+// layer-rule {
+//     match namespace="^noctalia-desktop.*"
+//     background-effect {
+//         xray false
+//   }
+// }
 // ..
 
 // opacity and blur overrides

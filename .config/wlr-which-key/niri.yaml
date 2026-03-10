@@ -1,6 +1,6 @@
 # Theming
 font: JetBrainsMono Nerd Font 12
-background: "#181211CC"
+background: "#181211"
 color: "#ede0de"
 border: "#ffb4ab"
 separator: " ➜ "
