@@ -807,7 +807,7 @@
         "fontDefaultScale": 0.9,
         "fontFixed": "JetBrainsMono Nerd Font",
         "fontFixedScale": 0.9,
-        "panelBackgroundOpacity": 0.8,
+        "panelBackgroundOpacity": 0.85,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",
@@ -825,7 +825,7 @@
                 "darkMode": true,
                 "generationMethod": "content",
                 "paletteColors": [
-                    "#d3c6aa",
+                    "#a7c080",
                     "#d3c6aa",
                     "#9da9a0",
                     "#e67e80"

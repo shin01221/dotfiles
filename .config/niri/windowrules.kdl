@@ -1,8 +1,9 @@
 // workspaces
 
-workspace "Read"
 workspace "Comm"
+workspace "Read"
 workspace "Net"
+workspace "Vms"
 
 window-rule {
     match app-id=r#".*org\.kde\.okular.*"#
@@ -24,6 +25,15 @@ window-rule {
     match app-id=r#"zen"#
     open-on-workspace "Net"
     default-column-width { proportion 1.00; }
+}
+window-rule {
+    match app-id="^virt-manager$|^Vmware$|^Vmplayer$"
+    opacity 1.00
+    open-on-workspace "Vms"
+    background-effect {
+        blur true
+        xray false
+  }
 }
 
 window-rule {

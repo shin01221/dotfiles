@@ -1,6 +1,6 @@
 // keep this on top since it need to be overrided later
 window-rule {
-    opacity 0.80
+    opacity 0.85
 }
 
 // window-rule {
@@ -10,10 +10,10 @@ window-rule {
 // }
 
 blur {
-   passes 4        // more passes = stronger blur (default: 3)
+   passes 5        // more passes = stronger blur (default: 3)
    offset 3.0      // sample distance per pass (default: 3.0)
    noise 0.08      // grain overlay (default: 0.02)
-   saturation 1.5  // color saturation boost (default: 1.5)
+   saturation 1.8  // color saturation boost (default: 1.5)
 }
 
 /* Blur everywhere */
@@ -28,7 +28,7 @@ layer-rule {
     match namespace="^wlr_which_key$"
     background-effect {
         blur true
-        xray false
+        xray true
     }
 }
 

@@ -12,7 +12,7 @@ if rg -q '\/\/\s*.*"transparency.*' "$niriConf"; then
     sd '"background":\s(.*)CC",' '"background": ${1}",' "$matConf"
 else
     sd '.*transparency.*' '// include "transparency.kdl"' "$niriConf"
-    jq -r '.ui.panelBackgroundOpacity = 0.80' "$noctaliaConf" >"$noctaliaConf.tmp" && mv "$noctaliaConf.tmp" "$noctaliaConf"
+    jq -r '.ui.panelBackgroundOpacity = 0.85' "$noctaliaConf" >"$noctaliaConf.tmp" && mv "$noctaliaConf.tmp" "$noctaliaConf"
     sd 'background:\s*(.*)"' 'background: ${1}CC"' "$wlrConf"
     sd '"background":\s(.*)",' '"background": ${1}CC",' "$matConf"
 fi

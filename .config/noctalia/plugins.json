@@ -12,7 +12,7 @@
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
         },
         "custom-commands": {
-            "enabled": false,
+            "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
         },
         "dns-switcher": {
