@@ -47,12 +47,12 @@ window-rule {
     default-column-width { proportion 1.00; }
 }
 
-window-rule {
-    match app-id=r#"rmpc|lrc|spotify"#
-    open-on-workspace "Music"
-    open-focused false
-    default-column-width { proportion 1.00; }
-}
+// window-rule {
+//     match app-id=r#"rmpc|lrc|spotify"#
+//     open-on-workspace "Music"
+//     open-focused false
+//     default-column-width { proportion 1.00; }
+// }
 
 window-rule {
     geometry-corner-radius 7
@@ -133,6 +133,11 @@ window-rule {
 window-rule {
     match app-id=r#"^org\.kde\.dolphin$"#
     open-maximized true
+}
+
+window-rule {
+    match app-id=r#"^org\.kde\.dolphin$"# title=r#"^[Cc]ompressing.*[Dd]olphin"#
+    open-floating true
 }
 
 // layer-rule {

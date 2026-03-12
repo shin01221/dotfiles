@@ -48,6 +48,7 @@
         "contentPadding": 1,
         "density": "default",
         "displayMode": "always_visible",
+        "enableExclusionZoneInset": true,
         "floating": false,
         "fontScale": 1,
         "frameRadius": 10,
@@ -192,6 +193,7 @@
                     "occupiedColor": "primary",
                     "pillSize": 0.6000000000000001,
                     "showApplications": false,
+                    "showApplicationsHover": false,
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": true,
                     "unfocusedIconsOpacity": 0.75
@@ -422,27 +424,6 @@
                         "visualizerVisibility": "always",
                         "x": 1500,
                         "y": 980
-                    },
-                    {
-                        "defaultSettings": {
-                            "barWidth": 0.6,
-                            "bloomIntensity": 0.5,
-                            "customPrimaryColor": "#6750A4",
-                            "customSecondaryColor": "#625B71",
-                            "fadeWhenIdle": false,
-                            "innerDiameter": 0.7,
-                            "ringOpacity": 0.8,
-                            "rotationSpeed": 0.5,
-                            "sensitivity": 1.5,
-                            "useCustomColors": false,
-                            "visualizationMode": 3,
-                            "waveThickness": 1
-                        },
-                        "id": "plugin:fancy-audiovisualizer",
-                        "scale": 1.026037734078067,
-                        "showBackground": true,
-                        "x": 20,
-                        "y": 120
                     }
                 ]
             }
@@ -807,7 +788,7 @@
         "fontDefaultScale": 0.9,
         "fontFixed": "JetBrainsMono Nerd Font",
         "fontFixedScale": 0.9,
-        "panelBackgroundOpacity": 0.85,
+        "panelBackgroundOpacity": 1,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",
@@ -926,13 +907,13 @@
                 "useWallpaperColors": true
             },
             {
-                "colorScheme": "Monochrome",
+                "colorScheme": "Noctalia (default)",
                 "darkMode": true,
-                "generationMethod": "fruit-salad",
+                "generationMethod": "tonal-spot",
                 "paletteColors": [
-                    "#55d6f4",
-                    "#84d2e7",
                     "#aec6ff",
+                    "#bfc6dc",
+                    "#dfbbde",
                     "#ffb4ab"
                 ],
                 "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/140660289_p23.jpg",

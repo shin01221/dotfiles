@@ -10,6 +10,7 @@ window-rule {
 }
 
 layer-rule {
+    opacity 1.0
     background-effect {
         blur false
         xray false

@@ -1,5 +1,10 @@
 // keep this on top since it need to be overrided later
 window-rule {
+    opacity 0.80
+}
+
+window-rule {
+    match is-focused=true
     opacity 0.85
 }
 
@@ -20,7 +25,7 @@ window-rule {
 
 layer-rule {
     match namespace="^wlr_which_key$"
-    opacity 0.85
+    opacity 0.88
     background-effect {
         blur true
         xray true
@@ -41,9 +46,11 @@ layer-rule {
     xray false
   }
 }
+
 // layer-rule {
-//     match namespace="^noctalia-desktop.*"
+//     match namespace="^noctalia-desktop-widgets-eDP-2"
 //     background-effect {
+//         blur true
 //         xray false
 //   }
 // }
