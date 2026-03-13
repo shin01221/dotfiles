@@ -37,8 +37,20 @@ window-rule {
 }
 
 window-rule {
+    match is-focused=true
+    border {
+        on
+        width 2
+    }
+}
+
+window-rule {
     match app-id=r#".*org\.kde\.okular.*"#
     open-on-workspace "Read"
+}
+
+window-rule {
+    draw-border-with-background false
 }
 
 window-rule {
@@ -47,15 +59,8 @@ window-rule {
     default-column-width { proportion 1.00; }
 }
 
-// window-rule {
-//     match app-id=r#"rmpc|lrc|spotify"#
-//     open-on-workspace "Music"
-//     open-focused false
-//     default-column-width { proportion 1.00; }
-// }
-
 window-rule {
-    geometry-corner-radius 7
+    geometry-corner-radius 10
     clip-to-geometry true
 }
 
@@ -74,10 +79,6 @@ window-rule {
     match is-floating=true
     min-width 100
     min-height 100
-}
-
-window-rule {
-    draw-border-with-background false
 }
 
 window-rule {

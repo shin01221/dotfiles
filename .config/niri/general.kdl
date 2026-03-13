@@ -44,8 +44,6 @@ output "eDP-1" {
     variable-refresh-rate on-demand=true
 }
 
-
-
 layout {
     gaps 2
     center-focused-column "never"
@@ -58,8 +56,9 @@ layout {
         off
         width 2
     }
+
     border {
-        on
+        off
         width 2
     }
     shadow {
