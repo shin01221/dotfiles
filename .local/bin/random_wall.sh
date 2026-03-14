@@ -18,4 +18,4 @@ fi
 # Pick a random image from the remaining ones
 random_image="$(printf "%s\n" "${images[@]}" | shuf -n 1)"
 
-qs -c noctalia ipc call wallpaper set "$random_image" eDP-2
+qs -c noctalia-shell ipc call wallpaper set "$random_image" eDP-2

@@ -1,8 +1,8 @@
 # Theming
 font: JetBrainsMono Nerd Font 12
-background: "#17120f"
-color: "#ece0da"
-border: "#ffb77a"
+background: "#131316"
+color: "#e4e1e6"
+border: "#bcc2ff"
 separator: " ➜ "
 border_width: 1
 corner_r: 10
@@ -52,7 +52,7 @@ menu:
         cmd: wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
       - key: "m"
         desc: Mute
-        cmd: qs -c noctalia ipc call volume muteOutput
+        cmd: qs -c noctalia-shell ipc call volume muteOutput
       - key: "r"
         desc: RMPC
         cmd: ~/.local/bin/music.sh rmpc
@@ -60,41 +60,44 @@ menu:
         desc: LRC
         cmd: ~/.local/bin/music.sh lrc
   - key: "n"
-    desc: Noctalia
+    desc: noctalia-shell
     submenu:
+      - key: "k" # ControlCenter
+        desc: ShowKeys
+        cmd: qs -c noctalia-shell ipc call plugin:show-keys toggle
       - key: "c"
         desc: ControlCenter
-        cmd: qs -c noctalia ipc call controlCenter toggle
+        cmd: qs -c noctalia-shell ipc call controlCenter toggle
       - key: "v"
         desc: Clipboard
-        cmd: qs -c noctalia ipc call launcher clipboard
+        cmd: qs -c noctalia-shell ipc call launcher clipboard
       - key: "s"
         desc: Settings
-        cmd: qs -c noctalia ipc call settings toggle
+        cmd: qs -c noctalia-shell ipc call settings toggle
       - key: "b"
         desc: ToggleBar
-        cmd: qs -c noctalia ipc call bar toggle
+        cmd: qs -c noctalia-shell ipc call bar toggle
       - key: "d"
         desc: Calender
-        cmd: qs -c noctalia ipc call calendar toggle
+        cmd: qs -c noctalia-shell ipc call calendar toggle
       - key: "w"
         desc: Wallpapers
-        cmd: qs -c noctalia ipc call wallpaper toggle
+        cmd: qs -c noctalia-shell ipc call wallpaper toggle
       - key: "r"
         desc: Record
-        cmd: qs -c noctalia ipc call plugin:screen-recorder toggle
+        cmd: qs -c noctalia-shell ipc call plugin:screen-recorder toggle
       - key: "R"
         desc: Reload
-        cmd: killall qs quickshell; qs -c noctalia &
+        cmd: killall qs quickshell; qs -c noctalia-shell &
       - key: "e"
         desc: Emojis
-        cmd: qs -c noctalia ipc call launcher emoji
+        cmd: qs -c noctalia-shell ipc call launcher emoji
       - key: "t"
         desc: "Toggle widgets"
-        cmd: qs -c noctalia ipc call desktopWidgets toggle
+        cmd: qs -c noctalia-shell ipc call desktopWidgets toggle
       - key: "l"
         desc: "Toggle dark/light"
-        cmd: qs -c noctalia ipc call darkMode toggle
+        cmd: qs -c noctalia-shell ipc call darkMode toggle
   - key: "s"
     desc: Scripts
     submenu:
@@ -142,52 +145,52 @@ menu:
     submenu:
       - key: "g"
         desc: Gruvbox
-        cmd: qs -c noctalia ipc call colorScheme set "Gruvbox"
+        cmd: qs -c noctalia-shell ipc call colorScheme set "Gruvbox"
       - key: "a"
         desc: Ayu
-        cmd: qs -c noctalia ipc call colorScheme set "Ayu"
+        cmd: qs -c noctalia-shell ipc call colorScheme set "Ayu"
       - key: "e"
         desc: Everforest
-        cmd: qs -c noctalia ipc call colorScheme set "Everforest"
+        cmd: qs -c noctalia-shell ipc call colorScheme set "Everforest"
       - key: "d"
         desc: GruberDarker
-        cmd: qs -c noctalia ipc call colorScheme set "Gruber Darker"
+        cmd: qs -c noctalia-shell ipc call colorScheme set "Gruber Darker"
       - key: "o"
         desc: GruvboxAlt
-        cmd: qs -c noctalia ipc call colorScheme set "GruvboxAlt"
+        cmd: qs -c noctalia-shell ipc call colorScheme set "GruvboxAlt"
       - key: "k"
         desc: Kanagawa
-        cmd: qs -c noctalia ipc call colorScheme set "Kanagawa"
+        cmd: qs -c noctalia-shell ipc call colorScheme set "Kanagawa"
       - key: "l"
         desc: LilacAmoled
-        cmd: qs -c noctalia ipc call colorScheme set "Lilac AMOLED"
+        cmd: qs -c noctalia-shell ipc call colorScheme set "Lilac AMOLED"
       - key: "m"
         desc: Miasma
-        cmd: qs -c noctalia ipc call colorScheme set "Miasma"
+        cmd: qs -c noctalia-shell ipc call colorScheme set "Miasma"
       - key: "b"
         desc: MonoChrome
-        cmd: qs -c noctalia ipc call colorScheme set "Monochrome"
+        cmd: qs -c noctalia-shell ipc call colorScheme set "Monochrome"
       - key: "t"
-        desc: Noctalia
-        cmd: qs -c noctalia ipc call colorScheme set "Noctalia (default)"
+        desc: noctalia-shell
+        cmd: qs -c noctalia-shell ipc call colorScheme set "noctalia-shell (default)"
       - key: "n"
         desc: Nord
-        cmd: qs -c noctalia ipc call colorScheme set "Nord"
+        cmd: qs -c noctalia-shell ipc call colorScheme set "Nord"
       - key: "x"
         desc: Oxide
-        cmd: qs -c noctalia ipc call colorScheme set "Oxide"
+        cmd: qs -c noctalia-shell ipc call colorScheme set "Oxide"
       - key: "u"
         desc: OccultUmbral
-        cmd: qs -c noctalia ipc call colorScheme set "Occult Umbral"
+        cmd: qs -c noctalia-shell ipc call colorScheme set "Occult Umbral"
       - key: "O"
         desc: One
-        cmd: qs -c noctalia ipc call colorScheme set "One"
+        cmd: qs -c noctalia-shell ipc call colorScheme set "One"
       - key: "r"
         desc: Rosepine
-        cmd: qs -c noctalia ipc call colorScheme set "Rose Pine"
+        cmd: qs -c noctalia-shell ipc call colorScheme set "Rose Pine"
       - key: "v"
         desc: Vesper
-        cmd: qs -c noctalia ipc call colorScheme set "Vesper"
+        cmd: qs -c noctalia-shell ipc call colorScheme set "Vesper"
       - key: "t"
         desc: TokyouNight
-        cmd: qs -c noctalia ipc call colorScheme set "Tokyou Night Moon"
+        cmd: qs -c noctalia-shell ipc call colorScheme set "Tokyou Night Moon"

@@ -12,7 +12,7 @@ window-rule {
 
 window-rule {
     match app-id=r#".*calibre-ebook-viewer.*"# title=r#".*E-book viewer.*"#
-    default-column-width { proportion 1.00; }
+    open-maximized true
 }
 
 window-rule {
@@ -36,13 +36,13 @@ window-rule {
   }
 }
 
-window-rule {
-    match is-focused=true
-    border {
-        on
-        width 2
-    }
-}
+// window-rule {
+//     match is-focused=true
+//     border {
+//         on
+//         width 2
+//     }
+// }
 
 window-rule {
     match app-id=r#".*org\.kde\.okular.*"#
@@ -81,12 +81,12 @@ window-rule {
     min-height 100
 }
 
-window-rule {
-    match title=r#"calibre\s+-\s+Preferences"#
-    open-floating true
-    default-column-width { fixed 1100; }
-    default-window-height { fixed 800; }
-}
+// window-rule {
+//     match title=r#"calibre\s+-\s+Preferences"#
+//     open-floating true
+//     default-column-width { fixed 1100; }
+//     default-window-height { fixed 800; }
+// }
 
 window-rule {
     match app-id="^foot-dropterm$|^kitty-dropterm$"
