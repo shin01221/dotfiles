@@ -136,7 +136,7 @@
             "left": [
                 {
                     "colorizeDistroLogo": false,
-                    "colorizeSystemIcon": "secondary",
+                    "colorizeSystemIcon": "primary",
                     "customIconPath": "",
                     "enableColorization": true,
                     "icon": "noctalia",
@@ -144,7 +144,7 @@
                     "useDistroLogo": true
                 },
                 {
-                    "colorizeSystemIcon": "secondary",
+                    "colorizeSystemIcon": "primary",
                     "enableColorization": true,
                     "generalTooltipText": "",
                     "hideMode": "alwaysExpanded",
@@ -237,7 +237,7 @@
                     ]
                 },
                 {
-                    "clockColor": "secondary",
+                    "clockColor": "primary",
                     "customFont": "JetBrainsMono NF",
                     "formatHorizontal": "MM-dd hh:mm AP",
                     "formatVertical": "HH mm - dd MM",
@@ -248,7 +248,7 @@
                 {
                     "compactMode": false,
                     "diskPath": "/",
-                    "iconColor": "secondary",
+                    "iconColor": "primary",
                     "id": "SystemMonitor",
                     "showCpuCores": false,
                     "showCpuFreq": false,
@@ -263,12 +263,12 @@
                     "showMemoryUsage": true,
                     "showNetworkStats": false,
                     "showSwapUsage": false,
-                    "textColor": "secondary",
+                    "textColor": "primary",
                     "useMonospaceFont": true,
                     "usePadding": true
                 },
                 {
-                    "colorizeSystemIcon": "secondary",
+                    "colorizeSystemIcon": "primary",
                     "enableColorization": true,
                     "generalTooltipText": "",
                     "hideMode": "alwaysExpanded",
@@ -342,7 +342,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Gruvbox",
+        "predefinedScheme": "Monochrome",
         "schedulingMode": "off",
         "useWallpaperColors": true
     },
@@ -460,11 +460,11 @@
         "dockType": "static",
         "enabled": true,
         "floatingRatio": 1,
-        "groupApps": false,
+        "groupApps": true,
         "groupClickAction": "cycle",
         "groupContextMenuMode": "extended",
         "groupIndicatorStyle": "dots",
-        "inactiveIndicators": true,
+        "inactiveIndicators": false,
         "indicatorColor": "primary",
         "indicatorOpacity": 0.6,
         "indicatorThickness": 3,
@@ -479,7 +479,7 @@
         "position": "right",
         "showDockIndicator": false,
         "showLauncherIcon": false,
-        "sitOnFrame": true,
+        "sitOnFrame": false,
         "size": 1
     },
     "general": {
@@ -809,7 +809,7 @@
         "fontDefaultScale": 0.9,
         "fontFixed": "JetBrainsMono Nerd Font",
         "fontFixedScale": 0.9,
-        "panelBackgroundOpacity": 1,
+        "panelBackgroundOpacity": 0.85,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",
@@ -980,7 +980,7 @@
                 "useWallpaperColors": true
             },
             {
-                "colorScheme": "Noctalia (default)",
+                "colorScheme": "Monochrome",
                 "darkMode": true,
                 "generationMethod": "tonal-spot",
                 "paletteColors": [

@@ -94,7 +94,7 @@ return {
           lualine_z = {
             {
               function()
-                return " " .. os.date("%H:%M:%S%p")
+                return " " .. os.date("%I:%M")
               end,
               separator = { left = "", right = "││┃" },
               padding = { left = 1, right = 1 },
