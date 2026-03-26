@@ -2,8 +2,6 @@
 
 noctaliaConf="$HOME/.config/noctalia/settings.json"
 niriConf="$HOME/.config/niri/config.kdl"
-wlrConf="$HOME/.config/wlr-which-key/niri.yaml"
-matConf="$HOME/.config/matugen/templates/which-key/colors.json"
 
 if rg -q '\/\/\s*.*"transparency.*' "$niriConf"; then
     sd '//\s+.*transparency.*' 'include "transparency.kdl"' "$niriConf"

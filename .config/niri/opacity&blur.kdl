@@ -1,6 +1,6 @@
 // keep this on top since it need to be overrided later
 window-rule {
-    opacity 0.80
+    opacity 0.85
 }
 
 window-rule {

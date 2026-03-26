@@ -55,7 +55,6 @@ alias down360='down 360'
 alias down480='down 480'
 alias down720='down 720'
 alias down1080='down 1080'
-alias df="_df"
 alias mirrors='sudo reflector --verbose --country Germany,France,Italy --latest 40 --sort rate --download-timeout 6 --protocol https --save /etc/pacman.d/mirrorlist'
 # alias mirrors='sudo reflector --verbose --protocol https --sort rate --latest 70 --download-timeout 6 --save /etc/pacman.d/mirrorlist'
 alias grep='grep --color=auto'

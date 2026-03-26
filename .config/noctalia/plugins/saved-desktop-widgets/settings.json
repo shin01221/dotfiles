@@ -1,0 +1,88 @@
+{
+  "monitorWidgets": {
+    "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/137853431_p40.jpg": [
+      {
+        "name": "eDP-2",
+        "widgets": [
+          {
+            "hideMode": "visible",
+            "id": "MediaPlayer",
+            "roundedCorners": true,
+            "scale": 1.0091543605945683,
+            "showAlbumArt": true,
+            "showBackground": true,
+            "showButtons": true,
+            "showVisualizer": false,
+            "visualizerType": "wave",
+            "visualizerVisibility": "always",
+            "x": 1500,
+            "y": 980
+          },
+          {
+            "defaultSettings": {
+              "barWidth": 0.6,
+              "bloomIntensity": 0.5,
+              "customPrimaryColor": "#6750A4",
+              "customSecondaryColor": "#625B71",
+              "fadeWhenIdle": false,
+              "innerDiameter": 0.7,
+              "ringOpacity": 0.8,
+              "rotationSpeed": 0.5,
+              "sensitivity": 1.5,
+              "useCustomColors": false,
+              "visualizationMode": 3,
+              "waveThickness": 1
+            },
+            "id": "plugin:fancy-audiovisualizer",
+            "scale": 1.1554714206655734,
+            "showBackground": true,
+            "x": 20,
+            "y": 120
+          }
+        ]
+      }
+    ],
+    "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/142528229_p15.png": [
+      {
+        "name": "eDP-2",
+        "widgets": [
+          {
+            "hideMode": "visible",
+            "id": "MediaPlayer",
+            "roundedCorners": true,
+            "scale": 1.0091543605945683,
+            "showAlbumArt": true,
+            "showBackground": true,
+            "showButtons": true,
+            "showVisualizer": false,
+            "visualizerType": "wave",
+            "visualizerVisibility": "always",
+            "x": 1500,
+            "y": 980
+          },
+          {
+            "defaultSettings": {
+              "barWidth": 0.6,
+              "bloomIntensity": 0.5,
+              "customPrimaryColor": "#6750A4",
+              "customSecondaryColor": "#625B71",
+              "fadeWhenIdle": false,
+              "innerDiameter": 0.7,
+              "ringOpacity": 0.8,
+              "rotationSpeed": 0.5,
+              "sensitivity": 1.5,
+              "useCustomColors": false,
+              "visualizationMode": 3,
+              "waveThickness": 1
+            },
+            "id": "plugin:fancy-audiovisualizer",
+            "scale": 1.1554714206655734,
+            "showBackground": true,
+            "x": 20,
+            "y": 120
+          }
+        ]
+      }
+    ]
+  }
+}

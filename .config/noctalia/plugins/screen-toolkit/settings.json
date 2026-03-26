@@ -1,0 +1,22 @@
+{
+  "stateIsRunning": false,
+  "stateActiveTool": "",
+  "installedLangs": [
+    "ara",
+    "eng"
+  ],
+  "transAvailable": true,
+  "stateMirrorVisible": false,
+  "resultHex": "",
+  "resultRgb": "",
+  "resultHsv": "",
+  "resultHsl": "",
+  "colorCapturePath": "",
+  "colorHistory": [
+    "#6C593F"
+  ],
+  "paletteColors": [],
+  "ocrResult": "pulverized",
+  "ocrCapturePath": "/tmp/screen-toolkit-ocr.png",
+  "translateResult": "ﻕﻮﺤﺴﻤﻟﺍ"
+}

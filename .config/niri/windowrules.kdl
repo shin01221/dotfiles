@@ -60,7 +60,7 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 10
+    geometry-corner-radius 7
     clip-to-geometry true
 }
 
@@ -139,11 +139,6 @@ window-rule {
 window-rule {
     match app-id=r#"^org\.kde\.dolphin$"# title=r#"^[Cc]ompressing.*[Dd]olphin"#
     open-floating true
-}
-
-window-rule {
-    match app-id=r#"^Kingdom Rush Origins$"# 
-    open-fullscreen true
 }
 
 // layer-rule {
