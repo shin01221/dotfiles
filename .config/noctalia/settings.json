@@ -352,7 +352,7 @@
     "monitorForColors": "",
     "predefinedScheme": "Gruvbox",
     "schedulingMode": "off",
-    "useWallpaperColors": true
+    "useWallpaperColors": false
   },
   "controlCenter": {
     "cards": [
@@ -427,7 +427,7 @@
             "showAlbumArt": true,
             "showBackground": true,
             "showButtons": true,
-            "showVisualizer": false,
+            "showVisualizer": true,
             "visualizerType": "wave",
             "visualizerVisibility": "always",
             "x": 1500,
@@ -494,7 +494,7 @@
     "allowPanelsOnScreenWithoutBar": true,
     "allowPasswordWithFprintd": false,
     "animationDisabled": false,
-    "animationSpeed": 1.3,
+    "animationSpeed": 1.6,
     "autoStartAuth": false,
     "avatarImage": "/home/shin/Downloads/550413787_122171110412380833_4447995126445341480_n.jpg",
     "boxRadiusRatio": 1,
@@ -805,6 +805,14 @@
       {
         "enabled": true,
         "id": "foot"
+      },
+      {
+        "enabled": true,
+        "id": "zenBrowser"
+      },
+      {
+        "enabled": true,
+        "id": "ghostty"
       }
     ],
     "enableUserTheming": true
@@ -817,7 +825,7 @@
     "fontFixedScale": 0.9,
     "panelBackgroundOpacity": 1.00,
     "panelsAttachedToBar": true,
-    "scrollbarAlwaysVisible": true,
+    "scrollbarAlwaysVisible": false,
     "settingsPanelMode": "attached",
     "settingsPanelSideBarCardStyle": false,
     "tooltipsEnabled": false,
@@ -830,40 +838,40 @@
     "enabled": true,
     "favorites": [
       {
-        "colorScheme": "Everforest",
+        "colorScheme": "Gruvbox",
         "darkMode": true,
         "generationMethod": "content",
         "paletteColors": [
-          "#a7c080",
-          "#d3c6aa",
-          "#9da9a0",
-          "#e67e80"
+          "#b8bb26",
+          "#fabd2f",
+          "#83a598",
+          "#fb4934"
         ],
         "path": "/home/shin/Pictures/homework/norm/136126644_p7.png",
         "useWallpaperColors": false
       },
       {
-        "colorScheme": "Everforest",
-        "darkMode": true,
+        "colorScheme": "Gruvbox",
+        "darkMode": false,
         "generationMethod": "content",
         "paletteColors": [
-          "#d3c6aa",
-          "#d3c6aa",
-          "#9da9a0",
-          "#e67e80"
+          "#98971a",
+          "#d79921",
+          "#458588",
+          "#cc241d"
         ],
         "path": "/home/shin/Pictures/homework/norm/140513212_p0.png",
         "useWallpaperColors": false
       },
       {
-        "colorScheme": "Noctalia (default)",
+        "colorScheme": "Gruvbox",
         "darkMode": true,
         "generationMethod": "content",
         "paletteColors": [
-          "#fff59b",
-          "#a9aefe",
-          "#9bfece",
-          "#fd4663"
+          "#b8bb26",
+          "#fabd2f",
+          "#83a598",
+          "#fb4934"
         ],
         "path": "/home/shin/Pictures/homework/norm/134115683_p34.png",
         "useWallpaperColors": false
@@ -934,17 +942,17 @@
         "useWallpaperColors": true
       },
       {
-        "colorScheme": "Noctalia (default)",
-        "darkMode": true,
-        "generationMethod": "tonal-spot",
+        "colorScheme": "Gruvbox",
+        "darkMode": false,
+        "generationMethod": "content",
         "paletteColors": [
-          "#aec6ff",
-          "#bfc6dc",
-          "#dfbbde",
-          "#ffb4ab"
+          "#98971a",
+          "#d79921",
+          "#458588",
+          "#cc241d"
         ],
         "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/140660289_p23.jpg",
-        "useWallpaperColors": true
+        "useWallpaperColors": false
       },
       {
         "colorScheme": "Monochrome",
@@ -983,19 +991,6 @@
           "#fd4663"
         ],
         "path": "/home/shin/Pictures/Wallpapers/wallhaven-m3x62m.jpg",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Monochrome",
-        "darkMode": true,
-        "generationMethod": "tonal-spot",
-        "paletteColors": [
-          "#ffb77a",
-          "#e3c0a5",
-          "#c4cb97",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/norm/141677314_p16.png",
         "useWallpaperColors": true
       },
       {
@@ -1042,10 +1037,10 @@
         "darkMode": true,
         "generationMethod": "content",
         "paletteColors": [
-          "#ffb4ac",
-          "#ffb4ac",
-          "#ffb86e",
-          "#ffb4ab"
+          "#b8bb26",
+          "#fabd2f",
+          "#83a598",
+          "#fb4934"
         ],
         "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/138069466_p35.jpg",
         "useWallpaperColors": true
@@ -1055,13 +1050,13 @@
         "darkMode": true,
         "generationMethod": "content",
         "paletteColors": [
-          "#ffb3af",
-          "#ffb3af",
-          "#ffb875",
-          "#ffb4ab"
+          "#b8bb26",
+          "#fabd2f",
+          "#83a598",
+          "#fb4934"
         ],
         "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/139750661_p29.png",
-        "useWallpaperColors": true
+        "useWallpaperColors": false
       },
       {
         "colorScheme": "Gruvbox",
@@ -1338,16 +1333,16 @@
       },
       {
         "colorScheme": "Gruvbox",
-        "darkMode": true,
+        "darkMode": false,
         "generationMethod": "content",
         "paletteColors": [
-          "#ffb3b4",
-          "#ffb3b4",
-          "#ffb784",
-          "#ffb4ab"
+          "#98971a",
+          "#d79921",
+          "#458588",
+          "#cc241d"
         ],
         "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/140434973_p28.png",
-        "useWallpaperColors": true
+        "useWallpaperColors": false
       },
       {
         "colorScheme": "Gruvbox",
@@ -1374,10 +1369,140 @@
         ],
         "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/139814113_p0.jpg",
         "useWallpaperColors": true
+      },
+      {
+        "colorScheme": "Gruvbox",
+        "darkMode": true,
+        "generationMethod": "content",
+        "paletteColors": [
+          "#b8bb26",
+          "#fabd2f",
+          "#83a598",
+          "#fb4934"
+        ],
+        "path": "/home/shin/Pictures/homework/norm/137722796_p32.jpg",
+        "useWallpaperColors": false
+      },
+      {
+        "colorScheme": "Gruvbox",
+        "darkMode": true,
+        "generationMethod": "content",
+        "paletteColors": [
+          "#b8bb26",
+          "#fabd2f",
+          "#83a598",
+          "#fb4934"
+        ],
+        "path": "/home/shin/Pictures/homework/ecchi/breast/140342959_p18.png",
+        "useWallpaperColors": false
+      },
+      {
+        "colorScheme": "Gruvbox",
+        "darkMode": true,
+        "generationMethod": "content",
+        "paletteColors": [
+          "#b8bb26",
+          "#fabd2f",
+          "#83a598",
+          "#fb4934"
+        ],
+        "path": "/home/shin/Pictures/homework/ecchi/breast/140828408_p16.png",
+        "useWallpaperColors": false
+      },
+      {
+        "colorScheme": "Gruvbox",
+        "darkMode": true,
+        "generationMethod": "content",
+        "paletteColors": [
+          "#b8bb26",
+          "#fabd2f",
+          "#83a598",
+          "#fb4934"
+        ],
+        "path": "/home/shin/Pictures/homework/ecchi/breast/139978393_p0.jpg",
+        "useWallpaperColors": false
+      },
+      {
+        "colorScheme": "Gruvbox",
+        "darkMode": true,
+        "generationMethod": "content",
+        "paletteColors": [
+          "#b8bb26",
+          "#fabd2f",
+          "#83a598",
+          "#fb4934"
+        ],
+        "path": "/home/shin/Pictures/homework/ecchi/breast/140164374_p26.png",
+        "useWallpaperColors": false
+      },
+      {
+        "colorScheme": "Gruvbox",
+        "darkMode": true,
+        "generationMethod": "content",
+        "paletteColors": [
+          "#b8bb26",
+          "#fabd2f",
+          "#83a598",
+          "#fb4934"
+        ],
+        "path": "/home/shin/Pictures/homework/ecchi/breast/138505327_p18.png",
+        "useWallpaperColors": false
+      },
+      {
+        "colorScheme": "Gruvbox",
+        "darkMode": true,
+        "generationMethod": "content",
+        "paletteColors": [
+          "#b8bb26",
+          "#fabd2f",
+          "#83a598",
+          "#fb4934"
+        ],
+        "path": "/home/shin/Pictures/homework/ecchi/breast/139162253_p15.png",
+        "useWallpaperColors": false
+      },
+      {
+        "colorScheme": "Gruvbox",
+        "darkMode": true,
+        "generationMethod": "content",
+        "paletteColors": [
+          "#b8bb26",
+          "#fabd2f",
+          "#83a598",
+          "#fb4934"
+        ],
+        "path": "/home/shin/Pictures/homework/ecchi/breast/Konachan.com - 391748 beach bikini black_hair blue_archive blush breasts choker close clouds food halo ice_cream nipples red_eyes sky swimsuit undressing water wings.png",
+        "useWallpaperColors": false
+      },
+      {
+        "colorScheme": "Gruvbox",
+        "darkMode": true,
+        "generationMethod": "content",
+        "paletteColors": [
+          "#b8bb26",
+          "#fabd2f",
+          "#83a598",
+          "#fb4934"
+        ],
+        "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/142776967_p25.png",
+        "useWallpaperColors": false
+      },
+      {
+        "colorScheme": "Gruvbox",
+        "darkMode": false,
+        "generationMethod": "content",
+        "paletteColors": [
+          "#98971a",
+          "#d79921",
+          "#458588",
+          "#cc241d"
+        ],
+        "path": "/home/shin/Pictures/homework/norm/142773448_p7.png",
+        "useWallpaperColors": false
       }
     ],
     "fillColor": "#004880",
-    "fillMode": "center",
+    "fillMode": "crop",
     "hideWallpaperFilenames": false,
     "monitorDirectories": [
       {

@@ -41,7 +41,7 @@ window-rule {
 
 /* No xray on noctalia layer-shell bg  */
 layer-rule {
-  match namespace="^noctalia-background-.*$|^noctalia-desktop.*"
+  match namespace="^noctalia-background-.*$"
   background-effect {
     xray false
   }

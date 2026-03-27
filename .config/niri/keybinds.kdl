@@ -1,7 +1,7 @@
 binds {
-    Mod+Return { spawn "foot"; }
+    Mod+Return { spawn "ghostty"; }
     Mod+Alt+D { spawn-sh "qs -c noctalia-shell ipc call launcher windows"; }
-    Mod+Shift+Return { spawn "env" "NO_TMUX=1" "foot"; }
+    Mod+Shift+Return { spawn "env" "NO_TMUX=1" "ghostty"; }
     Mod+D { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Mod+Print { spawn "~/.local/bin/hyprshot.sh"; }
     Mod+Alt+Print { spawn-sh "qs -c QuickSnip"; }

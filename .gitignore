@@ -4,6 +4,8 @@
 .config/mpd/log
 .config/hypr/custom/scripts/mpvpaper_thumbnails
 !.config/zsh/
+!.config/ghostty/
+!.config/foot/
 !.config/hypr
 !.config/mpd/
 !.config/mpv

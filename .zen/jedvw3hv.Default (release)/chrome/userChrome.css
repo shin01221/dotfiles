@@ -1,4 +1,5 @@
 /* Floating URL Bar - Show results only when typing */
+@import "/home/shin/.cache/noctalia/zen-browser/zen-userChrome.css";
 #urlbar[open] {
   background-image: var(--zen-main-browser-background-toolbar) !important;
   border-radius: 20px !important;
