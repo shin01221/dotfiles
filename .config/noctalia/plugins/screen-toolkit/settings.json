@@ -1,22 +1,33 @@
 {
-  "stateIsRunning": false,
-  "stateActiveTool": "",
+  "colorHistory": [
+    "#6C593F"
+  ],
+  "paletteColors": [
+    "#28231B",
+    "#282828",
+    "#5B5547",
+    "#8D8773",
+    "#C3BDA4",
+    "#E2DBC3",
+    "#F7F1CD",
+    "#FEFAE2"
+  ],
   "installedLangs": [
     "ara",
     "eng"
   ],
   "transAvailable": true,
+  "selectedOcrLang": "eng",
+  "detectedRecorder": "wl-screenrec",
+  "stateIsRunning": false,
+  "stateActiveTool": "",
   "stateMirrorVisible": false,
   "resultHex": "",
   "resultRgb": "",
   "resultHsv": "",
   "resultHsl": "",
   "colorCapturePath": "",
-  "colorHistory": [
-    "#6C593F"
-  ],
-  "paletteColors": [],
-  "ocrResult": "pulverized",
-  "ocrCapturePath": "/tmp/screen-toolkit-ocr.png",
-  "translateResult": "ﻕﻮﺤﺴﻤﻟﺍ"
+  "ocrResult": "",
+  "ocrCapturePath": "",
+  "translateResult": ""
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Get current wallpaper path from JSON
-wallpaper_path=$(jq -r '.wallpapers["eDP-2"]' ~/.cache/noctalia/wallpapers.json)
+wallpaper_path=$(jq -r '.wallpapers["eDP-2"].dark' ~/.cache/noctalia/wallpapers.json)
 
 # Get the directory containing the wallpapers
 wallpaper_dir="$(dirname "$wallpaper_path")"

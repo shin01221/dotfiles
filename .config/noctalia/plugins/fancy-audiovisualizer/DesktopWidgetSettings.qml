@@ -18,7 +18,7 @@ ColumnLayout {
   property real valueBarWidth: widgetSettings?.data?.barWidth ?? pluginApi?.pluginSettings?.barWidth ?? 0.6
   property real valueRingOpacity: widgetSettings?.data?.ringOpacity ?? pluginApi?.pluginSettings?.ringOpacity ?? 0.8
   property real valueBloomIntensity: widgetSettings?.data?.bloomIntensity ?? pluginApi?.pluginSettings?.bloomIntensity ?? 0.5
-  property int valueVisualizationMode: widgetSettings?.data?.visualizationMode ?? pluginApi?.pluginSettings?.visualizationMode ?? 3
+  property int valueVisualizationMode: widgetSettings?.data?.visualizationMode ?? pluginApi?.pluginSettings?.visualizationMode ?? 4
   property real valueWaveThickness: widgetSettings?.data?.waveThickness ?? pluginApi?.pluginSettings?.waveThickness ?? 1.0
   property real valueInnerDiameter: widgetSettings?.data?.innerDiameter ?? pluginApi?.pluginSettings?.innerDiameter ?? 0.7
   property bool valueFadeWhenIdle: widgetSettings?.data?.fadeWhenIdle ?? pluginApi?.pluginSettings?.fadeWhenIdle ?? true

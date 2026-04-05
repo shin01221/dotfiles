@@ -26,6 +26,7 @@
 !.config/eilmeldung
 !.config/tmux/plugins
 !.config/fish
+.config/fish/secrets.fish
 !.config/matugen
 !.config/systemd
 !.config/lsd

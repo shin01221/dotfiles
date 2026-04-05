@@ -1,6 +1,8 @@
 {
+  "saveWidgets": true,
+  "loadWidgets": true,
   "monitorWidgets": {
-    "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/137853431_p40.jpg": [
+    "/home/shin/Pictures/homework/ecchi/breast/143151571-0a6e6c8f6af29570d192878ef1971396_p0.jpg": [
       {
         "name": "eDP-2",
         "widgets": [
@@ -8,162 +10,54 @@
             "hideMode": "visible",
             "id": "MediaPlayer",
             "roundedCorners": true,
-            "scale": 1.0091543605945683,
-            "showAlbumArt": true,
-            "showBackground": true,
-            "showButtons": true,
-            "showVisualizer": false,
-            "visualizerType": "wave",
-            "visualizerVisibility": "always",
-            "x": 1500,
-            "y": 980
-          },
-          {
-            "defaultSettings": {
-              "barWidth": 0.6,
-              "bloomIntensity": 0.5,
-              "customPrimaryColor": "#6750A4",
-              "customSecondaryColor": "#625B71",
-              "fadeWhenIdle": false,
-              "innerDiameter": 0.7,
-              "ringOpacity": 0.8,
-              "rotationSpeed": 0.5,
-              "sensitivity": 1.5,
-              "useCustomColors": false,
-              "visualizationMode": 3,
-              "waveThickness": 1
-            },
-            "id": "plugin:fancy-audiovisualizer",
-            "scale": 1.1554714206655734,
-            "showBackground": true,
-            "x": 20,
-            "y": 120
-          }
-        ]
-      }
-    ],
-    "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/142528229_p15.png": [
-      {
-        "name": "eDP-2",
-        "widgets": [
-          {
-            "hideMode": "visible",
-            "id": "MediaPlayer",
-            "roundedCorners": true,
-            "scale": 1.0091543605945683,
-            "showAlbumArt": true,
-            "showBackground": true,
-            "showButtons": true,
-            "showVisualizer": false,
-            "visualizerType": "wave",
-            "visualizerVisibility": "always",
-            "x": 1500,
-            "y": 980
-          },
-          {
-            "defaultSettings": {
-              "barWidth": 0.6,
-              "bloomIntensity": 0.5,
-              "customPrimaryColor": "#6750A4",
-              "customSecondaryColor": "#625B71",
-              "fadeWhenIdle": false,
-              "innerDiameter": 0.7,
-              "ringOpacity": 0.8,
-              "rotationSpeed": 0.5,
-              "sensitivity": 1.5,
-              "useCustomColors": false,
-              "visualizationMode": 3,
-              "waveThickness": 1
-            },
-            "id": "plugin:fancy-audiovisualizer",
-            "scale": 1.1554714206655734,
-            "showBackground": true,
-            "x": 20,
-            "y": 120
-          }
-        ]
-      }
-    ],
-    "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/142776967_p20.png": [
-      {
-        "name": "eDP-2",
-        "widgets": [
-          {
-            "hideMode": "visible",
-            "id": "MediaPlayer",
-            "roundedCorners": true,
-            "scale": 1.0091543605945683,
-            "showAlbumArt": true,
-            "showBackground": true,
-            "showButtons": true,
-            "showVisualizer": false,
-            "visualizerType": "wave",
-            "visualizerVisibility": "always",
-            "x": 1500,
-            "y": 980
-          },
-          {
-            "defaultSettings": {
-              "barWidth": 0.6,
-              "bloomIntensity": 0.5,
-              "customPrimaryColor": "#6750A4",
-              "customSecondaryColor": "#625B71",
-              "fadeWhenIdle": false,
-              "innerDiameter": 0.7,
-              "ringOpacity": 0.8,
-              "rotationSpeed": 0.5,
-              "sensitivity": 1.5,
-              "useCustomColors": false,
-              "visualizationMode": 3,
-              "waveThickness": 1
-            },
-            "id": "plugin:fancy-audiovisualizer",
-            "scale": 1.1554714206655734,
-            "showBackground": true,
-            "x": 20,
-            "y": 120
-          }
-        ]
-      }
-    ],
-    "/home/shin/Pictures/homework/norm/141628321_p18.png": [
-      {
-        "name": "eDP-2",
-        "widgets": [
-          {
-            "hideMode": "visible",
-            "id": "MediaPlayer",
-            "roundedCorners": true,
-            "scale": 1.0091543605945683,
             "showAlbumArt": true,
             "showBackground": true,
             "showButtons": true,
             "showVisualizer": true,
             "visualizerType": "wave",
-            "visualizerVisibility": "always",
             "x": 1500,
             "y": 980
           },
           {
             "defaultSettings": {
-              "barWidth": 0.6,
-              "bloomIntensity": 0.5,
-              "customPrimaryColor": "#6750A4",
-              "customSecondaryColor": "#625B71",
-              "fadeWhenIdle": false,
-              "innerDiameter": 0.7,
-              "ringOpacity": 0.8,
-              "rotationSpeed": 0.5,
-              "sensitivity": 1.5,
-              "useCustomColors": false,
-              "visualizationMode": 3,
-              "waveThickness": 1
+              "hideBackground": false,
+              "minimumThreshold": 10
             },
-            "id": "plugin:fancy-audiovisualizer",
-            "scale": 1.1554714206655734,
+            "id": "plugin:catwalk",
             "showBackground": true,
-            "x": 20,
-            "y": 120
+            "x": 60,
+            "y": 980
+          },
+          {
+            "defaultSettings": {
+              "completedCount": 0,
+              "count": 0,
+              "current_page_id": 0,
+              "exportEmptySections": false,
+              "exportFormat": "markdown",
+              "exportPath": "~/Documents",
+              "isExpanded": false,
+              "pages": [
+                {
+                  "id": 0,
+                  "name": "General"
+                }
+              ],
+              "priorityColors": {
+                "high": "#f44336",
+                "low": "#9e9e9e",
+                "medium": "#2196f3"
+              },
+              "showBackground": true,
+              "showCompleted": true,
+              "todos": [],
+              "useCustomColors": false
+            },
+            "id": "plugin:todo",
+            "scale": 0.8805836594793031,
+            "showBackground": true,
+            "x": 1620,
+            "y": 140
           }
         ]
       }

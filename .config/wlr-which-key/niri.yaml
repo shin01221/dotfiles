@@ -1,8 +1,8 @@
 # Theming
 font: JetBrainsMono Nerd Font 12
-background: "#282828"
-color: "#fbf1c7"
-border: "#b8bb26"
+background: "#fff8f6"
+color: "#201a17"
+border: "#8a4f30"
 separator: " ➜ "
 border_width: 1
 corner_r: 10
@@ -88,7 +88,7 @@ menu:
         cmd: qs -c noctalia-shell ipc call plugin:screen-recorder toggle
       - key: "R"
         desc: Reload
-        cmd: killall qs quickshell; qs -c noctalia-shell &
+        cmd: killall qs && sleep 0.3 && qs -c noctalia-shell &
       - key: "e"
         desc: Emojis
         cmd: qs -c noctalia-shell ipc call launcher emoji
@@ -101,6 +101,9 @@ menu:
   - key: "s"
     desc: Scripts
     submenu:
+      - key: "z"
+        desc: Zoom
+        cmd: sleep .5 && wooz --invert-scroll
       - key: "w"
         desc: RandomWallpaper
         cmd: ~/.local/bin/random_wall.sh
@@ -161,6 +164,9 @@ menu:
       - key: "k"
         desc: Kanagawa
         cmd: qs -c noctalia-shell ipc call colorScheme set "Kanagawa"
+      - key: "p"
+        desc: KanagawaPaper
+        cmd: qs -c noctalia-shell ipc call colorScheme set "Kanagawa Paper"
       - key: "l"
         desc: LilacAmoled
         cmd: qs -c noctalia-shell ipc call colorScheme set "Lilac AMOLED"

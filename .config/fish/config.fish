@@ -13,10 +13,18 @@ end
 set -gx PATH $HOME/.local/bin $HOME/go/bin $HOME/.cargo/bin $PATH
 set -Ux JAVA_HOME /usr/lib/jvm/java-21-openjdk
 
+# Source secrets (not tracked by git)
+if test -f ~/.config/fish/secrets.fish
+    source ~/.config/fish/secrets.fish
+end
+
 starship init fish | source
 if status is-interactive # Commands to run in interactive sessions can go here
     set fish_greeting
-    set cur_wall (jq -r '.wallpapers["eDP-2"]' ~/.cache/noctalia/wallpapers.json)
+end
+
+function cur_wall
+    jq -r '.wallpapers["eDP-2"]' ~/.cache/noctalia/wallpapers.json
 end
 
 direnv hook fish | source

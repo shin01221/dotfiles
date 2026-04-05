@@ -1,1550 +1,1984 @@
 {
-  "appLauncher": {
-    "autoPasteClipboard": false,
-    "clipboardWatchImageCommand": "wl-paste --type image --watch cliphist store",
-    "clipboardWatchTextCommand": "wl-paste --type text --watch cliphist store",
-    "clipboardWrapText": true,
-    "customLaunchPrefix": "",
-    "customLaunchPrefixEnabled": false,
-    "density": "default",
-    "enableClipPreview": true,
-    "enableClipboardChips": true,
-    "enableClipboardHistory": true,
-    "enableClipboardSmartIcons": true,
-    "enableSessionSearch": false,
-    "enableSettingsSearch": false,
-    "enableWindowsSearch": true,
-    "iconMode": "tabler",
-    "ignoreMouseInput": false,
-    "overviewLayer": false,
-    "pinnedApps": [],
-    "position": "follow_bar",
-    "screenshotAnnotationTool": "",
-    "showCategories": true,
-    "showIconBackground": true,
-    "sortByMostUsed": true,
-    "terminalCommand": "NO_TMUX=1 foot -e",
-    "viewMode": "list"
-  },
-  "audio": {
-    "mprisBlacklist": [
-      "firefox.*"
-    ],
-    "preferredPlayer": "mpd",
-    "spectrumFrameRate": 120,
-    "spectrumMirrored": true,
-    "visualizerType": "linear",
-    "volumeFeedback": false,
-    "volumeFeedbackSoundFile": "",
-    "volumeOverdrive": true,
-    "volumeStep": 2
-  },
-  "bar": {
-    "autoHideDelay": 500,
-    "autoShowDelay": 150,
-    "backgroundOpacity": 1,
-    "barType": "framed",
-    "capsuleColorKey": "none",
-    "capsuleOpacity": 0.3,
-    "contentPadding": 1,
-    "density": "default",
-    "displayMode": "always_visible",
-    "enableExclusionZoneInset": true,
-    "fontScale": 1,
-    "frameRadius": 10,
-    "frameThickness": 6,
-    "hideOnOverview": true,
-    "marginHorizontal": 12,
-    "marginVertical": 3,
-    "middleClickAction": "none",
-    "middleClickCommand": "",
-    "middleClickFollowMouse": false,
-    "monitors": [],
-    "mouseWheelAction": "content",
-    "mouseWheelWrap": true,
-    "outerCorners": true,
-    "position": "top",
-    "reverseScroll": false,
-    "rightClickAction": "controlCenter",
-    "rightClickCommand": "",
-    "rightClickFollowMouse": true,
-    "screenOverrides": [
-      {
-        "enabled": false,
-        "name": "eDP-2"
-      }
-    ],
-    "showCapsule": true,
-    "showOnWorkspaceSwitch": true,
-    "showOutline": false,
-    "useSeparateOpacity": false,
-    "widgetSpacing": 6,
-    "widgets": {
-      "center": [
-        {
-          "compactMode": false,
-          "hideMode": "hidden",
-          "hideWhenIdle": false,
-          "id": "MediaMini",
-          "maxWidth": 145,
-          "panelShowAlbumArt": true,
-          "scrollingMode": "hover",
-          "showAlbumArt": true,
-          "showArtistFirst": true,
-          "showProgressRing": false,
-          "showVisualizer": true,
-          "textColor": "primary",
-          "useFixedWidth": false,
-          "visualizerType": "mirrored"
-        },
-        {
-          "colorizeSystemIcon": "primary",
-          "enableColorization": true,
-          "generalTooltipText": "",
-          "hideMode": "maxTransparent",
-          "icon": "music",
-          "id": "CustomButton",
-          "ipcIdentifier": "",
-          "leftClickExec": "playerctl --ignore-player=firefox --player=tauon,spotify,mpd toggle",
-          "leftClickUpdateText": true,
-          "maxTextLength": {
-            "horizontal": 75,
-            "vertical": 10
-          },
-          "middleClickExec": "",
-          "middleClickUpdateText": false,
-          "parseJson": false,
-          "rightClickExec": "",
-          "rightClickUpdateText": false,
-          "showExecTooltip": true,
-          "showIcon": true,
-          "showTextTooltip": true,
-          "textCollapse": "(no lyrics)",
-          "textCommand": "lrc_tty --raw",
-          "textIntervalMs": 500,
-          "textStream": false,
-          "wheelDownExec": "",
-          "wheelDownUpdateText": false,
-          "wheelExec": "",
-          "wheelMode": "unified",
-          "wheelUpExec": "",
-          "wheelUpUpdateText": false,
-          "wheelUpdateText": false
-        }
-      ],
-      "left": [
-        {
-          "colorizeDistroLogo": false,
-          "colorizeSystemIcon": "primary",
-          "customIconPath": "",
-          "enableColorization": true,
-          "icon": "noctalia",
-          "id": "ControlCenter",
-          "useDistroLogo": true
-        },
-        {
-          "colorizeSystemIcon": "primary",
-          "enableColorization": true,
-          "generalTooltipText": "",
-          "hideMode": "alwaysExpanded",
-          "icon": "calendar",
-          "id": "CustomButton",
-          "ipcIdentifier": "",
-          "leftClickExec": "qs -c noctalia-shell ipc call plugin:pomodoro toggle",
-          "leftClickUpdateText": true,
-          "maxTextLength": {
-            "horizontal": 10,
-            "vertical": 0
-          },
-          "middleClickExec": "",
-          "middleClickUpdateText": false,
-          "parseJson": false,
-          "rightClickExec": "qs -c noctalia-shell ipc call launcher toggle",
-          "rightClickUpdateText": false,
-          "showExecTooltip": true,
-          "showIcon": false,
-          "showTextTooltip": true,
-          "textCollapse": "",
-          "textCommand": "echo \"死Shin\"",
-          "textIntervalMs": 1000000,
-          "textStream": false,
-          "wheelDownExec": "qs -c noctalia-shell ipc call volume decrease",
-          "wheelDownUpdateText": true,
-          "wheelExec": "",
-          "wheelMode": "separate",
-          "wheelUpExec": "qs -c noctalia-shell ipc call volume increase",
-          "wheelUpUpdateText": true,
-          "wheelUpdateText": false
-        },
-        {
-          "characterCount": 2,
-          "colorizeIcons": false,
-          "emptyColor": "none",
-          "enableScrollWheel": true,
-          "focusedColor": "secondary",
-          "followFocusedScreen": true,
-          "fontWeight": "bold",
-          "groupedBorderOpacity": 0.43,
-          "hideUnoccupied": false,
-          "iconScale": 0.6799999999999999,
-          "id": "Workspace",
-          "labelMode": "name",
-          "occupiedColor": "primary",
-          "pillSize": 0.6000000000000001,
-          "showApplications": false,
-          "showApplicationsHover": false,
-          "showBadge": true,
-          "showLabelsOnlyWhenOccupied": true,
-          "unfocusedIconsOpacity": 0.75
-        },
-        {
-          "defaultSettings": {
-            "hideBackground": false,
-            "minimumThreshold": 10
-          },
-          "id": "plugin:catwalk"
-        }
-      ],
-      "right": [
-        {
-          "defaultSettings": {
-            "audioCodec": "opus",
-            "audioSource": "default_output",
-            "colorRange": "limited",
-            "copyToClipboard": false,
-            "directory": "",
-            "filenamePattern": "recording_yyyyMMdd_HHmmss",
-            "frameRate": "60",
-            "hideInactive": false,
-            "quality": "very_high",
-            "resolution": "original",
-            "showCursor": true,
-            "videoCodec": "h264",
-            "videoSource": "portal"
-          },
-          "id": "plugin:screen-recorder"
-        },
-        {
-          "blacklist": [],
-          "chevronColor": "primary",
-          "colorizeIcons": false,
-          "drawerEnabled": true,
-          "hidePassive": true,
-          "id": "Tray",
-          "pinned": []
-        },
-        {
-          "clockColor": "primary",
-          "customFont": "JetBrainsMono NF",
-          "formatHorizontal": "hh:mm AP M-d",
-          "formatVertical": "HH mm",
-          "id": "Clock",
-          "tooltipFormat": "HH:mm ddd, MMM dd",
-          "useCustomFont": true
-        },
-        {
-          "compactMode": false,
-          "diskPath": "/",
-          "iconColor": "primary",
-          "id": "SystemMonitor",
-          "showCpuCores": false,
-          "showCpuFreq": false,
-          "showCpuTemp": false,
-          "showCpuUsage": false,
-          "showDiskAvailable": false,
-          "showDiskUsage": false,
-          "showDiskUsageAsPercent": false,
-          "showGpuTemp": false,
-          "showLoadAverage": false,
-          "showMemoryAsPercent": false,
-          "showMemoryUsage": true,
-          "showNetworkStats": false,
-          "showSwapUsage": false,
-          "textColor": "primary",
-          "useMonospaceFont": true,
-          "usePadding": true
-        },
-        {
-          "colorizeSystemIcon": "primary",
-          "enableColorization": true,
-          "generalTooltipText": "",
-          "hideMode": "alwaysExpanded",
-          "icon": "checklist",
-          "id": "CustomButton",
-          "ipcIdentifier": "",
-          "leftClickExec": "qs -c noctalia-shell ipc call plugin:todo togglePanel",
-          "leftClickUpdateText": true,
-          "maxTextLength": {
-            "horizontal": 10,
-            "vertical": 10
-          },
-          "middleClickExec": "",
-          "middleClickUpdateText": false,
-          "parseJson": false,
-          "rightClickExec": "",
-          "rightClickUpdateText": false,
-          "showExecTooltip": true,
-          "showIcon": true,
-          "showTextTooltip": true,
-          "textCollapse": "",
-          "textCommand": "",
-          "textIntervalMs": 3000,
-          "textStream": false,
-          "wheelDownExec": "",
-          "wheelDownUpdateText": false,
-          "wheelExec": "",
-          "wheelMode": "unified",
-          "wheelUpExec": "",
-          "wheelUpUpdateText": false,
-          "wheelUpdateText": false
-        },
-        {
-          "defaultSettings": {
-            "colorHistory": [],
-            "installedLangs": [
-              "eng"
+    "appLauncher": {
+        "autoPasteClipboard": false,
+        "clipboardWatchImageCommand": "wl-paste --type image --watch cliphist store",
+        "clipboardWatchTextCommand": "wl-paste --type text --watch cliphist store",
+        "clipboardWrapText": true,
+        "customLaunchPrefix": "",
+        "customLaunchPrefixEnabled": false,
+        "density": "default",
+        "enableClipPreview": true,
+        "enableClipboardChips": true,
+        "enableClipboardHistory": true,
+        "enableClipboardSmartIcons": true,
+        "enableSessionSearch": false,
+        "enableSettingsSearch": false,
+        "enableWindowsSearch": true,
+        "iconMode": "tabler",
+        "ignoreMouseInput": false,
+        "overviewLayer": false,
+        "pinnedApps": [
+        ],
+        "position": "follow_bar",
+        "screenshotAnnotationTool": "",
+        "showCategories": true,
+        "showIconBackground": true,
+        "sortByMostUsed": true,
+        "terminalCommand": "env NO_TMUX=1 foot -e",
+        "viewMode": "list"
+    },
+    "audio": {
+        "mprisBlacklist": [
+            "firefox.*"
+        ],
+        "preferredPlayer": "mpd",
+        "spectrumFrameRate": 120,
+        "spectrumMirrored": true,
+        "visualizerType": "linear",
+        "volumeFeedback": false,
+        "volumeFeedbackSoundFile": "",
+        "volumeOverdrive": true,
+        "volumeStep": 2
+    },
+    "bar": {
+        "autoHideDelay": 500,
+        "autoShowDelay": 150,
+        "backgroundOpacity": 1,
+        "barType": "framed",
+        "capsuleColorKey": "none",
+        "capsuleOpacity": 0.3,
+        "contentPadding": 1,
+        "density": "default",
+        "displayMode": "always_visible",
+        "enableExclusionZoneInset": true,
+        "fontScale": 1,
+        "frameRadius": 10,
+        "frameThickness": 6,
+        "hideOnOverview": true,
+        "marginHorizontal": 12,
+        "marginVertical": 3,
+        "middleClickAction": "none",
+        "middleClickCommand": "",
+        "middleClickFollowMouse": false,
+        "monitors": [
+        ],
+        "mouseWheelAction": "content",
+        "mouseWheelWrap": true,
+        "outerCorners": true,
+        "position": "top",
+        "reverseScroll": false,
+        "rightClickAction": "controlCenter",
+        "rightClickCommand": "",
+        "rightClickFollowMouse": true,
+        "screenOverrides": [
+            {
+                "enabled": false,
+                "name": "eDP-2"
+            }
+        ],
+        "showCapsule": true,
+        "showOnWorkspaceSwitch": true,
+        "showOutline": false,
+        "useSeparateOpacity": false,
+        "widgetSpacing": 6,
+        "widgets": {
+            "center": [
+                {
+                    "compactMode": false,
+                    "hideMode": "hidden",
+                    "hideWhenIdle": false,
+                    "id": "MediaMini",
+                    "maxWidth": 145,
+                    "panelShowAlbumArt": true,
+                    "scrollingMode": "hover",
+                    "showAlbumArt": true,
+                    "showArtistFirst": true,
+                    "showProgressRing": false,
+                    "showVisualizer": true,
+                    "textColor": "primary",
+                    "useFixedWidth": false,
+                    "visualizerType": "wave"
+                },
+                {
+                    "colorizeSystemIcon": "primary",
+                    "enableColorization": true,
+                    "generalTooltipText": "",
+                    "hideMode": "maxTransparent",
+                    "icon": "music",
+                    "id": "CustomButton",
+                    "ipcIdentifier": "",
+                    "leftClickExec": "playerctl --ignore-player=firefox --player=tauon,spotify,mpd toggle",
+                    "leftClickUpdateText": true,
+                    "maxTextLength": {
+                        "horizontal": 75,
+                        "vertical": 10
+                    },
+                    "middleClickExec": "",
+                    "middleClickUpdateText": false,
+                    "parseJson": false,
+                    "rightClickExec": "",
+                    "rightClickUpdateText": false,
+                    "showExecTooltip": true,
+                    "showIcon": true,
+                    "showTextTooltip": true,
+                    "textCollapse": "(no lyrics)",
+                    "textCommand": "lrc_tty --raw",
+                    "textIntervalMs": 500,
+                    "textStream": false,
+                    "wheelDownExec": "",
+                    "wheelDownUpdateText": false,
+                    "wheelExec": "",
+                    "wheelMode": "unified",
+                    "wheelUpExec": "",
+                    "wheelUpUpdateText": false,
+                    "wheelUpdateText": false
+                }
             ],
-            "paletteColors": [],
-            "selectedOcrLang": "eng",
-            "transAvailable": false
-          },
-          "id": "plugin:screen-toolkit"
-        },
-        {
-          "deviceNativePath": "",
-          "displayMode": "graphic",
-          "hideIfIdle": true,
-          "hideIfNotDetected": true,
-          "id": "Battery",
-          "showNoctaliaPerformance": true,
-          "showPowerProfiles": true
+            "left": [
+                {
+                    "colorizeDistroLogo": false,
+                    "colorizeSystemIcon": "primary",
+                    "customIconPath": "",
+                    "enableColorization": true,
+                    "icon": "noctalia",
+                    "id": "ControlCenter",
+                    "useDistroLogo": true
+                },
+                {
+                    "colorizeSystemIcon": "primary",
+                    "enableColorization": true,
+                    "generalTooltipText": "",
+                    "hideMode": "alwaysExpanded",
+                    "icon": "calendar",
+                    "id": "CustomButton",
+                    "ipcIdentifier": "",
+                    "leftClickExec": "qs -c noctalia-shell ipc call plugin:pomodoro toggle",
+                    "leftClickUpdateText": true,
+                    "maxTextLength": {
+                        "horizontal": 10,
+                        "vertical": 0
+                    },
+                    "middleClickExec": "",
+                    "middleClickUpdateText": false,
+                    "parseJson": false,
+                    "rightClickExec": "qs -c noctalia-shell ipc call launcher toggle",
+                    "rightClickUpdateText": false,
+                    "showExecTooltip": true,
+                    "showIcon": false,
+                    "showTextTooltip": true,
+                    "textCollapse": "",
+                    "textCommand": "echo \"死Shin\"",
+                    "textIntervalMs": 1000000,
+                    "textStream": false,
+                    "wheelDownExec": "qs -c noctalia-shell ipc call volume decrease",
+                    "wheelDownUpdateText": true,
+                    "wheelExec": "",
+                    "wheelMode": "separate",
+                    "wheelUpExec": "qs -c noctalia-shell ipc call volume increase",
+                    "wheelUpUpdateText": true,
+                    "wheelUpdateText": false
+                },
+                {
+                    "characterCount": 2,
+                    "colorizeIcons": false,
+                    "emptyColor": "none",
+                    "enableScrollWheel": true,
+                    "focusedColor": "secondary",
+                    "followFocusedScreen": true,
+                    "fontWeight": "bold",
+                    "groupedBorderOpacity": 0.43,
+                    "hideUnoccupied": false,
+                    "iconScale": 0.6799999999999999,
+                    "id": "Workspace",
+                    "labelMode": "name",
+                    "occupiedColor": "primary",
+                    "pillSize": 0.6000000000000001,
+                    "showApplications": false,
+                    "showApplicationsHover": false,
+                    "showBadge": true,
+                    "showLabelsOnlyWhenOccupied": true,
+                    "unfocusedIconsOpacity": 0.75
+                },
+                {
+                    "defaultSettings": {
+                        "hideBackground": false,
+                        "minimumThreshold": 10
+                    },
+                    "id": "plugin:catwalk"
+                }
+            ],
+            "right": [
+                {
+                    "blacklist": [
+                    ],
+                    "chevronColor": "primary",
+                    "colorizeIcons": false,
+                    "drawerEnabled": true,
+                    "hidePassive": true,
+                    "id": "Tray",
+                    "pinned": [
+                    ]
+                },
+                {
+                    "defaultSettings": {
+                        "audioCodec": "opus",
+                        "audioSource": "default_output",
+                        "colorRange": "limited",
+                        "copyToClipboard": false,
+                        "customReplayDuration": "30",
+                        "directory": "",
+                        "filenamePattern": "recording_yyyyMMdd_HHmmss",
+                        "frameRate": "60",
+                        "hideInactive": false,
+                        "iconColor": "none",
+                        "quality": "very_high",
+                        "replayDuration": "30",
+                        "replayEnabled": false,
+                        "replayStorage": "ram",
+                        "resolution": "original",
+                        "restorePortalSession": false,
+                        "showCursor": true,
+                        "videoCodec": "h264",
+                        "videoSource": "portal"
+                    },
+                    "id": "plugin:screen-recorder"
+                },
+                {
+                    "clockColor": "primary",
+                    "customFont": "JetBrainsMono NF",
+                    "formatHorizontal": "hh:mm AP M-d",
+                    "formatVertical": "HH mm",
+                    "id": "Clock",
+                    "tooltipFormat": "HH:mm ddd, MMM dd",
+                    "useCustomFont": true
+                },
+                {
+                    "compactMode": false,
+                    "diskPath": "/",
+                    "iconColor": "primary",
+                    "id": "SystemMonitor",
+                    "showCpuCores": false,
+                    "showCpuFreq": false,
+                    "showCpuTemp": false,
+                    "showCpuUsage": false,
+                    "showDiskAvailable": false,
+                    "showDiskUsage": false,
+                    "showDiskUsageAsPercent": false,
+                    "showGpuTemp": false,
+                    "showLoadAverage": false,
+                    "showMemoryAsPercent": false,
+                    "showMemoryUsage": true,
+                    "showNetworkStats": false,
+                    "showSwapUsage": false,
+                    "textColor": "primary",
+                    "useMonospaceFont": true,
+                    "usePadding": true
+                },
+                {
+                    "colorizeSystemIcon": "primary",
+                    "enableColorization": true,
+                    "generalTooltipText": "",
+                    "hideMode": "alwaysExpanded",
+                    "icon": "checklist",
+                    "id": "CustomButton",
+                    "ipcIdentifier": "",
+                    "leftClickExec": "qs -c noctalia-shell ipc call plugin:todo togglePanel",
+                    "leftClickUpdateText": true,
+                    "maxTextLength": {
+                        "horizontal": 10,
+                        "vertical": 10
+                    },
+                    "middleClickExec": "",
+                    "middleClickUpdateText": false,
+                    "parseJson": false,
+                    "rightClickExec": "",
+                    "rightClickUpdateText": false,
+                    "showExecTooltip": true,
+                    "showIcon": true,
+                    "showTextTooltip": true,
+                    "textCollapse": "",
+                    "textCommand": "",
+                    "textIntervalMs": 3000,
+                    "textStream": false,
+                    "wheelDownExec": "",
+                    "wheelDownUpdateText": false,
+                    "wheelExec": "",
+                    "wheelMode": "unified",
+                    "wheelUpExec": "",
+                    "wheelUpUpdateText": false,
+                    "wheelUpdateText": false
+                },
+                {
+                    "defaultSettings": {
+                        "colorHistory": [
+                        ],
+                        "detectedRecorder": "",
+                        "installedLangs": [
+                            "eng"
+                        ],
+                        "paletteColors": [
+                        ],
+                        "selectedOcrLang": "eng",
+                        "transAvailable": false
+                    },
+                    "id": "plugin:screen-toolkit"
+                },
+                {
+                    "deviceNativePath": "__default__",
+                    "displayMode": "graphic-clean",
+                    "hideIfIdle": true,
+                    "hideIfNotDetected": true,
+                    "id": "Battery",
+                    "showNoctaliaPerformance": false,
+                    "showPowerProfiles": false
+                }
+            ]
         }
-      ]
-    }
-  },
-  "brightness": {
-    "backlightDeviceMappings": [],
-    "brightnessStep": 5,
-    "enableDdcSupport": false,
-    "enforceMinimum": true
-  },
-  "calendar": {
-    "cards": [
-      {
-        "enabled": true,
-        "id": "calendar-header-card"
-      },
-      {
-        "enabled": true,
-        "id": "calendar-month-card"
-      },
-      {
-        "enabled": true,
-        "id": "weather-card"
-      }
-    ]
-  },
-  "colorSchemes": {
-    "darkMode": true,
-    "generationMethod": "content",
-    "manualSunrise": "06:30",
-    "manualSunset": "18:30",
-    "monitorForColors": "",
-    "predefinedScheme": "Gruvbox",
-    "schedulingMode": "off",
-    "useWallpaperColors": false
-  },
-  "controlCenter": {
-    "cards": [
-      {
-        "enabled": true,
-        "id": "profile-card"
-      },
-      {
-        "enabled": true,
-        "id": "shortcuts-card"
-      },
-      {
-        "enabled": true,
-        "id": "audio-card"
-      },
-      {
-        "enabled": false,
-        "id": "brightness-card"
-      },
-      {
-        "enabled": true,
-        "id": "weather-card"
-      },
-      {
-        "enabled": true,
-        "id": "media-sysmon-card"
-      }
-    ],
-    "diskPath": "/",
-    "position": "close_to_bar_button",
-    "shortcuts": {
-      "left": [
-        {
-          "id": "WiFi"
-        },
-        {
-          "id": "Bluetooth"
-        },
-        {
-          "id": "WallpaperSelector"
-        }
-      ],
-      "right": [
-        {
-          "id": "Notifications"
-        },
-        {
-          "id": "PowerProfile"
-        },
-        {
-          "id": "KeepAwake"
-        },
-        {
-          "id": "NightLight"
-        }
-      ]
-    }
-  },
-  "desktopWidgets": {
-    "enabled": true,
-    "gridSnap": true,
-    "gridSnapScale": false,
-    "monitorWidgets": [
-      {
-        "name": "eDP-2",
-        "widgets": [
-          {
-            "hideMode": "visible",
-            "id": "MediaPlayer",
-            "roundedCorners": true,
-            "scale": 1.0091543605945683,
-            "showAlbumArt": true,
-            "showBackground": true,
-            "showButtons": true,
-            "showVisualizer": true,
-            "visualizerType": "wave",
-            "visualizerVisibility": "always",
-            "x": 1500,
-            "y": 980
-          },
-          {
-            "defaultSettings": {
-              "barWidth": 0.6,
-              "bloomIntensity": 0.5,
-              "customPrimaryColor": "#6750A4",
-              "customSecondaryColor": "#625B71",
-              "fadeWhenIdle": false,
-              "innerDiameter": 0.7,
-              "ringOpacity": 0.8,
-              "rotationSpeed": 0.5,
-              "sensitivity": 1.5,
-              "useCustomColors": false,
-              "visualizationMode": 3,
-              "waveThickness": 1
+    },
+    "brightness": {
+        "backlightDeviceMappings": [
+        ],
+        "brightnessStep": 5,
+        "enableDdcSupport": false,
+        "enforceMinimum": true
+    },
+    "calendar": {
+        "cards": [
+            {
+                "enabled": true,
+                "id": "calendar-header-card"
             },
-            "id": "plugin:fancy-audiovisualizer",
-            "scale": 1.1554714206655734,
-            "showBackground": true,
-            "x": 20,
-            "y": 120
-          }
+            {
+                "enabled": true,
+                "id": "calendar-month-card"
+            },
+            {
+                "enabled": true,
+                "id": "weather-card"
+            }
         ]
-      }
-    ],
-    "overviewEnabled": true
-  },
-  "dock": {
-    "animationSpeed": 1,
-    "backgroundOpacity": 1,
-    "colorizeIcons": true,
-    "deadOpacity": 0.6,
-    "displayMode": "auto_hide",
-    "dockType": "attached",
-    "enabled": true,
-    "floatingRatio": 1,
-    "groupApps": true,
-    "groupClickAction": "cycle",
-    "groupContextMenuMode": "extended",
-    "groupIndicatorStyle": "dots",
-    "inactiveIndicators": false,
-    "indicatorColor": "primary",
-    "indicatorOpacity": 0.6,
-    "indicatorThickness": 3,
-    "launcherIcon": "",
-    "launcherIconColor": "none",
-    "launcherPosition": "end",
-    "launcherUseDistroLogo": false,
-    "monitors": [],
-    "onlySameOutput": true,
-    "pinnedApps": [],
-    "pinnedStatic": true,
-    "position": "right",
-    "showDockIndicator": false,
-    "showLauncherIcon": false,
-    "sitOnFrame": false,
-    "size": 1
-  },
-  "general": {
-    "allowPanelsOnScreenWithoutBar": true,
-    "allowPasswordWithFprintd": false,
-    "animationDisabled": false,
-    "animationSpeed": 1.6,
-    "autoStartAuth": false,
-    "avatarImage": "/home/shin/Downloads/550413787_122171110412380833_4447995126445341480_n.jpg",
-    "boxRadiusRatio": 1,
-    "clockFormat": "hh\\nmm",
-    "clockStyle": "custom",
-    "compactLockScreen": false,
-    "dimmerOpacity": 0.25,
-    "enableBlurBehind": true,
-    "enableLockScreenCountdown": false,
-    "enableLockScreenMediaControls": false,
-    "enableShadows": true,
-    "forceBlackScreenCorners": true,
-    "iRadiusRatio": 1,
-    "keybinds": {
-      "keyDown": [
-        "Down",
-        "Ctrl+N"
-      ],
-      "keyEnter": [
-        "Return",
-        "Enter",
-        "Ctrl+Y"
-      ],
-      "keyEscape": [
-        "Esc"
-      ],
-      "keyLeft": [
-        "Left"
-      ],
-      "keyRemove": [
-        "Del"
-      ],
-      "keyRight": [
-        "Right"
-      ],
-      "keyUp": [
-        "Up",
-        "Ctrl+P"
-      ]
     },
-    "language": "",
-    "lockOnSuspend": true,
-    "lockScreenAnimations": true,
-    "lockScreenBlur": 0,
-    "lockScreenCountdownDuration": 10000,
-    "lockScreenMonitors": [],
-    "lockScreenTint": 0,
-    "passwordChars": true,
-    "radiusRatio": 1,
-    "reverseScroll": false,
-    "scaleRatio": 0.9500000000000001,
-    "screenRadiusRatio": 1,
-    "shadowDirection": "center",
-    "shadowOffsetX": 0,
-    "shadowOffsetY": 0,
-    "showChangelogOnStartup": true,
-    "showHibernateOnLockScreen": false,
-    "showScreenCorners": true,
-    "showSessionButtonsOnLockScreen": true,
-    "telemetryEnabled": false
-  },
-  "hooks": {
-    "colorGeneration": "",
-    "darkModeChange": "",
-    "enabled": true,
-    "performanceModeDisabled": "",
-    "performanceModeEnabled": "",
-    "screenLock": "",
-    "screenUnlock": "",
-    "session": "",
-    "startup": "",
-    "wallpaperChange": ""
-  },
-  "idle": {
-    "customCommands": "[]",
-    "enabled": false,
-    "fadeDuration": 5,
-    "lockCommand": "",
-    "lockTimeout": 660,
-    "resumeLockCommand": "",
-    "resumeScreenOffCommand": "",
-    "resumeSuspendCommand": "",
-    "screenOffCommand": "",
-    "screenOffTimeout": 600,
-    "suspendCommand": "",
-    "suspendTimeout": 1800
-  },
-  "location": {
-    "analogClockInCalendar": false,
-    "firstDayOfWeek": -1,
-    "hideWeatherCityName": false,
-    "hideWeatherTimezone": false,
-    "name": "Cairo",
-    "showCalendarEvents": true,
-    "showCalendarWeather": true,
-    "showWeekNumberInCalendar": false,
-    "use12hourFormat": true,
-    "useFahrenheit": true,
-    "weatherEnabled": true,
-    "weatherShowEffects": true
-  },
-  "network": {
-    "airplaneModeEnabled": false,
-    "bluetoothAutoConnect": true,
-    "bluetoothDetailsViewMode": "grid",
-    "bluetoothHideUnnamedDevices": false,
-    "bluetoothRssiPollIntervalMs": 10000,
-    "bluetoothRssiPollingEnabled": true,
-    "disableDiscoverability": false,
-    "networkPanelView": "wifi",
-    "wifiDetailsViewMode": "grid"
-  },
-  "nightLight": {
-    "autoSchedule": false,
-    "dayTemp": "6500",
-    "enabled": true,
-    "forced": false,
-    "manualSunrise": "08:00",
-    "manualSunset": "20:00",
-    "nightTemp": "3998"
-  },
-  "noctaliaPerformance": {
-    "disableDesktopWidgets": true,
-    "disableWallpaper": false
-  },
-  "notifications": {
-    "backgroundOpacity": 0.9,
-    "clearDismissed": true,
-    "criticalUrgencyDuration": 15,
-    "density": "compact",
-    "enableBatteryToast": true,
-    "enableKeyboardLayoutToast": true,
-    "enableMarkdown": false,
-    "enableMediaToast": false,
-    "enabled": true,
-    "location": "top_right",
-    "lowUrgencyDuration": 2,
-    "monitors": [],
-    "normalUrgencyDuration": 3,
-    "overlayLayer": true,
-    "respectExpireTimeout": true,
-    "saveToHistory": {
-      "critical": true,
-      "low": true,
-      "normal": true
+    "colorSchemes": {
+        "darkMode": false,
+        "generationMethod": "content",
+        "manualSunrise": "06:30",
+        "manualSunset": "18:30",
+        "monitorForColors": "",
+        "predefinedScheme": "Gruvbox",
+        "schedulingMode": "location",
+        "syncGsettings": true,
+        "useWallpaperColors": true
     },
-    "sounds": {
-      "criticalSoundFile": "",
-      "enabled": false,
-      "excludedApps": "discord,firefox,chrome,chromium,edge",
-      "lowSoundFile": "",
-      "normalSoundFile": "",
-      "separateSounds": true,
-      "volume": 0.5
-    }
-  },
-  "osd": {
-    "autoHideMs": 1000,
-    "backgroundOpacity": 1,
-    "enabled": true,
-    "enabledTypes": [
-      0,
-      1,
-      2
-    ],
-    "location": "top_right",
-    "monitors": [],
-    "overlayLayer": true
-  },
-  "plugins": {
-    "autoUpdate": true,
-    "notifyUpdates": true
-  },
-  "sessionMenu": {
-    "countdownDuration": 5000,
-    "enableCountdown": false,
-    "largeButtonsLayout": "grid",
-    "largeButtonsStyle": false,
-    "position": "center",
-    "powerOptions": [
-      {
-        "action": "lock",
-        "command": "",
-        "countdownEnabled": true,
+    "controlCenter": {
+        "cards": [
+            {
+                "enabled": true,
+                "id": "profile-card"
+            },
+            {
+                "enabled": true,
+                "id": "shortcuts-card"
+            },
+            {
+                "enabled": true,
+                "id": "audio-card"
+            },
+            {
+                "enabled": false,
+                "id": "brightness-card"
+            },
+            {
+                "enabled": true,
+                "id": "weather-card"
+            },
+            {
+                "enabled": true,
+                "id": "media-sysmon-card"
+            }
+        ],
+        "diskPath": "/",
+        "position": "close_to_bar_button",
+        "shortcuts": {
+            "left": [
+                {
+                    "id": "WiFi"
+                },
+                {
+                    "id": "Bluetooth"
+                },
+                {
+                    "id": "WallpaperSelector"
+                }
+            ],
+            "right": [
+                {
+                    "id": "Notifications"
+                },
+                {
+                    "id": "PowerProfile"
+                },
+                {
+                    "id": "KeepAwake"
+                },
+                {
+                    "id": "NightLight"
+                }
+            ]
+        }
+    },
+    "desktopWidgets": {
         "enabled": true,
-        "keybind": "1"
-      },
-      {
-        "action": "suspend",
-        "command": "",
-        "countdownEnabled": true,
+        "gridSnap": true,
+        "gridSnapScale": false,
+        "monitorWidgets": [
+            {
+                "name": "eDP-2",
+                "widgets": [
+                    {
+                        "hideMode": "visible",
+                        "id": "MediaPlayer",
+                        "roundedCorners": true,
+                        "showAlbumArt": true,
+                        "showBackground": true,
+                        "showButtons": true,
+                        "showVisualizer": true,
+                        "visualizerType": "wave",
+                        "x": 1500,
+                        "y": 980
+                    },
+                    {
+                        "defaultSettings": {
+                            "hideBackground": false,
+                            "minimumThreshold": 10
+                        },
+                        "id": "plugin:catwalk",
+                        "showBackground": true,
+                        "x": 60,
+                        "y": 980
+                    },
+                    {
+                        "defaultSettings": {
+                            "completedCount": 0,
+                            "count": 0,
+                            "current_page_id": 0,
+                            "exportEmptySections": false,
+                            "exportFormat": "markdown",
+                            "exportPath": "~/Documents",
+                            "isExpanded": false,
+                            "pages": [
+                                {
+                                    "id": 0,
+                                    "name": "General"
+                                }
+                            ],
+                            "priorityColors": {
+                                "high": "#f44336",
+                                "low": "#9e9e9e",
+                                "medium": "#2196f3"
+                            },
+                            "showBackground": true,
+                            "showCompleted": true,
+                            "todos": [
+                            ],
+                            "useCustomColors": false
+                        },
+                        "id": "plugin:todo",
+                        "scale": 0.8805836594793031,
+                        "showBackground": true,
+                        "x": 1620,
+                        "y": 140
+                    }
+                ]
+            }
+        ],
+        "overviewEnabled": true
+    },
+    "dock": {
+        "animationSpeed": 1,
+        "backgroundOpacity": 1,
+        "colorizeIcons": true,
+        "deadOpacity": 0.6,
+        "displayMode": "auto_hide",
+        "dockType": "attached",
         "enabled": true,
-        "keybind": "2"
-      },
-      {
-        "action": "hibernate",
-        "command": "",
-        "countdownEnabled": true,
+        "floatingRatio": 1,
+        "groupApps": true,
+        "groupClickAction": "cycle",
+        "groupContextMenuMode": "extended",
+        "groupIndicatorStyle": "dots",
+        "inactiveIndicators": false,
+        "indicatorColor": "primary",
+        "indicatorOpacity": 0.6,
+        "indicatorThickness": 3,
+        "launcherIcon": "",
+        "launcherIconColor": "none",
+        "launcherPosition": "end",
+        "launcherUseDistroLogo": false,
+        "monitors": [
+        ],
+        "onlySameOutput": true,
+        "pinnedApps": [
+        ],
+        "pinnedStatic": true,
+        "position": "right",
+        "showDockIndicator": false,
+        "showLauncherIcon": false,
+        "sitOnFrame": false,
+        "size": 1
+    },
+    "general": {
+        "allowPanelsOnScreenWithoutBar": true,
+        "allowPasswordWithFprintd": false,
+        "animationDisabled": false,
+        "animationSpeed": 1.6,
+        "autoStartAuth": false,
+        "avatarImage": "/home/shin/Downloads/550413787_122171110412380833_4447995126445341480_n.jpg",
+        "boxRadiusRatio": 1,
+        "clockFormat": "hh\\nmm",
+        "clockStyle": "custom",
+        "compactLockScreen": false,
+        "dimmerOpacity": 0.25,
+        "enableBlurBehind": true,
+        "enableLockScreenCountdown": false,
+        "enableLockScreenMediaControls": false,
+        "enableShadows": true,
+        "forceBlackScreenCorners": true,
+        "iRadiusRatio": 1,
+        "keybinds": {
+            "keyDown": [
+                "Down",
+                "Ctrl+N"
+            ],
+            "keyEnter": [
+                "Return",
+                "Enter",
+                "Ctrl+Y"
+            ],
+            "keyEscape": [
+                "Esc"
+            ],
+            "keyLeft": [
+                "Left"
+            ],
+            "keyRemove": [
+                "Del"
+            ],
+            "keyRight": [
+                "Right"
+            ],
+            "keyUp": [
+                "Up",
+                "Ctrl+P"
+            ]
+        },
+        "language": "",
+        "lockOnSuspend": true,
+        "lockScreenAnimations": true,
+        "lockScreenBlur": 0,
+        "lockScreenCountdownDuration": 10000,
+        "lockScreenMonitors": [
+        ],
+        "lockScreenTint": 0,
+        "passwordChars": true,
+        "radiusRatio": 1,
+        "reverseScroll": false,
+        "scaleRatio": 0.9500000000000001,
+        "screenRadiusRatio": 1,
+        "shadowDirection": "center",
+        "shadowOffsetX": 0,
+        "shadowOffsetY": 0,
+        "showChangelogOnStartup": true,
+        "showHibernateOnLockScreen": false,
+        "showScreenCorners": true,
+        "showSessionButtonsOnLockScreen": true,
+        "smoothScrollEnabled": true,
+        "telemetryEnabled": false
+    },
+    "hooks": {
+        "colorGeneration": "",
+        "darkModeChange": "",
+        "enabled": true,
+        "performanceModeDisabled": "",
+        "performanceModeEnabled": "",
+        "screenLock": "",
+        "screenUnlock": "",
+        "session": "",
+        "startup": "",
+        "wallpaperChange": ""
+    },
+    "idle": {
+        "customCommands": "[]",
         "enabled": false,
-        "keybind": "3"
-      },
-      {
-        "action": "reboot",
-        "command": "",
-        "countdownEnabled": true,
+        "fadeDuration": 5,
+        "lockCommand": "",
+        "lockTimeout": 660,
+        "resumeLockCommand": "",
+        "resumeScreenOffCommand": "",
+        "resumeSuspendCommand": "",
+        "screenOffCommand": "",
+        "screenOffTimeout": 600,
+        "suspendCommand": "",
+        "suspendTimeout": 1800
+    },
+    "location": {
+        "analogClockInCalendar": false,
+        "autoLocate": false,
+        "firstDayOfWeek": -1,
+        "hideWeatherCityName": false,
+        "hideWeatherTimezone": false,
+        "name": "Cairo",
+        "showCalendarEvents": true,
+        "showCalendarWeather": true,
+        "showWeekNumberInCalendar": false,
+        "use12hourFormat": true,
+        "useFahrenheit": true,
+        "weatherEnabled": true,
+        "weatherShowEffects": true,
+        "weatherTaliaMascotAlways": false
+    },
+    "network": {
+        "bluetoothAutoConnect": true,
+        "bluetoothDetailsViewMode": "grid",
+        "bluetoothHideUnnamedDevices": false,
+        "bluetoothRssiPollIntervalMs": 10000,
+        "bluetoothRssiPollingEnabled": true,
+        "disableDiscoverability": false,
+        "networkPanelView": "wifi",
+        "wifiDetailsViewMode": "grid"
+    },
+    "nightLight": {
+        "autoSchedule": false,
+        "dayTemp": "6500",
         "enabled": true,
-        "keybind": "4"
-      },
-      {
-        "action": "logout",
-        "command": "",
-        "countdownEnabled": true,
+        "forced": false,
+        "manualSunrise": "08:00",
+        "manualSunset": "20:00",
+        "nightTemp": "3601"
+    },
+    "noctaliaPerformance": {
+        "disableDesktopWidgets": true,
+        "disableWallpaper": false
+    },
+    "notifications": {
+        "backgroundOpacity": 0.9,
+        "clearDismissed": true,
+        "criticalUrgencyDuration": 15,
+        "density": "compact",
+        "enableBatteryToast": true,
+        "enableKeyboardLayoutToast": true,
+        "enableMarkdown": false,
+        "enableMediaToast": false,
         "enabled": true,
-        "keybind": "5"
-      },
-      {
-        "action": "shutdown",
-        "command": "",
-        "countdownEnabled": true,
+        "location": "top_right",
+        "lowUrgencyDuration": 2,
+        "monitors": [
+        ],
+        "normalUrgencyDuration": 3,
+        "overlayLayer": true,
+        "respectExpireTimeout": true,
+        "saveToHistory": {
+            "critical": true,
+            "low": true,
+            "normal": true
+        },
+        "sounds": {
+            "criticalSoundFile": "",
+            "enabled": false,
+            "excludedApps": "discord,firefox,chrome,chromium,edge",
+            "lowSoundFile": "",
+            "normalSoundFile": "",
+            "separateSounds": true,
+            "volume": 0.5
+        }
+    },
+    "osd": {
+        "autoHideMs": 1000,
+        "backgroundOpacity": 1,
         "enabled": true,
-        "keybind": "6"
-      },
-      {
-        "action": "rebootToUefi",
-        "command": "",
-        "countdownEnabled": true,
-        "enabled": true,
-        "keybind": ""
-      }
-    ],
-    "showHeader": false,
-    "showKeybinds": true
-  },
-  "settingsVersion": 59,
-  "systemMonitor": {
-    "batteryCriticalThreshold": 5,
-    "batteryWarningThreshold": 20,
-    "cpuCriticalThreshold": 90,
-    "cpuWarningThreshold": 80,
-    "criticalColor": "#fd4663",
-    "diskAvailCriticalThreshold": 10,
-    "diskAvailWarningThreshold": 20,
-    "diskCriticalThreshold": 90,
-    "diskWarningThreshold": 80,
-    "enableDgpuMonitoring": false,
-    "externalMonitor": "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor",
-    "gpuCriticalThreshold": 90,
-    "gpuWarningThreshold": 80,
-    "memCriticalThreshold": 90,
-    "memWarningThreshold": 80,
-    "swapCriticalThreshold": 90,
-    "swapWarningThreshold": 80,
-    "tempCriticalThreshold": 90,
-    "tempWarningThreshold": 80,
-    "useCustomColors": false,
-    "warningColor": "#9bfece"
-  },
-  "templates": {
-    "activeTemplates": [
-      {
-        "enabled": true,
-        "id": "gtk"
-      },
-      {
-        "enabled": true,
-        "id": "fuzzel"
-      },
-      {
-        "enabled": true,
-        "id": "discord"
-      },
-      {
-        "enabled": true,
-        "id": "telegram"
-      },
-      {
-        "enabled": true,
-        "id": "cava"
-      },
-      {
-        "enabled": true,
-        "id": "btop"
-      },
-      {
-        "enabled": true,
-        "id": "spicetify"
-      },
-      {
-        "enabled": true,
-        "id": "kcolorscheme"
-      },
-      {
-        "enabled": true,
-        "id": "qt"
-      },
-      {
-        "enabled": true,
-        "id": "yazi"
-      },
-      {
-        "enabled": true,
-        "id": "kitty"
-      },
-      {
-        "enabled": true,
-        "id": "niri"
-      },
-      {
-        "enabled": true,
-        "id": "foot"
-      },
-      {
-        "enabled": true,
-        "id": "zenBrowser"
-      },
-      {
-        "enabled": true,
-        "id": "ghostty"
-      }
-    ],
-    "enableUserTheming": true
-  },
-  "ui": {
-    "boxBorderEnabled": false,
-    "fontDefault": "Noto Sans Cherokee",
-    "fontDefaultScale": 0.9,
-    "fontFixed": "JetBrainsMono Nerd Font",
-    "fontFixedScale": 0.9,
-    "panelBackgroundOpacity": 1.00,
-    "panelsAttachedToBar": true,
-    "scrollbarAlwaysVisible": false,
-    "settingsPanelMode": "attached",
-    "settingsPanelSideBarCardStyle": false,
-    "tooltipsEnabled": false,
-    "translucentWidgets": true
-  },
-  "wallpaper": {
-    "automationEnabled": false,
-    "directory": "/home/shin/Pictures/",
-    "enableMultiMonitorDirectories": false,
-    "enabled": true,
-    "favorites": [
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#b8bb26",
-          "#fabd2f",
-          "#83a598",
-          "#fb4934"
+        "enabledTypes": [
+            0,
+            1,
+            2
         ],
-        "path": "/home/shin/Pictures/homework/norm/136126644_p7.png",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": false,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#98971a",
-          "#d79921",
-          "#458588",
-          "#cc241d"
+        "location": "top_right",
+        "monitors": [
         ],
-        "path": "/home/shin/Pictures/homework/norm/140513212_p0.png",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#b8bb26",
-          "#fabd2f",
-          "#83a598",
-          "#fb4934"
+        "overlayLayer": true
+    },
+    "plugins": {
+        "autoUpdate": true,
+        "notifyUpdates": true
+    },
+    "sessionMenu": {
+        "countdownDuration": 5000,
+        "enableCountdown": false,
+        "largeButtonsLayout": "grid",
+        "largeButtonsStyle": false,
+        "position": "center",
+        "powerOptions": [
+            {
+                "action": "lock",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": true,
+                "keybind": "1"
+            },
+            {
+                "action": "suspend",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": true,
+                "keybind": "2"
+            },
+            {
+                "action": "hibernate",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": false,
+                "keybind": "3"
+            },
+            {
+                "action": "reboot",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": true,
+                "keybind": "4"
+            },
+            {
+                "action": "logout",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": true,
+                "keybind": "5"
+            },
+            {
+                "action": "shutdown",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": true,
+                "keybind": "6"
+            },
+            {
+                "action": "rebootToUefi",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": true,
+                "keybind": ""
+            }
         ],
-        "path": "/home/shin/Pictures/homework/norm/134115683_p34.png",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#b8bb26",
-          "#fabd2f",
-          "#83a598",
-          "#fb4934"
+        "showHeader": false,
+        "showKeybinds": true
+    },
+    "settingsVersion": 59,
+    "systemMonitor": {
+        "batteryCriticalThreshold": 5,
+        "batteryWarningThreshold": 20,
+        "cpuCriticalThreshold": 90,
+        "cpuWarningThreshold": 80,
+        "criticalColor": "#fd4663",
+        "diskAvailCriticalThreshold": 10,
+        "diskAvailWarningThreshold": 20,
+        "diskCriticalThreshold": 90,
+        "diskWarningThreshold": 80,
+        "enableDgpuMonitoring": false,
+        "externalMonitor": "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor",
+        "gpuCriticalThreshold": 90,
+        "gpuWarningThreshold": 80,
+        "memCriticalThreshold": 90,
+        "memWarningThreshold": 80,
+        "swapCriticalThreshold": 90,
+        "swapWarningThreshold": 80,
+        "tempCriticalThreshold": 90,
+        "tempWarningThreshold": 80,
+        "useCustomColors": false,
+        "warningColor": "#9bfece"
+    },
+    "templates": {
+        "activeTemplates": [
+            {
+                "enabled": true,
+                "id": "gtk"
+            },
+            {
+                "enabled": true,
+                "id": "fuzzel"
+            },
+            {
+                "enabled": true,
+                "id": "discord"
+            },
+            {
+                "enabled": true,
+                "id": "telegram"
+            },
+            {
+                "enabled": true,
+                "id": "cava"
+            },
+            {
+                "enabled": true,
+                "id": "btop"
+            },
+            {
+                "enabled": true,
+                "id": "spicetify"
+            },
+            {
+                "enabled": true,
+                "id": "kcolorscheme"
+            },
+            {
+                "enabled": true,
+                "id": "qt"
+            },
+            {
+                "enabled": true,
+                "id": "yazi"
+            },
+            {
+                "enabled": true,
+                "id": "kitty"
+            },
+            {
+                "enabled": true,
+                "id": "niri"
+            },
+            {
+                "enabled": true,
+                "id": "foot"
+            },
+            {
+                "enabled": true,
+                "id": "zenBrowser"
+            },
+            {
+                "enabled": true,
+                "id": "ghostty"
+            }
         ],
-        "path": "/home/shin/Pictures/homework/norm/137722796_p33.jpg",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Noctalia (default)",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#fff59b",
-          "#a9aefe",
-          "#9bfece",
-          "#fd4663"
-        ],
-        "path": "/home/shin/Pictures/homework/norm/136841628_p47.jpg",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Everforest",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#d3c6aa",
-          "#d3c6aa",
-          "#9da9a0",
-          "#e67e80"
-        ],
-        "path": "/home/shin/Pictures/homework/norm/132983004_p9.png",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Everforest",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#d3c6aa",
-          "#d3c6aa",
-          "#9da9a0",
-          "#e67e80"
-        ],
-        "path": "/home/shin/Pictures/homework/norm/132983004_p17.png",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Monochrome",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#cbc7b3",
-          "#cac6bc",
-          "#c1c9bc",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/Wallpapers/wallhaven-rqyd8j.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": false,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#98971a",
-          "#d79921",
-          "#458588",
-          "#cc241d"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/140660289_p23.jpg",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Monochrome",
-        "darkMode": true,
-        "generationMethod": "fruit-salad",
-        "paletteColors": [
-          "#ffaeda",
-          "#fbb0d8",
-          "#ffb59c",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/140789652_p5.jpg",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#cfc6ac",
-          "#ccc6b9",
-          "#c0cab6",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/Wallpapers/wallhaven-8gkolk.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "muted",
-        "paletteColors": [
-          "#a6a6a6",
-          "#999999",
-          "#999999",
-          "#fd4663"
-        ],
-        "path": "/home/shin/Pictures/Wallpapers/wallhaven-m3x62m.jpg",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#bcc2ff",
-          "#c0c4ee",
-          "#faabff",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/132983004_p8.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#95cdf6",
-          "#b4c9db",
-          "#e5b6f0",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/132983004_p16.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ffb1c0",
-          "#ffb1c0",
-          "#ffb68b",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/139750661_p3.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#b8bb26",
-          "#fabd2f",
-          "#83a598",
-          "#fb4934"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/138069466_p35.jpg",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#b8bb26",
-          "#fabd2f",
-          "#83a598",
-          "#fb4934"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/139750661_p29.png",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ffb4aa",
-          "#ffb4aa",
-          "#ffb95d",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/137853431_p40.jpg",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ffb59b",
-          "#ffb59b",
-          "#c5cf34",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/135553079_p10.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ffb4a3",
-          "#eabcb1",
-          "#f3bd71",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/138251627_p22.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ffb3b5",
-          "#efb9ba",
-          "#fabb5d",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/138251627_p25.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ffb4ab",
-          "#f2b9b2",
-          "#fcba57",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/140342959_p10.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ffb59a",
-          "#f0baa8",
-          "#c6cd6a",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/141219067_p17.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#e6bdb5",
-          "#d8c2bd",
-          "#d5c5a1",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/140016858_p0.jpg",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#e7bdae",
-          "#d8c2ba",
-          "#c8c9a5",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/140661655_p0.jpg",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ffb59d",
-          "#feb59d",
-          "#c5cf3b",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/135553079_p14.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#e7bea4",
-          "#d8c2b5",
-          "#cac9a1",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/140183544_p0.jpg",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ffb4ab",
-          "#ffb4ab",
-          "#ffb95d",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/136088031_p27.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ffb3ad",
-          "#eebab6",
-          "#c6cd6f",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/140034358_p3.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#b1c5ff",
-          "#b1c5ff",
-          "#f2afff",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/140010478_p0.jpg",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ffb4a9",
-          "#ffb4a9",
-          "#ffb94e",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/139437074_p12.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ffb3ad",
-          "#ffb3ad",
-          "#ffb866",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/139162253_p17.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ffb4a8",
-          "#e7bdb6",
-          "#efbe7a",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/137904923_p8.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ffb4a9",
-          "#f7b7ae",
-          "#ffb94e",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/138069466_p45.jpg",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": false,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ae3200",
-          "#96472e",
-          "#5d6300",
-          "#ba1a1a"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/wide-open-ontop/138365478_p13.jpg",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": false,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ba1926",
-          "#9f3f3c",
-          "#8a5100",
-          "#ba1a1a"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/wide-open-ontop/139374863_p1.jpg",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ffb3b0",
-          "#ffb3b0",
-          "#ffb963",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/wide-open-ontop/137853431_p35.jpg",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ffb59f",
-          "#eebbad",
-          "#c6cd70",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/142696346_p6.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": false,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#98971a",
-          "#d79921",
-          "#458588",
-          "#cc241d"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/140434973_p28.png",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#c6c2ed",
-          "#c8c4d7",
-          "#ebb8d4",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/139750661_p4.png",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#ddc1b6",
-          "#d3c3be",
-          "#cdc7af",
-          "#ffb4ab"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/139814113_p0.jpg",
-        "useWallpaperColors": true
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#b8bb26",
-          "#fabd2f",
-          "#83a598",
-          "#fb4934"
-        ],
-        "path": "/home/shin/Pictures/homework/norm/137722796_p32.jpg",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#b8bb26",
-          "#fabd2f",
-          "#83a598",
-          "#fb4934"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/breast/140342959_p18.png",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#b8bb26",
-          "#fabd2f",
-          "#83a598",
-          "#fb4934"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/breast/140828408_p16.png",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#b8bb26",
-          "#fabd2f",
-          "#83a598",
-          "#fb4934"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/breast/139978393_p0.jpg",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#b8bb26",
-          "#fabd2f",
-          "#83a598",
-          "#fb4934"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/breast/140164374_p26.png",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#b8bb26",
-          "#fabd2f",
-          "#83a598",
-          "#fb4934"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/breast/138505327_p18.png",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#b8bb26",
-          "#fabd2f",
-          "#83a598",
-          "#fb4934"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/breast/139162253_p15.png",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#b8bb26",
-          "#fabd2f",
-          "#83a598",
-          "#fb4934"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/breast/Konachan.com - 391748 beach bikini black_hair blue_archive blush breasts choker close clouds food halo ice_cream nipples red_eyes sky swimsuit undressing water wings.png",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": true,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#b8bb26",
-          "#fabd2f",
-          "#83a598",
-          "#fb4934"
-        ],
-        "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/142776967_p25.png",
-        "useWallpaperColors": false
-      },
-      {
-        "colorScheme": "Gruvbox",
-        "darkMode": false,
-        "generationMethod": "content",
-        "paletteColors": [
-          "#98971a",
-          "#d79921",
-          "#458588",
-          "#cc241d"
-        ],
-        "path": "/home/shin/Pictures/homework/norm/142773448_p7.png",
-        "useWallpaperColors": false
-      }
-    ],
-    "fillColor": "#004880",
-    "fillMode": "crop",
-    "hideWallpaperFilenames": false,
-    "monitorDirectories": [
-      {
+        "enableUserTheming": true
+    },
+    "ui": {
+        "boxBorderEnabled": false,
+        "fontDefault": "Noto Sans Cherokee",
+        "fontDefaultScale": 0.9,
+        "fontFixed": "JetBrainsMono Nerd Font",
+        "fontFixedScale": 0.9,
+        "panelBackgroundOpacity": 1,
+        "panelsAttachedToBar": true,
+        "scrollbarAlwaysVisible": false,
+        "settingsPanelMode": "attached",
+        "settingsPanelSideBarCardStyle": false,
+        "tooltipsEnabled": false,
+        "translucentWidgets": true
+    },
+    "wallpaper": {
+        "automationEnabled": false,
         "directory": "/home/shin/Pictures/",
-        "name": "eDP-2",
-        "wallpaper": ""
-      }
-    ],
-    "overviewBlur": 0.4,
-    "overviewEnabled": true,
-    "overviewTint": 0.6,
-    "panelPosition": "top_center",
-    "randomIntervalSec": 1800,
-    "setWallpaperOnAllMonitors": true,
-    "showHiddenFiles": false,
-    "skipStartupTransition": true,
-    "solidColor": "#180905",
-    "sortOrder": "date_desc",
-    "transitionDuration": 1000,
-    "transitionEdgeSmoothness": 0.05,
-    "transitionType": [
-      "fade",
-      "disc",
-      "stripes",
-      "wipe",
-      "pixelate",
-      "honeycomb"
-    ],
-    "useOriginalImages": false,
-    "useSolidColor": false,
-    "useWallhaven": false,
-    "viewMode": "browse",
-    "wallhavenApiKey": "",
-    "wallhavenCategories": "111",
-    "wallhavenOrder": "desc",
-    "wallhavenPurity": "100",
-    "wallhavenQuery": "anim",
-    "wallhavenRatios": "",
-    "wallhavenResolutionHeight": "",
-    "wallhavenResolutionMode": "atleast",
-    "wallhavenResolutionWidth": "",
-    "wallhavenSorting": "relevance",
-    "wallpaperChangeMode": "random"
-  }
+        "enableMultiMonitorDirectories": false,
+        "enabled": true,
+        "favorites": [
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/norm/136126644_p7.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/norm/140513212_p0.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/norm/134115683_p34.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/norm/137722796_p33.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Noctalia (default)",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#fff59b",
+                    "#a9aefe",
+                    "#9bfece",
+                    "#fd4663"
+                ],
+                "path": "/home/shin/Pictures/homework/norm/136841628_p47.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Everforest",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#d3c6aa",
+                    "#d3c6aa",
+                    "#9da9a0",
+                    "#e67e80"
+                ],
+                "path": "/home/shin/Pictures/homework/norm/132983004_p9.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Everforest",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#d3c6aa",
+                    "#d3c6aa",
+                    "#9da9a0",
+                    "#e67e80"
+                ],
+                "path": "/home/shin/Pictures/homework/norm/132983004_p17.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Monochrome",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#cbc7b3",
+                    "#cac6bc",
+                    "#c1c9bc",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/Wallpapers/wallhaven-rqyd8j.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#aec6ff",
+                    "#b5c6f1",
+                    "#f4aeff",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/140660289_p23.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Monochrome",
+                "darkMode": true,
+                "generationMethod": "fruit-salad",
+                "paletteColors": [
+                    "#ffaeda",
+                    "#fbb0d8",
+                    "#ffb59c",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/140789652_p5.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#cfc6ac",
+                    "#ccc6b9",
+                    "#c0cab6",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/Wallpapers/wallhaven-8gkolk.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "monochrome",
+                "paletteColors": [
+                    "#ffffff",
+                    "#c6c6c6",
+                    "#e2e2e2",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/Wallpapers/wallhaven-m3x62m.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#bcc2ff",
+                    "#c0c4ee",
+                    "#faabff",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/132983004_p8.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#95cdf6",
+                    "#b4c9db",
+                    "#e5b6f0",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/132983004_p16.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb1c0",
+                    "#ffb1c0",
+                    "#ffb68b",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/139750661_p3.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/138069466_p35.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/139750661_p29.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb4aa",
+                    "#ffb4aa",
+                    "#ffb95d",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/137853431_p40.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb59b",
+                    "#ffb59b",
+                    "#c5cf34",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/135553079_p10.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb4a3",
+                    "#eabcb1",
+                    "#f3bd71",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/138251627_p22.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb3b5",
+                    "#efb9ba",
+                    "#fabb5d",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/138251627_p25.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb4ab",
+                    "#f2b9b2",
+                    "#fcba57",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/140342959_p10.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb59a",
+                    "#f0baa8",
+                    "#c6cd6a",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/141219067_p17.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#e6bdb5",
+                    "#d8c2bd",
+                    "#d5c5a1",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/140016858_p0.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#e7bdae",
+                    "#d8c2ba",
+                    "#c8c9a5",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/140661655_p0.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb59d",
+                    "#feb59d",
+                    "#c5cf3b",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/135553079_p14.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#e7bea4",
+                    "#d8c2b5",
+                    "#cac9a1",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/140183544_p0.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb4ab",
+                    "#ffb4ab",
+                    "#ffb95d",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/136088031_p27.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb3ad",
+                    "#eebab6",
+                    "#c6cd6f",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/140034358_p3.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b1c5ff",
+                    "#b1c5ff",
+                    "#f2afff",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/140010478_p0.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb4a9",
+                    "#ffb4a9",
+                    "#ffb94e",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/139437074_p12.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb3ad",
+                    "#ffb3ad",
+                    "#ffb866",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/139162253_p17.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb4a8",
+                    "#e7bdb6",
+                    "#efbe7a",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/137904923_p8.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb4a9",
+                    "#f7b7ae",
+                    "#ffb94e",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/138069466_p45.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": false,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ae3200",
+                    "#96472e",
+                    "#5d6300",
+                    "#ba1a1a"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/wide-open-ontop/138365478_p13.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": false,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ba1926",
+                    "#9f3f3c",
+                    "#8a5100",
+                    "#ba1a1a"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/wide-open-ontop/139374863_p1.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb3b0",
+                    "#ffb3b0",
+                    "#ffb963",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/wide-open-ontop/137853431_p35.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb59f",
+                    "#eebbad",
+                    "#c6cd70",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/142696346_p6.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/140434973_p28.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c6c2ed",
+                    "#c8c4d7",
+                    "#ebb8d4",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/139750661_p4.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ddc1b6",
+                    "#d3c3be",
+                    "#cdc7af",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/ass/139814113_p0.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/norm/137722796_p32.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/breast/140342959_p18.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/breast/140828408_p16.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/breast/139978393_p0.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/breast/140164374_p26.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/breast/138505327_p18.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/breast/139162253_p15.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/breast/Konachan.com - 391748 beach bikini black_hair blue_archive blush breasts choker close clouds food halo ice_cream nipples red_eyes sky swimsuit undressing water wings.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/142776967_p25.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": false,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#98971a",
+                    "#d79921",
+                    "#458588",
+                    "#cc241d"
+                ],
+                "path": "/home/shin/Pictures/homework/norm/142773448_p7.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/norm/136568108_p43.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/142892880_p20.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/142892880_p25.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb3af",
+                    "#ebbab8",
+                    "#f5bc6b",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/142892880_p7.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb4a6",
+                    "#e5bdb6",
+                    "#edbf7e",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/142892880_p16.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb3b0",
+                    "#f3b8b5",
+                    "#fdba54",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/142892880_p18.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#b8bb26",
+                    "#fabd2f",
+                    "#83a598",
+                    "#fb4934"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/142892880_p12.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb4ab",
+                    "#fdb4ac",
+                    "#ffb94e",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/142095616_p22.png",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/138365478_p39.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/136312111_p33.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/134224177_p28.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/131622983_p16.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/139374863_p66.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/140124345_p26.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/138365478_p14.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/135581639_p19.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/137853431_p41.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/135553079_p21.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/136421912_p35.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/129012996_p28.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/136841628_p57.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/136841628_p52.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/137722796_p35.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/137725458_p3.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/yande.re 1178395 alsace_(azur_lane) azur_lane bikini cream manjuu_(azur_lane) megane mogador_(azur_lane) morung swimsuits wet.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Kanagawa Paper",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/yande.re 1117194 areola azur_lane breasts hindenburg_(azur_lane) horns kearsarge_(azur_lane) kitsune-neko lingerie naked pointy_ears shimanto_(azur_lane) yuri.png",
+                "useWallpaperColors": false
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#ffb4ab",
+                    "#ffb4ab",
+                    "#ffb95d",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/nobreast/laying-down/138505327_p16.png",
+                "useWallpaperColors": true
+            },
+            {
+                "appearance": "light",
+                "colorScheme": "Gruvbox",
+                "darkMode": false,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#84523c",
+                    "#73584e",
+                    "#5e622f",
+                    "#ba1a1a"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/breast/143151571-0a6e6c8f6af29570d192878ef1971396_p0.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "colorScheme": "Gruvbox",
+                "darkMode": false,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#855140",
+                    "#735850",
+                    "#5e6230",
+                    "#ba1a1a"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/breast/128144981_p12.png",
+                "useWallpaperColors": true
+            },
+            {
+                "appearance": "light",
+                "colorScheme": "Gruvbox",
+                "darkMode": false,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#8a4f30",
+                    "#775748",
+                    "#5e6223",
+                    "#ba1a1a"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/breast/140374857_p0.jpg",
+                "useWallpaperColors": true
+            }
+        ],
+        "fillColor": "#004880",
+        "fillMode": "stretch",
+        "hideWallpaperFilenames": false,
+        "linkLightAndDarkWallpapers": true,
+        "monitorDirectories": [
+            {
+                "directory": "/home/shin/Pictures/",
+                "name": "eDP-2",
+                "wallpaper": ""
+            }
+        ],
+        "overviewBlur": 0.4,
+        "overviewEnabled": true,
+        "overviewTint": 0.6,
+        "panelPosition": "top_center",
+        "randomIntervalSec": 1800,
+        "setWallpaperOnAllMonitors": true,
+        "showHiddenFiles": false,
+        "skipStartupTransition": true,
+        "solidColor": "#180905",
+        "sortOrder": "date_desc",
+        "transitionDuration": 1000,
+        "transitionEdgeSmoothness": 0.05,
+        "transitionType": [
+            "fade",
+            "disc",
+            "stripes",
+            "wipe",
+            "pixelate",
+            "honeycomb"
+        ],
+        "useOriginalImages": false,
+        "useSolidColor": false,
+        "useWallhaven": false,
+        "viewMode": "browse",
+        "wallhavenApiKey": "",
+        "wallhavenCategories": "111",
+        "wallhavenOrder": "desc",
+        "wallhavenPurity": "100",
+        "wallhavenQuery": "anim",
+        "wallhavenRatios": "",
+        "wallhavenResolutionHeight": "",
+        "wallhavenResolutionMode": "atleast",
+        "wallhavenResolutionWidth": "",
+        "wallhavenSorting": "relevance",
+        "wallpaperChangeMode": "random"
+    }
 }

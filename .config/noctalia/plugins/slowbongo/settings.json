@@ -1,0 +1,14 @@
+{
+  "inputDevices": [
+    "/dev/input/event10",
+    "/dev/input/event6",
+    "/dev/input/event11",
+    "/dev/input/event9"
+  ],
+  "catColor": "tertiary",
+  "catSize": 0.8500000000000001,
+  "catOffsetY": 0,
+  "raveMode": false,
+  "tappyMode": false,
+  "useMprisFilter": false
+}
