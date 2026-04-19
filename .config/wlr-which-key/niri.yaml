@@ -1,8 +1,8 @@
 # Theming
 font: JetBrainsMono Nerd Font 12
-background: "#fff8f6"
-color: "#201a17"
-border: "#8a4f30"
+background: "#141311"
+color: "#e6e2de"
+border: "#d0c6a9"
 separator: " ➜ "
 border_width: 1
 corner_r: 10
@@ -104,6 +104,15 @@ menu:
       - key: "z"
         desc: Zoom
         cmd: sleep .5 && wooz --invert-scroll
+      - key: "k"
+        desc: ScreenToolkit
+        cmd: qs -c noctalia-shell ipc call plugin:screen-toolkit toggle
+      - key: "o"
+        desc: OCR
+        cmd: qs -c noctalia-shell ipc call plugin:screen-toolkit ocr
+      - key: "m"
+        desc: ToggleMPVAudio
+        cmd: mpv-audio.sh
       - key: "w"
         desc: RandomWallpaper
         cmd: ~/.local/bin/random_wall.sh
@@ -113,12 +122,12 @@ menu:
       - key: "v"
         desc: ToggleVisibility
         cmd: ~/.local/bin/niri-sidebar toggle-visibility
-      - key: "f"
-        desc: Flip
-        cmd: ~/.local/bin/niri-sidebar flip
-      - key: "r"
-        desc: Flip
-        cmd: ~/.local/bin/niri-sidebar reorder
+      # - key: "f"
+      #   desc: Flip
+      #   cmd: ~/.local/bin/niri-sidebar flip
+      # - key: "r"
+      #   desc: Reorder
+      #   cmd: ~/.local/bin/niri-sidebar reorder
       - key: "t"
         desc: ToggleTransparency
         cmd: ~/.local/bin/niri-transparency-toggle.sh

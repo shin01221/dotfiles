@@ -2,8 +2,8 @@ return {
   -- enabled = false,
   "obsidian-nvim/obsidian.nvim",
   version = "*",
-  lazy = true,
-  ft = "markdown",
+  -- lazy = true,
+  -- ft = "markdown",
   --
   opts = {
     footer = {

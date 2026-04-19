@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Vars
-path=$(jq -r '.wallpapers["eDP-2"]' ~/.cache/noctalia/wallpapers.json)
+path=$(jq -r '.wallpapers["eDP-2"].dark' ~/.cache/noctalia/wallpapers.json)
 base_homework="/Media/Pictures/homework"
 base_fav="/Media/Pictures/fav"
 base_wallpapers="/Media/Pictures/Wallpapers"

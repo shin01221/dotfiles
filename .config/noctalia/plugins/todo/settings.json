@@ -1,15 +1,6 @@
 {
   "todos": [
     {
-      "id": 1772105558811,
-      "text": "finish git part one in boot.dev",
-      "completed": false,
-      "createdAt": "2026-02-26T11:32:38.811Z",
-      "pageId": 0,
-      "priority": "medium",
-      "details": ""
-    },
-    {
       "id": 1769850633081,
       "text": "mail server",
       "completed": false,
@@ -35,25 +26,60 @@
       "pageId": 0,
       "priority": "medium",
       "details": ""
+    },
+    {
+      "id": 1775766713912,
+      "text": "nginx container or other practice on docker",
+      "completed": false,
+      "createdAt": "2026-04-09T20:31:53.912Z",
+      "pageId": 1,
+      "priority": "medium",
+      "details": ""
+    },
+    {
+      "id": 1775469772393,
+      "text": "start nixos VM machine",
+      "completed": false,
+      "createdAt": "2026-04-06T10:02:52.393Z",
+      "pageId": 1,
+      "priority": "medium",
+      "details": ""
+    },
+    {
+      "id": 1775766698967,
+      "text": "learn nginx",
+      "completed": true,
+      "createdAt": "2026-04-09T20:31:38.967Z",
+      "pageId": 1,
+      "priority": "medium",
+      "details": ""
     }
   ],
   "pages": [
     {
       "id": 0,
       "name": "General"
+    },
+    {
+      "id": 1,
+      "name": "Daily"
+    },
+    {
+      "id": 2,
+      "name": "Weekly"
     }
   ],
-  "current_page_id": 0,
-  "count": 4,
-  "completedCount": 0,
+  "current_page_id": 1,
+  "count": 6,
+  "completedCount": 1,
   "showCompleted": false,
   "showBackground": true,
   "isExpanded": false,
   "useCustomColors": false,
   "priorityColors": {
-    "high": "#c4746e",
-    "medium": "#c4b28a",
-    "low": "#c8c093"
+    "high": "#ffb4ab",
+    "medium": "#ffb3b5",
+    "low": "#dac1c1"
   },
   "exportPath": "~/Documents",
   "exportFormat": "markdown",

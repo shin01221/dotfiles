@@ -148,6 +148,11 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id="com.github.niri-shot"
+    open-floating true
+}
+
 // layer-rule {
 //   match namespace="^noctalia-wallpaper*"
 //   place-within-backdrop true

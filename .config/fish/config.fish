@@ -4,6 +4,8 @@ set -g fish_key_bindings fish_vi_key_bindings
 set -Ux fifc_editor nvim
 set -gx MANPAGER "nvim +Man!"
 bind -M insert jj 'set fish_bind_mode default; commandline -f repaint-mode'
+bind -M insert \cf clear-and-redraw
+bind \cf clear-and-redraw
 
 # sourcing my functions
 for f in ~/.config/fish/functions/user/*.fish
@@ -24,7 +26,7 @@ if status is-interactive # Commands to run in interactive sessions can go here
 end
 
 function cur_wall
-    jq -r '.wallpapers["eDP-2"]' ~/.cache/noctalia/wallpapers.json
+    jq -r '.wallpapers["eDP-2"].dark' ~/.cache/noctalia/wallpapers.json
 end
 
 direnv hook fish | source
