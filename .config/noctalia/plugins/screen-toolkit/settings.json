@@ -24,7 +24,7 @@
   "stateIsRunning": false,
   "stateActiveTool": "",
   "stateMirrorVisible": false,
-  "ocrResult": "select st.stu_name, st.stu_id,, ss.sub_id from student st inner join stu_sub ss on st.stu_id = ss.stu_id;",
+  "ocrResult": "Identify the file types of the following: /etc/passwd, /dev/pts/0, /etc, /dev/sda",
   "ocrCapturePath": "/tmp/screen-toolkit-ocr.png",
   "translateResult": ""
 }

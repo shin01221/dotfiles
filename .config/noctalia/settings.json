@@ -101,10 +101,11 @@
                 },
                 {
                     "colorizeSystemIcon": "primary",
-                    "enableColorization": true,
+                    "colorizeSystemText": "primary",
                     "generalTooltipText": "",
                     "hideMode": "maxTransparent",
                     "icon": "music",
+                    "iconPosition": "left",
                     "id": "CustomButton",
                     "ipcIdentifier": "",
                     "leftClickExec": "playerctl --ignore-player=firefox --player=tauon,spotify,mpd toggle",
@@ -138,6 +139,7 @@
                 {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "primary",
+                    "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": true,
                     "icon": "noctalia",
@@ -146,10 +148,11 @@
                 },
                 {
                     "colorizeSystemIcon": "primary",
-                    "enableColorization": true,
+                    "colorizeSystemText": "primary",
                     "generalTooltipText": "",
                     "hideMode": "alwaysExpanded",
                     "icon": "calendar",
+                    "iconPosition": "left",
                     "id": "CustomButton",
                     "ipcIdentifier": "",
                     "leftClickExec": "qs -c noctalia-shell ipc call plugin:pomodoro toggle",
@@ -276,10 +279,11 @@
                 },
                 {
                     "colorizeSystemIcon": "primary",
-                    "enableColorization": true,
+                    "colorizeSystemText": "none",
                     "generalTooltipText": "",
                     "hideMode": "alwaysExpanded",
                     "icon": "checklist",
+                    "iconPosition": "left",
                     "id": "CustomButton",
                     "ipcIdentifier": "",
                     "leftClickExec": "qs -c noctalia-shell ipc call plugin:todo togglePanel",
@@ -307,21 +311,6 @@
                     "wheelUpExec": "",
                     "wheelUpUpdateText": false,
                     "wheelUpdateText": false
-                },
-                {
-                    "defaultSettings": {
-                        "colorHistory": [
-                        ],
-                        "detectedRecorder": "",
-                        "installedLangs": [
-                            "eng"
-                        ],
-                        "paletteColors": [
-                        ],
-                        "selectedOcrLang": "eng",
-                        "transAvailable": false
-                    },
-                    "id": "plugin:screen-toolkit"
                 },
                 {
                     "deviceNativePath": "__default__",
@@ -364,10 +353,10 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Gruvbox",
+        "predefinedScheme": "Miasma",
         "schedulingMode": "off",
         "syncGsettings": true,
-        "useWallpaperColors": true
+        "useWallpaperColors": false
     },
     "controlCenter": {
         "cards": [
@@ -452,6 +441,7 @@
                             "minimumThreshold": 10
                         },
                         "id": "plugin:catwalk",
+                        "scale": 0.5,
                         "showBackground": true,
                         "x": 20,
                         "y": 980
@@ -486,6 +476,33 @@
                         "showBackground": true,
                         "x": 1600,
                         "y": 100
+                    },
+                    {
+                        "backgroundOpacity": 1,
+                        "dateStyle": "bubble",
+                        "defaultSettings": {
+                            "backgroundOpacity": 1,
+                            "dateStyle": "bubble",
+                            "dialStyle": "dots",
+                            "hourHandStyle": "fill",
+                            "minuteHandStyle": "medium",
+                            "secondHandStyle": "dot",
+                            "showHourMarks": false,
+                            "showSeconds": true,
+                            "sides": 9
+                        },
+                        "dialStyle": "dots",
+                        "hourHandStyle": "hollow",
+                        "id": "plugin:cookie-clock",
+                        "minuteHandStyle": "medium",
+                        "scale": 0.8684486759167527,
+                        "secondHandStyle": "dot",
+                        "showBackground": true,
+                        "showHourMarks": false,
+                        "showSeconds": true,
+                        "sides": 7,
+                        "x": 1640,
+                        "y": 440
                     }
                 ]
             }
@@ -652,7 +669,7 @@
         "forced": false,
         "manualSunrise": "08:00",
         "manualSunset": "20:00",
-        "nightTemp": "4552"
+        "nightTemp": "4025"
     },
     "noctaliaPerformance": {
         "disableDesktopWidgets": true,
@@ -853,6 +870,10 @@
             {
                 "enabled": true,
                 "id": "ghostty"
+            },
+            {
+                "enabled": true,
+                "id": "starship"
             }
         ],
         "enableUserTheming": true
@@ -863,7 +884,7 @@
         "fontDefaultScale": 0.9,
         "fontFixed": "JetBrainsMono Nerd Font",
         "fontFixedScale": 0.9,
-        "panelBackgroundOpacity": 1,
+        "panelBackgroundOpacity": 0.85,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": false,
         "settingsPanelMode": "attached",
@@ -1113,6 +1134,7 @@
                 "useWallpaperColors": true
             },
             {
+                "appearance": "dark",
                 "colorScheme": "Gruvbox",
                 "darkMode": true,
                 "generationMethod": "content",
@@ -1126,13 +1148,14 @@
                 "useWallpaperColors": true
             },
             {
+                "appearance": "dark",
                 "colorScheme": "Gruvbox",
                 "darkMode": true,
                 "generationMethod": "content",
                 "paletteColors": [
-                    "#ffb4a3",
-                    "#eabcb1",
-                    "#f3bd71",
+                    "#ffb3b0",
+                    "#f7b6b3",
+                    "#ffb94e",
                     "#ffb4ab"
                 ],
                 "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/138251627_p22.png",
@@ -1615,6 +1638,7 @@
                 "useWallpaperColors": true
             },
             {
+                "appearance": "dark",
                 "colorScheme": "Gruvbox",
                 "darkMode": true,
                 "generationMethod": "content",
@@ -2206,10 +2230,38 @@
                 ],
                 "path": "/home/shin/Pictures/Wallpapers/wallhaven-8gkolk.webp",
                 "useWallpaperColors": false
+            },
+            {
+                "appearance": "dark",
+                "colorScheme": "Noctalia (default)",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#e2bfb5",
+                    "#d5c3be",
+                    "#d1c6a8",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/breast/143546165-a523176101f01cc39883869f2b83ddbb_p0.jpg",
+                "useWallpaperColors": true
+            },
+            {
+                "appearance": "dark",
+                "colorScheme": "Noctalia (default)",
+                "darkMode": true,
+                "generationMethod": "content",
+                "paletteColors": [
+                    "#fcb5ab",
+                    "#e3beb9",
+                    "#c7cb8d",
+                    "#ffb4ab"
+                ],
+                "path": "/home/shin/Pictures/homework/ecchi/breast/143517464-29b7d15705310639a86c052e38b7f9f9_p0.jpg",
+                "useWallpaperColors": true
             }
         ],
         "fillColor": "#004880",
-        "fillMode": "crop",
+        "fillMode": "stretch",
         "hideWallpaperFilenames": false,
         "linkLightAndDarkWallpapers": true,
         "monitorDirectories": [

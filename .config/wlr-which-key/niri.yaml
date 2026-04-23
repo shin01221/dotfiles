@@ -1,8 +1,8 @@
 # Theming
 font: JetBrainsMono Nerd Font 12
-background: "#141311"
-color: "#e6e2de"
-border: "#d0c6a9"
+background: "#222222"
+color: "#c2c2b0"
+border: "#c9a554"
 separator: " ➜ "
 border_width: 1
 corner_r: 10
@@ -88,7 +88,7 @@ menu:
         cmd: qs -c noctalia-shell ipc call plugin:screen-recorder toggle
       - key: "R"
         desc: Reload
-        cmd: killall qs && sleep 0.3 && qs -c noctalia-shell &
+        cmd: killall qs ; sleep 0.3 && qs -c noctalia-shell &
       - key: "e"
         desc: Emojis
         cmd: qs -c noctalia-shell ipc call launcher emoji

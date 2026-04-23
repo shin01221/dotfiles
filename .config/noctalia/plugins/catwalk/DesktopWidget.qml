@@ -70,13 +70,13 @@ DraggableDesktopWidget {
             layer.enabled: true
             layer.effect: MultiEffect {
                 colorization: 1.0
-                colorizationColor: Color.mOnSecondary
+                colorizationColor: Color.mPrimary
             }
         }
 
         Text {
             text: Math.round(root.cpuUsage) + "%"
-            color: Color.mOnSecondary
+            color: Color.mPrimary
             font.bold: true
             font.pixelSize: 40
             Layout.alignment: Qt.AlignVCenter
