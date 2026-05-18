@@ -12,6 +12,8 @@ binds {
     Mod+Minus{ spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }
     Mod+U { switch-layout "next"; }
     Mod+Alt+Return { spawn-sh "~/.local/bin/scratchpad.sh foot-dropterm"; }
+    Mod+BracketRight { spawn-sh "playerctl --ignore-player=firefox --player=tauon,spotify,mpd position 10+"; }
+    Mod+BracketLeft { spawn-sh "playerctl --ignore-player=firefox --player=tauon,spotify,mpd position 10-"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -93,8 +95,8 @@ binds {
     Mod+Ctrl+8 { move-column-to-workspace 8; }
     Mod+Ctrl+9 { move-column-to-workspace 9; }
 
-    Mod+BracketLeft  { consume-or-expel-window-left; }
-    Mod+BracketRight { consume-or-expel-window-right; }
+    Mod+Alt+BracketLeft  { consume-or-expel-window-left; }
+    Mod+Alt+BracketRight { consume-or-expel-window-right; }
 
     Mod+Shift+BracketRight  { consume-window-into-column; }
     Mod+Shift+BracketLeft { expel-window-from-column; }

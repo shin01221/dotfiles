@@ -36,3 +36,10 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.formatoptions:remove({ "c", "r", "o" })
   end,
 })
+
+vim.api.nvim_create_user_command("LspRestart", function()
+  for _, client in ipairs(vim.lsp.get_active_clients()) do
+    client:stop()
+  end
+  vim.cmd("edit")
+end, {})

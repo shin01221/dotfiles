@@ -11,7 +11,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#".*calibre-ebook-viewer.*"# title=r#".*E-book viewer.*"#
+    match app-id=r#".*calibre-ebook-viewer.*|vlc"# title=r#".*E-book viewer.*"#
     open-maximized true
 }
 

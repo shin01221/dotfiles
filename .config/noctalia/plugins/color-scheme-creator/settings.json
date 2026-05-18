@@ -1,42 +1,42 @@
 {
-  "wip": null,
-  "iconColor": "primary"
-}
-     "mPrimary": "#ffb4ab",
-      "mOnPrimary": "#690005",
-      "mSecondary": "#ffb4ab",
-      "mOnSecondary": "#620f0d",
-      "mTertiary": "#ffb95d",
-      "mOnTertiary": "#462a00",
+  "iconColor": "primary",
+  "wip": {
+    "name": "",
+    "dark": {
+      "mPrimary": "#ffabf3",
+      "mOnPrimary": "#5b015a",
+      "mSecondary": "#e9b8de",
+      "mOnSecondary": "#462443",
+      "mTertiary": "#ffb3b5",
+      "mOnTertiary": "#650619",
       "mError": "#ffb4ab",
       "mOnError": "#690005",
-      "mSurface": "#1e0f0e",
-      "mOnSurface": "#fadcd8",
-      "mSurfaceVariant": "#2c1b19",
-      "mOnSurfaceVariant": "#e4beb9",
-      "mOutline": "#5b403d",
+      "mSurface": "#181117",
+      "mOnSurface": "#eddfe6",
+      "mSurfaceVariant": "#251d23",
+      "mOnSurfaceVariant": "#d5c1ce",
+      "mOutline": "#51434d",
       "mShadow": "#000000",
-      "mHover": "#ffb95d",
-      "mOnHover": "#462a00"
+      "mHover": "#ffb3b5",
+      "mOnHover": "#650619"
     },
     "light": {
-      "mPrimary": "#ffb4ab",
-      "mOnPrimary": "#690005",
-      "mSecondary": "#ffb4ab",
-      "mOnSecondary": "#620f0d",
-      "mTertiary": "#ffb95d",
-      "mOnTertiary": "#462a00",
+      "mPrimary": "#ffabf3",
+      "mOnPrimary": "#5b015a",
+      "mSecondary": "#e9b8de",
+      "mOnSecondary": "#462443",
+      "mTertiary": "#ffb3b5",
+      "mOnTertiary": "#650619",
       "mError": "#ffb4ab",
       "mOnError": "#690005",
-      "mSurface": "#1e0f0e",
-      "mOnSurface": "#fadcd8",
-      "mSurfaceVariant": "#2c1b19",
-      "mOnSurfaceVariant": "#e4beb9",
-      "mOutline": "#5b403d",
+      "mSurface": "#181117",
+      "mOnSurface": "#eddfe6",
+      "mSurfaceVariant": "#251d23",
+      "mOnSurfaceVariant": "#d5c1ce",
+      "mOutline": "#51434d",
       "mShadow": "#000000",
-      "mHover": "#ffb95d",
-      "mOnHover": "#462a00"
+      "mHover": "#ffb3b5",
+      "mOnHover": "#650619"
     }
-  },
-  "iconColor": "primary"
+  }
 }

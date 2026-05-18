@@ -6,7 +6,7 @@ window-rule {
 
 window-rule {
     match is-focused=true
-    opacity 0.85
+    opacity 0.92
 }
 
 blur {

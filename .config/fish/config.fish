@@ -1,4 +1,6 @@
 set EDITOR nvim
+set UV_LINK_MODE copy
+set -Ux KUBE_EDITOR nvim
 
 set -g fish_key_bindings fish_vi_key_bindings
 set -Ux fifc_editor nvim

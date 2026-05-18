@@ -1,6 +1,15 @@
 {
   "todos": [
     {
+      "id": 1778246327366,
+      "text": "traditional linux package managers VS nix package manager blog post",
+      "completed": false,
+      "createdAt": "2026-05-08T13:18:47.366Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    },
+    {
       "id": 1776954150595,
       "text": "start nixOS journey",
       "completed": false,
@@ -10,10 +19,19 @@
       "details": ""
     },
     {
-      "id": 1776954180444,
-      "text": "traditional linux package managers VS nix package manager blog post",
+      "id": 1778919933523,
+      "text": "start a new VM and set it as K8S node in a cluster",
       "completed": false,
-      "createdAt": "2026-04-23T14:23:00.445Z",
+      "createdAt": "2026-05-16T08:25:33.523Z",
+      "pageId": 1,
+      "priority": "medium",
+      "details": ""
+    },
+    {
+      "id": 1778919902255,
+      "text": "finish ITI kubernates",
+      "completed": false,
+      "createdAt": "2026-05-16T08:25:02.255Z",
       "pageId": 1,
       "priority": "medium",
       "details": ""
@@ -34,7 +52,7 @@
     }
   ],
   "current_page_id": 1,
-  "count": 2,
+  "count": 4,
   "completedCount": 0,
   "showCompleted": false,
   "showBackground": true,

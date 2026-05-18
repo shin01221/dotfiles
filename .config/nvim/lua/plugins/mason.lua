@@ -5,7 +5,8 @@ return {
     "ansiblels",
     "yamlls",
     "marksman",
-    "pyright",
+    "basedpyright",
+    "django-language-server",
     "clangd",
   },
 }

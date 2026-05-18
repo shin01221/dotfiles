@@ -1,8 +1,8 @@
 # Theming
 font: JetBrainsMono Nerd Font 12
-background: "#222222"
-color: "#c2c2b0"
-border: "#c9a554"
+background: "#1f1f28"
+color: "#dcd7ba"
+border: "#c4b28a"
 separator: " ➜ "
 border_width: 1
 corner_r: 10
@@ -38,12 +38,6 @@ menu:
       - key: "p"
         desc: Toggle on/off
         cmd: playerctl --ignore-player=firefox --player=tauon,spotify,mpd play-pause
-      - key: "]"
-        desc: Seek+
-        cmd: playerctl --ignore-player=firefox --player=tauon,spotify,mpd position 10+
-      - key: "["
-        desc: Seek-
-        cmd: playerctl --ignore-player=firefox --player=tauon,spotify,mpd position 10-
       - key: "="
         desc: VolumeUp
         cmd: wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ -l 1.5
@@ -119,9 +113,9 @@ menu:
       - key: "d"
         desc: DeleteCurrentWallpaper
         cmd: ~/.local/bin/wallpaper-manager.sh --delete
-      - key: "v"
-        desc: ToggleVisibility
-        cmd: ~/.local/bin/niri-sidebar toggle-visibility
+      # - key: "v"
+      #   desc: ToggleVisibility
+      #   cmd: ~/.local/bin/niri-sidebar toggle-visibility
       # - key: "f"
       #   desc: Flip
       #   cmd: ~/.local/bin/niri-sidebar flip
