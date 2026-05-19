@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-CONFIG_FILE="$HOME/.config/wlr-which-key/niri.yaml"
-GENERATED_JSON="$HOME/.config/wlr-which-key/colors.json"
+config="$HOME/.config/wlr-which-key/niri.yaml"
+json="$HOME/.config/wlr-which-key/colors.json"
 
-BG=$(jq -r '.background' "$GENERATED_JSON")
-FG=$(jq -r '.color' "$GENERATED_JSON")
-BORDER=$(jq -r '.border' "$GENERATED_JSON")
+bg=$(jq -r '.background' "$json")
+fg=$(jq -r '.color' "$json")
+border=$(jq -r '.border' "$json")
 
-sd '^(color: ).*' "\$1\"${FG}\"" "$CONFIG_FILE"
-sd '^(border: ).*' "\$1\"${BORDER}\"" "$CONFIG_FILE"
-sd '^(background: ).*' "\$1\"${BG}\"" "$CONFIG_FILE"
+sd '^(color: ).*' "\$1\"${fg}\"" "$config"
+sd '^(border: ).*' "\$1\"${border}\"" "$config"
+sd '^(background: ).*' "\$1\"${bg}\"" "$config"
