@@ -1,6 +1,24 @@
 {
   "todos": [
     {
+      "id": 1779169353192,
+      "text": "deploy mongo db and mongo express on K8Slocally",
+      "completed": false,
+      "createdAt": "2026-05-19T05:42:33.192Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    },
+    {
+      "id": 1779169321584,
+      "text": "start a new VM and set it as K8S node in a cluster",
+      "completed": false,
+      "createdAt": "2026-05-19T05:42:01.584Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    },
+    {
       "id": 1778246327366,
       "text": "traditional linux package managers VS nix package manager blog post",
       "completed": false,
@@ -19,19 +37,10 @@
       "details": ""
     },
     {
-      "id": 1778919933523,
-      "text": "start a new VM and set it as K8S node in a cluster",
+      "id": 1779379852729,
+      "text": "set up obsidian and better note taking",
       "completed": false,
-      "createdAt": "2026-05-16T08:25:33.523Z",
-      "pageId": 1,
-      "priority": "medium",
-      "details": ""
-    },
-    {
-      "id": 1778919902255,
-      "text": "finish ITI kubernates",
-      "completed": true,
-      "createdAt": "2026-05-16T08:25:02.255Z",
+      "createdAt": "2026-05-21T16:10:52.729Z",
       "pageId": 1,
       "priority": "medium",
       "details": ""
@@ -52,8 +61,8 @@
     }
   ],
   "current_page_id": 1,
-  "count": 4,
-  "completedCount": 1,
+  "count": 5,
+  "completedCount": 0,
   "showCompleted": false,
   "showBackground": true,
   "isExpanded": false,
