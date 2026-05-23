@@ -19,7 +19,7 @@ search_dir="${search_dir%/}"
 
 clear
 
-files=$(find "$search_dir" -maxdepth 1 -not -name '.' -not -name 'recent_files.sh' \
+files=$(find "$search_dir" -mindepth 1 -maxdepth 1 -not -name 'recent_files.sh' \
     -printf '%T+ %p\n' 2>/dev/null |
     sort -r |
     head -n "$count" |

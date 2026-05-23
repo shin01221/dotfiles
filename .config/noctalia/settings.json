@@ -30,7 +30,8 @@
     "audio": {
         "mprisBlacklist": [
             "firefox.*",
-            "zen.*"
+            "zen.*",
+            "Mozilla.*"
         ],
         "preferredPlayer": "mpd",
         "spectrumFrameRate": 120,
@@ -2462,17 +2463,17 @@
             },
             {
                 "appearance": "dark",
-                "colorScheme": "Noctalia (default)",
+                "colorScheme": "Kanagawa Paper",
                 "darkMode": true,
                 "generationMethod": "content",
                 "paletteColors": [
-                    "#e3beb4",
-                    "#d6c2bd",
-                    "#d3c5a6",
-                    "#ffb4ab"
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
                 ],
                 "path": "/home/shin/Pictures/homework/ecchi/nobreast/leaning-boobi/133750824_p21.png",
-                "useWallpaperColors": true
+                "useWallpaperColors": false
             },
             {
                 "appearance": "dark",
@@ -2616,7 +2617,7 @@
             }
         ],
         "fillColor": "#004880",
-        "fillMode": "stretch",
+        "fillMode": "crop",
         "hideWallpaperFilenames": false,
         "linkLightAndDarkWallpapers": true,
         "monitorDirectories": [
