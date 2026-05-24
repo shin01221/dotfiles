@@ -10,37 +10,26 @@ return {
       },
     },
   },
-  -- vim.lsp.config / vim.lsp.enable calls remain after these plugin specs
-  -- vim.lsp.config("djls", {
-  --   cmd = { "djls", "serve" },
-  --   filetypes = { "htmldjango", "html", "python" },
-  --   root_markers = { "manage.py", "pyproject.toml", ".git" },
-  -- }),
-  -- vim.lsp.config("djlsp", {
-  --   cmd = { "djlsp" },
-  --   filetypes = { "htmldjango", "html" },
-  --   root_markers = { ".git" },
-  --   settings = {},
-  -- }),
-
+  -- yamlls: register config with cmd + filetypes, merge settings
   vim.lsp.config("yamlls", {
+    cmd = { "yaml-language-server", "--stdio" },
+    filetypes = { "yaml", "yml" },
     settings = {
       yaml = {
-        filetypes = { "yaml", "yml" },
         validate = true,
         completion = true,
         hover = true,
+        schemaStore = { enable = true },
         schemas = {
-          -- Base schemas from lsp-setup.lua are already included
           kubernetes = "k8s-*.yaml",
-          ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/**/*.{yml,yaml}",
-          ["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
           ["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
           ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
           ["http://json.schemastore.org/circleciconfig"] = ".circleci/**/*.{yml,yaml}",
+          ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/**/*.{yml,yaml}",
+          ["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
         },
       },
     },
   }),
-},
-  vim.lsp.enable("yamlls")
+  vim.lsp.enable("yamlls"),
+}
