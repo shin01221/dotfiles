@@ -1,0 +1,36 @@
+{
+  "Kubernetes StorageClass": {
+    "prefix": "k8s-sc",
+    "body": [
+      "apiVersion: storage.k8s.io/v1",
+      "kind: StorageClass",
+      "metadata:",
+      "  name: ${1:my-storage-class}",
+      "provisioner: ${2:kubernetes.io/no-provisioner}",
+      "reclaimPolicy: ${3:Retain}",
+      "volumeBindingMode: ${4:WaitForFirstConsumer}",
+      "allowVolumeExpansion: ${5:true}"
+    ],
+    "description": "Kubernetes StorageClass"
+  },
+  "Kubernetes PersistentVolume": {
+    "prefix": "k8s-pv",
+    "body": [
+      "apiVersion: v1",
+      "kind: PersistentVolume",
+      "metadata:",
+      "  name: ${1:my-pv}",
+      "spec:",
+      "  capacity:",
+      "    storage: ${2:10Gi}",
+      "  volumeMode: ${3:Filesystem}",
+      "  accessModes:",
+      "    - ${4:ReadWriteOnce}",
+      "  persistentVolumeReclaimPolicy: ${5:Retain}",
+      "  storageClassName: ${6:storage-class-name}",
+      "  hostPath:",
+      "    path: ${7:/data/pv}"
+    ],
+    "description": "Kubernetes PersistentVolume"
+  }
+}
