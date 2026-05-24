@@ -2617,7 +2617,7 @@
             }
         ],
         "fillColor": "#004880",
-        "fillMode": "crop",
+        "fillMode": "stretch",
         "hideWallpaperFilenames": false,
         "linkLightAndDarkWallpapers": true,
         "monitorDirectories": [
@@ -2627,8 +2627,8 @@
                 "wallpaper": ""
             }
         ],
-        "overviewBlur": 0.4,
-        "overviewEnabled": true,
+        "overviewBlur": 0,
+        "overviewEnabled": false,
         "overviewTint": 0.6,
         "panelPosition": "top_center",
         "randomIntervalSec": 1800,

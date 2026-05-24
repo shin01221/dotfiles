@@ -37,10 +37,10 @@
       "details": ""
     },
     {
-      "id": 1779379852729,
-      "text": "set up obsidian and better note taking",
-      "completed": true,
-      "createdAt": "2026-05-21T16:10:52.729Z",
+      "id": 1779619604964,
+      "text": "create kubernates snippests with lua snip",
+      "completed": false,
+      "createdAt": "2026-05-24T10:46:44.964Z",
       "pageId": 1,
       "priority": "medium",
       "details": ""
@@ -60,9 +60,9 @@
       "name": "Weekly"
     }
   ],
-  "current_page_id": 0,
+  "current_page_id": 1,
   "count": 5,
-  "completedCount": 1,
+  "completedCount": 0,
   "showCompleted": false,
   "showBackground": true,
   "isExpanded": false,
