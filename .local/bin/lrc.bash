@@ -1,4 +1,4 @@
-players=$(playerctl --list-all | grep -o spotify)
+players=$(playerctl --list-all)
 statusSpotify=$(playerctl status --player spotify)
 statusMpd=$(playerctl status --player mpd)
 

@@ -358,7 +358,7 @@
     },
     "colorSchemes": {
         "darkMode": true,
-        "generationMethod": "content",
+        "generationMethod": "tonal-spot",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
@@ -1159,7 +1159,7 @@
                 "appearance": "dark",
                 "colorScheme": "Kanagawa Paper",
                 "darkMode": true,
-                "generationMethod": "tonal-spot",
+                "generationMethod": "content",
                 "paletteColors": [
                     "#c4b28a",
                     "#8ea49e",
@@ -1713,10 +1713,10 @@
                 "darkMode": true,
                 "generationMethod": "content",
                 "paletteColors": [
-                    "#6b7f9f",
-                    "#6f8795",
-                    "#8b6e86",
-                    "#c27672"
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
                 ],
                 "path": "/home/shin/Pictures/homework/ecchi/nobreast/random-poses/134224177_p28.png",
                 "useWallpaperColors": false

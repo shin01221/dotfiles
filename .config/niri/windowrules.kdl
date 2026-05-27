@@ -144,6 +144,11 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#"^deadcells"#
+    open-fullscreen true
+}
+
+window-rule {
     match app-id=r#"^org\.kde\.dolphin$"# title=r#"^[Cc]ompressing.*[Dd]olphin"#
     open-floating true
 }

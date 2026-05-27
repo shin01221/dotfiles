@@ -1,15 +1,6 @@
 {
   "todos": [
     {
-      "id": 1779169353192,
-      "text": "deploy mongo db and mongo express on K8Slocally",
-      "completed": false,
-      "createdAt": "2026-05-19T05:42:33.192Z",
-      "pageId": 0,
-      "priority": "medium",
-      "details": ""
-    },
-    {
       "id": 1779169321584,
       "text": "start a new VM and set it as K8S node in a cluster",
       "completed": false,
@@ -37,10 +28,19 @@
       "details": ""
     },
     {
-      "id": 1779619604964,
-      "text": "create kubernates snippests with lua snip",
+      "id": 1779706285423,
+      "text": "kubernates the hardway",
       "completed": false,
-      "createdAt": "2026-05-24T10:46:44.964Z",
+      "createdAt": "2026-05-25T10:51:25.423Z",
+      "pageId": 1,
+      "priority": "medium",
+      "details": ""
+    },
+    {
+      "id": 1779706259161,
+      "text": "ip tables , nstables",
+      "completed": false,
+      "createdAt": "2026-05-25T10:50:59.161Z",
       "pageId": 1,
       "priority": "medium",
       "details": ""
