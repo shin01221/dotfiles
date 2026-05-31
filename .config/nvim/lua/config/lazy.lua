@@ -15,11 +15,19 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  { "catppuccin/nvim", name = "catppuccin", enabled = false },
+  { "folke/tokyonight.nvim", enabled = false },
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import/override with your plugins
     { import = "plugins" },
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "default", -- just some random built-in scheme
+    },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.

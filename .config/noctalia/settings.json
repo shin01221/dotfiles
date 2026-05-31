@@ -362,7 +362,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Kanagawa Paper",
+        "predefinedScheme": "Miasma",
         "schedulingMode": "off",
         "syncGsettings": true,
         "useWallpaperColors": false
@@ -2225,17 +2225,17 @@
             },
             {
                 "appearance": "dark",
-                "colorScheme": "Noctalia (default)",
+                "colorScheme": "Kanagawa Paper",
                 "darkMode": true,
-                "generationMethod": "content",
+                "generationMethod": "tonal-spot",
                 "paletteColors": [
-                    "#fcb5ab",
-                    "#e3beb9",
-                    "#c7cb8d",
-                    "#ffb4ab"
+                    "#c4b28a",
+                    "#8ea49e",
+                    "#938aa9",
+                    "#c4746e"
                 ],
                 "path": "/home/shin/Pictures/homework/ecchi/breast/143517464-29b7d15705310639a86c052e38b7f9f9_p0.jpg",
-                "useWallpaperColors": true
+                "useWallpaperColors": false
             },
             {
                 "appearance": "dark",

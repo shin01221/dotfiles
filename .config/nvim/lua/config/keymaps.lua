@@ -19,8 +19,8 @@ vim.keymap.set("n", "<A-j>", "<cmd>Treewalker SwapDown<cr>", { silent = true })
 vim.keymap.set("n", "<A-h>", "<cmd>Treewalker SwapLeft<cr>", { silent = true })
 vim.keymap.set("n", "<A-l>", "<cmd>Treewalker SwapRight<cr>", { silent = true })
 
-keymap.set("n", "tt", vim.cmd.Themery)
--- keymap.set("n", "tt", "<cmd>Themify<cr>")
+-- keymap.set("n", "tt", vim.cmd.Themery)
+keymap.set("n", "tt", "<cmd>Themify<cr>")
 -- toggle markview
 keymap.set("n", "<leader>um", "<cmd>Markview Toggle<cr>", { desc = "Toggle markdwon" })
 --toggle top bar buffer on or off
