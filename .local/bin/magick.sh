@@ -1,88 +1,153 @@
 #!/usr/bin/env bash
 source "$HOME/.local/bin/functions.sh"
-# Usage:
-#   ./imgtool.sh --resize-height in.png out.png HEIGHT [top|bottom|center]
-#   ./imgtool.sh --resize-width  in.png out.png WIDTH  [left|right|center]
-#   ./imgtool.sh --downscale     in.png out.png PERCENT
-#   ./imgtool.sh --sort DIR
 
-mode="$1"
-input="$2"
-output="$3"
-height=$(identify -format "%h" "$input")
-width=$(identify -format "%w" "$input")
-new_height=$((height - $4))
-new_width=$((width - $4))
-position="$5"
+usage() {
+	cat <<EOF
+Usage: magick.sh [--replace] <mode> <args>
 
-# Handle modes
-case "$mode" in
---resize-height)
-	if [[ -z "$input" || -z "$output" || -z "$new_height" ]]; then
-		echo "Error: Missing arguments for --resize-height"
-		exit 1
-	fi
+Modes:
+  --resize-height <in> <out> <HEIGHT> [top|bottom|center]
+  --resize-width  <in> <out> <WIDTH>  [left|right|center]
+  --downscale     <in> <out> <PERCENT>
+  --sort          <DIR>
 
-	# Set default position
-	if [[ -z "$position" ]]; then
-		position="bottom"
-	fi
+With --replace (in-place, multiple files):
+  --replace --resize-height <in>... <HEIGHT> [top|bottom|center]
+  --replace --resize-width  <in>... <WIDTH>  [left|right|center]
+  --replace --downscale     <in>... <PERCENT>
 
-	case "$position" in
-	top) gravity="South" ;;
-	center) gravity="Center" ;;
-	bottom | *) gravity="North" ;;
+Options:
+  --replace  Edit files in-place (output = input)
+  --help     Show this help
+EOF
+	exit 0
+}
+
+replace_flag=false
+mode=""
+args=()
+
+for arg in "$@"; do
+	case "$arg" in
+	--help) usage ;;
+	--replace) replace_flag=true ;;
+	--resize-height | --resize-width | --downscale | --sort) mode="$arg" ;;
+	*) args+=("$arg") ;;
 	esac
+done
+set -- "${args[@]}"
 
-	magick "$input" -gravity "$gravity" -crop "x$new_height+0+0" +repage "$output"
-	;;
+command -v magick >/dev/null 2>&1 || { echo "Error: ImageMagick (magick) not found" >&2; exit 1; }
+command -v identify >/dev/null 2>&1 || { echo "Error: ImageMagick (identify) not found" >&2; exit 1; }
 
---resize-width)
-	if [[ -z "$input" || -z "$output" || -z "$new_height" ]]; then
-		echo "Error: Missing arguments for --resize-width"
-		exit 1
-	fi
+process_file() {
+	local input="$1" output="$2" mode="$3"
+	shift 3
+	local rest=("$@")
 
-	if [[ -z "$position" ]]; then
-		position="center"
-	fi
-
-	case "$position" in
-	left) gravity="East" ;;
-	center | *) gravity="Center" ;;
-	right) gravity="West" ;;
-	esac
-
-	magick "$input" -gravity "$gravity" -crop "$new_width"x+0+0 +repage "$output"
-	;;
-
---downscale)
-	if [[ -z "$input" || -z "$output" || -z "$val" ]]; then
-		echo "Error: Missing arguments for --downscale"
-		exit 1
-	fi
-
-	# remove % if present
-	if [[ "$val" == *% ]]; then
+	case "$mode" in
+	--resize-height)
+		local height_offset="${rest[0]}"
+		local position="${rest[1]:-bottom}"
+		local h
+		h=$(identify -format "%h" "$input") || {
+			echo "Error: Failed to read height of '$input'" >&2
+			return 1
+		}
+		local new_height=$((h - height_offset))
+		[ "$new_height" -gt 0 ] || { echo "Error: Resulting height $new_height <= 0 for '$input'" >&2; return 1; }
+		local gravity
+		case "$position" in
+		top) gravity="South" ;;
+		center) gravity="Center" ;;
+		bottom | *) gravity="North" ;;
+		esac
+		magick "$input" -gravity "$gravity" -crop "x${new_height}+0+0" +repage "$output" || {
+			echo "Error: Failed to process '$input'" >&2
+			return 1
+		}
+		;;
+	--resize-width)
+		local width_offset="${rest[0]}"
+		local position="${rest[1]:-center}"
+		local w
+		w=$(identify -format "%w" "$input") || {
+			echo "Error: Failed to read width of '$input'" >&2
+			return 1
+		}
+		local new_width=$((w - width_offset))
+		[ "$new_width" -gt 0 ] || { echo "Error: Resulting width $new_width <= 0 for '$input'" >&2; return 1; }
+		local gravity
+		case "$position" in
+		left) gravity="East" ;;
+		center | *) gravity="Center" ;;
+		right) gravity="West" ;;
+		esac
+		magick "$input" -gravity "$gravity" -crop "${new_width}x+0+0" +repage "$output" || {
+			echo "Error: Failed to process '$input'" >&2
+			return 1
+		}
+		;;
+	--downscale)
+		local val="${rest[0]}"
 		val="${val%\%}"
+		[ "$val" -gt 0 ] 2>/dev/null || { echo "Error: Invalid percentage '$val'" >&2; return 1; }
+		magick "$input" -resize "${val}%" "$output" || {
+			echo "Error: Failed to downscale '$input'" >&2
+			return 1
+		}
+		;;
+	esac
+}
+
+case "$mode" in
+--resize-height | --resize-width | --downscale)
+	if $replace_flag; then
+		case "$mode" in
+		--downscale)
+			last_idx=$((${#args[@]} - 1))
+			percent="${args[$last_idx]}"
+			inputs=("${args[@]:0:$last_idx}")
+			;;
+		--resize-height | --resize-width)
+			last_idx=$((${#args[@]} - 1))
+			val="${args[$last_idx]}"
+			position=""
+			prev="${args[$((last_idx - 1))]:-}"
+			case "$prev" in
+			top | bottom | center | left | right)
+				position="$prev"
+				inputs=("${args[@]:0:$((last_idx - 1))}")
+				;;
+			*)
+				inputs=("${args[@]:0:$last_idx}")
+				;;
+			esac
+			;;
+		esac
+		[ ${#inputs[@]} -eq 0 ] && { echo "Error: No input files" >&2; exit 1; }
+		fail=0
+		for input in "${inputs[@]}"; do
+			[ -f "$input" ] || { echo "Error: '$input' is not a file" >&2; fail=1; continue; }
+			process_file "$input" "$input" "$mode" "$val" "$position" || fail=1
+		done
+		exit $fail
+	else
+		input="$1" output="$2"
+		[[ -z "$input" || -z "$output" ]] && { echo "Error: Missing arguments for $mode" >&2; exit 1; }
+		[ -f "$input" ] || { echo "Error: '$input' is not a file" >&2; exit 1; }
+		shift 2
+		process_file "$input" "$output" "$mode" "$@"
 	fi
-	magick "$input" -resize "$val%" "$output"
 	;;
 
 --sort)
-	if [[ -z "$input" ]]; then
-		echo "Error: Please provide directory to sort."
-		exit 1
-	fi
-	sort_images "$input"
+	dir="${1:-.}"
+	[ -d "$dir" ] || { echo "Error: '$dir' is not a directory" >&2; exit 1; }
+	sort_images "$dir"
 	;;
 
 *)
-	echo "Usage:"
-	echo "  magick.sh --resize-height <in> <out> HEIGHT [top|bottom|center]"
-	echo "  magick.sh --resize-width  <in> <out> WIDTH  [left|right|center]"
-	echo "  magick.sh --downscale     <in> <out> PERCENT"
-	echo "  magick.sh --sort DIR"
-	exit 1
+	usage
 	;;
 esac
