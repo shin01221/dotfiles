@@ -1,10 +1,12 @@
 #!/bin/bash
 
 save_mode=false
+print_mode=false
 positional=()
 for arg in "$@"; do
     case "$arg" in
     --save) save_mode=true ;;
+    --print) print_mode=true ;;
     *) positional+=("$arg") ;;
     esac
 done
@@ -29,17 +31,23 @@ selected=$(printf '%s\n' "$files" |
     while IFS= read -r fullpath; do
         printf "%s\n" "${fullpath#$search_dir/}"
     done |
-    fzf --prompt="Recent files> " \
+    fzf --multi \
+        --prompt="Recent files> " \
         --height=80% \
         --preview="fzf_preview.sh $(printf '%q' "$search_dir")/{}" \
         --preview-window='right:70%:border:wrap')
 
 [ -z "$selected" ] && exit 0
 
-full_path="$search_dir/$selected"
-
-if $save_mode; then
-    printf '"%s"' "$full_path" | wl-copy
+if $print_mode; then
+    while IFS= read -r sel; do
+        printf '%s\n' "$search_dir/$sel"
+    done <<< "$selected"
+elif $save_mode; then
+    paths=$(printf '"%s"' "$search_dir/$selected" | paste -sd,)
+    printf '%s' "$paths" | wl-copy
 else
-    gio open "$full_path"
+    while IFS= read -r sel; do
+        gio open "$search_dir/$sel"
+    done <<< "$selected"
 fi

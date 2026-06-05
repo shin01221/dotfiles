@@ -10,7 +10,7 @@ Version=202
 
 [IconsMode]
 IconSize=80
-PreviewSize=80
+PreviewSize=112
 
 [InformationPanel]
 dateFormat=ShortFormat
