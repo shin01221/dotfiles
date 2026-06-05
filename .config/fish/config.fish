@@ -27,10 +27,6 @@ if status is-interactive # Commands to run in interactive sessions can go here
     set fish_greeting
 end
 
-function cur_wall
-    jq -r '.wallpapers["eDP-2"].dark' ~/.cache/noctalia/wallpapers.json
-end
-
 direnv hook fish | source
 
 zoxide init fish | source

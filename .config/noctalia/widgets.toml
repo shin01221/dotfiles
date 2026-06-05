@@ -1,0 +1,27 @@
+[widget.clock-seconds]
+type = "clock"
+format = "{:%H:%M:%S}"
+
+[widget.clock]
+format = "{:%H:%M}\n{:%d/%m}"
+vertical_format = "{:%H\n%M}"
+tooltip_format = "{:%A, %B %d, %Y}"
+
+[widget.clock-12h]
+type = "clock"
+format = "{:%-I:%M %p}\t{:%d/%m}"
+tooltip_format = "{:%A, %B %d, %Y}"
+
+[widget.workspaces]
+display = "name"
+max_label_chars = 2
+pill_scale = 0.85
+labels_only_when_occupied = true
+hide_when_empty = true
+
+[widget.tray]
+drawer = true
+
+[widget.lrc]
+type = "scripted"
+script = "~/.local/bin/lrc.lua"

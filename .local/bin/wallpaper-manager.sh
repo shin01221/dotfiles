@@ -4,15 +4,12 @@ source "$HOME/.local/bin/functions.sh"
 mode=$1
 
 case $mode in
---fav-manage)
-	fav_toggle
-	;;
---delete)
-	wall_delete
-	;;
 
+--delete)
+    wall_delete
+    ;;
 --help)
-	echo "--fav-manage to remove or add a current wallpaper to favourites"
-	echo "--delete to delete the current wallpaper"
-	;;
+    echo "--fav-manage to remove or add a current wallpaper to favourites"
+    echo "--delete to delete the current wallpaper"
+    ;;
 esac

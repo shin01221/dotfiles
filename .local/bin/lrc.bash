@@ -1,10 +1,10 @@
-players=$(playerctl --list-all)
-statusSpotify=$(playerctl status --player spotify)
-statusMpd=$(playerctl status --player mpd)
+# players=$(playerctl --list-all)
+statusSpotify=$(playerctl status --player spotify 2>/dev/null)
+statusMpd=$(playerctl status --player mpd 2>/dev/null)
 
-if [[ $players =~ spotify && $statusSpotify =~ Playing ]]; then
+if [[ $statusSpotify == "Playing" ]]; then
     lrc_tty --raw --player spotify
 fi
-if [[ $players =~ mpd && $statusMpd =~ Playing ]]; then
+if [[ $statusMpd == "Playing" ]]; then
     lrc_tty --raw --player mpd
 fi

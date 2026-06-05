@@ -1,25 +1,10 @@
 #!/bin/bash
 
 # Vars
-path=$(jq -r '.wallpapers["eDP-2"].dark' ~/.cache/noctalia/wallpapers.json)
+path=$(noctalia msg wallpaper-get)
 base_homework="/Media/Pictures/homework"
 base_fav="/Media/Pictures/fav"
 base_wallpapers="/Media/Pictures/Wallpapers"
-STATE_FILE="$HOME/.cache/current_wallpaper_path"
-if [[ ! -e "$path" ]]; then
-    if [[ -f "$STATE_FILE" ]]; then
-        path="$(<"$STATE_FILE")"
-    else
-        notify-send "⚠️ Wallpaper Toggle" "Error: Wallpaper not found and no state file exists."
-        exit 1
-    fi
-fi
-
-# Normalize with realpath
-# path="$(realpath -m "$path")"
-# base_homework="$(realpath -m "$base_homework")"
-# base_fav="$(realpath -m "$base_fav")"
-# base_wallpapers="$(realpath -m "$base_wallpapers")"
 
 #Functions
 move_by_dimensions() {
@@ -42,26 +27,6 @@ move_by_dimensions() {
     fi
 }
 
-fav_toggle() {
-    dir="$(dirname -- "$path")"
-    filename="$(basename -- "$path")"
-
-    # If the file is already inside a 'fav' directory → move it one level up
-    if [[ "$dir" == */fav ]]; then
-        parent_dir="$(dirname -- "$dir")"
-        target="$parent_dir/$filename"
-        mv -- "$path" "$target" && notify-send "Fav toggle" "Removed from fav 💢"
-
-    # Otherwise → move it into a 'fav' subdirectory in the same location
-    else
-        fav_dir="$dir/fav"
-        mkdir -p -- "$fav_dir"
-        target="$fav_dir/$filename"
-        mv -- "$path" "$target" && notify-send "Fav toggle" "Added to fav 🌡️"
-    fi
-
-    echo "$target" >"$STATE_FILE"
-}
 wall_delete() {
     rm "$path"
 }

@@ -38,21 +38,18 @@ menu:
       - key: "p"
         desc: Toggle on/off
         cmd: playerctl --ignore-player=firefox --player=tauon,spotify,mpd play-pause
-      - key: "="
-        desc: VolumeUp
-        cmd: wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ -l 1.5
-      - key: "-"
-        desc: VolumeDown
-        cmd: wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
       - key: "m"
         desc: Mute
-        cmd: qs -c noctalia-shell ipc call volume muteOutput
+        cmd: noctalia msg volume-mute
       - key: "r"
         desc: RMPC
         cmd: ~/.local/bin/music.sh rmpc
       - key: "l"
         desc: LRC
         cmd: ~/.local/bin/music.sh lrc
+      - key: "P"
+        desc: MuteMicrophone
+        cmd: noctalia msg mic-mute
   - key: "n"
     desc: noctalia-shell
     submenu:
@@ -61,28 +58,28 @@ menu:
         cmd: qs -c noctalia-shell ipc call plugin:show-keys toggle
       - key: "c"
         desc: ControlCenter
-        cmd: qs -c noctalia-shell ipc call controlCenter toggle
+        cmd: noctalia msg panel-toggle control-center
       - key: "v"
         desc: Clipboard
-        cmd: qs -c noctalia-shell ipc call launcher clipboard
+        cmd: noctalia msg panel-toggle clipboard
       - key: "s"
         desc: Settings
-        cmd: qs -c noctalia-shell ipc call settings toggle
+        cmd: noctalia msg settings-toggle
       - key: "b"
         desc: ToggleBar
-        cmd: qs -c noctalia-shell ipc call bar toggle
+        cmd: noctalia msg bar-toggle
       - key: "d"
         desc: Calender
         cmd: qs -c noctalia-shell ipc call calendar toggle
       - key: "w"
         desc: Wallpapers
-        cmd: qs -c noctalia-shell ipc call wallpaper toggle
+        cmd: noctalia msg panel-toggle wallpaper
       - key: "r"
         desc: Record
         cmd: qs -c noctalia-shell ipc call plugin:screen-recorder toggle
       - key: "R"
         desc: Reload
-        cmd: killall qs ; sleep 0.3 && qs -c noctalia-shell &
+        cmd: killall noctalia ; sleep 0.3 && noctalia &
       - key: "e"
         desc: Emojis
         cmd: qs -c noctalia-shell ipc call launcher emoji
@@ -91,7 +88,7 @@ menu:
         cmd: qs -c noctalia-shell ipc call desktopWidgets toggle
       - key: "l"
         desc: "Toggle dark/light"
-        cmd: qs -c noctalia-shell ipc call darkMode toggle
+        cmd: noctalia msg theme-mode-toggle
   - key: "s"
     desc: Scripts
     submenu:
@@ -113,15 +110,6 @@ menu:
       - key: "d"
         desc: DeleteCurrentWallpaper
         cmd: ~/.local/bin/wallpaper-manager.sh --delete
-      # - key: "v"
-      #   desc: ToggleVisibility
-      #   cmd: ~/.local/bin/niri-sidebar toggle-visibility
-      # - key: "f"
-      #   desc: Flip
-      #   cmd: ~/.local/bin/niri-sidebar flip
-      # - key: "r"
-      #   desc: Reorder
-      #   cmd: ~/.local/bin/niri-sidebar reorder
       - key: "t"
         desc: ToggleTransparency
         cmd: ~/.local/bin/niri-transparency-toggle.sh

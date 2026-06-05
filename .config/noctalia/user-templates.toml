@@ -1,25 +1,15 @@
-[config]
+[theme.templates]
+enable_builtin_templates = true
+enable_community_templates = true
+builtin_ids = []
+community_ids = []
 
-[templates]
-# User-defined templates
-# Add your custom templates below
-# Example:
-# [templates.myapp]
-# input_path = "~/.config/noctalia/templates/myapp.css"
-# output_path = "~/.config/myapp/theme.css"
-# post_hook = "myapp --reload-theme"
-
-# Remove this section and add your own templates
-# [templates.placeholder]
-# input_path = "/home/shin/.config/quickshell/noctalia-shell/Assets/MatugenTemplates/noctalia.json"
-# output_path = "/home/shin/.cache/noctalia/placeholder.json"
-
-[templates.tmux]
+[theme.templates.user.tmux]
 input_path = "~/.config/matugen/templates/tmux/tmux-colors.conf"
 output_path = "~/.config/tmux/theme.conf"
 post_hook = "~/.local/bin/tmux-hook.bash"
 
-[templates.starship]
+[theme.templates.user.starship]
 input_path = "~/.config/matugen/templates/starship/starship-colors.toml"
 output_path = "~/.config/starship.toml"
 post_hook = "bash ~/.local/bin/theme-switch-hook.bash"
@@ -33,10 +23,10 @@ post_hook = "bash ~/.local/bin/theme-switch-hook.bash"
 # input_path = "~/.config/matugen/templates/foot/foot"
 # output_path = "~/.config/foot/themes/noctalia"
 
-[templates.kde_colors]
-input_path = "~/.config/matugen/templates/kde/color.txt"
-output_path = "~/.local/state/quickshell/user/generated/color.txt"
-post_hook = "~/.config/matugen/templates/kde/kde-material-you-colors-wrapper.sh && plasma-apply-colorscheme noctalia"
+# [templates.kde_colors]
+# input_path = "~/.config/matugen/templates/kde/color.txt"
+# output_path = "~/.local/state/quickshell/user/generated/color.txt"
+# post_hook = "~/.config/matugen/templates/kde/kde-material-you-colors-wrapper.sh && plasma-apply-colorscheme noctalia"
 
 # [templates.hyprland]
 # input_path = "~/.config/matugen/templates/hyprland/colors.conf"
@@ -47,7 +37,7 @@ post_hook = "~/.config/matugen/templates/kde/kde-material-you-colors-wrapper.sh 
 # output_path = "~/.config/nvim/colors/matugen.lua"
 # post_hook = 'pkill -SIGUSR1 nvim'
 
-[templates.which-key]
+[theme.templates.user.which-key]
 input_path = "~/.config/matugen/templates/which-key/colors.json"
 output_path = "~/.config/wlr-which-key/colors.json"
 post_hook = "~/.local/bin/which-key.sh"

@@ -1,13 +1,13 @@
 // keep this on top since it need to be overrided later
 
 window-rule {
-    opacity 0.85
-}
-
-window-rule {
-    match is-focused=true
     opacity 0.92
 }
+
+// window-rule {
+//     match is-focused=true
+//     opacity 0.92
+// }
 
 blur {
    passes 5        // more passes = stronger blur (default: 3)
@@ -26,7 +26,7 @@ window-rule {
 
 layer-rule {
     match namespace="^wlr_which_key$"
-    opacity 0.88
+    opacity 0.95
     background-effect {
         blur true
         xray true
