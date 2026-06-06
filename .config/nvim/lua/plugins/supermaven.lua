@@ -5,6 +5,7 @@ return {
     -- condition = function()
     --     return string.match(vim.fn.expand("%:t"), "foo.sh")
     -- end,
+    enable = false,
     keymaps = {
       accept_suggestion = "<Tab>",
       clear_suggestion = "<M-]>",

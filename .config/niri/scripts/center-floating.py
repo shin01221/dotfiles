@@ -10,17 +10,14 @@ WINDOW_TITLE_RE = re.compile(r"calibre\s+-\s+Preferences")
 
 
 def niri_json(args):
-    r = subprocess.run(
-        ["niri", "msg", "--json", *args],
-        capture_output=True, text=True
-    )
+    r = subprocess.run(["niri", "msg", "--json", *args], capture_output=True, text=True)
     return json.loads(r.stdout) if r.stdout else None
 
 
 def center(wid):
     subprocess.run(
         ["niri", "msg", "action", "center-window", "--id", str(wid)],
-        capture_output=True
+        capture_output=True,
     )
 
 
@@ -39,7 +36,7 @@ def main():
                     break
         if not found:
             centered = False
-        time.sleep(2)
+        time.sleep(0.1)
 
 
 if __name__ == "__main__":

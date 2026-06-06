@@ -24,6 +24,17 @@ window-rule {
   }
 }
 
+window-rule {
+  match app-id="^org\\.kde\\.dolphin$"
+  popups {
+    background-effect {
+      blur true
+      xray true
+    }
+    geometry-corner-radius 5
+  }
+}
+
 layer-rule {
     match namespace="^wlr_which_key$"
     opacity 0.95
@@ -31,7 +42,7 @@ layer-rule {
         blur true
         xray true
     }
-    geometry-corner-radius 0
+    geometry-corner-radius 9
 }
 
 /* Floating noctalia settings */

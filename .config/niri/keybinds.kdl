@@ -4,7 +4,7 @@ binds {
     Mod+Shift+Return { spawn "env" "NO_TMUX=1" "foot"; }
     Mod+D { spawn-sh "noctalia msg panel-toggle launcher"; }
     // Mod+Print { spawn "niri-shot" "-r"; }
-    Mod+Print { spawn-sh "qs -c noctalia-shell ipc call plugin:screen-toolkit annotate"; }
+    Mod+Print { spawn-sh "noctalia msg screenshot-region"; }
     // Mod+Alt+Print { spawn-sh "qs -c noctalia-shell ipc call plugin:screen-toolkit annotateFullscreen"; }
     Mod+Alt+Print { spawn-sh "noctalia msg screenshot-fullscreen all"; }
     // Mod+Alt+Print { spawn "niri-shot" "-f"; }

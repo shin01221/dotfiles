@@ -20,28 +20,21 @@ window-rule {
     open-floating true
 }
 
+
 window-rule {
-    match is-floating=true
-    border {
+    match is-focused=true
+    focus-ring {
             on
-            width 2
+            width 1
     }
-    default-column-width { fixed 800; }
-    default-window-height { fixed 800; }
 }
-// window-rule {
-//     match is-focused=true
-//     border {
-//             on
-//             width 2
-//     }
-// }
 
 window-rule {
     match app-id=r#"zen"#
     open-on-workspace "Net"
-    default-column-width { proportion 1.00; }
+    open-maximized true
 }
+
 window-rule {
     match app-id="^virt-manager$|^Vmware$|^Vmplayer$"
     opacity 1.00
@@ -78,6 +71,18 @@ window-rule {
 window-rule {
     geometry-corner-radius 0
     clip-to-geometry false
+}
+
+window-rule {
+    match is-floating=true
+    geometry-corner-radius 5
+    clip-to-geometry true
+    border {
+            on
+            width 2
+    }
+    default-column-width { fixed 800; }
+    default-window-height { fixed 800; }
 }
 
 window-rule {
@@ -187,7 +192,13 @@ window-rule {
 //         xray false
 //   }
 // }
-
+layer-rule {
+    match namespace="(^noctalia-osd.*)|(noctalia-notification.*)"
+    opacity 0.9
+    background-effect {
+        xray false
+    }
+}
 layer-rule {
   match namespace="^noctalia-wallpaper*"
   place-within-backdrop true
