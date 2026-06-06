@@ -58,7 +58,7 @@ layout {
     }
 
     border {
-        on
+        off
         width 2
     }
     shadow {
