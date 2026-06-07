@@ -32,15 +32,4 @@ return {
     },
   }),
   vim.lsp.enable("yamlls"),
-  vim.lsp.enable("clangd"),
-  vim.lsp.config("clangd", {
-    capailities = {
-      offsetEncoding = { "utf-8", "utf-16" },
-      textDocument = {
-        completion = {
-          editsNearCursor = true,
-        },
-      },
-    },
-  }),
 }

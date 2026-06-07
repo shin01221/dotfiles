@@ -1,8 +1,8 @@
 # Theming
 font: JetBrainsMono Nerd Font 12
-background: "#222222"
-color: "#c2c2b0"
-border: "#c9a554"
+background: "#1a1110"
+color: "#f1dedc"
+border: "#ffb4a9"
 separator: " ➜ "
 border_width: 1
 corner_r: 10
@@ -76,7 +76,7 @@ menu:
         cmd: noctalia msg panel-toggle wallpaper
       - key: "r"
         desc: Record
-        cmd: qs -c noctalia-shell ipc call plugin:screen-recorder toggle
+        cmd: noctalia msg scripted-widget 'screen_recorder' all:main toggle
       - key: "R"
         desc: Reload
         cmd: killall noctalia ; sleep 0.3 && noctalia &

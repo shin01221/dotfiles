@@ -28,5 +28,5 @@ function fetchLyrics(player)
 				barWidget.setText("| " .. text)
 			end
 		end
-	end)
+	end, 30000)
 end
