@@ -24,9 +24,11 @@ function fetchLyrics(player)
 	noctalia.runAsync("lrc_tty --raw --player " .. player, function(r)
 		if r.exitCode == 0 then
 			local text = r.stdout:gsub("%s+$", "")
-			if #text > 0 then
+			if #text > 0 and text ~= "(no lyrics)" then
 				barWidget.setText("| " .. text)
+				return
 			end
 		end
+		barWidget.setText("")
 	end, 30000)
 end
