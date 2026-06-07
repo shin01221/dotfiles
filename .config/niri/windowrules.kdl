@@ -199,6 +199,7 @@ layer-rule {
         xray false
     }
 }
+
 layer-rule {
   match namespace="^noctalia-wallpaper*"
   place-within-backdrop true
