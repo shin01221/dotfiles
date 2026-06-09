@@ -64,7 +64,55 @@ end)
 
 -- neovide configs
 if vim.g.neovide then
-  -- vim.o.guifont = "Maple Mono:h10"
+  local config_dir = (vim.env.XDG_CONFIG_HOME and #vim.env.XDG_CONFIG_HOME > 0) and vim.env.XDG_CONFIG_HOME
+    or os.getenv("HOME") .. "/.config"
+
+  local function readf(p)
+    local f = io.open(p, "r")
+    if not f then
+      return nil
+    end
+    local c = f:read("*a")
+    f:close()
+    return c
+  end
+
+  local function val(c, k)
+    for l in c:gmatch("[^\r\n]+") do
+      local a, b = l:match("^%s*([%w-]+)%s*=%s*(.-)%s*$")
+      if a and a == k then
+        return b:match('^"(.*)"$') or b:match("^'(.*)'$") or b
+      end
+    end
+  end
+
+  local c = readf(config_dir .. "/ghostty/config")
+  local bg
+  if c then
+    bg = val(c, "background")
+      or (val(c, "theme") and val(readf(config_dir .. "/ghostty/themes/" .. val(c, "theme")), "background"))
+  end
+
+  if bg then
+    local function apply()
+      vim.api.nvim_set_hl(0, "Normal", { bg = bg })
+    end
+    apply()
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "VeryLazy",
+      once = true,
+      callback = apply,
+    })
+    vim.api.nvim_create_autocmd("ColorScheme", {
+      pattern = "*",
+      callback = function()
+        vim.schedule(apply)
+      end,
+    })
+  end
+
+  vim.g.neovide_theme = "dark"
+  vim.o.guifont = "DejaVu Sans Mono:h11"
   vim.g.neovide_padding_top = 30
   vim.g.neovide_padding_right = 20
   vim.g.neovide_padding_left = 20
