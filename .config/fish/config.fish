@@ -1,5 +1,9 @@
 set EDITOR nvim
 set UV_LINK_MODE copy
+set -gx TODO_DIR /Media/Docs/notes/TODO
+set -gx TODO_FILE "$TODO_DIR/todo.txt"
+set -gx DONE_FILE "$TODO_DIR/done.txt"
+
 set -Ux KUBE_EDITOR nvim
 
 set -g fish_key_bindings fish_vi_key_bindings

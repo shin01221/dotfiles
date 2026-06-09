@@ -24,4 +24,9 @@ drawer = true
 
 [widget.lrc]
 type = "scripted"
-script = "~/.local/bin/lrc.lua"
+script = "~/.config/noctalia/scripts/lrc.lua"
+
+[widget.pomodoro]
+type = "scripted"
+script = "~/.config/noctalia/scripts/pomodoro.lua"
+scope = "shared"
