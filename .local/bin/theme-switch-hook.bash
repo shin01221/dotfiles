@@ -1,17 +1,16 @@
 #!/usr/bin/env bash
 
-settings=$HOME/.config/noctalia/settings.json
-matugen_conf=$HOME/.config/noctalia/user-templates.toml
-auto_colors=$(jq -r '.colorSchemes.useWallpaperColors' "$settings")
-theme=$(jq -r '.colorSchemes.predefinedScheme' "$settings")
-mode=$(jq -r '.colorSchemes.darkMode' "$settings")
+# settings=$HOME/.config/noctalia/settings.json
+# matugen_conf=$HOME/.config/noctalia/user-templates.toml
+auto_colors=$(noctalia msg color-scheme-get | cut -d ' ' -f 1)
+theme=$(noctalia msg color-scheme-get | cut -d ' ' -f 2)
+mode=$(noctalia msg theme-mode-get)
 starship_configs=$HOME/.config/starship
 tmux_themes=$HOME/.config/tmux/themes
 tmux_config=$HOME/.config/tmux/tmux.conf
-themes_arr=("Ayu" "Gruvbox" "Eldritch" "Everforest" "GruvboxAlt" "Kanagawa" "Miasma" "Monochrome" "Noctalia (default)" "Nord" "Rose Pine" "Tokyo Night Moon" "Lilac AMOLED" "Occult Umbral" "One" "Oxide" "Vesper")
-variant=$([[ "$mode" == "true" ]] && echo "dark" || echo "light") # should be used to refactor this script.
+themes_arr=("Ayu" "Gruvbox" "Eldritch" "Everforest" "GruvboxAlt" "Kanagawa" "Miasma" "Monochrome" "Noctalia" "Nord" "Rose Pine" "Tokyo Night Moon" "Lilac AMOLED" "Occult Umbral" "One" "Oxide" "Vesper")
 
-if [[ $auto_colors = true ]]; then
+if [[ $auto_colors = wallpaper ]]; then
     exit
 fi
 
@@ -23,8 +22,8 @@ else
 fi
 apply_theme() {
     local theme_name=$1
-    cp "$starship_configs/starship.toml-$theme_name-$variant" "$HOME/.config/starship.toml"
-    cp "$tmux_themes/$theme_name-$variant.conf" "$HOME/.config/tmux/theme.conf"
+    cp "$starship_configs/starship.toml-$theme_name-$mode" "$HOME/.config/starship.toml"
+    cp "$tmux_themes/$theme_name-$mode.conf" "$HOME/.config/tmux/theme.conf"
 }
 case "$theme" in
 "${themes_arr[0]}")
