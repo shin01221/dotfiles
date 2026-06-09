@@ -37,7 +37,6 @@ return {
                 local index = math.floor(os.time() / 4) % #frames + 1
                 return frames[index]
               end,
-              separator = { left = "", right = "" },
               padding = { left = 1, right = 1 },
 
               color = function()
