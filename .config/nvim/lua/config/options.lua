@@ -113,7 +113,7 @@ if vim.g.neovide then
 
   vim.g.neovide_theme = "dark"
   vim.o.guifont = "DejaVu Sans Mono:h11"
-  vim.g.neovide_padding_top = 30
+  vim.g.neovide_padding_top = 0
   vim.g.neovide_padding_right = 20
   vim.g.neovide_padding_left = 20
 end
