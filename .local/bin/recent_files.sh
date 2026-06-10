@@ -1,5 +1,36 @@
 #!/bin/bash
 
+die() {
+    echo "Error: $*" >&2
+    exit 1
+}
+
+usage() {
+    cat <<'EOF'
+Usage: recent_files.sh [OPTIONS] [COUNT] [DIR]
+
+List recently modified files in a directory and pick with fzf.
+
+Options:
+  --save       Copy selected paths to clipboard (wl-copy)
+  --print      Print selected paths to stdout
+  --no-picker  Skip fzf, print N most recent files directly
+  --help       Show this help and exit
+
+Arguments:
+  COUNT  Number of recent files to list (default: 5)
+  DIR    Directory to scan (default: current directory)
+
+Examples:
+  recent_files.sh
+  recent_files.sh 10 ~/Downloads
+  recent_files.sh --print 5 ~/Pictures
+  recent_files.sh --save 3 ~/Documents
+  recent_files.sh --no-picker 8 ~/Videos
+EOF
+    exit 0
+}
+
 save_mode=false
 print_mode=false
 no_picker=false
@@ -9,52 +40,44 @@ for arg in "$@"; do
     --save) save_mode=true ;;
     --print) print_mode=true ;;
     --no-picker) no_picker=true ;;
-    --help)
-        echo "Usage: recent_files.sh [--save|--print|--no-picker] [COUNT] [DIR]"
-        echo "  --save       Copy paths to clipboard (wl-copy)"
-        echo "  --print      Print selected paths to stdout"
-        echo "  --no-picker  Skip fzf, print N most recent files directly"
-        echo "  COUNT        Number of recent files to show (default: 5)"
-        echo "  DIR          Directory to scan (default: .)"
-        exit 0
-        ;;
+    --help) usage ;;
     *) positional+=("$arg") ;;
     esac
 done
 set -- "${positional[@]}"
 
 count="${1:-5}"
-[[ "$count" =~ ^[0-9]+$ ]] && shift || count=5
+if [[ "$count" =~ ^[0-9]+$ ]]; then
+    shift
+else
+    count=5
+fi
 
 search_dir="${1:-.}"
 search_dir="${search_dir/#\~/$HOME}"
-search_dir="${search_dir%/}"
+search_dir="$(realpath -m "$search_dir" 2>/dev/null || realpath "$search_dir" 2>/dev/null || echo "$search_dir")"
 
-[ -d "$search_dir" ] || {
-    echo "Error: '$search_dir' is not a directory" >&2
-    exit 1
-}
+[ -d "$search_dir" ] || die "'$search_dir' is not a directory"
 
-files=$(find "$search_dir" -mindepth 1 -maxdepth 1 -not -name 'recent_files.sh' \
+if ! $print_mode && ! $save_mode && ! $no_picker; then
+    command -v gio >/dev/null 2>&1 || die "gio not found (required for default open mode)"
+fi
+$save_mode && ! command -v wl-copy >/dev/null 2>&1 && die "wl-copy not found (required for --save)"
+
+files=$(find "$search_dir" -mindepth 1 -maxdepth 1 -not -name "$(basename "$0")" \
     -printf '%T+ %p\n' 2>/dev/null |
     sort -r |
     head -n "$count" |
     cut -d' ' -f2-)
 
-[ -z "$files" ] && {
-    echo "No files found" >&2
-    exit 1
-}
+[ -z "$files" ] && die "No files found in '$search_dir'"
 
 if $no_picker; then
     printf '%s\n' "$files"
     exit 0
 fi
 
-command -v fzf >/dev/null 2>&1 || {
-    echo "Error: fzf not found" >&2
-    exit 1
-}
+command -v fzf >/dev/null 2>&1 || die "fzf not found (required for interactive picker)"
 
 [ -t 1 ] && clear
 
