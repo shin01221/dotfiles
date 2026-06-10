@@ -9,6 +9,11 @@ set -Ux KUBE_EDITOR nvim
 set -g fish_key_bindings fish_vi_key_bindings
 set -Ux fifc_editor nvim
 set -gx MANPAGER "nvim +Man!"
+
+function cur_wall
+    noctalia msg wallpaper-get
+end
+
 bind -M insert jj 'set fish_bind_mode default; commandline -f repaint-mode'
 bind -M insert \cf clear-and-redraw
 bind \cf clear-and-redraw

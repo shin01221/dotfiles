@@ -6,13 +6,13 @@ usage() {
 Usage: magick.sh [--replace] <mode> <args>
 
 Modes:
-  --resize-height <in> <out> <HEIGHT> [top|bottom|center]
+  --resize-height <in> <out> <HEIGHT> [top|bottom]
   --resize-width  <in> <out> <WIDTH>  [left|right|center]
   --downscale     <in> <out> <PERCENT>
   --sort          <DIR>
 
 With --replace (in-place, multiple files):
-  --replace --resize-height <in>... <HEIGHT> [top|bottom|center]
+  --replace --resize-height <in>... <HEIGHT> [top|bottom]
   --replace --resize-width  <in>... <WIDTH>  [left|right|center]
   --replace --downscale     <in>... <PERCENT>
 
@@ -59,7 +59,6 @@ process_file() {
 		local gravity
 		case "$position" in
 		top) gravity="South" ;;
-		center) gravity="Center" ;;
 		bottom | *) gravity="North" ;;
 		esac
 		magick "$input" -gravity "$gravity" -crop "x${new_height}+0+0" +repage "$output" || {
@@ -80,8 +79,8 @@ process_file() {
 		local gravity
 		case "$position" in
 		left) gravity="East" ;;
-		center | *) gravity="Center" ;;
 		right) gravity="West" ;;
+		center | *) gravity="Center" ;;
 		esac
 		magick "$input" -gravity "$gravity" -crop "${new_width}x+0+0" +repage "$output" || {
 			echo "Error: Failed to process '$input'" >&2
