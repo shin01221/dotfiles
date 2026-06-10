@@ -9,7 +9,6 @@ height="${FZF_PREVIEW_LINES:-40}"
 
 has_cmd() { command -v "$1" >/dev/null 2>&1; }
 
-# Kitty image protocol works in kitty and ghostty, but NOT through tmux
 in_tmux() { [ -n "$TMUX" ]; }
 
 is_kitty_protocol() {
@@ -18,6 +17,20 @@ is_kitty_protocol() {
     [ "$TERM_PROGRAM" = "ghostty" ] && return 0
     [ "$TERM_PROGRAM" = "kitty" ] && return 0
     [ -n "$GHOSTTY_RESOURCES_DIR" ] && return 0
+    case "$TERM" in
+        xterm-kitty|xterm-ghostty|*-ghostty) return 0 ;;
+    esac
+    return 1
+}
+
+has_sixel() {
+    in_tmux && return 1
+    case "$TERM_PROGRAM" in
+        foot) return 0 ;;
+    esac
+    case "$TERM" in
+        foot|foot-*|*-sixel) return 0 ;;
+    esac
     return 1
 }
 
@@ -32,6 +45,13 @@ display_image_kitty() {
         --size="${width}x${height}" "$img" 2>/dev/null
 }
 
+display_image_sixel() {
+    local img="$1"
+    [ ! -f "$img" ] && return 1
+    chafa -f sixels --scale=max \
+        --size="${width}x${height}" "$img" 2>/dev/null
+}
+
 display_image_chafa() {
     local img="$1"
     [ ! -f "$img" ] && return 1
@@ -41,17 +61,11 @@ display_image_chafa() {
 
 display_image() {
     local img="$1"
-    if [ -n "$CHAFA_DEBUG" ]; then
-        echo "CHAFA_DEBUG: tmux=$(in_tmux && echo yes || echo no)" >&2
-        echo "CHAFA_DEBUG: KITTY_WINDOW_ID=${KITTY_WINDOW_ID:-unset}" >&2
-        echo "CHAFA_DEBUG: TERM_PROGRAM=${TERM_PROGRAM:-unset}" >&2
-        echo "CHAFA_DEBUG: GHOSTTY_RESOURCES_DIR=${GHOSTTY_RESOURCES_DIR:-unset}" >&2
-    fi
     if is_kitty_protocol && has_cmd chafa; then
-        [ -n "$CHAFA_DEBUG" ] && echo "CHAFA_DEBUG: using kitty protocol" >&2
         display_image_kitty "$img" || display_image_chafa "$img"
+    elif has_sixel && has_cmd chafa; then
+        display_image_sixel "$img" || display_image_chafa "$img"
     elif has_cmd chafa; then
-        [ -n "$CHAFA_DEBUG" ] && echo "CHAFA_DEBUG: using symbols" >&2
         clear_image
         display_image_chafa "$img"
     else
