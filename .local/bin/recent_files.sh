@@ -64,7 +64,15 @@ if ! $print_mode && ! $save_mode && ! $no_picker; then
 fi
 $save_mode && ! command -v wl-copy >/dev/null 2>&1 && die "wl-copy not found (required for --save)"
 
-files=$(find "$search_dir" -mindepth 1 -maxdepth 1 -not -name "$(basename "$0")" \
+skip_names=('.git' '.github' 'node_modules' '__pycache__'
+    '.cache' '.npm' '.yarn' '.pnpm-store'
+    '*.pyc' '*.swp' '*.swx' '*.swo'
+    '.DS_Store' 'Thumbs.db')
+find_skip=()
+for n in "${skip_names[@]}"; do find_skip+=(-not -name "$n"); done
+files=$(find "$search_dir" -mindepth 1 -maxdepth 1 \
+    -not -name "$(basename "$0")" \
+    "${find_skip[@]}" \
     -printf '%T+ %p\n' 2>/dev/null |
     sort -r |
     head -n "$count" |

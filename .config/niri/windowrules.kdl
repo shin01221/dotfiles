@@ -79,11 +79,17 @@ window-rule {
     clip-to-geometry true
     border {
             on
-            width 2
+            width 0
     }
     default-column-width { fixed 800; }
     default-window-height { fixed 800; }
 }
+
+// window-rule {
+//     match app-id=r#"org\.telegram\.desktop"#
+//     geometry-corner-radius 0
+//     clip-to-geometry false
+// }
 
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
@@ -195,6 +201,13 @@ window-rule {
 layer-rule {
     match namespace="(^noctalia-osd.*)|(noctalia-notification.*)"
     opacity 0.9
+    background-effect {
+        xray false
+    }
+}
+
+layer-rule {
+    match namespace="^noctalia-dock.*"
     background-effect {
         xray false
     }

@@ -32,4 +32,15 @@ return {
     },
   }),
   vim.lsp.enable("yamlls"),
+
+  vim.lsp.config("rust_analyzer", {
+    cmd = { "rust-analyzer" },
+    filetypes = { "rust" },
+    settings = {
+      ["rust-analyzer"] = {
+        check = { command = "clippy" },
+      },
+    },
+  }),
+  vim.lsp.enable("rust_analyzer"),
 }

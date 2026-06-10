@@ -103,7 +103,7 @@ binds {
     Mod+Shift+BracketLeft { expel-window-from-column; }
 
     Mod+R { switch-preset-column-width; }
-    Mod+Shift+R { switch-preset-window-height; }
+    Mod+Shift+R { quit; }
     Mod+Ctrl+R { reset-window-height; }
     Mod+Alt+F { maximize-column; }
     Mod+F { fullscreen-window; }

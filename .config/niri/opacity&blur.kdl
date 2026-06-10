@@ -29,9 +29,9 @@ window-rule {
   popups {
     background-effect {
       blur true
-      xray true
+      xray false
     }
-    geometry-corner-radius 5
+    geometry-corner-radius 7
   }
 }
 
@@ -51,13 +51,20 @@ window-rule {
   open-floating true
 }
 
-/* No xray on noctalia layer-shell bg  */
 layer-rule {
-  match namespace="^noctalia-background-.*$"
-  background-effect {
-    xray false
-  }
+    match namespace="^noctalia-bar-main.*"
+    background-effect {
+        blur true
+        xray true
+    }
 }
+
+ // layer-rule {
+ //   match namespace="^noctalia-background-.*$"
+ //   background-effect {
+ //     xray false
+ //   }
+ // }
 
 // layer-rule {
 //     match namespace="^noctalia-desktop-widgets-eDP-2"

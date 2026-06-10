@@ -10,7 +10,7 @@ if rg -q '\/\/\s*.*"transparency.*' "$niriConf"; then
     sd 'capsule_opacity.*' 'capsule_opacity = 1.00' "$noctaliaConf/bar.toml"
 else
     sd '.*transparency.*' '// include "transparency.kdl"' "$niriConf"
-    sd 'background_opacity.*' 'background_opacity = 0.92' "$noctaliaConf/bar.toml"
-    sd 'background_opacity.*' 'background_opacity = 0.92' "$noctaliaConf/config.toml"
+    sd 'background_opacity.*' 'background_opacity = 0.90' "$noctaliaConf/bar.toml"
+    sd 'background_opacity.*' 'background_opacity = 0.90' "$noctaliaConf/config.toml"
     sd 'capsule_opacity.*' 'capsule_opacity = 0.50' "$noctaliaConf/bar.toml"
 fi

@@ -9,5 +9,5 @@ margin_ends = 0
 start = ["control-center", "workspaces", "active_window"]
 center = ["media"]
 end = ["tray", "ram", "clock-12h", "pomodoro"]
-background_opacity = 0.92
+background_opacity = 0.90
 capsule_opacity = 0.50
