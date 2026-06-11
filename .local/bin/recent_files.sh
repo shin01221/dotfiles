@@ -102,7 +102,9 @@ selected=$(printf '%s\n' "$files" |
 [ -z "$selected" ] && exit 0
 
 if $print_mode; then
-    printf '%s\n' "$search_dir/$selected"
+    while IFS= read -r sel; do
+        printf "'%s'\n" "$search_dir/$sel"
+    done <<< "$selected"
 elif $save_mode; then
     paths=$(printf '"%s"' "$search_dir/$selected" | paste -sd,)
     printf '%s' "$paths" | wl-copy

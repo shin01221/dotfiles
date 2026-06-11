@@ -5,10 +5,10 @@ sunset = "21:00"         # HH:MM — night starts
 sunrise = "07:30"        # HH:MM — day starts
 
 [notifications]
-background_opacity = 0.90
+background_opacity = 1.00
 
 [dock]
-background_opacity = 0.90
+background_opacity = 1.00
 
 [lockscreen]
 wallpaper = "/home/shin/Pictures/homework/norm/143296243-4a29a38c6585c30d999b3a1d719f2893_p28.png"

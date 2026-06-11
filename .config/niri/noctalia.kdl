@@ -2,23 +2,23 @@ layout {
 
     focus-ring {
         active-color   "#c9a554"
-        inactive-color "#fafaf5"
+        inactive-color "#222222"
         urgent-color   "#b36d43"
     }
 
     border {
         active-color   "#c9a554"
-        inactive-color "#fafaf5"
+        inactive-color "#222222"
         urgent-color   "#b36d43"
     }
 
     shadow {
-        color "#d7d7d070"
+        color "#1a1a1a70"
     }
 
     tab-indicator {
         active-color   "#c9a554"
-        inactive-color "#e5ddcd"
+        inactive-color "#594312"
         urgent-color   "#b36d43"
     }
 
