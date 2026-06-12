@@ -11,6 +11,8 @@ Modes:
   --downscale     <in> <out> <PERCENT>
   --sort          <DIR>
 
+If <in> is a directory, all images in it are processed in-place.
+
 With --replace (in-place, multiple files):
   --replace --resize-height <in>... <HEIGHT> [top|bottom]
   --replace --resize-width  <in>... <WIDTH>  [left|right|center]
@@ -24,6 +26,7 @@ EOF
 }
 
 replace_flag=false
+batch_flag=false
 mode=""
 args=()
 
@@ -31,6 +34,7 @@ for arg in "$@"; do
 	case "$arg" in
 	--help) usage ;;
 	--replace) replace_flag=true ;;
+	--batch) batch_flag=true ;;
 	--resize-height | --resize-width | --downscale | --sort) mode="$arg" ;;
 	*) args+=("$arg") ;;
 	esac
@@ -44,6 +48,8 @@ process_file() {
 	local input="$1" output="$2" mode="$3"
 	shift 3
 	local rest=("$@")
+
+	identify "$input" >/dev/null 2>&1 || { echo "Error: '$input' is not an image — please choose an image" >&2; return 1; }
 
 	case "$mode" in
 	--resize-height)
@@ -130,6 +136,29 @@ case "$mode" in
 			[ -f "$input" ] || { echo "Error: '$input' is not a file" >&2; fail=1; continue; }
 			process_file "$input" "$input" "$mode" "$val" "$position" || fail=1
 		done
+		exit $fail
+	elif $batch_flag; then
+		[ -d "$1" ] || { echo "Error: '$1' is not a directory" >&2; exit 1; }
+		dir="$1"
+		val="$2"
+		[[ -z "$val" ]] && { echo "Error: Missing value argument for $mode" >&2; exit 1; }
+		position="$3"
+
+		fail=0
+		while IFS= read -r -d '' img; do
+			process_file "$img" "$img" "$mode" "$val" "$position" || fail=1
+		done < <(find "$dir" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \) -print0)
+		exit $fail
+	elif [ -d "$1" ]; then
+		dir="$1"
+		val="$2"
+		[[ -z "$val" ]] && { echo "Error: Missing value argument for $mode" >&2; exit 1; }
+		position="$3"
+
+		fail=0
+		while IFS= read -r -d '' img; do
+			process_file "$img" "$img" "$mode" "$val" "$position" || fail=1
+		done < <(find "$dir" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \) -print0)
 		exit $fail
 	else
 		input="$1" output="$2"
