@@ -1,4 +1,6 @@
 {
-  "etags": {},
+  "etags": {
+    "https://medhat-blog.netlify.app/rss.xml": "\"d8bf0592973b61e1adafde1dea858ef0-ssl\""
+  },
   "cache_control": {}
 }

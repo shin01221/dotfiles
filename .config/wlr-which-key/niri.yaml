@@ -1,8 +1,8 @@
 # Theming
 font: JetBrainsMono Nerd Font 12
-background: "#222222"
-color: "#c2c2b0"
-border: "#c9a554"
+background: "#fff8f6"
+color: "#231917"
+border: "#904b3a"
 separator: " ➜ "
 border_width: 1
 corner_r: 10
